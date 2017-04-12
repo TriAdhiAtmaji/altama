@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?component name="signLabel" class="com.jatis.ui.common.SignLabel" ?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window apply="org.zkoss.bind.BindComposer"
+            viewModel="@id('vm') @init('com.bitozen.example2.viewModel.companyProfile.CompanyProfileVM')"
+            form="@id('fx') @load(vm.companyProfileDTO) @save(vm.companyProfileDTO, before='buttonSave')">
+        
+        <separator/>
+        <groupbox closable="false" mold="3d">
+            <caption label="Form Pencarian Perusahaan"/>
+            <grid>
+                
+                <columns>
+                    <column width="20%"/>
+                    <column width="30%"/>
+                </columns>
+                
+                <rows>
+                    <row>
+                         
+                        <label value="Jenis Perusahaan"/>
+                        <combobox width="300px" placeholder="- Silahkan Pilih -" model="@load(vm.listJenisPerusahaan)" selectedItem="@bind(vm.jenisPerusahaan)">
+                            <template name="model" var="items">
+                                <comboitem label="@load(items)" value="@load(items)"/>
+                            </template>
+                        </combobox>
+                       
+                        <label value="Bidang Usaha"/>
+                        <combobox width="300px" placeholder="- Silahkan Pilih -" model="@load(vm.listBidangUsaha)" selectedItem="@bind(vm.bidangUsaha)">
+                            <template name="model" var="items">
+                                <comboitem label="@load(items)" value="@load(items)"/>
+                            </template>
+                        </combobox>	
+                    </row>    
+                    <row>
+                        <label value="Nama Perusahaan" />
+                        <textbox value="@bind(vm.namaPerusahaan)" width="300px"/>
+                        <label value="Status Perusahaan"/>
+                        <combobox width="300px" placeholder="- Silahkan Pilih -" model="@load(vm.listStatusPerusahaan)" selectedItem="@bind(vm.statusPerusahaan)">
+                            <template name="model" var="items">
+                                <comboitem label="@load(items)" value="@load(items)"/>
+                            </template>
+                        </combobox>			
+                    </row>
+          
+                </rows>               
+            </grid>
+            
+            <grid style="border:0">
+                <columns>
+                    <column width="267px"></column>
+                    <column width="120px"></column>
+                    <column width="300px"></column>
+                </columns>
+                <rows>
+                    <row>
+                        <label></label>
+                        <button label="Pencarian" mold="trendy" width="100px" onClick="@command('buttonSearch')"/>
+                        <button label="Membuat Perusahaan Baru" mold="trendy" width="220px" onClick="@command('buttonNewPerusahaan')"/>
+                    </row>
+                </rows>
+            </grid>
+                
+            
+        </groupbox>
+        <groupbox closable="false">
+            
+            <listbox rows="@load(vm.pageSize)" pageSize="@load(vm.pageSize)" pagingPosition="top" mold="paging" emptyMessage="${labels.common.noDataFound}" model="@bind(vm.companyProfileDTOs)">
+                <listhead>
+                    <listheader label="ID Perusahaan" width="15%" align="center"/>
+                    <listheader label="Nama Perusahaan" width="25%" align="center"/>
+                    <listheader label="Jenis Perusahaan" width="25%" align="center"/>
+                    <listheader label="Bidang Usaha" width="30%" align="center"/>
+                    <listheader label="Tahun Berdiri" width="30%" align="center"/>
+                    <listheader label="Aksi" width="10%" align="center"/>
+                </listhead>
+                <template name="model">
+                    <listitem value="${each}">
+                        <listcell >
+                            <label width="100%" value="@bind(each.idPerusahaan)"/>
+                        </listcell>
+                        <listcell >
+                            <label width="100%" value="@bind(each.namaPerusahaan)"/>
+                        </listcell>
+                        <listcell >
+                            <label width="100%" value="@bind(each.jenisPerusahaan)"/>
+                        </listcell>
+                        <listcell >
+                            <label width="100%" value="@bind(each.bidangUsaha)"/>
+                        </listcell>
+                        <listcell >
+                            <label width="100%" value="@bind(each.tglBerdiri)"/>
+                        </listcell>
+                        <listcell>
+                            <a label="Detail" style="text-decoration:underline; color:blue" onClick="@command('detailCompanyProfile', object=each)"></a>
+                            <a></a>
+                            <a label="Hapus" style="text-decoration:underline; color:blue" onClick="@command('deleteCompanyProfile', object=each)"></a>
+                        </listcell>
+                    </listitem>
+                </template>
+            </listbox>
+        </groupbox>
+    </window>
+</zk>

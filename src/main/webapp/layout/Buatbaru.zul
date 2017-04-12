@@ -1,0 +1,82 @@
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window apply="org.zkoss.bind.BindComposer"
+            viewModel="@id('vm') @init('com.bitozen.example2.viewModel.companyProfile.CompanyProfileVM')"
+            form="@id('fx') @load(vm.companyProfileDTO) @save(vm.companyProfileDTO, before='buttonSave')">
+        <groupbox closable="false" mold="3d" width="575px">
+            <caption label="Form Create Company"/>
+            <groupbox closable="false" width="560px">
+                <caption label="Company Profile" style="font-size:2em;" />
+                <radiogroup id="sv1"/>
+                <grid style="border:0" width="800px">
+                    <columns>
+                        <column width="20%"></column>
+                        <column width="80%"></column>
+                    </columns>
+                    <rows>
+                        <row spans="2"></row>
+                        <row>
+                            <label value="Jenis Perusahaan" />
+                            <radiogroup model="@bind(vm.listJenisPerusahaan)" selectedItem="@bind(vm.companyProfileDTO.jenisPerusahaan)" />
+<!--                            <cell>
+                                <radio id="ra1" label="Individu" radiogroup="sv1" />
+                                <radio id="ra2" label="Corporate" radiogroup="sv1" />
+                            </cell>		-->
+                        </row>
+                        <row>
+                            <label value="ID Perusahaan"/>
+                            <textbox width="60%" disabled="@bind(vm.disableID)" value="@bind(fx.idPerusahaan)" constraint="No Empty : ID Perusahan tidak boleh kosong"/>
+                        </row>
+                        <row>
+                            <label value="Nama Perusahaan"/>
+                            <textbox width="60%" value="@bind(fx.namaPerusahaan)" constraint="No Empty : Nama Perusahan tidak boleh kosong"/>
+                        </row>
+                        <row>
+                            <label value="Bidang Usaha"/>
+                            <combobox width="60%" placeholder="- Silahkan Pilih -" model="@load(vm.listBidangUsaha)" selectedItem="@bind(fx.bidangUsaha)" readonly="true" constraint="No Empty : Bidang Perusahan tidak boleh kosong">
+                                <template name="model" var="items">
+                                    <comboitem label="@load(items)" value="@load(items)"/>
+                                </template>
+                            </combobox>
+                        </row>
+                        <row>
+                            <label value="Alamat"/>
+                            <textbox rows="3" width="60%" value="@bind(fx.alamat)" constraint="No Empty : Alamat Perusahan tidak boleh kosong"/>
+                        </row>
+                        <row>
+                            <label value="No Telepon"/>
+                            <textbox width="60%" value="@bind(fx.noHp)" constraint="No Empty : No Telp tidak boleh kosong"/>
+                        </row>
+                        <row>
+                            <label value="Email"/>
+                            <textbox width="60%" value="@bind(fx.email)" constraint="No Empty : Email tidak boleh kosong"/>
+                        </row>
+                        <row>
+                            <label value="Website"/>
+                            <textbox width="60%" value="@bind(fx.website)"/>
+                        </row>
+                        <row>
+                            <label value="Tanggal Berdiri"/>
+                            <datebox id="tmb" width="60%" value="@bind(fx.tglBerdiri)" format="long" onCreate="self.value = new Date()" readonly="true" constraint="No Empty : Tanggal tidak boleh kosong"/>
+                        </row>
+                        <row>
+                            <label value="Status Perusahaan"/>
+                            <combobox width="60%" placeholder="- Silahkan Pilih -" model="@load(vm.listStatusPerusahaan)" selectedItem="@bind(fx.statusPerusahaan)" readonly="true" constraint="No Empty : Status Perusahan tidak boleh kosong">
+                                <template name="model" var="items">
+                                    <comboitem label="@load(items)" value="@load(items)"/>
+                                </template>
+                            </combobox>
+                        </row>
+                    </rows>
+                </grid>
+                
+            </groupbox>
+            <separator height="10px"/>
+            <groupbox width="560px">
+                <space width="60%"/>
+                <button label="Kembali" width="100px" onClick="@command('buttonCancel')"/>
+                <space width="3%"/>
+                <button label="Simpan" width="100px" onClick="@command('buttonSave')"/>
+            </groupbox>
+        </groupbox>
+    </window>
+</zk>

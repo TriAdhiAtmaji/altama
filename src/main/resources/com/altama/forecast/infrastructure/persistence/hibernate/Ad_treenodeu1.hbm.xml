@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-access="field">
+    <class mutable="true" name="com.altama.forecast.domain.ad_treenodeu1.Ad_treenodeu1" table="AD_TREENODEU1">
+        <!--<cache usage="read-only"/>-->
+        <id column="id" name="id">
+            <generator class="org.hibernate.id.IdentityGenerator"/>
+        </id>
+        
+        <property column="ad_tree_id" name="ad_tree_id" not-null="false"/>
+        <property column="node_id" name="node_id" not-null="false"/>
+        <property column="ad_client_id" name="ad_client_id" not-null="false"/>
+        <property column="ad_org_id" name="ad_org_id" not-null="false"/>
+        <property column="isactive" name="isactive" not-null="false"/>
+              
+        <property column="created" name="created" not-null="false"/>
+        <property column="createdBy" name="createdBy" not-null="false"/>
+        <property column="updated" name="updated" not-null="false"/>
+        <property column="updatedBy" name="updatedBy" not-null="false"/>
+        <property column="parent_id" name="parent_id" not-null="false"/>
+        <property column="seqno" name="seqno" not-null="false"/>
+        
+    </class>
+</hibernate-mapping>

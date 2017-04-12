@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <!-- All Application services are declared here !!! -->  
+       
+
+    <bean id="ad_treenodeu1DTOAssembler" class="com.altama.forecast.interfaces.web.facade.dto.assembler.ad_treenodeu1.Ad_treenodeu1DTOAssembler">
+    </bean> 
+    <bean id="ad_treenodeu1Service" class="com.altama.forecast.application.impl.Ad_treenodeu1ServiceImpl">
+        <property name="ad_treenodeu1Repository" ref="ad_treenodeu1Repository"/>
+        <property name="ad_treenodeu1DTOAssembler" ref="ad_treenodeu1DTOAssembler"/>
+    </bean> 
+    
+    <bean id="c_ElementvalueDTOAssembler" class="com.altama.forecast.interfaces.web.facade.dto.assembler.c_elementvalue.C_ElementvalueDTOAssembler">
+    </bean> 
+    <bean id="c_ElementvalueService" class="com.altama.forecast.application.impl.C_ElementvalueServiceImpl">
+        <property name="c_ElementvalueRepository" ref="c_ElementvalueRepository"/>
+        <property name="c_ElementvalueDTOAssembler" ref="c_ElementvalueDTOAssembler"/>
+    </bean> 
+    
+    <bean id="m_productDTOAssembler" class="com.altama.forecast.interfaces.web.facade.dto.assembler.m_product.M_productDTOAssembler">
+    </bean> 
+    <bean id="m_productService" class="com.altama.forecast.application.impl.M_productServiceImpl">
+        <property name="m_productRepository" ref="m_productRepository"/>
+        <property name="m_productDTOAssembler" ref="m_productDTOAssembler"/>
+    </bean> 
+    
+        
+</beans>

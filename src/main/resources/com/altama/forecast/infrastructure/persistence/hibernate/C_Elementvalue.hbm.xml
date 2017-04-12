@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class mutable="true" name="com.altama.forecast.domain.c_elementvalue.C_Elementvalue" table="C_ELEMENTVALUE">
+        <id column="id" name="id">
+            <generator class="org.hibernate.id.IdentityGenerator"/>
+        </id>
+        
+        <property column="c_elementvalue_id" name="c_elementvalue_id" not-null="false"/>
+        <property column="ad_client_id" name="ad_client_id" not-null="false"/>
+        <property column="isActive" name="isActive" not-null="false"/>
+        <property column="created" name="created" not-null="false"/>
+        <property column="createdBy" name="createdBy" not-null="false"/>
+        <property column="updated" name="updated" not-null="false"/>
+        <property column="updatedBy" name="updatedBy" not-null="false"/>
+        <property column="value" name="value" not-null="false"/>
+        <property column="name" name="name" not-null="false"/>     
+        <property column="description" name="description" not-null="false"/>
+        <property column="accountType" name="accountType" not-null="false"/>
+        <property column="accountSign" name="accountSign" not-null="false"/>
+        <property column="isDocControlled" name="isDocControlled" not-null="false"/>
+        <property column="c_element_id" name="c_element_id" not-null="false"/>     
+        <property column="isSummary" name="isSummary" not-null="false"/>
+        <property column="validFrom" name="validFrom" not-null="false"/>
+        <property column="validTo" name="validTo" not-null="false"/>
+        <property column="postActual" name="postActual" not-null="false"/>     
+        <property column="postBudget" name="postBudget" not-null="false"/>
+        <property column="postEncumBrance" name="postEncumBrance" not-null="false"/>
+        <property column="poststatistical" name="poststatistical" not-null="false"/>
+        <property column="isBankAccount" name="isBankAccount" not-null="false"/>     
+        <property column="c_bankaccount_id" name="c_bankaccount_id" not-null="false"/>
+        <property column="isForeignCurrency" name="isForeignCurrency" not-null="false"/>
+        <property column="c_currency_id" name="c_currency_id" not-null="false"/>
+        <property column="isht" name="isht" not-null="false"/>
+        
+    </class>
+</hibernate-mapping>
