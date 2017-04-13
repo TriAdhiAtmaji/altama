@@ -46,4 +46,8 @@
     <bean id="m_productRepository" class="com.altama.forecast.infrastructure.persistence.hibernate.M_productHibernateRepository">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
+    
+    <bean id="c_bpartnerRepository" class="com.altama.forecast.infrastructure.persistence.hibernate.C_bpartnerHibernateRepository">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
 </beans>

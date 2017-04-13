@@ -8,7 +8,12 @@
         </id>
         
         <property column="ad_tree_id" name="ad_tree_id" not-null="false"/>
-        <property column="node_id" name="node_id" not-null="false"/>
+        <!--        <property column="node_id" name="node_id" not-null="false"/>-->
+        
+        <many-to-one name="node_id" class="com.altama.forecast.domain.c_elementvalue.C_Elementvalue" lazy="false">
+            <column name="node_id" />
+        </many-to-one>
+        
         <property column="ad_client_id" name="ad_client_id" not-null="false"/>
         <property column="ad_org_id" name="ad_org_id" not-null="false"/>
         <property column="isactive" name="isactive" not-null="false"/>

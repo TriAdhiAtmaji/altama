@@ -2,13 +2,11 @@
 <?component name="signLabel" class="com.jatis.ui.common.SignLabel" ?>
 
 <zk xmlns="http://www.zkoss.org/2005/zul">
-    <window apply="org.zkoss.bind.BindComposer"
-            viewModel="@id('vm') @init('com.bitozen.example2.viewModel.companyProfile.CompanyProfileVM')"
-            form="@id('fx') @load(vm.companyProfileDTO) @save(vm.companyProfileDTO, before='buttonSave')">
+    <window apply="org.zkoss.bind.BindComposer">
         
         <separator/>
         <groupbox closable="false" mold="3d">
-            <caption label="Form Pencarian Perusahaan"/>
+            <caption label="Form Forecast"/>
             <grid>
                 
                 <columns>
@@ -20,26 +18,26 @@
                     <row>
                          
                         <label value="Jenis Perusahaan"/>
-                        <combobox width="300px" placeholder="- Silahkan Pilih -" model="@load(vm.listJenisPerusahaan)" selectedItem="@bind(vm.jenisPerusahaan)">
+                        <combobox width="300px" placeholder="- Silahkan Pilih -" model="" selectedItem="">
                             <template name="model" var="items">
-                                <comboitem label="@load(items)" value="@load(items)"/>
+                                <comboitem label="" value="@load(items)"/>
                             </template>
                         </combobox>
                        
                         <label value="Bidang Usaha"/>
-                        <combobox width="300px" placeholder="- Silahkan Pilih -" model="@load(vm.listBidangUsaha)" selectedItem="@bind(vm.bidangUsaha)">
+                        <combobox width="300px" placeholder="- Silahkan Pilih -" model="" selectedItem="">
                             <template name="model" var="items">
-                                <comboitem label="@load(items)" value="@load(items)"/>
+                                <comboitem label="" value=""/>
                             </template>
                         </combobox>	
                     </row>    
                     <row>
                         <label value="Nama Perusahaan" />
-                        <textbox value="@bind(vm.namaPerusahaan)" width="300px"/>
+                        <textbox value="" width="300px"/>
                         <label value="Status Perusahaan"/>
-                        <combobox width="300px" placeholder="- Silahkan Pilih -" model="@load(vm.listStatusPerusahaan)" selectedItem="@bind(vm.statusPerusahaan)">
+                        <combobox width="300px" placeholder="- Silahkan Pilih -" model="" selectedItem="">
                             <template name="model" var="items">
-                                <comboitem label="@load(items)" value="@load(items)"/>
+                                <comboitem label="" value=""/>
                             </template>
                         </combobox>			
                     </row>
@@ -56,8 +54,8 @@
                 <rows>
                     <row>
                         <label></label>
-                        <button label="Pencarian" mold="trendy" width="100px" onClick="@command('buttonSearch')"/>
-                        <button label="Membuat Perusahaan Baru" mold="trendy" width="220px" onClick="@command('buttonNewPerusahaan')"/>
+                        <button label="Pencarian" mold="trendy" width="100px" onClick=""/>
+                        <button label="Membuat Perusahaan Baru" mold="trendy" width="220px" onClick=""/>
                     </row>
                 </rows>
             </grid>
@@ -66,7 +64,7 @@
         </groupbox>
         <groupbox closable="false">
             
-            <listbox rows="@load(vm.pageSize)" pageSize="@load(vm.pageSize)" pagingPosition="top" mold="paging" emptyMessage="${labels.common.noDataFound}" model="@bind(vm.companyProfileDTOs)">
+            <listbox rows="" pageSize="" pagingPosition="top" mold="paging" emptyMessage="${labels.common.noDataFound}" model="">
                 <listhead>
                     <listheader label="ID Perusahaan" width="15%" align="center"/>
                     <listheader label="Nama Perusahaan" width="25%" align="center"/>
@@ -78,24 +76,24 @@
                 <template name="model">
                     <listitem value="${each}">
                         <listcell >
-                            <label width="100%" value="@bind(each.idPerusahaan)"/>
+                            <label width="100%" value=""/>
                         </listcell>
                         <listcell >
-                            <label width="100%" value="@bind(each.namaPerusahaan)"/>
+                            <label width="100%" value=""/>
                         </listcell>
                         <listcell >
-                            <label width="100%" value="@bind(each.jenisPerusahaan)"/>
+                            <label width="100%" value=""/>
                         </listcell>
                         <listcell >
-                            <label width="100%" value="@bind(each.bidangUsaha)"/>
+                            <label width="100%" value=""/>
                         </listcell>
                         <listcell >
-                            <label width="100%" value="@bind(each.tglBerdiri)"/>
+                            <label width="100%" value=""/>
                         </listcell>
                         <listcell>
-                            <a label="Detail" style="text-decoration:underline; color:blue" onClick="@command('detailCompanyProfile', object=each)"></a>
+                            <a label="Detail" style="text-decoration:underline; color:blue" onClick=""></a>
                             <a></a>
-                            <a label="Hapus" style="text-decoration:underline; color:blue" onClick="@command('deleteCompanyProfile', object=each)"></a>
+                            <a label="Hapus" style="text-decoration:underline; color:blue" onClick=""></a>
                         </listcell>
                     </listitem>
                 </template>

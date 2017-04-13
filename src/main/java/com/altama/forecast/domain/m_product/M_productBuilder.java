@@ -95,7 +95,7 @@ public class M_productBuilder {
     private BigDecimal palletizevalue;
     private String movingtype;
     private String movingtypesales;
-    private short interface_flag;
+    private int interface_flag;
     private BigDecimal weight_ctn;
     private BigDecimal qtylimitpo;
     private BigDecimal length_ctn;
@@ -537,7 +537,7 @@ public class M_productBuilder {
         return this;
     }
 
-    public M_productBuilder setInterface_flag(short interface_flag) {
+    public M_productBuilder setInterface_flag(int interface_flag) {
         this.interface_flag = interface_flag;
         return this;
     }

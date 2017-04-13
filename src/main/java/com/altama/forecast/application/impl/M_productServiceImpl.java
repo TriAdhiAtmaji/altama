@@ -2,10 +2,12 @@ package com.altama.forecast.application.impl;
 
 import com.altama.forecast.application.M_productService;
 import com.altama.forecast.domain.m_product.M_product;
+import com.altama.forecast.domain.m_product.M_productBuilder;
 import com.altama.forecast.domain.m_product.M_productRepository;
 import com.altama.forecast.interfaces.web.facade.dto.assembler.m_product.M_productDTOAssembler;
 import com.altama.forecast.interfaces.web.facade.dto.m_productDTO.M_productDTO;
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import org.apache.commons.lang.Validate;
@@ -47,7 +49,26 @@ public class M_productServiceImpl implements M_productService {
 
     @Override
     public M_productDTO getDummy() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        M_product m_product = new M_productBuilder()
+                .setM_product_id(BigDecimal.valueOf(4))
+                .setAd_client_id(BigDecimal.valueOf(8))
+                .setAd_org_id(BigDecimal.valueOf(8))
+                .setIsactive("Y")
+                .setCreated(new Date())
+                .setCreatedby(BigDecimal.valueOf(3))
+                .setUpdated(new Date())
+                .setUpdatedBy(BigDecimal.valueOf(3))
+                .setValue("Y")
+                .setName("TEK")
+                .setDescription("AW")
+                .setDocumentnote("WK")
+                .setHelp("Y")
+                .setUpc("Y")
+                .setVolume(BigDecimal.valueOf(9))
+                .setWeight(BigDecimal.valueOf(3))
+                .setWmsvalue("Y")
+                .createM_product();
+        return m_productDTOAssembler.toDTO(m_product);
     }
 
     @Override
@@ -74,6 +95,30 @@ public class M_productServiceImpl implements M_productService {
             return (List<M_productDTO>) m_productDTOAssembler.toDTO(listM_product);
         }
         return null;
+    }
+
+    @Override
+    public M_productDTO getDummy2() {
+        M_product m_product = new M_productBuilder()
+                .setM_product_id(BigDecimal.valueOf(4))
+                .setAd_client_id(BigDecimal.valueOf(8))
+                .setAd_org_id(BigDecimal.valueOf(8))
+                .setIsactive("Y")
+                .setCreated(new Date())
+                .setCreatedby(BigDecimal.valueOf(3))
+                .setUpdated(new Date())
+                .setUpdatedBy(BigDecimal.valueOf(3))
+                .setValue("Y")
+                .setName("AER")
+                .setDescription("AW")
+                .setDocumentnote("WK")
+                .setHelp("Y")
+                .setUpc("Y")
+                .setVolume(BigDecimal.valueOf(9))
+                .setWeight(BigDecimal.valueOf(3))
+                .setWmsvalue("Y")
+                .createM_product();
+        return m_productDTOAssembler.toDTO(m_product);
     }
 
 }

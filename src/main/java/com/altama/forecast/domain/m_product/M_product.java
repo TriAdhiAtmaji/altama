@@ -97,7 +97,7 @@ public class M_product implements EntityObject<M_product> {
     private BigDecimal palletizevalue;
     private String movingtype;
     private String movingtypesales;
-    private short interface_flag;
+    private int interface_flag;
     private BigDecimal weight_ctn;
     private BigDecimal qtylimitpo;
     private BigDecimal length_ctn;
@@ -114,7 +114,7 @@ public class M_product implements EntityObject<M_product> {
     public M_product() {
     }
 
-    public M_product(BigDecimal m_product_id, BigDecimal ad_client_id, BigDecimal ad_org_id, String isactive, Date created, BigDecimal createdby, Date updated, BigDecimal updatedBy, String value, String name, String description, String documentnote, String help, String upc, String sku, BigDecimal c_uom_id, BigDecimal salesrep_id, String issummary, String isstocked, String ispurchased, String issold, String isbom, String isinvoiceprintdetails, String ispicklistprintdetails, String isverified, BigDecimal c_revenuerecognition_id, BigDecimal m_product_category_id, String classification, BigDecimal volume, BigDecimal weight, BigDecimal shelfwidth, BigDecimal shelfheight, BigDecimal shelfdepth, BigDecimal unitsperpallet, BigDecimal c_taxcategory_id, BigDecimal s_resource_id, String discontinued, Date discontinuedby, String processing, String s_expensetype_id, String producttype, String imageurl, String descriptionurl, BigDecimal guaranteedays, BigDecimal r_mailtext_id, String versionno, BigDecimal m_attributeset_id, BigDecimal m_attributesetinstance_id, String downloadurl, BigDecimal m_freightcategory_id, BigDecimal m_locator_id, BigDecimal guaranteedaysmin, String iswebstorefeatured, String isselfservice, BigDecimal c_subscriptiontype_id, String isdropship, String isexcludeautodelivery, BigDecimal m_productsubcat_id, BigDecimal user1_id, String isgeneralsparepart, String item_no, String qty_per_innerbox, BigDecimal qty_per_ctn, BigDecimal qty_innerbox_per_ctn, BigDecimal net_weight, String isdiscontinued, BigDecimal net_weight_dus, BigDecimal weight_dus, String item_code, String picture, String isqi, String isnew, String isnewpo, Date updated_2, BigDecimal m_productsubcat2_id, BigDecimal m_productsubcat3_id, BigDecimal volume_ctn, String iscashback, String wmsvalue, BigDecimal c_uom2_id, BigDecimal c_uom3_id, String palletizeby, BigDecimal palletizevalue, String movingtype, String movingtypesales, short interface_flag, BigDecimal weight_ctn, BigDecimal qtylimitpo, BigDecimal length_ctn, BigDecimal width_ctn, BigDecimal height_ctn, String islimitpo, BigDecimal tier, BigDecimal qty_ctn_per_pallete, BigDecimal height_pallete, BigDecimal weight_pallete, BigDecimal height_tier, BigDecimal qtylimitoti) {
+    public M_product(BigDecimal m_product_id, BigDecimal ad_client_id, BigDecimal ad_org_id, String isactive, Date created, BigDecimal createdby, Date updated, BigDecimal updatedBy, String value, String name, String description, String documentnote, String help, String upc, String sku, BigDecimal c_uom_id, BigDecimal salesrep_id, String issummary, String isstocked, String ispurchased, String issold, String isbom, String isinvoiceprintdetails, String ispicklistprintdetails, String isverified, BigDecimal c_revenuerecognition_id, BigDecimal m_product_category_id, String classification, BigDecimal volume, BigDecimal weight, BigDecimal shelfwidth, BigDecimal shelfheight, BigDecimal shelfdepth, BigDecimal unitsperpallet, BigDecimal c_taxcategory_id, BigDecimal s_resource_id, String discontinued, Date discontinuedby, String processing, String s_expensetype_id, String producttype, String imageurl, String descriptionurl, BigDecimal guaranteedays, BigDecimal r_mailtext_id, String versionno, BigDecimal m_attributeset_id, BigDecimal m_attributesetinstance_id, String downloadurl, BigDecimal m_freightcategory_id, BigDecimal m_locator_id, BigDecimal guaranteedaysmin, String iswebstorefeatured, String isselfservice, BigDecimal c_subscriptiontype_id, String isdropship, String isexcludeautodelivery, BigDecimal m_productsubcat_id, BigDecimal user1_id, String isgeneralsparepart, String item_no, String qty_per_innerbox, BigDecimal qty_per_ctn, BigDecimal qty_innerbox_per_ctn, BigDecimal net_weight, String isdiscontinued, BigDecimal net_weight_dus, BigDecimal weight_dus, String item_code, String picture, String isqi, String isnew, String isnewpo, Date updated_2, BigDecimal m_productsubcat2_id, BigDecimal m_productsubcat3_id, BigDecimal volume_ctn, String iscashback, String wmsvalue, BigDecimal c_uom2_id, BigDecimal c_uom3_id, String palletizeby, BigDecimal palletizevalue, String movingtype, String movingtypesales, int interface_flag, BigDecimal weight_ctn, BigDecimal qtylimitpo, BigDecimal length_ctn, BigDecimal width_ctn, BigDecimal height_ctn, String islimitpo, BigDecimal tier, BigDecimal qty_ctn_per_pallete, BigDecimal height_pallete, BigDecimal weight_pallete, BigDecimal height_tier, BigDecimal qtylimitoti) {
         this.m_product_id = m_product_id;
         this.ad_client_id = ad_client_id;
         this.ad_org_id = ad_org_id;
@@ -1004,11 +1004,11 @@ public class M_product implements EntityObject<M_product> {
         this.movingtypesales = movingtypesales;
     }
 
-    public short getInterface_flag() {
+    public int getInterface_flag() {
         return interface_flag;
     }
 
-    public void setInterface_flag(short interface_flag) {
+    public void setInterface_flag(int interface_flag) {
         this.interface_flag = interface_flag;
     }
 
@@ -1110,105 +1110,105 @@ public class M_product implements EntityObject<M_product> {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 97 * hash + Objects.hashCode(this.m_product_id);
-        hash = 97 * hash + Objects.hashCode(this.ad_client_id);
-        hash = 97 * hash + Objects.hashCode(this.ad_org_id);
-        hash = 97 * hash + Objects.hashCode(this.isactive);
-        hash = 97 * hash + Objects.hashCode(this.created);
-        hash = 97 * hash + Objects.hashCode(this.createdby);
-        hash = 97 * hash + Objects.hashCode(this.updated);
-        hash = 97 * hash + Objects.hashCode(this.updatedBy);
-        hash = 97 * hash + Objects.hashCode(this.value);
-        hash = 97 * hash + Objects.hashCode(this.name);
-        hash = 97 * hash + Objects.hashCode(this.description);
-        hash = 97 * hash + Objects.hashCode(this.documentnote);
-        hash = 97 * hash + Objects.hashCode(this.help);
-        hash = 97 * hash + Objects.hashCode(this.upc);
-        hash = 97 * hash + Objects.hashCode(this.sku);
-        hash = 97 * hash + Objects.hashCode(this.c_uom_id);
-        hash = 97 * hash + Objects.hashCode(this.salesrep_id);
-        hash = 97 * hash + Objects.hashCode(this.issummary);
-        hash = 97 * hash + Objects.hashCode(this.isstocked);
-        hash = 97 * hash + Objects.hashCode(this.ispurchased);
-        hash = 97 * hash + Objects.hashCode(this.issold);
-        hash = 97 * hash + Objects.hashCode(this.isbom);
-        hash = 97 * hash + Objects.hashCode(this.isinvoiceprintdetails);
-        hash = 97 * hash + Objects.hashCode(this.ispicklistprintdetails);
-        hash = 97 * hash + Objects.hashCode(this.isverified);
-        hash = 97 * hash + Objects.hashCode(this.c_revenuerecognition_id);
-        hash = 97 * hash + Objects.hashCode(this.m_product_category_id);
-        hash = 97 * hash + Objects.hashCode(this.classification);
-        hash = 97 * hash + Objects.hashCode(this.volume);
-        hash = 97 * hash + Objects.hashCode(this.weight);
-        hash = 97 * hash + Objects.hashCode(this.shelfwidth);
-        hash = 97 * hash + Objects.hashCode(this.shelfheight);
-        hash = 97 * hash + Objects.hashCode(this.shelfdepth);
-        hash = 97 * hash + Objects.hashCode(this.unitsperpallet);
-        hash = 97 * hash + Objects.hashCode(this.c_taxcategory_id);
-        hash = 97 * hash + Objects.hashCode(this.s_resource_id);
-        hash = 97 * hash + Objects.hashCode(this.discontinued);
-        hash = 97 * hash + Objects.hashCode(this.discontinuedby);
-        hash = 97 * hash + Objects.hashCode(this.processing);
-        hash = 97 * hash + Objects.hashCode(this.s_expensetype_id);
-        hash = 97 * hash + Objects.hashCode(this.producttype);
-        hash = 97 * hash + Objects.hashCode(this.imageurl);
-        hash = 97 * hash + Objects.hashCode(this.descriptionurl);
-        hash = 97 * hash + Objects.hashCode(this.guaranteedays);
-        hash = 97 * hash + Objects.hashCode(this.r_mailtext_id);
-        hash = 97 * hash + Objects.hashCode(this.versionno);
-        hash = 97 * hash + Objects.hashCode(this.m_attributeset_id);
-        hash = 97 * hash + Objects.hashCode(this.m_attributesetinstance_id);
-        hash = 97 * hash + Objects.hashCode(this.downloadurl);
-        hash = 97 * hash + Objects.hashCode(this.m_freightcategory_id);
-        hash = 97 * hash + Objects.hashCode(this.m_locator_id);
-        hash = 97 * hash + Objects.hashCode(this.guaranteedaysmin);
-        hash = 97 * hash + Objects.hashCode(this.iswebstorefeatured);
-        hash = 97 * hash + Objects.hashCode(this.isselfservice);
-        hash = 97 * hash + Objects.hashCode(this.c_subscriptiontype_id);
-        hash = 97 * hash + Objects.hashCode(this.isdropship);
-        hash = 97 * hash + Objects.hashCode(this.isexcludeautodelivery);
-        hash = 97 * hash + Objects.hashCode(this.m_productsubcat_id);
-        hash = 97 * hash + Objects.hashCode(this.user1_id);
-        hash = 97 * hash + Objects.hashCode(this.isgeneralsparepart);
-        hash = 97 * hash + Objects.hashCode(this.item_no);
-        hash = 97 * hash + Objects.hashCode(this.qty_per_innerbox);
-        hash = 97 * hash + Objects.hashCode(this.qty_per_ctn);
-        hash = 97 * hash + Objects.hashCode(this.qty_innerbox_per_ctn);
-        hash = 97 * hash + Objects.hashCode(this.net_weight);
-        hash = 97 * hash + Objects.hashCode(this.isdiscontinued);
-        hash = 97 * hash + Objects.hashCode(this.net_weight_dus);
-        hash = 97 * hash + Objects.hashCode(this.weight_dus);
-        hash = 97 * hash + Objects.hashCode(this.item_code);
-        hash = 97 * hash + Objects.hashCode(this.picture);
-        hash = 97 * hash + Objects.hashCode(this.isqi);
-        hash = 97 * hash + Objects.hashCode(this.isnew);
-        hash = 97 * hash + Objects.hashCode(this.isnewpo);
-        hash = 97 * hash + Objects.hashCode(this.updated_2);
-        hash = 97 * hash + Objects.hashCode(this.m_productsubcat2_id);
-        hash = 97 * hash + Objects.hashCode(this.m_productsubcat3_id);
-        hash = 97 * hash + Objects.hashCode(this.volume_ctn);
-        hash = 97 * hash + Objects.hashCode(this.iscashback);
-        hash = 97 * hash + Objects.hashCode(this.wmsvalue);
-        hash = 97 * hash + Objects.hashCode(this.c_uom2_id);
-        hash = 97 * hash + Objects.hashCode(this.c_uom3_id);
-        hash = 97 * hash + Objects.hashCode(this.palletizeby);
-        hash = 97 * hash + Objects.hashCode(this.palletizevalue);
-        hash = 97 * hash + Objects.hashCode(this.movingtype);
-        hash = 97 * hash + Objects.hashCode(this.movingtypesales);
-        hash = 97 * hash + this.interface_flag;
-        hash = 97 * hash + Objects.hashCode(this.weight_ctn);
-        hash = 97 * hash + Objects.hashCode(this.qtylimitpo);
-        hash = 97 * hash + Objects.hashCode(this.length_ctn);
-        hash = 97 * hash + Objects.hashCode(this.width_ctn);
-        hash = 97 * hash + Objects.hashCode(this.height_ctn);
-        hash = 97 * hash + Objects.hashCode(this.islimitpo);
-        hash = 97 * hash + Objects.hashCode(this.tier);
-        hash = 97 * hash + Objects.hashCode(this.qty_ctn_per_pallete);
-        hash = 97 * hash + Objects.hashCode(this.height_pallete);
-        hash = 97 * hash + Objects.hashCode(this.weight_pallete);
-        hash = 97 * hash + Objects.hashCode(this.height_tier);
-        hash = 97 * hash + Objects.hashCode(this.qtylimitoti);
+        int hash = 7;
+        hash = 43 * hash + Objects.hashCode(this.m_product_id);
+        hash = 43 * hash + Objects.hashCode(this.ad_client_id);
+        hash = 43 * hash + Objects.hashCode(this.ad_org_id);
+        hash = 43 * hash + Objects.hashCode(this.isactive);
+        hash = 43 * hash + Objects.hashCode(this.created);
+        hash = 43 * hash + Objects.hashCode(this.createdby);
+        hash = 43 * hash + Objects.hashCode(this.updated);
+        hash = 43 * hash + Objects.hashCode(this.updatedBy);
+        hash = 43 * hash + Objects.hashCode(this.value);
+        hash = 43 * hash + Objects.hashCode(this.name);
+        hash = 43 * hash + Objects.hashCode(this.description);
+        hash = 43 * hash + Objects.hashCode(this.documentnote);
+        hash = 43 * hash + Objects.hashCode(this.help);
+        hash = 43 * hash + Objects.hashCode(this.upc);
+        hash = 43 * hash + Objects.hashCode(this.sku);
+        hash = 43 * hash + Objects.hashCode(this.c_uom_id);
+        hash = 43 * hash + Objects.hashCode(this.salesrep_id);
+        hash = 43 * hash + Objects.hashCode(this.issummary);
+        hash = 43 * hash + Objects.hashCode(this.isstocked);
+        hash = 43 * hash + Objects.hashCode(this.ispurchased);
+        hash = 43 * hash + Objects.hashCode(this.issold);
+        hash = 43 * hash + Objects.hashCode(this.isbom);
+        hash = 43 * hash + Objects.hashCode(this.isinvoiceprintdetails);
+        hash = 43 * hash + Objects.hashCode(this.ispicklistprintdetails);
+        hash = 43 * hash + Objects.hashCode(this.isverified);
+        hash = 43 * hash + Objects.hashCode(this.c_revenuerecognition_id);
+        hash = 43 * hash + Objects.hashCode(this.m_product_category_id);
+        hash = 43 * hash + Objects.hashCode(this.classification);
+        hash = 43 * hash + Objects.hashCode(this.volume);
+        hash = 43 * hash + Objects.hashCode(this.weight);
+        hash = 43 * hash + Objects.hashCode(this.shelfwidth);
+        hash = 43 * hash + Objects.hashCode(this.shelfheight);
+        hash = 43 * hash + Objects.hashCode(this.shelfdepth);
+        hash = 43 * hash + Objects.hashCode(this.unitsperpallet);
+        hash = 43 * hash + Objects.hashCode(this.c_taxcategory_id);
+        hash = 43 * hash + Objects.hashCode(this.s_resource_id);
+        hash = 43 * hash + Objects.hashCode(this.discontinued);
+        hash = 43 * hash + Objects.hashCode(this.discontinuedby);
+        hash = 43 * hash + Objects.hashCode(this.processing);
+        hash = 43 * hash + Objects.hashCode(this.s_expensetype_id);
+        hash = 43 * hash + Objects.hashCode(this.producttype);
+        hash = 43 * hash + Objects.hashCode(this.imageurl);
+        hash = 43 * hash + Objects.hashCode(this.descriptionurl);
+        hash = 43 * hash + Objects.hashCode(this.guaranteedays);
+        hash = 43 * hash + Objects.hashCode(this.r_mailtext_id);
+        hash = 43 * hash + Objects.hashCode(this.versionno);
+        hash = 43 * hash + Objects.hashCode(this.m_attributeset_id);
+        hash = 43 * hash + Objects.hashCode(this.m_attributesetinstance_id);
+        hash = 43 * hash + Objects.hashCode(this.downloadurl);
+        hash = 43 * hash + Objects.hashCode(this.m_freightcategory_id);
+        hash = 43 * hash + Objects.hashCode(this.m_locator_id);
+        hash = 43 * hash + Objects.hashCode(this.guaranteedaysmin);
+        hash = 43 * hash + Objects.hashCode(this.iswebstorefeatured);
+        hash = 43 * hash + Objects.hashCode(this.isselfservice);
+        hash = 43 * hash + Objects.hashCode(this.c_subscriptiontype_id);
+        hash = 43 * hash + Objects.hashCode(this.isdropship);
+        hash = 43 * hash + Objects.hashCode(this.isexcludeautodelivery);
+        hash = 43 * hash + Objects.hashCode(this.m_productsubcat_id);
+        hash = 43 * hash + Objects.hashCode(this.user1_id);
+        hash = 43 * hash + Objects.hashCode(this.isgeneralsparepart);
+        hash = 43 * hash + Objects.hashCode(this.item_no);
+        hash = 43 * hash + Objects.hashCode(this.qty_per_innerbox);
+        hash = 43 * hash + Objects.hashCode(this.qty_per_ctn);
+        hash = 43 * hash + Objects.hashCode(this.qty_innerbox_per_ctn);
+        hash = 43 * hash + Objects.hashCode(this.net_weight);
+        hash = 43 * hash + Objects.hashCode(this.isdiscontinued);
+        hash = 43 * hash + Objects.hashCode(this.net_weight_dus);
+        hash = 43 * hash + Objects.hashCode(this.weight_dus);
+        hash = 43 * hash + Objects.hashCode(this.item_code);
+        hash = 43 * hash + Objects.hashCode(this.picture);
+        hash = 43 * hash + Objects.hashCode(this.isqi);
+        hash = 43 * hash + Objects.hashCode(this.isnew);
+        hash = 43 * hash + Objects.hashCode(this.isnewpo);
+        hash = 43 * hash + Objects.hashCode(this.updated_2);
+        hash = 43 * hash + Objects.hashCode(this.m_productsubcat2_id);
+        hash = 43 * hash + Objects.hashCode(this.m_productsubcat3_id);
+        hash = 43 * hash + Objects.hashCode(this.volume_ctn);
+        hash = 43 * hash + Objects.hashCode(this.iscashback);
+        hash = 43 * hash + Objects.hashCode(this.wmsvalue);
+        hash = 43 * hash + Objects.hashCode(this.c_uom2_id);
+        hash = 43 * hash + Objects.hashCode(this.c_uom3_id);
+        hash = 43 * hash + Objects.hashCode(this.palletizeby);
+        hash = 43 * hash + Objects.hashCode(this.palletizevalue);
+        hash = 43 * hash + Objects.hashCode(this.movingtype);
+        hash = 43 * hash + Objects.hashCode(this.movingtypesales);
+        hash = 43 * hash + this.interface_flag;
+        hash = 43 * hash + Objects.hashCode(this.weight_ctn);
+        hash = 43 * hash + Objects.hashCode(this.qtylimitpo);
+        hash = 43 * hash + Objects.hashCode(this.length_ctn);
+        hash = 43 * hash + Objects.hashCode(this.width_ctn);
+        hash = 43 * hash + Objects.hashCode(this.height_ctn);
+        hash = 43 * hash + Objects.hashCode(this.islimitpo);
+        hash = 43 * hash + Objects.hashCode(this.tier);
+        hash = 43 * hash + Objects.hashCode(this.qty_ctn_per_pallete);
+        hash = 43 * hash + Objects.hashCode(this.height_pallete);
+        hash = 43 * hash + Objects.hashCode(this.weight_pallete);
+        hash = 43 * hash + Objects.hashCode(this.height_tier);
+        hash = 43 * hash + Objects.hashCode(this.qtylimitoti);
         return hash;
     }
 

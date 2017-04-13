@@ -43,6 +43,7 @@ public class M_productHibernateRepository extends HibernateRepository implements
     @Override
     public List<M_product> findAll() {
         Criteria criteria = getSession().createCriteria(M_product.class);
+        System.out.println(criteria.list().isEmpty());
         return (List<M_product>) criteria.list();
     }
 

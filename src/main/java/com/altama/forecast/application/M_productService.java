@@ -16,6 +16,8 @@ public interface M_productService {
     void delete(M_productDTO m_product);
 
     M_productDTO getDummy();
+    
+    M_productDTO getDummy2();
 
     M_productDTO findByID(BigDecimal m_product_id);
 
