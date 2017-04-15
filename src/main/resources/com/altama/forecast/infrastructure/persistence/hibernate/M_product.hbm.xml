@@ -2,8 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class  mutable="true" name="com.altama.forecast.domain.m_product.M_product" table="m_product">
-        <id column="m_product_id" name="m_product_id" type="java.math.BigDecimal"/> 
-                       
+        <id column="m_product_id" name="m_product_id" type="java.math.BigDecimal"/>           
         <property column="ad_client_id" name="ad_client_id" not-null="false"/>
         <property column="ad_org_id" name="ad_org_id" not-null="false"/>
         <property column="isactive" name="isactive" not-null="false"/>

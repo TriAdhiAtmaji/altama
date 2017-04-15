@@ -20,6 +20,8 @@ public class C_ElementvalueServiceImpl implements C_ElementvalueService {
 
     private C_ElementvalueRepository c_ElementvalueRepository;
     private C_ElementvalueDTOAssembler c_ElementvalueDTOAssembler;
+    
+    
 
     public void setC_ElementvalueRepository(C_ElementvalueRepository c_ElementvalueRepository) {
         this.c_ElementvalueRepository = c_ElementvalueRepository;

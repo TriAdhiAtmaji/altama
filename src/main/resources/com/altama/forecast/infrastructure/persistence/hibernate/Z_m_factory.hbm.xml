@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class  mutable="true" name="com.altama.forecast.domain.z_m_factory.Z_m_factory" table="z_m_factory">
+    
+        <id column="z_m_factory_id" name="z_m_factory_id">
+        </id>
+    
+        <property column="ad_client_id" name="ad_client_id" not-null="false"/>
+        <property column="ad_org_id" name="ad_org_id" not-null="false"/>
+        <property column="isactive" name="isactive" not-null="false"/>
+        <property column="created" name="created" not-null="false"/>
+        <property column="createdby" name="createdby" not-null="false"/>
+        <property column="updated" name="updated" not-null="false"/>
+        <property column="updatedby" name="updatedby" not-null="false"/>
+        <property column="c_bpartner_id" name="c_bpartner_id" not-null="false"/>
+        <property column="name" name="name" not-null="false"/>
+    
+    </class>
+</hibernate-mapping>

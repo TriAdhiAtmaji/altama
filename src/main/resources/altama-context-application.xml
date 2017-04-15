@@ -28,5 +28,12 @@
         <property name="m_productDTOAssembler" ref="m_productDTOAssembler"/>
     </bean> 
     
+    <bean id="c_bpartnerDTOAssembler" class="com.altama.forecast.interfaces.web.facade.dto.assembler.c_bpartner.C_bpartnerDTOAssembler">
+    </bean> 
+    <bean id="c_bpartnerService" class="com.altama.forecast.application.impl.C_bpartnerServiceImpl">
+        <property name="c_bpartnerRepository" ref="c_bpartnerRepository"/>
+        <property name="c_bpartnerDTOAssembler" ref="c_bpartnerDTOAssembler"/>
+    </bean> 
+    
         
 </beans>

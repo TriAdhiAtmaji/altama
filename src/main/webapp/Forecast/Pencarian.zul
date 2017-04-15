@@ -28,7 +28,14 @@
                     </row> 
                     <row>
                         <label value="Product" />
-                        <textbox value="@bind(vm.name)" width="300px"/>
+<!--                        <textbox value="@bind(vm.name)" width="300px"/>-->
+                        
+                        <combobox width="400px" model="@load(vm.name)" selectedItem="@bind(vm.name)" placeholder="- Pilihan Menu -" readonly="true">
+                            <template name="model" var="items">
+                                <comboitem label="@load(items)" value="@load(items)"/>
+                            </template>
+                        </combobox>
+                        
                         <label value="Is Discontinued"/>
                         <combobox width="300px" readonly="true" placeholder="- Silahkan Pilih -" constraint="no empty :Tidak Boleh Kosong">
                            
