@@ -3,7 +3,7 @@
 <hibernate-mapping>
     <class  mutable="true" name="com.altama.forecast.domain.z_m_factory.Z_m_factory" table="z_m_factory">
     
-        <id column="z_m_factory_id" name="z_m_factory_id">
+        <id column="z_m_factory_id" name="z_m_factory_id"  type="java.math.BigDecimal>
         </id>
     
         <property column="ad_client_id" name="ad_client_id" not-null="false"/>

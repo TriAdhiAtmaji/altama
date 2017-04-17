@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class  mutable="true" name="com.altama.forecast.domain.z_m_product_factory.Z_m_product_factory" table ="z_m_product_factory">
+        
+        <id column="z_m_product_factory_id" name="z_m_product_factory_id"  type="java.math.BigDecimal>
+        </id>
+        
+        <property column="m_product_id" name="m_product_id" not-null="false"/>
+        
+<!--        <many-to-one name="z_m_factory_id" class="com.altama.forecast.domain.z_m_factory.Z_m_factory" lazy="false">
+            <column name="z_m_factory_id" />
+        </many-to-one>-->
+        
+        <property column="z_m_factory_id" name="z_m_factory_id" not-null="false"/>
+        
+        <property column="iscurrentvendor" name="iscurrentvendor" not-null="false"/>
+        
+    </class>
+</hibernate-mapping>

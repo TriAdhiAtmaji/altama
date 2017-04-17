@@ -3,15 +3,13 @@
 <hibernate-mapping default-access="field">
     <class mutable="true" name="com.altama.forecast.domain.ad_treenodeu1.Ad_treenodeu1" table="AD_TREENODEU1">
         <!--<cache usage="read-only"/>-->
-        <id column="ad_tree_id" name="ad_tree_id">
+        <id column="ad_tree_id" name="ad_tree_id"  type="java.math.BigDecimal>
             
         </id>
         
-        <!--        <property column="ad_tree_id" name="ad_tree_id" not-null="false"/>-->
-        <!--        <property column="node_id" name="node_id" not-null="false"/>-->
-        
+              
         <many-to-one name="node_id" class="com.altama.forecast.domain.c_elementvalue.C_Elementvalue" lazy="false">
-            <column name="node_id" />
+            <column name="c_elementvalue_id" />
         </many-to-one>
         
         <property column="ad_client_id" name="ad_client_id" not-null="false"/>

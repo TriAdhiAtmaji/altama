@@ -19,7 +19,11 @@
         <property column="updated" name="updated" not-null="false"/>
         <property column="updatedBy" name="updatedBy" not-null="false"/>
         <property column="value" name="value" not-null="false"/>
-        <property column="name" name="name" not-null="false"/>     
+        
+<!--        <many-to-one name="name" class="com.altama.forecast.domain.ad_treenodeu1.Ad_treenodeu1" column="ad_tree_id" lazy="false"/>-->
+                
+        <property column="name" name="name" not-null="false"/> 
+            
         <property column="description" name="description" not-null="false"/>
         <property column="accountType" name="accountType" not-null="false"/>
         <property column="accountSign" name="accountSign" not-null="false"/>

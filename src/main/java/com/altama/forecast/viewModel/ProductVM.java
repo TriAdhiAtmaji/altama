@@ -34,7 +34,7 @@ public class ProductVM {
 
     private String name;
 
-//    private ListModelList<nama> listnama = new ListModelList<nama>();
+//    private ListModelList<> listnama = new ListModelList<nama>();
     //    Setting List
     private PageNavigation previous;
     private boolean checked;
