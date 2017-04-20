@@ -21,6 +21,6 @@ public interface Ad_treenodeu1Service {
 
     List<Ad_treenodeu1DTO> findAll();
 
-    List<Ad_treenodeu1DTO> findByParams(Map map);
+    List<Ad_treenodeu1DTO> findByParams(String name);
 
 }

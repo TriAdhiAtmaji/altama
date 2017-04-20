@@ -5,13 +5,14 @@
  */
 package com.altama.forecast.interfaces.web.facade.dto.ad_treenodeu1;
 
+import com.altama.forecast.domain.c_elementvalue.C_Elementvalue;
 import java.math.BigDecimal;
 import java.util.Date;
 
 public class Ad_treenodeu1DTOBuilder {
 
     private BigDecimal ad_tree_id;
-    private BigDecimal node_id;
+    private C_Elementvalue node_id;
     private BigDecimal ad_client_id;
     private BigDecimal ad_org_id;
     private String isactive;
@@ -30,7 +31,7 @@ public class Ad_treenodeu1DTOBuilder {
         return this;
     }
 
-    public Ad_treenodeu1DTOBuilder setNode_id(BigDecimal node_id) {
+    public Ad_treenodeu1DTOBuilder setNode_id(C_Elementvalue node_id) {
         this.node_id = node_id;
         return this;
     }

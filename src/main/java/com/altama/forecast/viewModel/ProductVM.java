@@ -2,8 +2,10 @@ package com.altama.forecast.viewModel;
 
 import com.altama.forecast.application.M_productService;
 import com.altama.forecast.common.zul.PageNavigation;
+import com.altama.forecast.domain.m_product.Name;
 import com.altama.forecast.interfaces.web.facade.dto.m_productDTO.M_productDTO;
 import com.altama.forecast.interfaces.web.facade.dto.m_productDTO.M_productDTOBuilder;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -32,9 +34,17 @@ public class ProductVM {
     private M_productDTO m_productDTO = new M_productDTO();
     private List<M_productDTO> m_productDTOs = new ArrayList<>();
 
-    private String name;
+    private String nama;
 
-//    private ListModelList<> listnama = new ListModelList<nama>();
+    private Name nameSelected;
+
+    Name n1 = new Name(BigDecimal.valueOf(1), "Tekiro");
+    Name n2 = new Name(BigDecimal.valueOf(2), "Ryu");
+
+    List<Name> listName = new ArrayList<Name>();
+
+    //        combobox
+    //    private ListModelList<Name> listnama = new ListModelList<Name>();
     //    Setting List
     private PageNavigation previous;
     private boolean checked;
@@ -53,6 +63,9 @@ public class ProductVM {
     }
 
     private void initData() {
+        listName.add(n1);
+        listName.add(n2);
+
         m_productDTOs = m_productService.findAll();
     }
 
@@ -63,7 +76,7 @@ public class ProductVM {
                     .createM_productDTO();
         } else {
             this.m_productDTO = m_product;
-            name = m_productDTO.getName();
+            nama = m_productDTO.getName();
             this.previous = previous;
         }
     }
@@ -72,7 +85,9 @@ public class ProductVM {
     @NotifyChange("m_productDTOs")
     public void buttonSearch(@ContextParam(ContextType.VIEW) Window window) {
         Map params = new HashMap();
-        params.put("name", name);
+        params.put("nama", nama);
+
+        System.out.print("aaa" + nameSelected.getId().toString());
 
         m_productDTOs = m_productService.findByParams(params);
     }
@@ -93,12 +108,12 @@ public class ProductVM {
         this.m_productDTOs = m_productDTOs;
     }
 
-    public String getName() {
-        return name;
+    public String getNama() {
+        return nama;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNama(String nama) {
+        this.nama = nama;
     }
 
     public PageNavigation getPrevious() {
@@ -147,6 +162,37 @@ public class ProductVM {
 
     public void setTotalSize(int totalSize) {
         this.totalSize = totalSize;
+    }
+
+    public M_productService getM_productService() {
+        return m_productService;
+    }
+
+    public void setM_productService(M_productService m_productService) {
+        this.m_productService = m_productService;
+    }
+
+//    public Name getN() {
+//        return n;
+//    }
+//
+//    public void setN(Name n) {
+//        this.n = n;
+//    }
+    public List<Name> getListName() {
+        return listName;
+    }
+
+    public void setListName(List<Name> listName) {
+        this.listName = listName;
+    }
+
+    public Name getNameSelected() {
+        return nameSelected;
+    }
+
+    public void setNameSelected(Name nameSelected) {
+        this.nameSelected = nameSelected;
     }
 
 }

@@ -30,11 +30,11 @@
                         <label value="Product" />
                         <!--                        <textbox value="@bind(vm.name)" width="300px"/>-->
                         
-                        <!--                        <combobox width="400px" model="@load(vm.name)" selectedItem="@bind(vm.name)" placeholder="- Pilihan Menu -" readonly="true">
+                        <combobox width="400px" model="@load(vm.listName)" selectedItem="@bind(vm.nameSelected)" placeholder="- Pilihan Menu -" readonly="true">
                             <template name="model" var="items">
-                                <comboitem label="@load(items)" value="@load(items)"/>
+                                <comboitem label="@load(items.getName())" value="@load(items.getId().toString())"/>
                             </template>
-                        </combobox>-->
+                        </combobox>
                         
                         <label value="Is Discontinued"/>
                         <combobox width="300px" readonly="true" placeholder="- Silahkan Pilih -" constraint="no empty :Tidak Boleh Kosong">
@@ -72,8 +72,7 @@
             </groupbox>
         </groupbox>
         <groupbox closable="false">
-            <paging forward="onPaging" />
-            <listbox rows="5" emptyMessage="${labels.common.noDataFound}" model="@bind(vm.m_productDTOs)">
+            <listbox rows="@load(vm.pageSize)" pageSize="@load(vm.pageSize)" pagingPosition="top" mold="paging" emptyMessage="${labels.common.noDataFound}" model="@bind(vm.m_productDTOs)">
                 <listhead>
                     <listheader label="Product" width="30%" align="center"/>
                     <listheader label="Qty Available" width="30%" align="center"/>

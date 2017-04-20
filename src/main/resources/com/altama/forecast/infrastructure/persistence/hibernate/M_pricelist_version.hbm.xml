@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class mutable="true" name="com.altama.forecast.domain.m_pricelist_version.M_pricelist_version" table="m_pricelist_version" >
+    
+        <id column="m_pricelist_version_id" name="m_pricelist_version_id"  type="java.math.BigDecimal">
+        </id>
+        
+        <property column="name" name="namePricelist" not-null="false"/>
+    </class>
+</hibernate-mapping>

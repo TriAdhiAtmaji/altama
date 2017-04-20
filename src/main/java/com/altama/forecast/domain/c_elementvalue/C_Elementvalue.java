@@ -366,6 +366,11 @@ public class C_Elementvalue implements EntityObject<C_Elementvalue> {
         return true;
     }
 
+//    @Override
+//    public boolean sameValueAs(C_Elementvalue other) {
+//        return this.equals(other);
+//    }
+
     @Override
     public boolean sameIdentityAs(C_Elementvalue other) {
         return this.equals(other);

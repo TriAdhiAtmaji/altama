@@ -1,5 +1,6 @@
 package com.altama.forecast.interfaces.web.facade.dto.ad_treenodeu1;
 
+import com.altama.forecast.domain.c_elementvalue.C_Elementvalue;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -11,7 +12,7 @@ import java.util.Date;
 public class Ad_treenodeu1DTO implements Serializable {
 
     private BigDecimal ad_tree_id;
-    private BigDecimal node_id;
+    private C_Elementvalue node_id;
     private BigDecimal ad_client_id;
     private BigDecimal ad_org_id;
     private String isactive;
@@ -25,7 +26,7 @@ public class Ad_treenodeu1DTO implements Serializable {
     public Ad_treenodeu1DTO() {
     }
 
-    public Ad_treenodeu1DTO(BigDecimal ad_tree_id, BigDecimal node_id, BigDecimal ad_client_id, BigDecimal ad_org_id, String isactive, Date created, BigDecimal createdBy, BigDecimal updatedBy, Date updated, BigDecimal parent_id, BigDecimal seqno) {
+    public Ad_treenodeu1DTO(BigDecimal ad_tree_id, C_Elementvalue node_id, BigDecimal ad_client_id, BigDecimal ad_org_id, String isactive, Date created, BigDecimal createdBy, BigDecimal updatedBy, Date updated, BigDecimal parent_id, BigDecimal seqno) {
         this.ad_tree_id = ad_tree_id;
         this.node_id = node_id;
         this.ad_client_id = ad_client_id;
@@ -47,11 +48,11 @@ public class Ad_treenodeu1DTO implements Serializable {
         this.ad_tree_id = ad_tree_id;
     }
 
-    public BigDecimal getNode_id() {
+    public C_Elementvalue getNode_id() {
         return node_id;
     }
 
-    public void setNode_id(BigDecimal node_id) {
+    public void setNode_id(C_Elementvalue node_id) {
         this.node_id = node_id;
     }
 
@@ -129,7 +130,7 @@ public class Ad_treenodeu1DTO implements Serializable {
 
     @Override
     public String toString() {
-        return "ad_treenodeu1DTO{" + "ad_tree_id=" + ad_tree_id + ", node_id=" + node_id + ", ad_client_id=" + ad_client_id + ", ad_org_id=" + ad_org_id + ", isactive=" + isactive + ", created=" + created + ", createdBy=" + createdBy + ", updatedBy=" + updatedBy + ", updated=" + updated + ", parent_id=" + parent_id + ", seqno=" + seqno + '}';
+        return "Ad_treenodeu1DTO{" + "ad_tree_id=" + ad_tree_id + ", node_id=" + node_id + ", ad_client_id=" + ad_client_id + ", ad_org_id=" + ad_org_id + ", isactive=" + isactive + ", created=" + created + ", createdBy=" + createdBy + ", updatedBy=" + updatedBy + ", updated=" + updated + ", parent_id=" + parent_id + ", seqno=" + seqno + '}';
     }
 
 }

@@ -3,7 +3,7 @@
 <hibernate-mapping default-access="field">
     <class mutable="true" name="com.altama.forecast.domain.ad_treenodeu1.Ad_treenodeu1" table="AD_TREENODEU1">
         <!--<cache usage="read-only"/>-->
-        <id column="ad_tree_id" name="ad_tree_id"  type="java.math.BigDecimal>
+        <id column="ad_tree_id" name="ad_tree_id"  type="java.math.BigDecimal">
             
         </id>
         
