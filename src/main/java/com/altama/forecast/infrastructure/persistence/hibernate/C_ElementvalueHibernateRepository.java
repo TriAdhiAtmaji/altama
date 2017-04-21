@@ -43,6 +43,7 @@ public class C_ElementvalueHibernateRepository extends HibernateRepository imple
     @Override
     public List<C_Elementvalue> findAll() {
         Criteria criteria = getSession().createCriteria(C_Elementvalue.class);
+
         return (List<C_Elementvalue>) criteria.list();
     }
 

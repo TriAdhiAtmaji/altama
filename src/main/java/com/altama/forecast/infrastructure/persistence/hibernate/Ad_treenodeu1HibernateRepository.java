@@ -42,26 +42,28 @@ public class Ad_treenodeu1HibernateRepository extends HibernateRepository implem
 
     @Override
     public List<Ad_treenodeu1> findAll() {
-        Criteria criteria = getSession().createCriteria(Ad_treenodeu1.class);
+        Criteria criteria = getSession().createCriteria(Ad_treenodeu1.class, "ad_treenodeu1");
+        criteria.createAlias("ad_treenodeu1.node_id", "node_id", Criteria.FULL_JOIN);
         return (List<Ad_treenodeu1>) criteria.list();
     }
 
+    @Override
+    public List<Ad_treenodeu1> findByParams(Map map) {
+        Criteria criteria = getSession().createCriteria(Ad_treenodeu1.class, "ad_treenodeu1");
+        criteria.createAlias("ad_treenodeu1.node_id", "node_id");
+
+        if (StringUtil.hasValue(map.get("brand"))) {
+            criteria.add(Restrictions.eq("node_id.brand", map.get("brand")));
+        }
+        return criteria.list();
+    }
 //    @Override
 //    public List<Ad_treenodeu1> findByParams(Map map) {
 //        Criteria criteria = getSession().createCriteria(Ad_treenodeu1.class);
-//
-//        if (StringUtil.hasValue(map.get("ad_tree_id"))) {
-//            criteria.add(Restrictions.eq("ad_tree_id", map.get("ad_tree_id")));
+//        if (name.equals("%%")) {
+//            criteria.add(Restrictions.like("c_Elementvalue.name", name));
 //        }
-//        return criteria.list();
+//        return (List<Ad_treenodeu1>) criteria.list();
 //    }
-    @Override
-    public List<Ad_treenodeu1> findByParams(String name) {
-        Criteria criteria = getSession().createCriteria(Ad_treenodeu1.class);
-        if (name.equals("%%")) {
-            criteria.add(Restrictions.like("c_Elementvalue.name", name));
-        }
-        return (List<Ad_treenodeu1>) criteria.list();
-    }
 
 }

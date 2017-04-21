@@ -21,7 +21,7 @@ public class C_Elementvalue implements EntityObject<C_Elementvalue> {
     private Date updated;
     private BigDecimal updatedBy;
     private String value;
-    private String name;
+    private String brand;
     private String description;
     private String accountType;
     private String accountSign;
@@ -43,7 +43,7 @@ public class C_Elementvalue implements EntityObject<C_Elementvalue> {
     public C_Elementvalue() {
     }
 
-    public C_Elementvalue(BigDecimal c_elementvalue_id, BigDecimal ad_client_id, String isActive, Date created, BigDecimal createdBy, Date updated, BigDecimal updatedBy, String value, String name, String description, String accountType, String accountSign, String isDocControlled, BigDecimal c_element_id, String isSummary, Date validFrom, Date validTo, String postActual, String postBudget, String postEncumBrance, String poststatistical, String isBankAccount, BigDecimal c_bankaccount_id, String isForeignCurrency, BigDecimal c_currency_id, String isht) {
+    public C_Elementvalue(BigDecimal c_elementvalue_id, BigDecimal ad_client_id, String isActive, Date created, BigDecimal createdBy, Date updated, BigDecimal updatedBy, String value, String brand, String description, String accountType, String accountSign, String isDocControlled, BigDecimal c_element_id, String isSummary, Date validFrom, Date validTo, String postActual, String postBudget, String postEncumBrance, String poststatistical, String isBankAccount, BigDecimal c_bankaccount_id, String isForeignCurrency, BigDecimal c_currency_id, String isht) {
         this.c_elementvalue_id = c_elementvalue_id;
         this.ad_client_id = ad_client_id;
         this.isActive = isActive;
@@ -52,7 +52,7 @@ public class C_Elementvalue implements EntityObject<C_Elementvalue> {
         this.updated = updated;
         this.updatedBy = updatedBy;
         this.value = value;
-        this.name = name;
+        this.brand = brand;
         this.description = description;
         this.accountType = accountType;
         this.accountSign = accountSign;
@@ -81,7 +81,7 @@ public class C_Elementvalue implements EntityObject<C_Elementvalue> {
         this.updated = c_Elementvalue.updated;
         this.updatedBy = c_Elementvalue.updatedBy;
         this.value = c_Elementvalue.value;
-        this.name = c_Elementvalue.name;
+        this.brand = c_Elementvalue.brand;
         this.description = c_Elementvalue.description;
         this.accountType = c_Elementvalue.accountType;
         this.accountSign = c_Elementvalue.accountSign;
@@ -128,6 +128,14 @@ public class C_Elementvalue implements EntityObject<C_Elementvalue> {
 
     public BigDecimal getC_elementvalue_id() {
         return c_elementvalue_id;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
     public void setC_elementvalue_id(BigDecimal c_elementvalue_id) {
@@ -180,14 +188,6 @@ public class C_Elementvalue implements EntityObject<C_Elementvalue> {
 
     public void setValue(String value) {
         this.value = value;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getDescription() {
@@ -329,7 +329,7 @@ public class C_Elementvalue implements EntityObject<C_Elementvalue> {
         hash = 37 * hash + Objects.hashCode(this.updated);
         hash = 37 * hash + Objects.hashCode(this.updatedBy);
         hash = 37 * hash + Objects.hashCode(this.value);
-        hash = 37 * hash + Objects.hashCode(this.name);
+        hash = 37 * hash + Objects.hashCode(this.brand);
         hash = 37 * hash + Objects.hashCode(this.description);
         hash = 37 * hash + Objects.hashCode(this.accountType);
         hash = 37 * hash + Objects.hashCode(this.accountSign);
@@ -370,7 +370,6 @@ public class C_Elementvalue implements EntityObject<C_Elementvalue> {
 //    public boolean sameValueAs(C_Elementvalue other) {
 //        return this.equals(other);
 //    }
-
     @Override
     public boolean sameIdentityAs(C_Elementvalue other) {
         return this.equals(other);

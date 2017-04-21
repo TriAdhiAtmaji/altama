@@ -115,6 +115,7 @@ public class M_productDTOAssembler implements IObjectAssembler<M_product, M_prod
                 .setWeight_pallete(domainObject.getWeight_pallete())
                 .setHeight_tier(domainObject.getHeight_tier())
                 .setQtylimitoti(domainObject.getQtylimitoti())
+                .setIsDiscontinue(domainObject.getIsDiscontinue())
                 .createM_productDTO();
     }
 
@@ -219,6 +220,7 @@ public class M_productDTOAssembler implements IObjectAssembler<M_product, M_prod
                 .setWeight_pallete(dtoObject.getWeight_pallete())
                 .setHeight_tier(dtoObject.getHeight_tier())
                 .setQtylimitoti(dtoObject.getQtylimitoti())
+                .setIsDiscontinue(dtoObject.getIsDiscontinue())
                 .createM_product();
     }
 

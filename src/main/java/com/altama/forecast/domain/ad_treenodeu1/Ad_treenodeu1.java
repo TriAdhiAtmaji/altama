@@ -4,6 +4,7 @@ import com.altama.forecast.domain.c_elementvalue.C_Elementvalue;
 import com.altama.forecast.domain.shared.EntityObject;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 /**

@@ -4,7 +4,7 @@
 <zk xmlns="http://www.zkoss.org/2005/zul">
     <window border="none" apply="org.zkoss.bind.BindComposer"
             viewModel="@id('vm') @init('com.altama.forecast.viewModel.ProductVM')"
-            form="@id('fx') @load(vm.m_productDTO) @save(vm.m_productDTO, before='buttonSave')">
+            form="@id('fx') @load(vm.m_productDTO) @load2(vm.c_ElementvalueDTO) @save(vm.m_productDTO, before='buttonSave')">
         
         <separator/>
         <groupbox closable="false" mold="3d">
@@ -20,33 +20,35 @@
                 <rows>
                     <row>
                         <label value="Brand"/>
-                        <combobox width="300px" readonly="true" placeholder="- Silahkan Pilih -" constraint="no empty :Tidak Boleh Kosong">
-                            <comboitem label="aaa"/>
+                        <combobox width="300px" model="@bind(vm.listC_Elementvalues)" selectedItem="@bind(vm.brandSelected)" placeholder="- Pilihan Menu -" readonly="true">
+                            <template name="model" var="items">
+                                <comboitem label="@load(items.getBrand())" value="@load(items.getBrand())"/>
+                            </template>
                         </combobox>
                         <label value="Factory"/>
                         <textbox value="" width="300px"/>		
                     </row> 
                     <row>
                         <label value="Product" />
-                        <!--                        <textbox value="@bind(vm.name)" width="300px"/>-->
+                        <textbox value="@bind(vm.nama)" width="300px"/>
                         
-                        <combobox width="400px" model="@load(vm.listName)" selectedItem="@bind(vm.nameSelected)" placeholder="- Pilihan Menu -" readonly="true">
+                        <!--                        <combobox width="300px" model="@load(vm.listName)" selectedItem="@bind(vm.nameSelected)" placeholder="- Pilihan Menu -" readonly="true">
                             <template name="model" var="items">
                                 <comboitem label="@load(items.getName())" value="@load(items.getId().toString())"/>
                             </template>
-                        </combobox>
+                        </combobox>-->
                         
                         <label value="Is Discontinued"/>
-                        <combobox width="300px" readonly="true" placeholder="- Silahkan Pilih -" constraint="no empty :Tidak Boleh Kosong">
-                           
-                            <comboitem label="Yes" />
-                            <comboitem label="No" />
-                            
+                        <combobox width="300px" model="@load(vm.listDiscontinue)" selectedItem="@bind(vm.continueSelect)" placeholder="- Pilihan Menu -" readonly="true">
+                            <template name="model" var="items">
+                                <comboitem label="@load(items)" value="@load(items)"/>
+                            </template>
                         </combobox>			
                     </row>
                     <row>
                         <label value="Suplier" />
                         <textbox  width="300px"/>
+
                         <label value="Price List Version Jual" />
                         <textbox width="300px" readonly="true"/>			
                     </row>           

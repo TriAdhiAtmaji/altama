@@ -20,8 +20,6 @@ public class C_ElementvalueServiceImpl implements C_ElementvalueService {
 
     private C_ElementvalueRepository c_ElementvalueRepository;
     private C_ElementvalueDTOAssembler c_ElementvalueDTOAssembler;
-    
-    
 
     public void setC_ElementvalueRepository(C_ElementvalueRepository c_ElementvalueRepository) {
         this.c_ElementvalueRepository = c_ElementvalueRepository;
@@ -60,7 +58,7 @@ public class C_ElementvalueServiceImpl implements C_ElementvalueService {
                 .setUpdated(new Date())
                 .setUpdatedBy(BigDecimal.valueOf(12))
                 .setValue("h")
-                .setName("e")
+                .setBrand("Tekiro")
                 .setDescription("ak")
                 .setAccountType("y")
                 .setAccountSign("b")

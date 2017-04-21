@@ -58,6 +58,10 @@ public class M_productHibernateRepository extends HibernateRepository implements
         if (StringUtil.hasValue(map.get("name"))) {
             criteria.add(Restrictions.eq("name", map.get("name")));
         }
+
+        if (StringUtil.hasValue(map.get("isDiscontinue"))) {
+            criteria.add(Restrictions.eq("isDiscontinue", map.get("isDiscontinue")));
+        }
         return criteria.list();
     }
 

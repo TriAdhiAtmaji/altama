@@ -110,11 +110,12 @@ public class M_product implements EntityObject<M_product> {
     private BigDecimal weight_pallete;
     private BigDecimal height_tier;
     private BigDecimal qtylimitoti;
+    private IsDiscontinue isDiscontinue;
 
     public M_product() {
     }
 
-    public M_product(BigDecimal m_product_id, BigDecimal ad_client_id, BigDecimal ad_org_id, String isactive, Date created, BigDecimal createdby, Date updated, BigDecimal updatedBy, String value, String name, String description, String documentnote, String help, String upc, String sku, BigDecimal c_uom_id, BigDecimal salesrep_id, String issummary, String isstocked, String ispurchased, String issold, String isbom, String isinvoiceprintdetails, String ispicklistprintdetails, String isverified, BigDecimal c_revenuerecognition_id, BigDecimal m_product_category_id, String classification, BigDecimal volume, BigDecimal weight, BigDecimal shelfwidth, BigDecimal shelfheight, BigDecimal shelfdepth, BigDecimal unitsperpallet, BigDecimal c_taxcategory_id, BigDecimal s_resource_id, String discontinued, Date discontinuedby, String processing, String s_expensetype_id, String producttype, String imageurl, String descriptionurl, BigDecimal guaranteedays, BigDecimal r_mailtext_id, String versionno, BigDecimal m_attributeset_id, BigDecimal m_attributesetinstance_id, String downloadurl, BigDecimal m_freightcategory_id, BigDecimal m_locator_id, BigDecimal guaranteedaysmin, String iswebstorefeatured, String isselfservice, BigDecimal c_subscriptiontype_id, String isdropship, String isexcludeautodelivery, BigDecimal m_productsubcat_id, BigDecimal user1_id, String isgeneralsparepart, String item_no, String qty_per_innerbox, BigDecimal qty_per_ctn, BigDecimal qty_innerbox_per_ctn, BigDecimal net_weight, String isdiscontinued, BigDecimal net_weight_dus, BigDecimal weight_dus, String item_code, String picture, String isqi, String isnew, String isnewpo, Date updated_2, BigDecimal m_productsubcat2_id, BigDecimal m_productsubcat3_id, BigDecimal volume_ctn, String iscashback, String wmsvalue, BigDecimal c_uom2_id, BigDecimal c_uom3_id, String palletizeby, BigDecimal palletizevalue, String movingtype, String movingtypesales, int interface_flag, BigDecimal weight_ctn, BigDecimal qtylimitpo, BigDecimal length_ctn, BigDecimal width_ctn, BigDecimal height_ctn, String islimitpo, BigDecimal tier, BigDecimal qty_ctn_per_pallete, BigDecimal height_pallete, BigDecimal weight_pallete, BigDecimal height_tier, BigDecimal qtylimitoti) {
+    public M_product(BigDecimal m_product_id, BigDecimal ad_client_id, BigDecimal ad_org_id, String isactive, Date created, BigDecimal createdby, Date updated, BigDecimal updatedBy, String value, String name, String description, String documentnote, String help, String upc, String sku, BigDecimal c_uom_id, BigDecimal salesrep_id, String issummary, String isstocked, String ispurchased, String issold, String isbom, String isinvoiceprintdetails, String ispicklistprintdetails, String isverified, BigDecimal c_revenuerecognition_id, BigDecimal m_product_category_id, String classification, BigDecimal volume, BigDecimal weight, BigDecimal shelfwidth, BigDecimal shelfheight, BigDecimal shelfdepth, BigDecimal unitsperpallet, BigDecimal c_taxcategory_id, BigDecimal s_resource_id, String discontinued, Date discontinuedby, String processing, String s_expensetype_id, String producttype, String imageurl, String descriptionurl, BigDecimal guaranteedays, BigDecimal r_mailtext_id, String versionno, BigDecimal m_attributeset_id, BigDecimal m_attributesetinstance_id, String downloadurl, BigDecimal m_freightcategory_id, BigDecimal m_locator_id, BigDecimal guaranteedaysmin, String iswebstorefeatured, String isselfservice, BigDecimal c_subscriptiontype_id, String isdropship, String isexcludeautodelivery, BigDecimal m_productsubcat_id, BigDecimal user1_id, String isgeneralsparepart, String item_no, String qty_per_innerbox, BigDecimal qty_per_ctn, BigDecimal qty_innerbox_per_ctn, BigDecimal net_weight, String isdiscontinued, BigDecimal net_weight_dus, BigDecimal weight_dus, String item_code, String picture, String isqi, String isnew, String isnewpo, Date updated_2, BigDecimal m_productsubcat2_id, BigDecimal m_productsubcat3_id, BigDecimal volume_ctn, String iscashback, String wmsvalue, BigDecimal c_uom2_id, BigDecimal c_uom3_id, String palletizeby, BigDecimal palletizevalue, String movingtype, String movingtypesales, int interface_flag, BigDecimal weight_ctn, BigDecimal qtylimitpo, BigDecimal length_ctn, BigDecimal width_ctn, BigDecimal height_ctn, String islimitpo, BigDecimal tier, BigDecimal qty_ctn_per_pallete, BigDecimal height_pallete, BigDecimal weight_pallete, BigDecimal height_tier, BigDecimal qtylimitoti, IsDiscontinue isDiscontinue) {
         this.m_product_id = m_product_id;
         this.ad_client_id = ad_client_id;
         this.ad_org_id = ad_org_id;
@@ -213,6 +214,7 @@ public class M_product implements EntityObject<M_product> {
         this.weight_pallete = weight_pallete;
         this.height_tier = height_tier;
         this.qtylimitoti = qtylimitoti;
+        this.isDiscontinue = isDiscontinue;
     }
 
     public void assignNewM_product(M_product m_product) {
@@ -314,6 +316,7 @@ public class M_product implements EntityObject<M_product> {
         this.weight_pallete = m_product.weight_pallete;
         this.height_tier = m_product.height_tier;
         this.qtylimitoti = m_product.qtylimitoti;
+        this.isDiscontinue = m_product.isDiscontinue;
     }
 
     public long getId() {
@@ -1106,6 +1109,14 @@ public class M_product implements EntityObject<M_product> {
 
     public void setQtylimitoti(BigDecimal qtylimitoti) {
         this.qtylimitoti = qtylimitoti;
+    }
+
+    public IsDiscontinue getIsDiscontinue() {
+        return isDiscontinue;
+    }
+
+    public void setIsDiscontinue(IsDiscontinue isDiscontinue) {
+        this.isDiscontinue = isDiscontinue;
     }
 
     @Override

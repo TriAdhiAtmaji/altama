@@ -18,7 +18,7 @@ public class C_ElementvalueBuilder {
     private Date updated;
     private BigDecimal updatedBy;
     private String value;
-    private String name;
+    private String brand;
     private String description;
     private String accountType;
     private String accountSign;
@@ -80,8 +80,8 @@ public class C_ElementvalueBuilder {
         return this;
     }
 
-    public C_ElementvalueBuilder setName(String name) {
-        this.name = name;
+    public C_ElementvalueBuilder setBrand(String brand) {
+        this.brand = brand;
         return this;
     }
 
@@ -171,7 +171,7 @@ public class C_ElementvalueBuilder {
     }
 
     public C_Elementvalue createC_Elementvalue() {
-        return new C_Elementvalue(c_elementvalue_id, ad_client_id, isActive, created, createdBy, updated, updatedBy, value, name, description, accountType, accountSign, isDocControlled, c_element_id, isSummary, validFrom, validTo, postActual, postBudget, postEncumBrance, poststatistical, isBankAccount, c_bankaccount_id, isForeignCurrency, c_currency_id, isht);
+        return new C_Elementvalue(c_elementvalue_id, ad_client_id, isActive, created, createdBy, updated, updatedBy, value, brand, description, accountType, accountSign, isDocControlled, c_element_id, isSummary, validFrom, validTo, postActual, postBudget, postEncumBrance, poststatistical, isBankAccount, c_bankaccount_id, isForeignCurrency, c_currency_id, isht);
     }
 
 }

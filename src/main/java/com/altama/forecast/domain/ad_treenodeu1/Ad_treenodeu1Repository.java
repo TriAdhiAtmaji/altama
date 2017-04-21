@@ -2,6 +2,7 @@ package com.altama.forecast.domain.ad_treenodeu1;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -17,5 +18,5 @@ public interface Ad_treenodeu1Repository {
 
     List<Ad_treenodeu1> findAll();
 
-    List<Ad_treenodeu1> findByParams(String name);
+    List<Ad_treenodeu1> findByParams(Map map);
 }

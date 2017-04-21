@@ -59,7 +59,7 @@ public class M_productServiceImpl implements M_productService {
                 .setUpdated(new Date())
                 .setUpdatedBy(BigDecimal.valueOf(3))
                 .setValue("Y")
-                .setName(null)
+                .setName("asa")
                 .setDescription("AW")
                 .setDocumentnote("WK")
                 .setHelp("Y")

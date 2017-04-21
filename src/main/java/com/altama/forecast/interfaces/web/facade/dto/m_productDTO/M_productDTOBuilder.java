@@ -5,6 +5,8 @@
  */
 package com.altama.forecast.interfaces.web.facade.dto.m_productDTO;
 
+import com.altama.forecast.domain.m_product.IsDiscontinue;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -108,6 +110,7 @@ public class M_productDTOBuilder {
     private BigDecimal weight_pallete;
     private BigDecimal height_tier;
     private BigDecimal qtylimitoti;
+    private IsDiscontinue isDiscontinue;
 
     public M_productDTOBuilder() {
     }
@@ -602,8 +605,13 @@ public class M_productDTOBuilder {
         return this;
     }
 
+    public M_productDTOBuilder setIsDiscontinue(IsDiscontinue isDiscontinue) {
+        this.isDiscontinue = isDiscontinue;
+        return this;
+    }
+
     public M_productDTO createM_productDTO() {
-        return new M_productDTO(m_product_id, ad_client_id, ad_org_id, isactive, created, createdby, updated, updatedBy, value, name, description, documentnote, help, upc, sku, c_uom_id, salesrep_id, issummary, isstocked, ispurchased, issold, isbom, isinvoiceprintdetails, ispicklistprintdetails, isverified, c_revenuerecognition_id, m_product_category_id, classification, volume, weight, shelfwidth, shelfheight, shelfdepth, unitsperpallet, c_taxcategory_id, s_resource_id, discontinued, discontinuedby, processing, s_expensetype_id, producttype, imageurl, descriptionurl, guaranteedays, r_mailtext_id, versionno, m_attributeset_id, m_attributesetinstance_id, downloadurl, m_freightcategory_id, m_locator_id, guaranteedaysmin, iswebstorefeatured, isselfservice, c_subscriptiontype_id, isdropship, isexcludeautodelivery, m_productsubcat_id, user1_id, isgeneralsparepart, item_no, qty_per_innerbox, qty_per_ctn, qty_innerbox_per_ctn, net_weight, isdiscontinued, net_weight_dus, weight_dus, item_code, picture, isqi, isnew, isnewpo, updated_2, m_productsubcat2_id, m_productsubcat3_id, volume_ctn, iscashback, wmsvalue, c_uom2_id, c_uom3_id, palletizeby, palletizevalue, movingtype, movingtypesales, interface_flag, weight_ctn, qtylimitpo, length_ctn, width_ctn, height_ctn, islimitpo, tier, qty_ctn_per_pallete, height_pallete, weight_pallete, height_tier, qtylimitoti);
+        return new M_productDTO(m_product_id, ad_client_id, ad_org_id, isactive, created, createdby, updated, updatedBy, value, name, description, documentnote, help, upc, sku, c_uom_id, salesrep_id, issummary, isstocked, ispurchased, issold, isbom, isinvoiceprintdetails, ispicklistprintdetails, isverified, c_revenuerecognition_id, m_product_category_id, classification, volume, weight, shelfwidth, shelfheight, shelfdepth, unitsperpallet, c_taxcategory_id, s_resource_id, discontinued, discontinuedby, processing, s_expensetype_id, producttype, imageurl, descriptionurl, guaranteedays, r_mailtext_id, versionno, m_attributeset_id, m_attributesetinstance_id, downloadurl, m_freightcategory_id, m_locator_id, guaranteedaysmin, iswebstorefeatured, isselfservice, c_subscriptiontype_id, isdropship, isexcludeautodelivery, m_productsubcat_id, user1_id, isgeneralsparepart, item_no, qty_per_innerbox, qty_per_ctn, qty_innerbox_per_ctn, net_weight, isdiscontinued, net_weight_dus, weight_dus, item_code, picture, isqi, isnew, isnewpo, updated_2, m_productsubcat2_id, m_productsubcat3_id, volume_ctn, iscashback, wmsvalue, c_uom2_id, c_uom3_id, palletizeby, palletizevalue, movingtype, movingtypesales, interface_flag, weight_ctn, qtylimitpo, length_ctn, width_ctn, height_ctn, islimitpo, tier, qty_ctn_per_pallete, height_pallete, weight_pallete, height_tier, qtylimitoti, isDiscontinue);
     }
 
 }

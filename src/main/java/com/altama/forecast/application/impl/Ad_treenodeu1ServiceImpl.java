@@ -56,7 +56,7 @@ public class Ad_treenodeu1ServiceImpl implements Ad_treenodeu1Service {
                 .setCreated(new Date())
                 .setCreatedBy(BigDecimal.valueOf(1))
                 .setIsactive("y")
-                //                .setNode_id(BigDecimal.valueOf(12))
+                .setNode_id(null)
                 .setParent_id(BigDecimal.valueOf(34))
                 .setSeqno(BigDecimal.valueOf(2))
                 .setUpdated(new Date())
@@ -72,9 +72,9 @@ public class Ad_treenodeu1ServiceImpl implements Ad_treenodeu1Service {
     }
 
     @Override
-    public List<Ad_treenodeu1DTO> findByParams(String name) {
+    public List<Ad_treenodeu1DTO> findByParams(Map map) {
         Validate.notNull(ad_treenodeu1Repository);
-        List<Ad_treenodeu1> listAdTree = (List<Ad_treenodeu1>) ad_treenodeu1Repository.findByParams(name);
+        List<Ad_treenodeu1> listAdTree = (List<Ad_treenodeu1>) ad_treenodeu1Repository.findByParams(map);
         if (listAdTree != null) {
             return (List<Ad_treenodeu1DTO>) ad_treenodeu1DTOAssembler.toDTO(listAdTree);
         }

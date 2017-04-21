@@ -18,7 +18,7 @@ public class C_ElementvalueDTO implements Serializable {
     private Date updated;
     private BigDecimal updatedBy;
     private String value;
-    private String name;
+    private String brand;
     private String description;
     private String accountType;
     private String accountSign;
@@ -40,7 +40,7 @@ public class C_ElementvalueDTO implements Serializable {
     public C_ElementvalueDTO() {
     }
 
-    public C_ElementvalueDTO(BigDecimal c_elementvalue_id, BigDecimal ad_client_id, String isActive, Date created, BigDecimal createdBy, Date updated, BigDecimal updatedBy, String value, String name, String description, String accountType, String accountSign, String isDocControlled, BigDecimal c_element_id, String isSummary, Date validFrom, Date validTo, String postActual, String postBudget, String postEncumBrance, String poststatistical, String isBankAccount, BigDecimal c_bankaccount_id, String isForeignCurrency, BigDecimal c_currency_id, String isht) {
+    public C_ElementvalueDTO(BigDecimal c_elementvalue_id, BigDecimal ad_client_id, String isActive, Date created, BigDecimal createdBy, Date updated, BigDecimal updatedBy, String value, String brand, String description, String accountType, String accountSign, String isDocControlled, BigDecimal c_element_id, String isSummary, Date validFrom, Date validTo, String postActual, String postBudget, String postEncumBrance, String poststatistical, String isBankAccount, BigDecimal c_bankaccount_id, String isForeignCurrency, BigDecimal c_currency_id, String isht) {
         this.c_elementvalue_id = c_elementvalue_id;
         this.ad_client_id = ad_client_id;
         this.isActive = isActive;
@@ -49,7 +49,7 @@ public class C_ElementvalueDTO implements Serializable {
         this.updated = updated;
         this.updatedBy = updatedBy;
         this.value = value;
-        this.name = name;
+        this.brand = brand;
         this.description = description;
         this.accountType = accountType;
         this.accountSign = accountSign;
@@ -141,12 +141,12 @@ public class C_ElementvalueDTO implements Serializable {
         this.value = value;
     }
 
-    public String getName() {
-        return name;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
     public String getDescription() {
@@ -279,7 +279,7 @@ public class C_ElementvalueDTO implements Serializable {
 
     @Override
     public String toString() {
-        return "C_ElementvalueDTO{" + "c_elementvalue_id=" + c_elementvalue_id + ", ad_client_id=" + ad_client_id + ", isActive=" + isActive + ", created=" + created + ", createdBy=" + createdBy + ", updated=" + updated + ", updatedBy=" + updatedBy + ", value=" + value + ", name=" + name + ", description=" + description + ", accountType=" + accountType + ", accountSign=" + accountSign + ", isDocControlled=" + isDocControlled + ", c_element_id=" + c_element_id + ", isSummary=" + isSummary + ", validFrom=" + validFrom + ", validTo=" + validTo + ", postActual=" + postActual + ", postBudget=" + postBudget + ", postEncumBrance=" + postEncumBrance + ", poststatistical=" + poststatistical + ", isBankAccount=" + isBankAccount + ", c_bankaccount_id=" + c_bankaccount_id + ", isForeignCurrency=" + isForeignCurrency + ", c_currency_id=" + c_currency_id + ", isht=" + isht + '}';
+        return "C_ElementvalueDTO{" + "c_elementvalue_id=" + c_elementvalue_id + ", ad_client_id=" + ad_client_id + ", isActive=" + isActive + ", created=" + created + ", createdBy=" + createdBy + ", updated=" + updated + ", updatedBy=" + updatedBy + ", value=" + value + ", brand=" + brand + ", description=" + description + ", accountType=" + accountType + ", accountSign=" + accountSign + ", isDocControlled=" + isDocControlled + ", c_element_id=" + c_element_id + ", isSummary=" + isSummary + ", validFrom=" + validFrom + ", validTo=" + validTo + ", postActual=" + postActual + ", postBudget=" + postBudget + ", postEncumBrance=" + postEncumBrance + ", poststatistical=" + poststatistical + ", isBankAccount=" + isBankAccount + ", c_bankaccount_id=" + c_bankaccount_id + ", isForeignCurrency=" + isForeignCurrency + ", c_currency_id=" + c_currency_id + ", isht=" + isht + '}';
     }
 
 }

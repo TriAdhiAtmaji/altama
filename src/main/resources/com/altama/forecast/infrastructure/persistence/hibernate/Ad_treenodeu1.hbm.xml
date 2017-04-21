@@ -7,9 +7,19 @@
             
         </id>
         
+        
+        <!--        <list lazy="false" name="node_id" table="C_ELEMENTVALUE">
+            <key column="node_id"/>
+            <list-index column="role_privilege_index"/>
+            <composite-element class="com.altama.forecast.domain.c_elementvalue.C_Elementvalue">
+                <many-to-one cascade="all" class="com.altama.forecast.domain.c_elementvalue.C_Elementvalue" column="c_elementvalue_id" lazy="false" name="node_id" not-null="true"/>
+                <property column="name" name="brand" not-null="false"/>
+            </composite-element>
+        </list>-->
+        
               
         <many-to-one name="node_id" class="com.altama.forecast.domain.c_elementvalue.C_Elementvalue" lazy="false">
-            <column name="c_elementvalue_id" />
+            <column name="node_id"/>
         </many-to-one>
         
         <property column="ad_client_id" name="ad_client_id" not-null="false"/>
