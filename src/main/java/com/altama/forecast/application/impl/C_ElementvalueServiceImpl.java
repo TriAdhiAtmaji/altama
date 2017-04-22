@@ -7,7 +7,6 @@ import com.altama.forecast.domain.c_elementvalue.C_ElementvalueRepository;
 import com.altama.forecast.interfaces.web.facade.dto.assembler.c_elementvalue.C_ElementvalueDTOAssembler;
 import com.altama.forecast.interfaces.web.facade.dto.c_elementvalue.C_ElementvalueDTO;
 import java.math.BigDecimal;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import org.apache.commons.lang.Validate;
@@ -52,30 +51,9 @@ public class C_ElementvalueServiceImpl implements C_ElementvalueService {
         C_Elementvalue c_Elementvalue = new C_ElementvalueBuilder()
                 .setC_elementvalue_id(BigDecimal.valueOf(1))
                 .setAd_client_id(BigDecimal.valueOf(12))
-                .setIsActive("Aw")
-                .setCreated(new Date())
-                .setCreatedBy(BigDecimal.valueOf(12))
-                .setUpdated(new Date())
-                .setUpdatedBy(BigDecimal.valueOf(12))
                 .setValue("h")
                 .setBrand("Tekiro")
                 .setDescription("ak")
-                .setAccountType("y")
-                .setAccountSign("b")
-                .setIsDocControlled("e")
-                .setC_element_id(BigDecimal.valueOf(3))
-                .setIsSummary("ba")
-                .setValidFrom(new Date())
-                .setValidTo(new Date())
-                .setPostActual("ok")
-                .setPostBudget("goo")
-                .setPostEncumBrance("nice")
-                .setPoststatistical("oh")
-                .setIsBankAccount("noce")
-                .setC_bankaccount_id(BigDecimal.valueOf(12))
-                .setIsForeignCurrency("asa")
-                .setC_currency_id(BigDecimal.TEN)
-                .setIsht("ok")
                 .createC_Elementvalue();
         return c_ElementvalueDTOAssembler.toDTO(c_Elementvalue);
     }
@@ -93,7 +71,7 @@ public class C_ElementvalueServiceImpl implements C_ElementvalueService {
     @Override
     public List<C_ElementvalueDTO> findAll() {
         Validate.notNull(c_ElementvalueRepository);
-        return (List<C_ElementvalueDTO>) c_ElementvalueDTOAssembler.toDTO((List<C_Elementvalue>) c_ElementvalueRepository.findAll());
+        return (List<C_ElementvalueDTO>) c_ElementvalueDTOAssembler.toDTOs((List<C_Elementvalue>) c_ElementvalueRepository.findAll());
     }
 
     @Override
@@ -101,7 +79,7 @@ public class C_ElementvalueServiceImpl implements C_ElementvalueService {
         Validate.notNull(c_ElementvalueRepository);
         List<C_Elementvalue> listC_Element = c_ElementvalueRepository.findByParams(map);
         if (listC_Element != null) {
-            return (List<C_ElementvalueDTO>) c_ElementvalueDTOAssembler.toDTO(listC_Element);
+            return (List<C_ElementvalueDTO>) c_ElementvalueDTOAssembler.toDTOs(listC_Element);
         }
         return null;
     }

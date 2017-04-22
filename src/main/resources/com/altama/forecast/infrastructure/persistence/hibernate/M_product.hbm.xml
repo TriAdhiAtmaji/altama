@@ -5,101 +5,20 @@
         <id column="m_product_id" name="m_product_id" type="java.math.BigDecimal"/>           
         <property column="ad_client_id" name="ad_client_id" not-null="false"/>
         <property column="ad_org_id" name="ad_org_id" not-null="false"/>
-        <property column="isactive" name="isactive" not-null="false"/>
-        <property column="created" name="created" not-null="false"/>
-        <property column="createdby" name="createdby" not-null="false"/>
-        <property column="updated" name="updated" not-null="false"/>
-        <property column="updatedBy" name="updatedBy" not-null="false"/>
+        
         <property column="value" name="value" not-null="false"/>
         <property column="name" name="name" not-null="false"/>     
-        <property column="description" name="description" not-null="false"/>
-        <property column="documentnote" name="documentnote" not-null="false"/>
-        <property column="help" name="help" not-null="false"/>
-        <property column="upc" name="upc" not-null="false"/>
-        <property column="sku" name="sku" not-null="false"/>     
+       
         <property column="c_uom_id" name="c_uom_id" not-null="false"/>
         <property column="salesrep_id" name="salesrep_id" not-null="false"/>
-        <property column="issummary" name="issummary" not-null="false"/>
-        <property column="isstocked" name="isstocked" not-null="false"/>     
-        <property column="ispurchased" name="ispurchased" not-null="false"/>
-        <property column="issold" name="issold" not-null="false"/>
-        <property column="isbom" name="isbom" not-null="false"/>
-        <property column="isinvoiceprintdetails" name="isinvoiceprintdetails" not-null="false"/>     
-        <property column="ispicklistprintdetails" name="ispicklistprintdetails" not-null="false"/>
-        <property column="isverified" name="isverified" not-null="false"/>
+       
         <property column="c_revenuerecognition_id" name="c_revenuerecognition_id" not-null="false"/>
         <property column="m_product_category_id" name="m_product_category_id" not-null="false"/>
         <property column="classification" name="classification" not-null="false"/>
         <property column="volume" name="volume" not-null="false"/>
         <property column="weight" name="weight" not-null="false"/>     
-        <property column="shelfwidth" name="shelfwidth" not-null="false"/>
-        <property column="shelfheight" name="shelfheight" not-null="false"/>
-        <property column="shelfdepth" name="shelfdepth" not-null="false"/>
-        <property column="unitsperpallet" name="unitsperpallet" not-null="false"/>      
-        <property column="c_taxcategory_id" name="c_taxcategory_id" not-null="false"/>     
-        <property column="s_resource_id" name="s_resource_id" not-null="false"/>
-        <property column="discontinued" name="discontinued" not-null="false"/>
-        <property column="discontinuedby" name="discontinuedby" not-null="false"/>
-        <property column="processing" name="processing" not-null="false"/>
-        <property column="s_expensetype_id" name="s_expensetype_id" not-null="false"/>
-        <property column="producttype" name="producttype" not-null="false"/>
-        <property column="imageurl" name="imageurl" not-null="false"/>     
-        <property column="descriptionurl" name="descriptionurl" not-null="false"/>
-        <property column="guaranteedays" name="guaranteedays" not-null="false"/>
-        <property column="r_mailtext_id" name="r_mailtext_id" not-null="false"/>
-        <property column="versionno" name="versionno" not-null="false"/>  
-        <property column="m_attributeset_id" name="m_attributeset_id" not-null="false"/>     
-        <property column="m_attributesetinstance_id" name="m_attributesetinstance_id" not-null="false"/>
-        <property column="downloadurl" name="downloadurl" not-null="false"/>
-        <property column="m_freightcategory_id" name="m_freightcategory_id" not-null="false"/>
         <property column="m_locator_id" name="m_locator_id" not-null="false"/>
-        <property column="guaranteedaysmin" name="guaranteedaysmin" not-null="false"/>
-        <property column="iswebstorefeatured" name="iswebstorefeatured" not-null="false"/>
-        <property column="isselfservice" name="isselfservice" not-null="false"/>     
-        <property column="c_subscriptiontype_id" name="c_subscriptiontype_id" not-null="false"/>
-        <property column="isdropship" name="isdropship" not-null="false"/>
-        <property column="isexcludeautodelivery" name="isexcludeautodelivery" not-null="false"/>
-        <property column="m_productsubcat_id" name="m_productsubcat_id" not-null="false"/>
-        <property column="user1_id" name="user1_id" not-null="false"/>
-        <property column="isgeneralsparepart" name="isgeneralsparepart" not-null="false"/>
-        <property column="item_no" name="item_no" not-null="false"/>
-        <property column="qty_per_innerbox" name="qty_per_innerbox" not-null="false"/>
-        <property column="qty_per_ctn" name="qty_per_ctn" not-null="false"/>
-        <property column="qty_innerbox_per_ctn" name="qty_innerbox_per_ctn" not-null="false"/>
-        <property column="net_weight" name="net_weight" not-null="false"/>     
-        <property column="isdiscontinued" name="isdiscontinued" not-null="false"/>
-        <property column="net_weight_dus" name="net_weight_dus" not-null="false"/>
-        <property column="weight_dus" name="weight_dus" not-null="false"/>
-        <property column="item_code" name="item_code" not-null="false"/>
-        <property column="picture" name="picture" not-null="false"/>
-        <property column="isqi" name="isqi" not-null="false"/>
-        <property column="isnew" name="isnew" not-null="false"/>
-        <property column="isnewpo" name="isnewpo" not-null="false"/>     
-        <property column="updated_2" name="updated_2" not-null="false"/>
-        <property column="m_productsubcat2_id" name="m_productsubcat2_id" not-null="false"/>
-        <property column="m_productsubcat3_id" name="m_productsubcat3_id" not-null="false"/>
-        <property column="volume_ctn" name="volume_ctn" not-null="false"/>
-        <property column="iscashback" name="iscashback" not-null="false"/>
         <property column="wmsvalue" name="wmsvalue" not-null="false"/>
-        <property column="c_uom2_id" name="c_uom2_id" not-null="false"/>     
-        <property column="c_uom3_id" name="c_uom3_id" not-null="false"/>
-        <property column="palletizeby" name="palletizeby" not-null="false"/>
-        <property column="palletizevalue" name="palletizevalue" not-null="false"/>
-        <property column="movingtype" name="movingtype" not-null="false"/>
-        <property column="movingtypesales" name="movingtypesales" not-null="false"/>
-        <property column="interface_flag" name="interface_flag" not-null="false"/>
-        <property column="weight_ctn" name="weight_ctn" not-null="false"/>     
-        <property column="qtylimitpo" name="qtylimitpo" not-null="false"/>
-        <property column="length_ctn" name="length_ctn" not-null="false"/>
-        <property column="width_ctn" name="width_ctn" not-null="false"/>
-        <property column="height_ctn" name="height_ctn" not-null="false"/>
-        <property column="islimitpo" name="islimitpo" not-null="false"/>
-        <property column="tier" name="tier" not-null="false"/>
-        <property column="qty_ctn_per_pallete" name="qty_ctn_per_pallete" not-null="false"/>
-        <property column="height_pallete" name="height_pallete" not-null="false"/>     
-        <property column="weight_pallete" name="weight_pallete" not-null="false"/>
-        <property column="height_tier" name="height_tier" not-null="false"/>
-        <property column="qtylimitoti" name="qtylimitoti" not-null="false"/>
-    
+       
     </class>
 </hibernate-mapping>

@@ -21,14 +21,6 @@ public class Ad_treenodeu1DTOAssembler implements IObjectAssembler<Ad_treenodeu1
                 .setNode_id(domainObject.getNode_id())
                 .setAd_client_id(domainObject.getAd_client_id())
                 .setAd_org_id(domainObject.getAd_org_id())
-                .setCreated(domainObject.getCreated())
-                .setCreatedBy(domainObject.getCreatedBy())
-                .setIsactive(domainObject.getIsactive())
-                .setNode_id(domainObject.getNode_id())
-                .setParent_id(domainObject.getParent_id())
-                .setSeqno(domainObject.getSeqno())
-                .setUpdated(domainObject.getUpdated())
-                .setUpdatedBy(domainObject.getUpdatedBy())
                 .createAd_treenodeu1DTO();
 
     }
@@ -40,14 +32,6 @@ public class Ad_treenodeu1DTOAssembler implements IObjectAssembler<Ad_treenodeu1
                 .setNode_id(dtoObject.getNode_id())
                 .setAd_client_id(dtoObject.getAd_client_id())
                 .setAd_org_id(dtoObject.getAd_org_id())
-                .setCreated(dtoObject.getCreated())
-                .setCreatedBy(dtoObject.getCreatedBy())
-                .setIsactive(dtoObject.getIsactive())
-                .setNode_id(dtoObject.getNode_id())
-                .setParent_id(dtoObject.getParent_id())
-                .setSeqno(dtoObject.getSeqno())
-                .setUpdated(dtoObject.getUpdated())
-                .setUpdatedBy(dtoObject.getUpdatedBy())
                 .createAd_treenodeu1();
     }
 

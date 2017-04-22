@@ -22,7 +22,7 @@
                         <label value="Brand"/>
                         <combobox width="300px" model="@bind(vm.listC_Elementvalues)" selectedItem="@bind(vm.brandSelected)" placeholder="- Pilihan Menu -" readonly="true">
                             <template name="model" var="items">
-                                <comboitem label="@load(items.getBrand())" value="@load(items.getBrand())"/>
+                                <comboitem label="@load(items.getBrand())" value="@load(items.getC_elementvalue_id().toString())"/>
                             </template>
                         </combobox>
                         <label value="Factory"/>

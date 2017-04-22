@@ -24,14 +24,6 @@
         
         <property column="ad_client_id" name="ad_client_id" not-null="false"/>
         <property column="ad_org_id" name="ad_org_id" not-null="false"/>
-        <property column="isactive" name="isactive" not-null="false"/>
-              
-        <property column="created" name="created" not-null="false"/>
-        <property column="createdBy" name="createdBy" not-null="false"/>
-        <property column="updated" name="updated" not-null="false"/>
-        <property column="updatedBy" name="updatedBy" not-null="false"/>
-        <property column="parent_id" name="parent_id" not-null="false"/>
-        <property column="seqno" name="seqno" not-null="false"/>
-        
+                
     </class>
 </hibernate-mapping>

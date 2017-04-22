@@ -52,7 +52,8 @@ public class ProductVM {
 
     private C_ElementvalueDTO c_ElementvalueDTO = new C_ElementvalueDTO();
     private List<C_ElementvalueDTO> c_ElementvalueDTOs = new ArrayList<>();
-    List<C_ElementvalueDTO> listC_Elementvalues = new ArrayList<C_ElementvalueDTO>();
+    List<C_Elementvalue> listC_Elementvalues = new ArrayList<C_Elementvalue>();
+    C_Elementvalue c1 = new C_Elementvalue(BigDecimal.valueOf(2), BigDecimal.valueOf(2), "Tekiro", "Tekiro", "Tekiro");
 
 //    Name n1 = new Name(BigDecimal.valueOf(1), "Tekiro");
 //    Name n2 = new Name(BigDecimal.valueOf(2), "Ryu");
@@ -80,7 +81,7 @@ public class ProductVM {
     private void initData() {
 //        listName.add(n1);
 //        listName.add(n2);
-        listC_Elementvalues.add(c_ElementvalueService.getDummy());
+        listC_Elementvalues.add(c1);
         c_ElementvalueDTOs = c_ElementvalueService.findAll();
 
         List<C_ElementvalueDTO> listC_Elementvalues = c_ElementvalueService.findAll();
@@ -107,7 +108,7 @@ public class ProductVM {
         params.put("nama", nama);
 
 //        System.out.print("1 " + nameSelected.getId().toString() + " ");
-        System.out.print("2 " + brandSelected + " ");
+        System.out.print("2 " + brandSelected.getBrand() + " ");
 
         System.out.print("3 " + continueSelect + " ");
 
@@ -250,11 +251,11 @@ public class ProductVM {
         this.c_ElementvalueDTOs = c_ElementvalueDTOs;
     }
 
-    public List<C_ElementvalueDTO> getListC_Elementvalues() {
+    public List<C_Elementvalue> getListC_Elementvalues() {
         return listC_Elementvalues;
     }
 
-    public void setListC_Elementvalues(List<C_ElementvalueDTO> listC_Elementvalues) {
+    public void setListC_Elementvalues(List<C_Elementvalue> listC_Elementvalues) {
         this.listC_Elementvalues = listC_Elementvalues;
     }
 

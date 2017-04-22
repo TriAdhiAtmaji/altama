@@ -53,14 +53,6 @@ public class Ad_treenodeu1ServiceImpl implements Ad_treenodeu1Service {
                 .setAd_tree_id(BigDecimal.valueOf(10))
                 .setAd_client_id(BigDecimal.valueOf(12))
                 .setAd_org_id(BigDecimal.valueOf(14))
-                .setCreated(new Date())
-                .setCreatedBy(BigDecimal.valueOf(1))
-                .setIsactive("y")
-                .setNode_id(null)
-                .setParent_id(BigDecimal.valueOf(34))
-                .setSeqno(BigDecimal.valueOf(2))
-                .setUpdated(new Date())
-                .setUpdatedBy(BigDecimal.valueOf(2))
                 .createAd_treenodeu1();
         return ad_treenodeu1DTOAssembler.toDTO(ad_treenodeu1);
     }

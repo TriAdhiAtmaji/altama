@@ -7,7 +7,6 @@ package com.altama.forecast.interfaces.web.facade.dto.ad_treenodeu1;
 
 import com.altama.forecast.domain.c_elementvalue.C_Elementvalue;
 import java.math.BigDecimal;
-import java.util.Date;
 
 public class Ad_treenodeu1DTOBuilder {
 
@@ -15,13 +14,6 @@ public class Ad_treenodeu1DTOBuilder {
     private C_Elementvalue node_id;
     private BigDecimal ad_client_id;
     private BigDecimal ad_org_id;
-    private String isactive;
-    private Date created;
-    private BigDecimal createdBy;
-    private BigDecimal updatedBy;
-    private Date updated;
-    private BigDecimal parent_id;
-    private BigDecimal seqno;
 
     public Ad_treenodeu1DTOBuilder() {
     }
@@ -46,43 +38,8 @@ public class Ad_treenodeu1DTOBuilder {
         return this;
     }
 
-    public Ad_treenodeu1DTOBuilder setIsactive(String isactive) {
-        this.isactive = isactive;
-        return this;
-    }
-
-    public Ad_treenodeu1DTOBuilder setCreated(Date created) {
-        this.created = created;
-        return this;
-    }
-
-    public Ad_treenodeu1DTOBuilder setCreatedBy(BigDecimal createdBy) {
-        this.createdBy = createdBy;
-        return this;
-    }
-
-    public Ad_treenodeu1DTOBuilder setUpdatedBy(BigDecimal updatedBy) {
-        this.updatedBy = updatedBy;
-        return this;
-    }
-
-    public Ad_treenodeu1DTOBuilder setUpdated(Date updated) {
-        this.updated = updated;
-        return this;
-    }
-
-    public Ad_treenodeu1DTOBuilder setParent_id(BigDecimal parent_id) {
-        this.parent_id = parent_id;
-        return this;
-    }
-
-    public Ad_treenodeu1DTOBuilder setSeqno(BigDecimal seqno) {
-        this.seqno = seqno;
-        return this;
-    }
-
     public Ad_treenodeu1DTO createAd_treenodeu1DTO() {
-        return new Ad_treenodeu1DTO(ad_tree_id, node_id, ad_client_id, ad_org_id, isactive, created, createdBy, updatedBy, updated, parent_id, seqno);
+        return new Ad_treenodeu1DTO(ad_tree_id, node_id, ad_client_id, ad_org_id);
     }
 
 }

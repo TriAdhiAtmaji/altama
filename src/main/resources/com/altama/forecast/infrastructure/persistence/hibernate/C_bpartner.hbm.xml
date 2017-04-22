@@ -8,96 +8,23 @@
         <!--        <property column="c_bpartner_id" name="c_bpartner_id" not-null="false"/>-->
         <property column="ad_client_id" name="ad_client_id" not-null="false"/>
         <property column="ad_org_id" name="ad_org_id" not-null="false"/>
-        <property column="isactive" name="isactive" not-null="false"/>
-        <property column="created" name="created" not-null="false"/>
-        <property column="createdby" name="createdby" not-null="false"/>
-        <property column="updated" name="updated" not-null="false"/>
-        <property column="updatedBy" name="updatedBy" not-null="false"/>
         <property column="value" name="value" not-null="false"/>
         <property column="name" name="name" not-null="false"/> 
         <property column="name2" name="name2" not-null="false"/>    
         <property column="description" name="description" not-null="false"/>
-        <property column="issummary" name="issummary" not-null="false"/>
+        
         <property column="c_bp_group_id" name="c_bp_group_id" not-null="false"/>
-        <property column="isonetime" name="isonetime" not-null="false"/>
-        <property column="isprospect" name="isprospect" not-null="false"/>     
         <property column="isvendor" name="isvendor" not-null="false"/>
-        <property column="iscustomer" name="iscustomer" not-null="false"/>
-        <property column="isemployee" name="isemployee" not-null="false"/>
-        <property column="issalesrep" name="issalesrep" not-null="false"/>     
-        <property column="referenceno" name="referenceno" not-null="false"/>
-        <property column="duns" name="duns" not-null="false"/>
-        <property column="url" name="url" not-null="false"/>
-        <property column="ad_language" name="ad_language" not-null="false"/>     
-        <property column="taxid" name="taxid" not-null="false"/>
-        <property column="istaxexempt" name="istaxexempt" not-null="false"/>
         <property column="c_invoiceschedule_id" name="c_invoiceschedule_id" not-null="false"/>
-        <property column="rating" name="rating" not-null="false"/>
-        <property column="salesvolume" name="salesvolume" not-null="false"/>
-        <property column="numberemployees" name="numberemployees" not-null="false"/>
-        <property column="naics" name="naics" not-null="false"/>     
-        <property column="firstsale" name="firstsale" not-null="false"/>
-        <property column="acqusitioncost" name="acqusitioncost" not-null="false"/>
-        <property column="potentiallifetimevalue" name="potentiallifetimevalue" not-null="false"/>
-        <property column="actuallifetimevalue" name="actuallifetimevalue" not-null="false"/>      
-        <property column="shareofcustomer" name="shareofcustomer" not-null="false"/>     
-        <property column="paymentrule" name="paymentrule" not-null="false"/>
-        <property column="so_creditlimit" name="so_creditlimit" not-null="false"/>
-        <property column="so_creditused" name="so_creditused" not-null="false"/>
         <property column="c_paymentterm_id" name="c_paymentterm_id" not-null="false"/>
         <property column="m_pricelist_id" name="m_pricelist_id" not-null="false"/>
         <property column="m_discountschema_id" name="m_discountschema_id" not-null="false"/>
         <property column="c_dunning_id" name="c_dunning_id" not-null="false"/>     
-        <property column="isdiscountprinted" name="isdiscountprinted" not-null="false"/>
-        <property column="so_description" name="so_description" not-null="false"/>
-        <property column="poreference" name="poreference" not-null="false"/>
-        <property column="paymentrulepo" name="paymentrulepo" not-null="false"/>  
-        <property column="po_pricelist_id" name="po_pricelist_id" not-null="false"/>     
-        <property column="po_discountschema_id" name="po_discountschema_id" not-null="false"/>
-        <property column="po_paymentterm_id" name="po_paymentterm_id" not-null="false"/>
-        <property column="documentcopies" name="documentcopies" not-null="false"/>
         <property column="c_greeting_id" name="c_greeting_id" not-null="false"/>
-        <property column="invoicerule" name="invoicerule" not-null="false"/>
-        <property column="deliveryrule" name="deliveryrule" not-null="false"/>
-        <property column="freightcostrule" name="freightcostrule" not-null="false"/>     
-        <property column="deliveryviarule" name="deliveryviarule" not-null="false"/>
         <property column="salesrep_id" name="salesrep_id" not-null="false"/>
         <property column="sendemail" name="sendemail" not-null="false"/>
         <property column="bpartner_parent_id" name="bpartner_parent_id" not-null="false"/>
-        <property column="invoice_printformat_id" name="invoice_printformat_id" not-null="false"/>
-        <property column="socreditstatus" name="socreditstatus" not-null="false"/>
-        <property column="shelflifeminpct" name="shelflifeminpct" not-null="false"/>
-        <property column="ad_orgbp_id" name="ad_orgbp_id" not-null="false"/>
-        <property column="flatdiscount" name="flatdiscount" not-null="false"/>
-        <property column="totalopenbalance" name="totalopenbalance" not-null="false"/>
-        <property column="isodt" name="isodt" not-null="false"/>     
-        <property column="istaxdelay" name="istaxdelay" not-null="false"/>
-        <property column="trans_code" name="trans_code" not-null="false"/>
-        <property column="pkpdate" name="pkpdate" not-null="false"/>
-        <property column="processing" name="processing" not-null="false"/>
-        <property column="isvalid" name="isvalid" not-null="false"/>
-        <property column="c_salesregion_id" name="c_salesregion_id" not-null="false"/>
-        <property column="ismechanic" name="ismechanic" not-null="false"/>
-        <property column="isdriver" name="isdriver" not-null="false"/>     
-        <property column="m_shipper_id" name="m_shipper_id" not-null="false"/>
-        <property column="distributionmethod" name="distributionmethod" not-null="false"/>
-        <property column="marketsegment" name="marketsegment" not-null="false"/>
-        <property column="iswarehousestaff" name="iswarehousestaff" not-null="false"/>
-        <property column="sales_group" name="sales_group" not-null="false"/>
-        <property column="salesrep_2_id" name="salesrep_2_id" not-null="false"/>
-        <property column="isstopsopt" name="isstopsopt" not-null="false"/>     
-        <property column="isstopsoht" name="isstopsoht" not-null="false"/>
-        <property column="ischeckunpaidinvoice" name="ischeckunpaidinvoice" not-null="false"/>
-        <property column="so_creditlimit_pt" name="so_creditlimit_pt" not-null="false"/>
-        <property column="so_creditlimit_ht" name="so_creditlimit_ht" not-null="false"/>
-        <property column="so_creditused_pt" name="so_creditused_pt" not-null="false"/>
-        <property column="so_creditused_ht" name="so_creditused_ht" not-null="false"/>
-        <property column="wmsvalue" name="wmsvalue" not-null="false"/>     
-        <property column="ringtype" name="ringtype" not-null="false"/>
-        <property column="c_paymentterm_invoice_id" name="c_paymentterm_invoice_id" not-null="false"/>
-        <property column="interface_flag" name="interface_flag" not-null="false"/>
-        <property column="ispkp" name="ispkp" not-null="false"/>
-        <property column="alias" name="alias" not-null="false"/>
+       
         
     </class>
 </hibernate-mapping>
