@@ -7,7 +7,6 @@ import com.altama.forecast.domain.ad_treenodeu1.Ad_treenodeu1Repository;
 import com.altama.forecast.interfaces.web.facade.dto.ad_treenodeu1.Ad_treenodeu1DTO;
 import com.altama.forecast.interfaces.web.facade.dto.assembler.ad_treenodeu1.Ad_treenodeu1DTOAssembler;
 import java.math.BigDecimal;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import org.apache.commons.lang.Validate;

@@ -44,26 +44,17 @@ public class Ad_treenodeu1HibernateRepository extends HibernateRepository implem
     public List<Ad_treenodeu1> findAll() {
         Criteria criteria = getSession().createCriteria(Ad_treenodeu1.class, "ad_treenodeu1");
         criteria.createAlias("ad_treenodeu1.node_id", "node_id", Criteria.FULL_JOIN);
-        return (List<Ad_treenodeu1>) criteria.list();
+        return criteria.list();
     }
 
     @Override
     public List<Ad_treenodeu1> findByParams(Map map) {
         Criteria criteria = getSession().createCriteria(Ad_treenodeu1.class, "ad_treenodeu1");
-        criteria.createAlias("ad_treenodeu1.node_id", "node_id");
+        criteria.createAlias("ad_treenodeu1.node_id", "node_id", Criteria.FULL_JOIN);
 
         if (StringUtil.hasValue(map.get("brand"))) {
             criteria.add(Restrictions.eq("node_id.brand", map.get("brand")));
         }
         return criteria.list();
     }
-//    @Override
-//    public List<Ad_treenodeu1> findByParams(Map map) {
-//        Criteria criteria = getSession().createCriteria(Ad_treenodeu1.class);
-//        if (name.equals("%%")) {
-//            criteria.add(Restrictions.like("c_Elementvalue.name", name));
-//        }
-//        return (List<Ad_treenodeu1>) criteria.list();
-//    }
-
 }

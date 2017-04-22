@@ -26,7 +26,7 @@
                             </template>
                         </combobox>
                         <label value="Factory"/>
-                        <textbox value="" width="300px"/>		
+                        <textbox value="@bind(vm.factory)" width="300px"/>		
                     </row> 
                     <row>
                         <label value="Product" />
@@ -47,10 +47,10 @@
                     </row>
                     <row>
                         <label value="Suplier" />
-                        <textbox  width="300px"/>
+                        <textbox value="@bind(vm.suplier)" width="300px"/>
 
                         <label value="Price List Version Jual" />
-                        <textbox width="300px" readonly="true"/>			
+                        <textbox width="300px" readonly="false"/>			
                     </row>           
                 </rows> 
                               

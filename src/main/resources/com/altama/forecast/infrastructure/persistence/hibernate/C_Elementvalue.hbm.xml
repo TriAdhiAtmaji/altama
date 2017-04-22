@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
+    
+    
     <class mutable="true" name="com.altama.forecast.domain.c_elementvalue.C_Elementvalue" table="C_ELEMENTVALUE">
         <id column="c_elementvalue_id" name="c_elementvalue_id">
         </id>

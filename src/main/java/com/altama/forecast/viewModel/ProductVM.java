@@ -1,6 +1,7 @@
 package com.altama.forecast.viewModel;
 
 import com.altama.forecast.application.C_ElementvalueService;
+import com.altama.forecast.application.C_bpartnerService;
 import com.altama.forecast.application.M_productService;
 import com.altama.forecast.common.zul.PageNavigation;
 import com.altama.forecast.domain.c_elementvalue.C_Elementvalue;
@@ -39,6 +40,9 @@ public class ProductVM {
     @WireVariable
     C_ElementvalueService c_ElementvalueService;
 
+    @WireVariable
+    C_bpartnerService c_bpartnerService;
+
     private M_productDTO m_productDTO = new M_productDTO();
     private List<M_productDTO> m_productDTOs = new ArrayList<>();
 
@@ -54,6 +58,9 @@ public class ProductVM {
     private List<C_ElementvalueDTO> c_ElementvalueDTOs = new ArrayList<>();
     List<C_Elementvalue> listC_Elementvalues = new ArrayList<C_Elementvalue>();
     C_Elementvalue c1 = new C_Elementvalue(BigDecimal.valueOf(2), BigDecimal.valueOf(2), "Tekiro", "Tekiro", "Tekiro");
+
+    private String suplier;
+    private String factory;
 
 //    Name n1 = new Name(BigDecimal.valueOf(1), "Tekiro");
 //    Name n2 = new Name(BigDecimal.valueOf(2), "Ryu");
@@ -113,6 +120,10 @@ public class ProductVM {
         System.out.print("3 " + continueSelect + " ");
 
         System.out.print("4 " + nama + " ");
+
+        System.out.print("5 " + suplier + " ");
+
+        System.out.print("6 " + factory + " ");
 
         m_productDTOs = m_productService.findByParams(params);
     }
@@ -265,6 +276,22 @@ public class ProductVM {
 
     public void setContinueSelect(IsDiscontinue continueSelect) {
         this.continueSelect = continueSelect;
+    }
+
+    public String getSuplier() {
+        return suplier;
+    }
+
+    public void setSuplier(String suplier) {
+        this.suplier = suplier;
+    }
+
+    public String getFactory() {
+        return factory;
+    }
+
+    public void setFactory(String factory) {
+        this.factory = factory;
     }
 
 }
