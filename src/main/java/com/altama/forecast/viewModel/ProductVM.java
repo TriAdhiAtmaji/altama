@@ -1,17 +1,17 @@
 package com.altama.forecast.viewModel;
 
+import com.altama.forecast.application.Ad_treenodeu1Service;
 import com.altama.forecast.application.C_ElementvalueService;
 import com.altama.forecast.application.C_bpartnerService;
 import com.altama.forecast.application.M_productService;
 import com.altama.forecast.common.zul.PageNavigation;
-import com.altama.forecast.domain.c_elementvalue.C_Elementvalue;
 import com.altama.forecast.domain.m_product.IsDiscontinue;
 
 import com.altama.forecast.domain.m_product.Name;
+import com.altama.forecast.interfaces.web.facade.dto.ad_treenodeu1.Ad_treenodeu1DTO;
 import com.altama.forecast.interfaces.web.facade.dto.c_elementvalue.C_ElementvalueDTO;
 import com.altama.forecast.interfaces.web.facade.dto.m_productDTO.M_productDTO;
 import com.altama.forecast.interfaces.web.facade.dto.m_productDTO.M_productDTOBuilder;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -50,22 +50,21 @@ public class ProductVM {
 
     private Name nameSelected;
     private IsDiscontinue continueSelect;
-    private C_Elementvalue brandSelected;
+    private C_ElementvalueDTO brandSelected;
+    private Ad_treenodeu1DTO treeselect;
 
     private ListModelList<IsDiscontinue> listDiscontinue = new ListModelList<IsDiscontinue>();
 
     private C_ElementvalueDTO c_ElementvalueDTO = new C_ElementvalueDTO();
     private List<C_ElementvalueDTO> c_ElementvalueDTOs = new ArrayList<>();
-    List<C_Elementvalue> listC_Elementvalues = new ArrayList<C_Elementvalue>();
-    C_Elementvalue c1 = new C_Elementvalue(BigDecimal.valueOf(2), BigDecimal.valueOf(2), "Tekiro", "Tekiro", "Tekiro");
+    List<C_ElementvalueDTO> listC_Elementvalues = new ArrayList<C_ElementvalueDTO>();
+
+    private Ad_treenodeu1DTO ad_treenodeu1DTO = new Ad_treenodeu1DTO();
+    List<Ad_treenodeu1DTO> listAdtree = new ArrayList<Ad_treenodeu1DTO>();
 
     private String suplier;
     private String factory;
 
-//    Name n1 = new Name(BigDecimal.valueOf(1), "Tekiro");
-//    Name n2 = new Name(BigDecimal.valueOf(2), "Ryu");
-//
-//    List<Name> listName = new ArrayList<Name>();
     //        combobox
     //    Setting List
     private PageNavigation previous;
@@ -88,10 +87,11 @@ public class ProductVM {
     private void initData() {
 //        listName.add(n1);
 //        listName.add(n2);
-        listC_Elementvalues.add(c1);
-        c_ElementvalueDTOs = c_ElementvalueService.findAll();
+//        listC_Elementvalues.add(c1);
+//        c_ElementvalueDTOs = c_ElementvalueService.findAll();
 
-        List<C_ElementvalueDTO> listC_Elementvalues = c_ElementvalueService.findAll();
+//        listAdtree = ad_treenodeu1Service.findAll();
+        listC_Elementvalues = c_ElementvalueService.findAll();
         m_productDTOs = m_productService.findAll();
 
     }
@@ -230,12 +230,20 @@ public class ProductVM {
         this.nameSelected = nameSelected;
     }
 
-    public C_Elementvalue getBrandSelected() {
+    public C_ElementvalueDTO getBrandSelected() {
         return brandSelected;
     }
 
-    public void setBrandSelected(C_Elementvalue brandSelected) {
+    public void setBrandSelected(C_ElementvalueDTO brandSelected) {
         this.brandSelected = brandSelected;
+    }
+
+    public List<C_ElementvalueDTO> getListC_Elementvalues() {
+        return listC_Elementvalues;
+    }
+
+    public void setListC_Elementvalues(List<C_ElementvalueDTO> listC_Elementvalues) {
+        this.listC_Elementvalues = listC_Elementvalues;
     }
 
     public ListModelList<IsDiscontinue> getListDiscontinue() {
@@ -262,14 +270,6 @@ public class ProductVM {
         this.c_ElementvalueDTOs = c_ElementvalueDTOs;
     }
 
-    public List<C_Elementvalue> getListC_Elementvalues() {
-        return listC_Elementvalues;
-    }
-
-    public void setListC_Elementvalues(List<C_Elementvalue> listC_Elementvalues) {
-        this.listC_Elementvalues = listC_Elementvalues;
-    }
-
     public IsDiscontinue getContinueSelect() {
         return continueSelect;
     }
@@ -292,6 +292,30 @@ public class ProductVM {
 
     public void setFactory(String factory) {
         this.factory = factory;
+    }
+
+    public Ad_treenodeu1DTO getTreeselect() {
+        return treeselect;
+    }
+
+    public void setTreeselect(Ad_treenodeu1DTO treeselect) {
+        this.treeselect = treeselect;
+    }
+
+    public Ad_treenodeu1DTO getAd_treenodeu1DTO() {
+        return ad_treenodeu1DTO;
+    }
+
+    public void setAd_treenodeu1DTO(Ad_treenodeu1DTO ad_treenodeu1DTO) {
+        this.ad_treenodeu1DTO = ad_treenodeu1DTO;
+    }
+
+    public List<Ad_treenodeu1DTO> getListAdtree() {
+        return listAdtree;
+    }
+
+    public void setListAdtree(List<Ad_treenodeu1DTO> listAdtree) {
+        this.listAdtree = listAdtree;
     }
 
 }

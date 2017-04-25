@@ -12,18 +12,20 @@ import java.util.Date;
 public class Ad_treenodeu1DTO implements Serializable {
 
     private BigDecimal ad_tree_id;
-    private C_Elementvalue node_id;
+    private BigDecimal node_id;
     private BigDecimal ad_client_id;
     private BigDecimal ad_org_id;
+    private C_Elementvalue c_Elementvalue;
 
     public Ad_treenodeu1DTO() {
     }
 
-    public Ad_treenodeu1DTO(BigDecimal ad_tree_id, C_Elementvalue node_id, BigDecimal ad_client_id, BigDecimal ad_org_id) {
+    public Ad_treenodeu1DTO(BigDecimal ad_tree_id, BigDecimal node_id, BigDecimal ad_client_id, BigDecimal ad_org_id, C_Elementvalue c_Elementvalue) {
         this.ad_tree_id = ad_tree_id;
         this.node_id = node_id;
         this.ad_client_id = ad_client_id;
         this.ad_org_id = ad_org_id;
+        this.c_Elementvalue = c_Elementvalue;
     }
 
     public BigDecimal getAd_tree_id() {
@@ -34,12 +36,20 @@ public class Ad_treenodeu1DTO implements Serializable {
         this.ad_tree_id = ad_tree_id;
     }
 
-    public C_Elementvalue getNode_id() {
+    public BigDecimal getNode_id() {
         return node_id;
     }
 
-    public void setNode_id(C_Elementvalue node_id) {
+    public void setNode_id(BigDecimal node_id) {
         this.node_id = node_id;
+    }
+
+    public C_Elementvalue getC_Elementvalue() {
+        return c_Elementvalue;
+    }
+
+    public void setC_Elementvalue(C_Elementvalue c_Elementvalue) {
+        this.c_Elementvalue = c_Elementvalue;
     }
 
     public BigDecimal getAd_client_id() {
@@ -60,7 +70,7 @@ public class Ad_treenodeu1DTO implements Serializable {
 
     @Override
     public String toString() {
-        return "Ad_treenodeu1DTO{" + "ad_tree_id=" + ad_tree_id + ", node_id=" + node_id + ", ad_client_id=" + ad_client_id + ", ad_org_id=" + ad_org_id + '}';
+        return "Ad_treenodeu1DTO{" + "ad_tree_id=" + ad_tree_id + ", node_id=" + node_id + ", ad_client_id=" + ad_client_id + ", ad_org_id=" + ad_org_id + ", c_Elementvalue=" + c_Elementvalue + '}';
     }
 
 }

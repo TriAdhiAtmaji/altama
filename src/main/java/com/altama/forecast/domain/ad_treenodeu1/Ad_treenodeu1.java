@@ -12,18 +12,20 @@ import java.util.Objects;
 public class Ad_treenodeu1 implements EntityObject<Ad_treenodeu1> {
 
     private BigDecimal ad_tree_id;
-    private C_Elementvalue node_id;
+    private BigDecimal node_id;
     private BigDecimal ad_client_id;
     private BigDecimal ad_org_id;
+    private C_Elementvalue c_Elementvalue;
 
     public Ad_treenodeu1() {
     }
 
-    public Ad_treenodeu1(BigDecimal ad_tree_id, C_Elementvalue node_id, BigDecimal ad_client_id, BigDecimal ad_org_id) {
+    public Ad_treenodeu1(BigDecimal ad_tree_id, BigDecimal node_id, BigDecimal ad_client_id, BigDecimal ad_org_id, C_Elementvalue c_Elementvalue) {
         this.ad_tree_id = ad_tree_id;
         this.node_id = node_id;
         this.ad_client_id = ad_client_id;
         this.ad_org_id = ad_org_id;
+        this.c_Elementvalue = c_Elementvalue;
     }
 
     public void assignNewAd_treenodeu1(Ad_treenodeu1 ad_treenodeu1) {
@@ -33,20 +35,28 @@ public class Ad_treenodeu1 implements EntityObject<Ad_treenodeu1> {
         this.ad_org_id = ad_treenodeu1.ad_org_id;
     }
 
+    public BigDecimal getNode_id() {
+        return node_id;
+    }
+
+    public void setNode_id(BigDecimal node_id) {
+        this.node_id = node_id;
+    }
+
+    public C_Elementvalue getC_Elementvalue() {
+        return c_Elementvalue;
+    }
+
+    public void setC_Elementvalue(C_Elementvalue c_Elementvalue) {
+        this.c_Elementvalue = c_Elementvalue;
+    }
+
     public BigDecimal getAd_tree_id() {
         return ad_tree_id;
     }
 
     public void setAd_tree_id(BigDecimal ad_tree_id) {
         this.ad_tree_id = ad_tree_id;
-    }
-
-    public C_Elementvalue getNode_id() {
-        return node_id;
-    }
-
-    public void setNode_id(C_Elementvalue node_id) {
-        this.node_id = node_id;
     }
 
     public BigDecimal getAd_client_id() {
@@ -67,10 +77,11 @@ public class Ad_treenodeu1 implements EntityObject<Ad_treenodeu1> {
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 41 * hash + Objects.hashCode(this.node_id);
-        hash = 41 * hash + Objects.hashCode(this.ad_client_id);
-        hash = 41 * hash + Objects.hashCode(this.ad_org_id);
+        int hash = 5;
+        hash = 97 * hash + Objects.hashCode(this.node_id);
+        hash = 97 * hash + Objects.hashCode(this.ad_client_id);
+        hash = 97 * hash + Objects.hashCode(this.ad_org_id);
+        hash = 97 * hash + Objects.hashCode(this.c_Elementvalue);
         return hash;
     }
 

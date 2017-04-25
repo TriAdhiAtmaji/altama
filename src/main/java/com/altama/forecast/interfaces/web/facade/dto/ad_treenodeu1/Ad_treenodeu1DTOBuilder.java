@@ -11,9 +11,10 @@ import java.math.BigDecimal;
 public class Ad_treenodeu1DTOBuilder {
 
     private BigDecimal ad_tree_id;
-    private C_Elementvalue node_id;
+    private BigDecimal node_id;
     private BigDecimal ad_client_id;
     private BigDecimal ad_org_id;
+    private C_Elementvalue c_Elementvalue;
 
     public Ad_treenodeu1DTOBuilder() {
     }
@@ -23,7 +24,7 @@ public class Ad_treenodeu1DTOBuilder {
         return this;
     }
 
-    public Ad_treenodeu1DTOBuilder setNode_id(C_Elementvalue node_id) {
+    public Ad_treenodeu1DTOBuilder setNode_id(BigDecimal node_id) {
         this.node_id = node_id;
         return this;
     }
@@ -38,8 +39,13 @@ public class Ad_treenodeu1DTOBuilder {
         return this;
     }
 
+    public Ad_treenodeu1DTOBuilder setC_Elementvalue(C_Elementvalue c_Elementvalue) {
+        this.c_Elementvalue = c_Elementvalue;
+        return this;
+    }
+
     public Ad_treenodeu1DTO createAd_treenodeu1DTO() {
-        return new Ad_treenodeu1DTO(ad_tree_id, node_id, ad_client_id, ad_org_id);
+        return new Ad_treenodeu1DTO(ad_tree_id, node_id, ad_client_id, ad_org_id, c_Elementvalue);
     }
 
 }

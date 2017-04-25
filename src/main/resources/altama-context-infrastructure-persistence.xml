@@ -63,11 +63,8 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
     
-    <bean id="forecastRepository" class="com.altama.forecast.infrastructure.persistence.hibernate.ForecastHibernateRepository">
+    <!--    <bean id="forecastRepository" class="com.altama.forecast.infrastructure.persistence.hibernate.ForecastHibernateRepository">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
-    
-    <bean id="purchaseRepository" class="com.altama.forecast.infrastructure.persistence.hibernate.PurchaseHibernateRepository">
-        <property name="sessionFactory" ref="sessionFactory"/>
-    </bean>
+    -->
 </beans>

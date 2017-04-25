@@ -30,6 +30,7 @@ public class C_ElementvalueHibernateRepository extends HibernateRepository imple
         Query query = getSession().createQuery("delete from com.altama.forecast.domain.c_elementvalue.C_Elementvalue where c_elementvalue_id = :cID");
         query.setParameter("cID", c_Elementvalue.getC_elementvalue_id());
         query.executeUpdate();
+
     }
 
     @Override
@@ -40,11 +41,16 @@ public class C_ElementvalueHibernateRepository extends HibernateRepository imple
                 .uniqueResult();
     }
 
+//    @Override
+//    public List<C_Elementvalue> findAll() {
+//        Criteria criteria = getSession().createCriteria(C_Elementvalue.class);
+//
+//        return (List<C_Elementvalue>) criteria.list();
+//    }
     @Override
     public List<C_Elementvalue> findAll() {
-        Criteria criteria = getSession().createCriteria(C_Elementvalue.class);
-
-        return (List<C_Elementvalue>) criteria.list();
+        Query query = getSession().createQuery("from com.altama.forecast.domain.c_elementvalue.C_Elementvalue as elementvalue join elementvalue.ad_treenodeu1");
+        return (List<C_Elementvalue>) query.list();
     }
 
     @Override

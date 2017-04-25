@@ -3,15 +3,10 @@
 <hibernate-mapping>
     
     
-    <class mutable="true" name="com.altama.forecast.domain.c_elementvalue.C_Elementvalue" table="C_ELEMENTVALUE">
+    <class mutable="true" name="com.altama.forecast.domain.c_elementvalue.C_Elementvalue" table="c_elementvalue">
         <id column="c_elementvalue_id" name="c_elementvalue_id">
+            
         </id>
-        
-        
-                        
-        <!--        <many-to-one name="c_elementvalue_id" class="com.altama.forecast.domain.ad_treenodeu1.Ad_treenodeu1" lazy="false">
-            <column name="c_elementvalue_id" />
-        </many-to-one>-->
         
         <!--        <property column="c_elementvalue_id" name="c_elementvalue_id" not-null="false"/>-->
         <property column="ad_client_id" name="ad_client_id" not-null="false"/>
@@ -23,8 +18,8 @@
             
         <property column="description" name="description" not-null="false"/>
         
-        
-        
+        <one-to-one name="ad_treenodeu1" class="com.altama.forecast.domain.ad_treenodeu1.Ad_treenodeu1"/>
         
     </class>
+    
 </hibernate-mapping>

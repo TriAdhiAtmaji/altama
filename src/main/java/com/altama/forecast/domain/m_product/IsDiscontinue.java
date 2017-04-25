@@ -6,5 +6,5 @@ package com.altama.forecast.domain.m_product;
  */
 public enum IsDiscontinue {
 
-    YES, NO;
+    Y, N;
 }

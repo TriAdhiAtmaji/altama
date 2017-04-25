@@ -1,7 +1,9 @@
 package com.altama.forecast.domain.c_elementvalue;
 
+import com.altama.forecast.domain.ad_treenodeu1.Ad_treenodeu1;
 import com.altama.forecast.domain.shared.EntityObject;
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -15,16 +17,18 @@ public class C_Elementvalue implements EntityObject<C_Elementvalue> {
     private String value;
     private String brand;
     private String description;
+    private Ad_treenodeu1 ad_treenodeu1;
 
     public C_Elementvalue() {
     }
 
-    public C_Elementvalue(BigDecimal c_elementvalue_id, BigDecimal ad_client_id, String value, String brand, String description) {
+    public C_Elementvalue(BigDecimal c_elementvalue_id, BigDecimal ad_client_id, String value, String brand, String description, Ad_treenodeu1 ad_treenodeu1) {
         this.c_elementvalue_id = c_elementvalue_id;
         this.ad_client_id = ad_client_id;
         this.value = value;
         this.brand = brand;
         this.description = description;
+        this.ad_treenodeu1 = ad_treenodeu1;
     }
 
     public void assignNEWc_elemenvalue(C_Elementvalue c_Elementvalue) {
@@ -34,6 +38,14 @@ public class C_Elementvalue implements EntityObject<C_Elementvalue> {
         this.brand = c_Elementvalue.brand;
         this.description = c_Elementvalue.description;
 
+    }
+
+    public Ad_treenodeu1 getAd_treenodeu1() {
+        return ad_treenodeu1;
+    }
+
+    public void setAd_treenodeu1(Ad_treenodeu1 ad_treenodeu1) {
+        this.ad_treenodeu1 = ad_treenodeu1;
     }
 
     public BigDecimal getC_elementvalue_id() {
@@ -79,10 +91,11 @@ public class C_Elementvalue implements EntityObject<C_Elementvalue> {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 47 * hash + Objects.hashCode(this.ad_client_id);
-        hash = 47 * hash + Objects.hashCode(this.value);
-        hash = 47 * hash + Objects.hashCode(this.brand);
-        hash = 47 * hash + Objects.hashCode(this.description);
+        hash = 29 * hash + Objects.hashCode(this.ad_client_id);
+        hash = 29 * hash + Objects.hashCode(this.value);
+        hash = 29 * hash + Objects.hashCode(this.brand);
+        hash = 29 * hash + Objects.hashCode(this.description);
+        hash = 29 * hash + Objects.hashCode(this.ad_treenodeu1);
         return hash;
     }
 

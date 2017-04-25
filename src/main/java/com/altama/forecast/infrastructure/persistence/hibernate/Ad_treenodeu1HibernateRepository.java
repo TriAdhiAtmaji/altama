@@ -42,9 +42,8 @@ public class Ad_treenodeu1HibernateRepository extends HibernateRepository implem
 
     @Override
     public List<Ad_treenodeu1> findAll() {
-        Criteria criteria = getSession().createCriteria(Ad_treenodeu1.class, "ad_treenodeu1");
-        criteria.createAlias("ad_treenodeu1.node_id", "node_id", Criteria.FULL_JOIN);
-        return criteria.list();
+        Query query = getSession().createQuery("select node.name from com.altama.forecast.domain.ad_treenodeu1.Ad_treenodeu1 as treenode join treenode.c_Elementvalue as node");
+        return query.list();
     }
 
     @Override

@@ -1,8 +1,10 @@
 package com.altama.forecast.interfaces.web.facade.dto.assembler.c_elementvalue;
 
+import com.altama.forecast.domain.ad_treenodeu1.Ad_treenodeu1Repository;
 import com.altama.forecast.domain.c_elementvalue.C_Elementvalue;
 import com.altama.forecast.domain.c_elementvalue.C_ElementvalueBuilder;
 import com.altama.forecast.interfaces.web.facade.dto.assembler.IObjectAssembler;
+import com.altama.forecast.interfaces.web.facade.dto.assembler.ad_treenodeu1.Ad_treenodeu1DTOAssembler;
 import com.altama.forecast.interfaces.web.facade.dto.c_elementvalue.C_ElementvalueDTO;
 import com.altama.forecast.interfaces.web.facade.dto.c_elementvalue.C_ElementvalueDTOBuilder;
 import java.util.ArrayList;
@@ -22,6 +24,7 @@ public class C_ElementvalueDTOAssembler implements IObjectAssembler<C_Elementval
                 .setValue(domainObject.getValue())
                 .setBrand(domainObject.getBrand())
                 .setDescription(domainObject.getDescription())
+                .setAd_treenodeu1(domainObject.getAd_treenodeu1())
                 .createC_ElementvalueDTO();
 
     }
@@ -34,6 +37,7 @@ public class C_ElementvalueDTOAssembler implements IObjectAssembler<C_Elementval
                 .setValue(dtoObject.getValue())
                 .setBrand(dtoObject.getBrand())
                 .setDescription(dtoObject.getDescription())
+                .setAd_treenodeu1(dtoObject.getAd_treenodeu1())
                 .createC_Elementvalue();
 
     }
@@ -48,8 +52,10 @@ public class C_ElementvalueDTOAssembler implements IObjectAssembler<C_Elementval
 
     public List<C_ElementvalueDTO> toDTOs(List<C_Elementvalue> arg0) {
         List<C_ElementvalueDTO> res = new ArrayList<>();
-        for (C_Elementvalue t : arg0) {
-            res.add(this.toDTO(t));
+        if (arg0 != null) {
+            for (C_Elementvalue t : arg0) {
+                res.add(new C_ElementvalueDTOAssembler().toDTO(t));
+            }
         }
         return res;
     }

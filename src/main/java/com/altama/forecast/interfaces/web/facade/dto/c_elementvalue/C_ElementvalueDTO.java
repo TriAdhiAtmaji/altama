@@ -1,8 +1,9 @@
 package com.altama.forecast.interfaces.web.facade.dto.c_elementvalue;
 
+import com.altama.forecast.domain.ad_treenodeu1.Ad_treenodeu1;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Date;
 
 /**
  *
@@ -15,16 +16,22 @@ public class C_ElementvalueDTO implements Serializable {
     private String value;
     private String brand;
     private String description;
+    private Ad_treenodeu1 ad_treenodeu1;
 
     public C_ElementvalueDTO() {
     }
 
-    public C_ElementvalueDTO(BigDecimal c_elementvalue_id, BigDecimal ad_client_id, String value, String brand, String description) {
+    public C_ElementvalueDTO(BigDecimal c_elementvalue_id, BigDecimal ad_client_id, String value, String brand, String description, Ad_treenodeu1 ad_treenodeu1) {
         this.c_elementvalue_id = c_elementvalue_id;
         this.ad_client_id = ad_client_id;
         this.value = value;
         this.brand = brand;
         this.description = description;
+        this.ad_treenodeu1 = ad_treenodeu1;
+    }
+
+    public Ad_treenodeu1 getAd_treenodeu1() {
+        return ad_treenodeu1;
     }
 
     public BigDecimal getC_elementvalue_id() {
@@ -69,7 +76,7 @@ public class C_ElementvalueDTO implements Serializable {
 
     @Override
     public String toString() {
-        return "C_ElementvalueDTO{" + "c_elementvalue_id=" + c_elementvalue_id + ", ad_client_id=" + ad_client_id + ", value=" + value + ", brand=" + brand + ", description=" + description + '}';
+        return "C_ElementvalueDTO{" + "c_elementvalue_id=" + c_elementvalue_id + ", ad_client_id=" + ad_client_id + ", value=" + value + ", brand=" + brand + ", description=" + description + ", ad_treenodeu1=" + ad_treenodeu1 + '}';
     }
 
 }

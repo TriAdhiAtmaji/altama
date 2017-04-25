@@ -1,54 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping default-access="field">
-    <class mutable="true" name="com.altama.forecast.domain.ad_treenodeu1.Ad_treenodeu1" table="AD_TREENODEU1">
+    <class mutable="true" name="com.altama.forecast.domain.ad_treenodeu1.Ad_treenodeu1" table="ad_treenodeu1">
         <!--<cache usage="read-only"/>-->
         <id column="ad_tree_id" name="ad_tree_id"  type="java.math.BigDecimal">
             
         </id>
         
-        
-        <!--        <list lazy="false" name="node_id" table="C_ELEMENTVALUE">
-            <key column="node_id"/>
-            <list-index column="role_privilege_index"/>
-            <composite-element class="com.altama.forecast.domain.c_elementvalue.C_Elementvalue">
-                <many-to-one cascade="all" class="com.altama.forecast.domain.c_elementvalue.C_Elementvalue" column="c_elementvalue_id" lazy="false" name="node_id" not-null="true"/>
-                <property column="name" name="brand" not-null="false"/>
-            </composite-element>
-        </list>-->
-        
-              
-        <many-to-one name="node_id" class="com.altama.forecast.domain.c_elementvalue.C_Elementvalue" lazy="false">
-            <column name="node_id"/>
-        </many-to-one>
+        <!--        <one-to-one name="node_id" class="com.altama.forecast.domain.c_elementvalue.C_Elementvalue">   
+            <generator class="foreign">
+                <param name="property">c_Elementvalue</param>
+            </generator>        
+        </one-to-one>       -->
+        <property column="node_id" name="node_id" not-null="false"/>
         
         <property column="ad_client_id" name="ad_client_id" not-null="false"/>
         <property column="ad_org_id" name="ad_org_id" not-null="false"/>
-                
+        
+      
     </class>
     
-    <class mutable="true" name="com.altama.forecast.domain.c_elementvalue.C_Elementvalue" table="C_ELEMENTVALUE">
-        <id column="c_elementvalue_id" name="c_elementvalue_id">
-        </id>
-        
-        
-                        
-        <!--        <many-to-one name="c_elementvalue_id" class="com.altama.forecast.domain.ad_treenodeu1.Ad_treenodeu1" lazy="false">
-            <column name="c_elementvalue_id" />
-        </many-to-one>-->
-        
-        <!--        <property column="c_elementvalue_id" name="c_elementvalue_id" not-null="false"/>-->
-        <property column="ad_client_id" name="ad_client_id" not-null="false"/>
-        <property column="value" name="value" not-null="false"/>
-        
-        <!--        <many-to-one name="name" class="com.altama.forecast.domain.ad_treenodeu1.Ad_treenodeu1" column="ad_tree_id" lazy="false"/>-->
-                
-        <property column="name" name="brand" not-null="false"/> 
-            
-        <property column="description" name="description" not-null="false"/>
-        
-        
-        
-        
-    </class>
+   
 </hibernate-mapping>

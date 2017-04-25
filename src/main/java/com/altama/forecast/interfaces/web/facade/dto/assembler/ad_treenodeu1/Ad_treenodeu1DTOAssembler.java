@@ -21,6 +21,7 @@ public class Ad_treenodeu1DTOAssembler implements IObjectAssembler<Ad_treenodeu1
                 .setNode_id(domainObject.getNode_id())
                 .setAd_client_id(domainObject.getAd_client_id())
                 .setAd_org_id(domainObject.getAd_org_id())
+                .setC_Elementvalue(domainObject.getC_Elementvalue())
                 .createAd_treenodeu1DTO();
 
     }
@@ -32,10 +33,11 @@ public class Ad_treenodeu1DTOAssembler implements IObjectAssembler<Ad_treenodeu1
                 .setNode_id(dtoObject.getNode_id())
                 .setAd_client_id(dtoObject.getAd_client_id())
                 .setAd_org_id(dtoObject.getAd_org_id())
+                .setC_Elementvalue(dtoObject.getC_Elementvalue())
                 .createAd_treenodeu1();
     }
 
-    public List<Ad_treenodeu1> toDomain(List<Ad_treenodeu1DTO> arg0) {
+    public List<Ad_treenodeu1> toDomains(List<Ad_treenodeu1DTO> arg0) {
         List<Ad_treenodeu1> res = new ArrayList<>();
         for (Ad_treenodeu1DTO t : arg0) {
             res.add(new Ad_treenodeu1DTOAssembler().toDomain(t));
@@ -43,7 +45,7 @@ public class Ad_treenodeu1DTOAssembler implements IObjectAssembler<Ad_treenodeu1
         return res;
     }
 
-    public List<Ad_treenodeu1DTO> toDTO(List<Ad_treenodeu1> arg0) {
+    public List<Ad_treenodeu1DTO> toDTOs(List<Ad_treenodeu1> arg0) {
         List<Ad_treenodeu1DTO> res = new ArrayList<>();
         for (Ad_treenodeu1 t : arg0) {
             res.add(this.toDTO(t));

@@ -59,7 +59,7 @@ public class Ad_treenodeu1ServiceImpl implements Ad_treenodeu1Service {
     @Override
     public List<Ad_treenodeu1DTO> findAll() {
         Validate.notNull(ad_treenodeu1Repository);
-        return (List<Ad_treenodeu1DTO>) ad_treenodeu1DTOAssembler.toDTO((List<Ad_treenodeu1>) ad_treenodeu1Repository.findAll());
+        return (List<Ad_treenodeu1DTO>) ad_treenodeu1DTOAssembler.toDTOs((List<Ad_treenodeu1>) ad_treenodeu1Repository.findAll());
     }
 
     @Override
@@ -67,7 +67,7 @@ public class Ad_treenodeu1ServiceImpl implements Ad_treenodeu1Service {
         Validate.notNull(ad_treenodeu1Repository);
         List<Ad_treenodeu1> listAdTree = (List<Ad_treenodeu1>) ad_treenodeu1Repository.findByParams(map);
         if (listAdTree != null) {
-            return (List<Ad_treenodeu1DTO>) ad_treenodeu1DTOAssembler.toDTO(listAdTree);
+            return (List<Ad_treenodeu1DTO>) ad_treenodeu1DTOAssembler.toDTOs(listAdTree);
         }
         return null;
     }
