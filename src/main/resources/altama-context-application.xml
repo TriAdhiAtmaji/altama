@@ -48,5 +48,19 @@
         <property name="z_m_product_factoryRepository" ref="z_m_product_factoryRepository"/>
         <property name="z_m_product_factoryDTOAssembler" ref="z_m_product_factoryDTOAssembler"/>
     </bean>
+    
+    <bean id="forecastDTOAssembler" class="com.altama.forecast.interfaces.web.facade.dto.assembler.forecast.ForecastDTOAssembler">
+    </bean> 
+    <bean id="forecastService" class="com.altama.forecast.application.impl.ForecastServiceImpl">
+        <property name="forecastRepository" ref="forecastRepository"/>
+        <property name="forecastDTOAssembler" ref="forecastDTOAssembler"/>
+    </bean>
+    
+    <bean id="purchaseDTOAssembler" class="com.altama.forecast.interfaces.web.facade.dto.assembler.purchase.PurchaseDTOAssembler">
+    </bean> 
+    <bean id="purchaseService" class="com.altama.forecast.application.impl.PurchaseServiceImpl">
+        <property name="purchaseRepository" ref="purchaseRepository"/>
+        <property name="purchaseDTOAssembler" ref="purchaseDTOAssembler"/>
+    </bean>
         
 </beans>

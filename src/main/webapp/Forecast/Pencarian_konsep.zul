@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?component name="signLabel" class="com.jatis.ui.common.SignLabel" ?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window border="none" apply="org.zkoss.bind.BindComposer"
+            viewModel="@id('vm') @init('com.altama.forecast.viewModel.ForecastVM')"
+            form="@id('fx') @load(vm.forecastDTO) @save(vm.forecastDTO, before='buttonSave')">
+        
+        <separator/>
+        <groupbox closable="false" mold="3d">
+            <caption label="Form Forecast"/>
+            <grid>
+                <columns>
+                    <column width="20%"/>
+                    <column width="80%"/>
+                    <column width="20%"/>
+                    <column width="80%"/>
+                </columns>
+                
+                <rows>
+                    <row>
+                        <label value="Brand"/>
+                        <textbox value="@bind(vm.brand)" width="300px"/>
+
+                        <!--                        <combobox width="300px" model="@bind(vm.listC_Elementvalues)" selectedItem="@bind(vm.brandSelected)" placeholder="- Pilihan Menu -" readonly="true">
+                            <template name="model" var="items">
+                                <comboitem label="@load(items.getBrand())" value="@load(items.getC_elementvalue_id().toString())"/>
+                            </template>
+                        </combobox>-->
+                        
+                        <label value="Factory"/>
+                        <textbox value="@bind(vm.factory)" width="300px"/>		
+                    </row> 
+                    <row>
+                        <label value="Product" />
+                        <textbox value="@bind(vm.product)" width="300px"/>
+                        
+                        <!--                        <combobox width="300px" model="@load(vm.listName)" selectedItem="@bind(vm.nameSelected)" placeholder="- Pilihan Menu -" readonly="true">
+                            <template name="model" var="items">
+                                <comboitem label="@load(items.getName())" value="@load(items.getId().toString())"/>
+                            </template>
+                        </combobox>-->
+                        
+                        <label value="Is Discontinued"/>
+                        <combobox width="300px" model="@load(vm.listIsDiscontinued)" selectedItem="@bind(vm.isDiscontined)" placeholder="- Pilihan Menu -" readonly="true">
+                            <template name="model" var="items">
+                                <comboitem label="@load(items)" value="@load(items)"/>
+                            </template>
+                        </combobox>			
+                    </row>
+                    <row>
+                        <label value="Suplier" />
+                        <textbox value="@bind(vm.suplier)" width="300px"/>
+
+                        <label value="Price List Version Jual" />
+                        <textbox width="300px" value="@bind(vm.priceVersion)" readonly="false"/>			
+                    </row>           
+                </rows> 
+                              
+            </grid>
+            <groupbox >
+                <grid style="border:0">
+                    <columns>
+                        <column width="40%"></column>
+                        <column width="20%" align="center"></column>
+                        <column width="40%" align="right"></column>
+                    </columns>
+                    <rows>
+                        <row>
+                            <label></label>
+                            <button label="Search" mold="trendy" width="120px" onClick="@command('buttonSearch')"/>
+                            <label></label>
+                        </row>
+                    </rows>
+                </grid>
+                
+            </groupbox>
+        </groupbox>
+        <groupbox closable="false">
+            <listbox rows="@load(vm.pageSize)" pageSize="@load(vm.pageSize)" pagingPosition="top" mold="paging" emptyMessage="${labels.common.noDataFound}" model="@bind(vm.forecastDTOs)">
+                <listhead>
+                    <listheader label="Product" width="30%" align="center"/>
+                    <listheader label="Qty Available" width="30%" align="center"/>
+                    <listheader label="Qty Average" width="30%" align="center"/>
+                    <listheader label="Lead Time" width="20%" align="center"/>
+                    <listheader label="Qty Batas Atas" width="30%" align="center"/>
+                    <listheader label="Qty On Ondered" width="30%" align="center"/>
+                    <listheader label="Price List Jual" width="30%" align="center"/>
+                    <listheader label="Currency Last PCS" width="30%" align="center"/>
+                    <listheader label="MOQ" width="10%" align="center"/>
+                    <listheader label="Qty PCS per Master Box" width="30%" align="center"/>
+                    <listheader label="Rekomendasi Qty PO PCS" width="30%" align="center"/>
+                    <listheader label="Total Master BOX" width="30%" align="center"/>
+                </listhead>
+                <template name="model">
+                    <listitem value="${each}">
+                        <listcell >
+                            <label width="100%" value="@bind(each.product)"/>
+                        </listcell>
+                        <listcell >
+                            <label width="100%" value="@bind(each.qtyAvalilable)"/>
+                        </listcell>
+                        <listcell >
+                            <label width="100%" value="@bind(each.qtyAverage)"/>
+                        </listcell>
+                        <listcell >
+                            <label width="100%" value="@bind(each.leadTime)"/>
+                        </listcell>
+                        <listcell >
+                            <label width="100%" value="@bind(each.qtyBatasAtas)"/>
+                        </listcell>
+                        <listcell >
+                            <label width="100%" value="@bind(each.qtyOnOrdered)"/>
+                        </listcell>
+                        <listcell >
+                            <label width="100%" value="@bind(each.priceListJual)"/>
+                        </listcell>
+                        <listcell >
+                            <label width="100%" value="@bind(each.currencyLastPCS)"/>
+                        </listcell>
+                        
+                        <listcell >
+                            <label width="100%" value="@bind(each.priceListLastPCS)"/>
+                        </listcell>
+                        <listcell >
+                            <label width="100%" value="@bind(each.moq)"/>
+                        </listcell>
+                        
+                        <listcell >
+                            <label width="100%" value="@bind(each.qtyPCSperMasterBox)"/>
+                        </listcell>
+                        <listcell >
+                            <label width="100%" value="@bind(each.rekomendasiQtyPO)"/>
+                        </listcell>
+                        
+                        <listcell >
+                            <label width="100%" value="@bind(each.totalMasterBox)"/>
+                        </listcell>
+                        
+                        <!--                        <listcell>
+                            <a label="Detail" style="text-decoration:underline ;color:blue" onClick="@command('detailLayanan', object=each)"></a>
+                            <a label="|" style="font-size:12pt ;color:black"></a>
+                            <a label="Delete" style="text-decoration:underline ;color:blue" onClick="@command('deleteLayanan', object=each)"></a>
+                        </listcell>-->
+                    </listitem>
+                </template>
+            </listbox>
+        </groupbox>
+    </window>
+</zk>
