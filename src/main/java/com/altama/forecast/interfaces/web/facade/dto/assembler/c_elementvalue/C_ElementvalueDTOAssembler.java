@@ -1,10 +1,8 @@
 package com.altama.forecast.interfaces.web.facade.dto.assembler.c_elementvalue;
 
-import com.altama.forecast.domain.ad_treenodeu1.Ad_treenodeu1Repository;
 import com.altama.forecast.domain.c_elementvalue.C_Elementvalue;
 import com.altama.forecast.domain.c_elementvalue.C_ElementvalueBuilder;
 import com.altama.forecast.interfaces.web.facade.dto.assembler.IObjectAssembler;
-import com.altama.forecast.interfaces.web.facade.dto.assembler.ad_treenodeu1.Ad_treenodeu1DTOAssembler;
 import com.altama.forecast.interfaces.web.facade.dto.c_elementvalue.C_ElementvalueDTO;
 import com.altama.forecast.interfaces.web.facade.dto.c_elementvalue.C_ElementvalueDTOBuilder;
 import java.util.ArrayList;
