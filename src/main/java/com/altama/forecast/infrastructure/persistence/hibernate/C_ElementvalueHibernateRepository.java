@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -41,17 +42,20 @@ public class C_ElementvalueHibernateRepository extends HibernateRepository imple
                 .uniqueResult();
     }
 
-//    @Override
-//    public List<C_Elementvalue> findAll() {
-//        Criteria criteria = getSession().createCriteria(C_Elementvalue.class);
-//
-//        return (List<C_Elementvalue>) criteria.list();
-//    }
     @Override
     public List<C_Elementvalue> findAll() {
-        Query query = getSession().createQuery("from com.altama.forecast.domain.c_elementvalue.C_Elementvalue as elementvalue join elementvalue.ad_treenodeu1");
-        return (List<C_Elementvalue>) query.list();
+        Criteria criteria = getSession().createCriteria(C_Elementvalue.class, "elementvalueAlias");
+        criteria.createCriteria("elementvalueAlias.ad_treenodeu1", "join");
+        return (List<C_Elementvalue>) criteria.list();
+
+//        Criteria criteria = getSession().createCriteria(C_Elementvalue.class);
+//        return (List<C_Elementvalue>) criteria.list();
     }
+//    @Override
+//    public List<C_Elementvalue> findAll() {
+//        Query query = getSession().createQuery("from com.altama.forecast.domain.c_elementvalue.C_Elementvalue as elementvalue join elementvalue.ad_treenodeu1");
+//        return query.list();
+//    }
 
     @Override
     public List<C_Elementvalue> findByParams(Map map) {
