@@ -6,8 +6,7 @@
 package com.altama.forecast.domain.z_m_product_factory;
 
 import java.math.BigDecimal;
-import java.util.List;
-import java.util.Map;
+import java.util.Set;
 
 /**
  *
@@ -21,7 +20,6 @@ public interface Z_m_product_factoryRepository {
 
     Z_m_product_factory findByID(BigDecimal z_m_factory_id);
 
-    List<Z_m_product_factory> findAll();
+    Set<Z_m_product_factory> findAll();
 
-    List<Z_m_product_factory> findByParams(Map map);
 }

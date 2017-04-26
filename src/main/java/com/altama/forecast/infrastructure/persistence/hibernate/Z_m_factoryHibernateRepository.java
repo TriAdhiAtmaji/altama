@@ -42,9 +42,17 @@ public class Z_m_factoryHibernateRepository extends HibernateRepository implemen
 
     @Override
     public List<Z_m_factory> findAll() {
-        Criteria criteria = getSession().createCriteria(Z_m_factory.class);
-        System.out.println(criteria.list().isEmpty());
-        return (List<Z_m_factory>) criteria.list();
+        return (List<Z_m_factory>) getSession()
+                .createQuery("from com.altama.forecast.domain.z_m_factory.Z_m_factory as factory inner join factory.z_m_product_factory")
+                .list();
+
+//        Query query = getSession().createQuery("from com.altama.forecast.domain.z_m_factory.Z_m_factory as factory inner join factory.z_m_factory");
+//        System.out.println(query.list().isEmpty());
+//        return (List<Z_m_factory>) query.list();
+//        Criteria criteria = getSession().createCriteria(Z_m_factory.class, "factory");
+//        criteria.createCriteria("factory.z_m_product_factory", "join", criteria.INNER_JOIN);
+//        System.out.println(criteria.list().isEmpty());
+//        return (List<Z_m_factory>) criteria.list();
     }
 
     @Override

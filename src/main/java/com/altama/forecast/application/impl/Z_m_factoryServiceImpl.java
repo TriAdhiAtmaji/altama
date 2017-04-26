@@ -68,7 +68,7 @@ public class Z_m_factoryServiceImpl implements Z_m_factoryService {
     @Override
     public List<Z_m_factoryDTO> findAll() {
         Validate.notNull(z_m_factoryRepository);
-        return (List<Z_m_factoryDTO>) z_m_factoryDTOAssembler.toDTO((List<Z_m_factory>) z_m_factoryRepository.findAll());
+        return (List<Z_m_factoryDTO>) z_m_factoryDTOAssembler.toDTOs((List<Z_m_factory>) z_m_factoryRepository.findAll());
     }
 
     @Override
@@ -76,7 +76,7 @@ public class Z_m_factoryServiceImpl implements Z_m_factoryService {
         Validate.notNull(z_m_factoryRepository);
         List<Z_m_factory> listZMFactory = z_m_factoryRepository.findByParams(map);
         if (listZMFactory != null) {
-            return (List<Z_m_factoryDTO>) z_m_factoryDTOAssembler.toDTO(listZMFactory);
+            return (List<Z_m_factoryDTO>) z_m_factoryDTOAssembler.toDTOs(listZMFactory);
         }
         return null;
     }

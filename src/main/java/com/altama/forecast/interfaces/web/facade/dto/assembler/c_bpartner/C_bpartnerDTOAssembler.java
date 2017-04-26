@@ -31,8 +31,8 @@ public class C_bpartnerDTOAssembler implements IObjectAssembler<C_bpartner, C_bp
                 .setIsvendor(domainObject.getIsvendor())
                 .setM_discountschema_id(domainObject.getM_discountschema_id())
                 .setM_pricelist_id(domainObject.getM_pricelist_id())
-                .setName(domainObject.getName())
-                .setName2(domainObject.getName2())
+                .setSuplier(domainObject.getSuplier())
+                .setSuplier2(domainObject.getSuplier2())
                 .setPo_discountschema_id(domainObject.getPo_discountschema_id())
                 .setPo_paymentterm_id(domainObject.getPo_paymentterm_id())
                 .setPo_pricelist_id(domainObject.getPo_pricelist_id())
@@ -59,8 +59,8 @@ public class C_bpartnerDTOAssembler implements IObjectAssembler<C_bpartner, C_bp
                 .setIsvendor(dtoObject.getIsvendor())
                 .setM_discountschema_id(dtoObject.getM_discountschema_id())
                 .setM_pricelist_id(dtoObject.getM_pricelist_id())
-                .setName(dtoObject.getName())
-                .setName2(dtoObject.getName2())
+                .setSuplier(dtoObject.getSuplier())
+                .setSuplier2(dtoObject.getSuplier2())
                 .setPo_discountschema_id(dtoObject.getPo_discountschema_id())
                 .setPo_paymentterm_id(dtoObject.getPo_paymentterm_id())
                 .setPo_pricelist_id(dtoObject.getPo_pricelist_id())
@@ -70,7 +70,7 @@ public class C_bpartnerDTOAssembler implements IObjectAssembler<C_bpartner, C_bp
                 .createC_bpartner();
     }
 
-    public List<C_bpartner> toDomain(List<C_bpartnerDTO> arg0) {
+    public List<C_bpartner> toDomains(List<C_bpartnerDTO> arg0) {
         List<C_bpartner> res = new ArrayList<>();
         for (C_bpartnerDTO t : arg0) {
             res.add(new C_bpartnerDTOAssembler().toDomain(t));
@@ -78,7 +78,7 @@ public class C_bpartnerDTOAssembler implements IObjectAssembler<C_bpartner, C_bp
         return res;
     }
 
-    public List<C_bpartnerDTO> toDTO(List<C_bpartner> arg0) {
+    public List<C_bpartnerDTO> toDTOs(List<C_bpartner> arg0) {
         List<C_bpartnerDTO> res = new ArrayList<>();
         for (C_bpartner t : arg0) {
             res.add(this.toDTO(t));

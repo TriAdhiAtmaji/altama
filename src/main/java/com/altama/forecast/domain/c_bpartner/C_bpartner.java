@@ -14,8 +14,8 @@ public class C_bpartner implements EntityObject<C_bpartner> {
     private BigDecimal ad_client_id;
     private BigDecimal ad_org_id;
     private String value;
-    private String name;
-    private String name2;
+    private String Suplier;
+    private String Suplier2;
     private String description;
     private BigDecimal c_bp_group_id;
     private String isvendor;
@@ -36,13 +36,13 @@ public class C_bpartner implements EntityObject<C_bpartner> {
     public C_bpartner() {
     }
 
-    public C_bpartner(BigDecimal c_bpartner_id, BigDecimal ad_client_id, BigDecimal ad_org_id, String value, String name, String name2, String description, BigDecimal c_bp_group_id, String isvendor, BigDecimal c_invoiceschedule_id, BigDecimal c_paymentterm_id, BigDecimal m_pricelist_id, BigDecimal m_discountschema_id, BigDecimal c_dunning_id, BigDecimal po_pricelist_id, BigDecimal po_discountschema_id, BigDecimal po_paymentterm_id, BigDecimal documentcopies, BigDecimal c_greeting_id, BigDecimal salesrep_id, String sendemail, BigDecimal bpartner_parent_id) {
+    public C_bpartner(BigDecimal c_bpartner_id, BigDecimal ad_client_id, BigDecimal ad_org_id, String value, String Suplier, String Suplier2, String description, BigDecimal c_bp_group_id, String isvendor, BigDecimal c_invoiceschedule_id, BigDecimal c_paymentterm_id, BigDecimal m_pricelist_id, BigDecimal m_discountschema_id, BigDecimal c_dunning_id, BigDecimal po_pricelist_id, BigDecimal po_discountschema_id, BigDecimal po_paymentterm_id, BigDecimal documentcopies, BigDecimal c_greeting_id, BigDecimal salesrep_id, String sendemail, BigDecimal bpartner_parent_id) {
         this.c_bpartner_id = c_bpartner_id;
         this.ad_client_id = ad_client_id;
         this.ad_org_id = ad_org_id;
         this.value = value;
-        this.name = name;
-        this.name2 = name2;
+        this.Suplier = Suplier;
+        this.Suplier2 = Suplier2;
         this.description = description;
         this.c_bp_group_id = c_bp_group_id;
         this.isvendor = isvendor;
@@ -66,8 +66,8 @@ public class C_bpartner implements EntityObject<C_bpartner> {
         this.ad_client_id = c_bpartner.ad_client_id;
         this.ad_org_id = c_bpartner.ad_org_id;
         this.value = c_bpartner.value;
-        this.name = c_bpartner.name;
-        this.name2 = c_bpartner.name2;
+        this.Suplier = c_bpartner.Suplier;
+        this.Suplier2 = c_bpartner.Suplier2;
         this.description = c_bpartner.description;
         this.c_bp_group_id = c_bpartner.c_bp_group_id;
         this.isvendor = c_bpartner.isvendor;
@@ -118,20 +118,20 @@ public class C_bpartner implements EntityObject<C_bpartner> {
         this.value = value;
     }
 
-    public String getName() {
-        return name;
+    public String getSuplier() {
+        return Suplier;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSuplier(String Suplier) {
+        this.Suplier = Suplier;
     }
 
-    public String getName2() {
-        return name2;
+    public String getSuplier2() {
+        return Suplier2;
     }
 
-    public void setName2(String name2) {
-        this.name2 = name2;
+    public void setSuplier2(String Suplier2) {
+        this.Suplier2 = Suplier2;
     }
 
     public String getDescription() {
@@ -268,8 +268,8 @@ public class C_bpartner implements EntityObject<C_bpartner> {
         hash = 23 * hash + Objects.hashCode(this.ad_client_id);
         hash = 23 * hash + Objects.hashCode(this.ad_org_id);
         hash = 23 * hash + Objects.hashCode(this.value);
-        hash = 23 * hash + Objects.hashCode(this.name);
-        hash = 23 * hash + Objects.hashCode(this.name2);
+        hash = 23 * hash + Objects.hashCode(this.Suplier);
+        hash = 23 * hash + Objects.hashCode(this.Suplier2);
         hash = 23 * hash + Objects.hashCode(this.description);
         hash = 23 * hash + Objects.hashCode(this.c_bp_group_id);
         hash = 23 * hash + Objects.hashCode(this.isvendor);

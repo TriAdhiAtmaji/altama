@@ -17,7 +17,7 @@ public interface C_ElementvalueService {
 
     C_ElementvalueDTO getDummy();
 
-    C_ElementvalueDTO findByID(BigDecimal c_elementvalue_id);
+    C_ElementvalueDTO findByID(long c_elementvalue_id);
 
     List<C_ElementvalueDTO> findAll();
 

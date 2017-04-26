@@ -9,8 +9,8 @@
         <property column="ad_client_id" name="ad_client_id" not-null="false"/>
         <property column="ad_org_id" name="ad_org_id" not-null="false"/>
         <property column="value" name="value" not-null="false"/>
-        <property column="name" name="name" not-null="false"/> 
-        <property column="name2" name="name2" not-null="false"/>    
+        <property column="name" name="Suplier" not-null="false"/> 
+        <property column="name2" name="Suplier2" not-null="false"/>    
         <property column="description" name="description" not-null="false"/>
         
         <property column="c_bp_group_id" name="c_bp_group_id" not-null="false"/>

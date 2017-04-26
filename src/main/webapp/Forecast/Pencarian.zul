@@ -19,27 +19,25 @@
                 
                 <rows>
                     <row>
-                        <label value="Brand"/>
-                        
-                        <!--                        <combobox width="300px" model="@bind(vm.listAdtree)" selectedItem="@bind(vm.treeselect)" placeholder="- Pilihan Menu -" readonly="true">
-                            <template name="model" var="items">
-                                <comboitem label="@load(items.getNode_id())" value="@load(items.getAd_tree_id().toString())"/>
-                            </template>
-                        </combobox>-->
-                        
+                        <label value="Brand"/>                                                                    
                         <combobox width="300px" model="@bind(vm.listC_Elementvalues)" selectedItem="@bind(vm.brandSelected)" placeholder="- Pilihan Menu -" readonly="true">
                             <template name="model" var="items">
-                                <comboitem label="@load(items.getBrand())" value="@load(items.getBrand())"/>
+                                <comboitem label="@load(items.getBrand())" value="@load(items.getC_elementvalue_id().toString())"/>
                             </template>
                         </combobox>
                         <label value="Factory"/>
-                        <textbox value="@bind(vm.factory)" width="300px"/>		
+                        <!--                        <textbox value="@bind(vm.factory)" width="300px"/>-->
+                        <combobox width="300px" model="@bind(vm.listFactory)" selectedItem="@bind(vm.factory)" placeholder="- Pilihan Menu -" readonly="true">
+                            <template name="model" var="items">
+                                <comboitem label="@load(items.getName())" value="@load(items.getName())"/>
+                            </template>
+                        </combobox>		
                     </row> 
                     <row>
                         <label value="Product" />
                         <textbox value="@bind(vm.nama)" width="300px"/>
                         
-                        <!--                        <combobox width="300px" model="@load(vm.listName)" selectedItem="@bind(vm.nameSelected)" placeholder="- Pilihan Menu -" readonly="true">
+                        <!--                                                <combobox width="300px" model="@load(vm.listName)" selectedItem="@bind(vm.nameSelected)" placeholder="- Pilihan Menu -" readonly="true">
                             <template name="model" var="items">
                                 <comboitem label="@load(items.getName())" value="@load(items.getId().toString())"/>
                             </template>
@@ -54,7 +52,12 @@
                     </row>
                     <row>
                         <label value="Suplier" />
-                        <textbox value="@bind(vm.suplier)" width="300px"/>
+                        <!--                        <textbox value="@bind(vm.suplier)" width="300px"/>-->
+                        <combobox width="300px" model="@bind(vm.listBpartner)" selectedItem="@bind(vm.suplier)" placeholder="- Pilihan Menu -" readonly="true">
+                            <template name="model" var="items">
+                                <comboitem label="@load(items.getSuplier())" value="@load(items.getSuplier())"/>
+                            </template>
+                        </combobox>
 
                         <label value="Price List Version Jual" />
                         <textbox width="300px" readonly="false"/>			

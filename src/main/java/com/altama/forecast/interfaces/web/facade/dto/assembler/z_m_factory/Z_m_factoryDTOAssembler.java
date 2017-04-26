@@ -2,10 +2,13 @@ package com.altama.forecast.interfaces.web.facade.dto.assembler.z_m_factory;
 
 import com.altama.forecast.domain.z_m_factory.Z_m_factory;
 import com.altama.forecast.domain.z_m_factory.Z_m_factoryBuilder;
+import com.altama.forecast.domain.z_m_product_factory.Z_m_product_factoryRepository;
 import com.altama.forecast.interfaces.web.facade.dto.assembler.IObjectAssembler;
+import com.altama.forecast.interfaces.web.facade.dto.assembler.z_m_product_factory.Z_m_product_factoryDTOAssembler;
 import com.altama.forecast.interfaces.web.facade.dto.z_m_factory.Z_m_factoryDTO;
 import com.altama.forecast.interfaces.web.facade.dto.z_m_factory.Z_m_factoryDTOBuilder;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -13,6 +16,17 @@ import java.util.List;
  * @author admin
  */
 public class Z_m_factoryDTOAssembler implements IObjectAssembler<Z_m_factory, Z_m_factoryDTO> {
+
+    private Z_m_product_factoryDTOAssembler z_m_product_factoryDTOAssembler;
+    private Z_m_product_factoryRepository z_m_product_factoryRepository;
+
+    public void setZ_m_product_factoryDTOAssembler(Z_m_product_factoryDTOAssembler z_m_product_factoryDTOAssembler) {
+        this.z_m_product_factoryDTOAssembler = z_m_product_factoryDTOAssembler;
+    }
+
+    public void setZ_m_product_factoryRepository(Z_m_product_factoryRepository z_m_product_factoryRepository) {
+        this.z_m_product_factoryRepository = z_m_product_factoryRepository;
+    }
 
     @Override
     public Z_m_factoryDTO toDTO(Z_m_factory domainObject) {
@@ -27,6 +41,7 @@ public class Z_m_factoryDTOAssembler implements IObjectAssembler<Z_m_factory, Z_
                 .setUpdated(domainObject.getUpdated())
                 .setUpdatedby(domainObject.getUpdatedby())
                 .setZ_m_factory_id(domainObject.getZ_m_factory_id())
+                .setZ_m_product_factory(domainObject.getZ_m_product_factory())
                 .createZ_m_factoryDTO();
     }
 
@@ -43,10 +58,11 @@ public class Z_m_factoryDTOAssembler implements IObjectAssembler<Z_m_factory, Z_
                 .setUpdated(dtoObject.getUpdated())
                 .setUpdatedby(dtoObject.getUpdatedby())
                 .setZ_m_factory_id(dtoObject.getZ_m_factory_id())
+                .setZ_m_product_factory(dtoObject.getZ_m_product_factory())
                 .createZ_m_factory();
     }
 
-    public List<Z_m_factory> toDomain(List<Z_m_factoryDTO> arg0) {
+    public List<Z_m_factory> toDomains(List<Z_m_factoryDTO> arg0) {
         List<Z_m_factory> res = new ArrayList<>();
         for (Z_m_factoryDTO t : arg0) {
             res.add(new Z_m_factoryDTOAssembler().toDomain(t));
@@ -54,10 +70,12 @@ public class Z_m_factoryDTOAssembler implements IObjectAssembler<Z_m_factory, Z_
         return res;
     }
 
-    public List<Z_m_factoryDTO> toDTO(List<Z_m_factory> arg0) {
+    public List<Z_m_factoryDTO> toDTOs(List<Z_m_factory> arg0) {
         List<Z_m_factoryDTO> res = new ArrayList<>();
-        for (Z_m_factory t : arg0) {
-            res.add(this.toDTO(t));
+        if (arg0 != null) {
+            for (Z_m_factory t : arg0) {
+                res.add(this.toDTO(t));
+            }
         }
         return res;
     }

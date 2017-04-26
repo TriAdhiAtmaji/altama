@@ -1,6 +1,7 @@
 package com.altama.forecast.domain.z_m_product_factory;
 
 import com.altama.forecast.domain.shared.EntityObject;
+import com.altama.forecast.domain.z_m_factory.Z_m_factory;
 import java.math.BigDecimal;
 import java.util.Objects;
 
@@ -14,15 +15,17 @@ public class Z_m_product_factory implements EntityObject<Z_m_product_factory> {
     private BigDecimal m_product_id;
     private BigDecimal z_m_factory_id;
     private String iscurrentvendor;
+    private Z_m_factory z_m_factory;
 
     public Z_m_product_factory() {
     }
 
-    public Z_m_product_factory(BigDecimal z_m_product_factory_id, BigDecimal m_product_id, BigDecimal z_m_factory_id, String iscurrentvendor) {
+    public Z_m_product_factory(BigDecimal z_m_product_factory_id, BigDecimal m_product_id, BigDecimal z_m_factory_id, String iscurrentvendor, Z_m_factory z_m_factory) {
         this.z_m_product_factory_id = z_m_product_factory_id;
         this.m_product_id = m_product_id;
         this.z_m_factory_id = z_m_factory_id;
         this.iscurrentvendor = iscurrentvendor;
+        this.z_m_factory = z_m_factory;
     }
 
     public void assignNewZ_m_product_factory(Z_m_product_factory z_m_product_factory) {
@@ -30,6 +33,14 @@ public class Z_m_product_factory implements EntityObject<Z_m_product_factory> {
         this.m_product_id = z_m_product_factory.m_product_id;
         this.z_m_factory_id = z_m_product_factory.z_m_factory_id;
         this.iscurrentvendor = z_m_product_factory.iscurrentvendor;
+    }
+
+    public Z_m_factory getZ_m_factory() {
+        return z_m_factory;
+    }
+
+    public void setZ_m_factory(Z_m_factory z_m_factory) {
+        this.z_m_factory = z_m_factory;
     }
 
     public BigDecimal getZ_m_product_factory_id() {
@@ -66,10 +77,11 @@ public class Z_m_product_factory implements EntityObject<Z_m_product_factory> {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 97 * hash + Objects.hashCode(this.m_product_id);
-        hash = 97 * hash + Objects.hashCode(this.z_m_factory_id);
-        hash = 97 * hash + Objects.hashCode(this.iscurrentvendor);
+        int hash = 7;
+        hash = 79 * hash + Objects.hashCode(this.m_product_id);
+        hash = 79 * hash + Objects.hashCode(this.z_m_factory_id);
+        hash = 79 * hash + Objects.hashCode(this.iscurrentvendor);
+        hash = 79 * hash + Objects.hashCode(this.z_m_factory);
         return hash;
     }
 

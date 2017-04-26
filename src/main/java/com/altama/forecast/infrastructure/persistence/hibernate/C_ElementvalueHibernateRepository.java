@@ -35,7 +35,7 @@ public class C_ElementvalueHibernateRepository extends HibernateRepository imple
     }
 
     @Override
-    public C_Elementvalue findByID(BigDecimal c_elementvalue_id) {
+    public C_Elementvalue findByID(long c_elementvalue_id) {
         return (C_Elementvalue) getSession()
                 .createQuery("from com.altama.forecast.domain.c_elementvalue.C_Elementvalue where c_elementvalue_id = :tid")
                 .setParameter("tid", c_elementvalue_id)
@@ -45,16 +45,14 @@ public class C_ElementvalueHibernateRepository extends HibernateRepository imple
     @Override
     public List<C_Elementvalue> findAll() {
         Criteria criteria = getSession().createCriteria(C_Elementvalue.class, "elementvalueAlias");
-        criteria.createCriteria("elementvalueAlias.ad_treenodeu1", "join");
+//        criteria.createCriteria("elementvalueAlias.ad_treenodeu1", "join");
         return (List<C_Elementvalue>) criteria.list();
 
-//        Criteria criteria = getSession().createCriteria(C_Elementvalue.class);
-//        return (List<C_Elementvalue>) criteria.list();
     }
 //    @Override
 //    public List<C_Elementvalue> findAll() {
 //        Query query = getSession().createQuery("from com.altama.forecast.domain.c_elementvalue.C_Elementvalue as elementvalue join elementvalue.ad_treenodeu1");
-//        return query.list();
+//        return (List<C_Elementvalue>) query.list();
 //    }
 
     @Override

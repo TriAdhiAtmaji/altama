@@ -1,17 +1,17 @@
 package com.altama.forecast.viewModel;
 
-import com.altama.forecast.application.Ad_treenodeu1Service;
 import com.altama.forecast.application.C_ElementvalueService;
 import com.altama.forecast.application.C_bpartnerService;
 import com.altama.forecast.application.M_productService;
+import com.altama.forecast.application.Z_m_factoryService;
 import com.altama.forecast.common.zul.PageNavigation;
 import com.altama.forecast.domain.m_product.IsDiscontinue;
-
 import com.altama.forecast.domain.m_product.Name;
-import com.altama.forecast.interfaces.web.facade.dto.ad_treenodeu1.Ad_treenodeu1DTO;
+import com.altama.forecast.interfaces.web.facade.dto.c_bpartner.C_bpartnerDTO;
 import com.altama.forecast.interfaces.web.facade.dto.c_elementvalue.C_ElementvalueDTO;
 import com.altama.forecast.interfaces.web.facade.dto.m_productDTO.M_productDTO;
 import com.altama.forecast.interfaces.web.facade.dto.m_productDTO.M_productDTOBuilder;
+import com.altama.forecast.interfaces.web.facade.dto.z_m_factory.Z_m_factoryDTO;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -43,30 +43,30 @@ public class ProductVM {
     @WireVariable
     C_bpartnerService c_bpartnerService;
 
+    @WireVariable
+    Z_m_factoryService z_m_factoryService;
+
     private M_productDTO m_productDTO = new M_productDTO();
     private List<M_productDTO> m_productDTOs = new ArrayList<>();
 
-    private String nama;
+    private C_ElementvalueDTO c_ElementvalueDTO = new C_ElementvalueDTO();
+    private List<C_ElementvalueDTO> c_ElementvalueDTOs = new ArrayList<>();
 
+    // Selected ComboBox
+    private String nama;
     private Name nameSelected;
     private IsDiscontinue continueSelect;
     private C_ElementvalueDTO brandSelected;
-    private Ad_treenodeu1DTO treeselect;
-
-    private ListModelList<IsDiscontinue> listDiscontinue = new ListModelList<IsDiscontinue>();
-
-    private C_ElementvalueDTO c_ElementvalueDTO = new C_ElementvalueDTO();
-    private List<C_ElementvalueDTO> c_ElementvalueDTOs = new ArrayList<>();
-    List<C_ElementvalueDTO> listC_Elementvalues = new ArrayList<C_ElementvalueDTO>();
-
-    private Ad_treenodeu1DTO ad_treenodeu1DTO = new Ad_treenodeu1DTO();
-    List<Ad_treenodeu1DTO> listAdtree = new ArrayList<Ad_treenodeu1DTO>();
-
-    private String suplier;
-    private String factory;
+    private C_bpartnerDTO suplier;
+    private Z_m_factoryDTO factory;
 
     //        combobox
-    //    Setting List
+    private ListModelList<IsDiscontinue> listDiscontinue = new ListModelList<IsDiscontinue>();
+    private List<C_ElementvalueDTO> listC_Elementvalues = new ArrayList<C_ElementvalueDTO>();
+    private List<C_bpartnerDTO> listBpartner = new ArrayList<C_bpartnerDTO>();
+    private List<Z_m_factoryDTO> listFactory = new ArrayList<Z_m_factoryDTO>();
+
+    //    Setting page navigate
     private PageNavigation previous;
     private boolean checked;
     private int pageSize = 5;
@@ -85,14 +85,11 @@ public class ProductVM {
     }
 
     private void initData() {
-//        listName.add(n1);
-//        listName.add(n2);
-//        listC_Elementvalues.add(c1);
-//        c_ElementvalueDTOs = c_ElementvalueService.findAll();
 
-//        listAdtree = ad_treenodeu1Service.findAll();
+        listBpartner = c_bpartnerService.findAll();
         listC_Elementvalues = c_ElementvalueService.findAll();
         m_productDTOs = m_productService.findAll();
+        listFactory = z_m_factoryService.findAll();
 
     }
 
@@ -115,7 +112,7 @@ public class ProductVM {
         params.put("nama", nama);
 
 //        System.out.print("1 " + nameSelected.getId().toString() + " ");
-        System.out.print("2 " + brandSelected.getBrand() + " ");
+        System.out.print("2 " + brandSelected.getBrand() + " " + brandSelected.getC_elementvalue_id());
 
         System.out.print("3 " + continueSelect + " ");
 
@@ -278,44 +275,36 @@ public class ProductVM {
         this.continueSelect = continueSelect;
     }
 
-    public String getSuplier() {
+    public C_bpartnerDTO getSuplier() {
         return suplier;
     }
 
-    public void setSuplier(String suplier) {
+    public void setSuplier(C_bpartnerDTO suplier) {
         this.suplier = suplier;
     }
 
-    public String getFactory() {
+    public List<C_bpartnerDTO> getListBpartner() {
+        return listBpartner;
+    }
+
+    public void setListBpartner(List<C_bpartnerDTO> listBpartner) {
+        this.listBpartner = listBpartner;
+    }
+
+    public Z_m_factoryDTO getFactory() {
         return factory;
     }
 
-    public void setFactory(String factory) {
+    public void setFactory(Z_m_factoryDTO factory) {
         this.factory = factory;
     }
 
-    public Ad_treenodeu1DTO getTreeselect() {
-        return treeselect;
+    public List<Z_m_factoryDTO> getListFactory() {
+        return listFactory;
     }
 
-    public void setTreeselect(Ad_treenodeu1DTO treeselect) {
-        this.treeselect = treeselect;
-    }
-
-    public Ad_treenodeu1DTO getAd_treenodeu1DTO() {
-        return ad_treenodeu1DTO;
-    }
-
-    public void setAd_treenodeu1DTO(Ad_treenodeu1DTO ad_treenodeu1DTO) {
-        this.ad_treenodeu1DTO = ad_treenodeu1DTO;
-    }
-
-    public List<Ad_treenodeu1DTO> getListAdtree() {
-        return listAdtree;
-    }
-
-    public void setListAdtree(List<Ad_treenodeu1DTO> listAdtree) {
-        this.listAdtree = listAdtree;
+    public void setListFactory(List<Z_m_factoryDTO> listFactory) {
+        this.listFactory = listFactory;
     }
 
 }

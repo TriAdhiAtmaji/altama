@@ -68,7 +68,7 @@ public class C_bpartnerServiceImpl implements C_bpartnerService {
     @Override
     public List<C_bpartnerDTO> findAll() {
         Validate.notNull(c_bpartnerRepository);
-        return (List<C_bpartnerDTO>) c_bpartnerDTOAssembler.toDTO((List<C_bpartner>) c_bpartnerRepository.findAll());
+        return (List<C_bpartnerDTO>) c_bpartnerDTOAssembler.toDTOs((List<C_bpartner>) c_bpartnerRepository.findAll());
     }
 
     @Override
@@ -76,7 +76,7 @@ public class C_bpartnerServiceImpl implements C_bpartnerService {
         Validate.notNull(c_bpartnerRepository);
         List<C_bpartner> listC_Bpartner = c_bpartnerRepository.findByParams(map);
         if (listC_Bpartner != null) {
-            return (List<C_bpartnerDTO>) c_bpartnerDTOAssembler.toDTO(listC_Bpartner);
+            return (List<C_bpartnerDTO>) c_bpartnerDTOAssembler.toDTOs(listC_Bpartner);
         }
         return null;
     }

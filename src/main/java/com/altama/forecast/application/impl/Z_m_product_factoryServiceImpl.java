@@ -9,6 +9,7 @@ import com.altama.forecast.interfaces.web.facade.dto.z_m_product_factory.Z_m_pro
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import org.apache.commons.lang.Validate;
 
 /**
@@ -73,19 +74,9 @@ public class Z_m_product_factoryServiceImpl implements Z_m_product_factoryServic
     }
 
     @Override
-    public List<Z_m_product_factoryDTO> findAll() {
+    public Set<Z_m_product_factoryDTO> findAll() {
         Validate.notNull(z_m_product_factoryRepository);
-        return (List<Z_m_product_factoryDTO>) z_m_product_factoryDTOAssembler.toDTO((List<Z_m_product_factory>) z_m_product_factoryRepository.findAll());
-    }
-
-    @Override
-    public List<Z_m_product_factoryDTO> findByParams(Map map) {
-        Validate.notNull(z_m_product_factoryRepository);
-        List<Z_m_product_factory> listZMFactory = z_m_product_factoryRepository.findByParams(map);
-        if (listZMFactory != null) {
-            return (List<Z_m_product_factoryDTO>) z_m_product_factoryDTOAssembler.toDTO(listZMFactory);
-        }
-        return null;
+        return (Set<Z_m_product_factoryDTO>) z_m_product_factoryDTOAssembler.toDTOs((Set<Z_m_product_factory>) z_m_product_factoryRepository.findAll());
     }
 
 }

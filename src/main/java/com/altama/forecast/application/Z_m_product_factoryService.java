@@ -4,6 +4,7 @@ import com.altama.forecast.interfaces.web.facade.dto.z_m_product_factory.Z_m_pro
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  *
@@ -21,7 +22,5 @@ public interface Z_m_product_factoryService {
 
     Z_m_product_factoryDTO findByID(BigDecimal z_m_product_factory_id);
 
-    List<Z_m_product_factoryDTO> findAll();
-
-    List<Z_m_product_factoryDTO> findByParams(Map map);
+    Set<Z_m_product_factoryDTO> findAll();
 }

@@ -18,8 +18,12 @@
             
         <property column="description" name="description" not-null="false"/>
         
-        <one-to-one name="ad_treenodeu1" class="com.altama.forecast.domain.ad_treenodeu1.Ad_treenodeu1"/>
-        
+        <!--        <one-to-one name="ad_treenodeu1" class="com.altama.forecast.domain.ad_treenodeu1.Ad_treenodeu1" />-->
+        <!--        <many-to-one name="ad_treenodeu1" class="com.altama.forecast.domain.ad_treenodeu1.Ad_treenodeu1" column="c_elementvalue_id" unique="true" not-null="true"/>-->
+        <join table="ad_treenodeu1" >
+            <key column="node_id"/>
+            <many-to-one name="ad_treenodeu1"  not-null="true" unique="true"/>
+        </join>
     </class>
     
 </hibernate-mapping>

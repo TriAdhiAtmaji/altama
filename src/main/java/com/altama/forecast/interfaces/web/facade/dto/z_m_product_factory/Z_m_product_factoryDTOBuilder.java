@@ -5,6 +5,7 @@
  */
 package com.altama.forecast.interfaces.web.facade.dto.z_m_product_factory;
 
+import com.altama.forecast.domain.z_m_factory.Z_m_factory;
 import java.math.BigDecimal;
 
 public class Z_m_product_factoryDTOBuilder {
@@ -13,6 +14,7 @@ public class Z_m_product_factoryDTOBuilder {
     private BigDecimal m_product_id;
     private BigDecimal z_m_factory_id;
     private String iscurrentvendor;
+    private Z_m_factory z_m_factory;
 
     public Z_m_product_factoryDTOBuilder() {
     }
@@ -37,8 +39,13 @@ public class Z_m_product_factoryDTOBuilder {
         return this;
     }
 
+    public Z_m_product_factoryDTOBuilder setZ_m_factory(Z_m_factory z_m_factory) {
+        this.z_m_factory = z_m_factory;
+        return this;
+    }
+
     public Z_m_product_factoryDTO createZ_m_product_factoryDTO() {
-        return new Z_m_product_factoryDTO(z_m_product_factory_id, m_product_id, z_m_factory_id, iscurrentvendor);
+        return new Z_m_product_factoryDTO(z_m_product_factory_id, m_product_id, z_m_factory_id, iscurrentvendor, z_m_factory);
     }
 
 }

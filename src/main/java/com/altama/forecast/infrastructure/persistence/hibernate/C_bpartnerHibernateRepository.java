@@ -1,11 +1,14 @@
 package com.altama.forecast.infrastructure.persistence.hibernate;
 
+import com.altama.forecast.application.util.StringUtil;
 import com.altama.forecast.domain.c_bpartner.C_bpartner;
 import com.altama.forecast.domain.c_bpartner.C_bpartnerRepository;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
+import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -39,12 +42,19 @@ public class C_bpartnerHibernateRepository extends HibernateRepository implement
 
     @Override
     public List<C_bpartner> findAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Criteria criteria = getSession().createCriteria(C_bpartner.class);
+        criteria.add(Restrictions.eq("isvendor", "Y"));
+        return criteria.list();
     }
 
     @Override
     public List<C_bpartner> findByParams(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Criteria criteria = getSession().createCriteria(C_bpartner.class);
+
+        if (StringUtil.hasValue(map.get("name"))) {
+            criteria.add(Restrictions.eq("name", map.get("name")));
+        }
+        return criteria.list();
     }
 
 }

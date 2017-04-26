@@ -2,7 +2,6 @@ package com.altama.forecast.interfaces.web.facade.dto.c_bpartner;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Date;
 
 /**
  *
@@ -14,8 +13,8 @@ public class C_bpartnerDTO implements Serializable {
     private BigDecimal ad_client_id;
     private BigDecimal ad_org_id;
     private String value;
-    private String name;
-    private String name2;
+    private String Suplier;
+    private String Suplier2;
     private String description;
     private BigDecimal c_bp_group_id;
     private String isvendor;
@@ -36,13 +35,13 @@ public class C_bpartnerDTO implements Serializable {
     public C_bpartnerDTO() {
     }
 
-    public C_bpartnerDTO(BigDecimal c_bpartner_id, BigDecimal ad_client_id, BigDecimal ad_org_id, String value, String name, String name2, String description, BigDecimal c_bp_group_id, String isvendor, BigDecimal c_invoiceschedule_id, BigDecimal c_paymentterm_id, BigDecimal m_pricelist_id, BigDecimal m_discountschema_id, BigDecimal c_dunning_id, BigDecimal po_pricelist_id, BigDecimal po_discountschema_id, BigDecimal po_paymentterm_id, BigDecimal documentcopies, BigDecimal c_greeting_id, BigDecimal salesrep_id, String sendemail, BigDecimal bpartner_parent_id) {
+    public C_bpartnerDTO(BigDecimal c_bpartner_id, BigDecimal ad_client_id, BigDecimal ad_org_id, String value, String Suplier, String Suplier2, String description, BigDecimal c_bp_group_id, String isvendor, BigDecimal c_invoiceschedule_id, BigDecimal c_paymentterm_id, BigDecimal m_pricelist_id, BigDecimal m_discountschema_id, BigDecimal c_dunning_id, BigDecimal po_pricelist_id, BigDecimal po_discountschema_id, BigDecimal po_paymentterm_id, BigDecimal documentcopies, BigDecimal c_greeting_id, BigDecimal salesrep_id, String sendemail, BigDecimal bpartner_parent_id) {
         this.c_bpartner_id = c_bpartner_id;
         this.ad_client_id = ad_client_id;
         this.ad_org_id = ad_org_id;
         this.value = value;
-        this.name = name;
-        this.name2 = name2;
+        this.Suplier = Suplier;
+        this.Suplier2 = Suplier2;
         this.description = description;
         this.c_bp_group_id = c_bp_group_id;
         this.isvendor = isvendor;
@@ -93,20 +92,20 @@ public class C_bpartnerDTO implements Serializable {
         this.value = value;
     }
 
-    public String getName() {
-        return name;
+    public String getSuplier() {
+        return Suplier;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSuplier(String Suplier) {
+        this.Suplier = Suplier;
     }
 
-    public String getName2() {
-        return name2;
+    public String getSuplier2() {
+        return Suplier2;
     }
 
-    public void setName2(String name2) {
-        this.name2 = name2;
+    public void setSuplier2(String Suplier2) {
+        this.Suplier2 = Suplier2;
     }
 
     public String getDescription() {
@@ -239,7 +238,7 @@ public class C_bpartnerDTO implements Serializable {
 
     @Override
     public String toString() {
-        return "C_bpartnerDTO{" + "c_bpartner_id=" + c_bpartner_id + ", ad_client_id=" + ad_client_id + ", ad_org_id=" + ad_org_id + ", value=" + value + ", name=" + name + ", name2=" + name2 + ", description=" + description + ", c_bp_group_id=" + c_bp_group_id + ", isvendor=" + isvendor + ", c_invoiceschedule_id=" + c_invoiceschedule_id + ", c_paymentterm_id=" + c_paymentterm_id + ", m_pricelist_id=" + m_pricelist_id + ", m_discountschema_id=" + m_discountschema_id + ", c_dunning_id=" + c_dunning_id + ", po_pricelist_id=" + po_pricelist_id + ", po_discountschema_id=" + po_discountschema_id + ", po_paymentterm_id=" + po_paymentterm_id + ", documentcopies=" + documentcopies + ", c_greeting_id=" + c_greeting_id + ", salesrep_id=" + salesrep_id + ", sendemail=" + sendemail + ", bpartner_parent_id=" + bpartner_parent_id + '}';
+        return "C_bpartnerDTO{" + "c_bpartner_id=" + c_bpartner_id + ", ad_client_id=" + ad_client_id + ", ad_org_id=" + ad_org_id + ", value=" + value + ", Suplier=" + Suplier + ", Suplier2=" + Suplier2 + ", description=" + description + ", c_bp_group_id=" + c_bp_group_id + ", isvendor=" + isvendor + ", c_invoiceschedule_id=" + c_invoiceschedule_id + ", c_paymentterm_id=" + c_paymentterm_id + ", m_pricelist_id=" + m_pricelist_id + ", m_discountschema_id=" + m_discountschema_id + ", c_dunning_id=" + c_dunning_id + ", po_pricelist_id=" + po_pricelist_id + ", po_discountschema_id=" + po_discountschema_id + ", po_paymentterm_id=" + po_paymentterm_id + ", documentcopies=" + documentcopies + ", c_greeting_id=" + c_greeting_id + ", salesrep_id=" + salesrep_id + ", sendemail=" + sendemail + ", bpartner_parent_id=" + bpartner_parent_id + '}';
     }
 
 }

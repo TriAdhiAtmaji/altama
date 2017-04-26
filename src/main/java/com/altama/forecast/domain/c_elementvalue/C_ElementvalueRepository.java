@@ -1,6 +1,5 @@
 package com.altama.forecast.domain.c_elementvalue;
 
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
@@ -14,7 +13,7 @@ public interface C_ElementvalueRepository {
 
     void deleteData(C_Elementvalue c_Elementvalue);
 
-    C_Elementvalue findByID(BigDecimal c_elementvalue_id);
+    C_Elementvalue findByID(long c_elementvalue_id);
 
     List<C_Elementvalue> findAll();
 

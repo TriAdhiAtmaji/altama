@@ -5,6 +5,8 @@
     
         <id column="z_m_factory_id" name="z_m_factory_id"  type="java.math.BigDecimal">
         </id>
+        
+        <!--        <many-to-one name="z_m_product_factory" class="com.altama.forecast.domain.z_m_product_factory.Z_m_product_factory"/>-->
     
         <property column="ad_client_id" name="ad_client_id" not-null="false"/>
         <property column="ad_org_id" name="ad_org_id" not-null="false"/>
@@ -15,6 +17,20 @@
         <property column="updatedby" name="updatedby" not-null="false"/>
         <property column="c_bpartner_id" name="c_bpartner_id" not-null="false"/>
         <property column="name" name="name" not-null="false"/>
+        
+        <!--        <set cascade="all" lazy="false" name="z_m_product_factory" table="z_m_product_factory">
+            <key column="z_m_factory_id"/>
+            <one-to-many class="com.altama.forecast.domain.z_m_product_factory.Z_m_product_factory"/>            
+        </set>>-->
+        
+        <set name="z_m_product_factory" table="z_m_product_factory"
+             inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="z_m_factory_id" not-null="true" />
+            </key>
+            <one-to-many class="com.altama.forecast.domain.z_m_product_factory.Z_m_product_factory" />
+        </set>
+    
     
     </class>
 </hibernate-mapping>

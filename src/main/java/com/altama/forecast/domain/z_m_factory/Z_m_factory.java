@@ -1,9 +1,11 @@
 package com.altama.forecast.domain.z_m_factory;
 
 import com.altama.forecast.domain.shared.EntityObject;
+import com.altama.forecast.domain.z_m_product_factory.Z_m_product_factory;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  *
@@ -21,11 +23,12 @@ public class Z_m_factory implements EntityObject<Z_m_factory> {
     private BigDecimal updatedby;
     private BigDecimal c_bpartner_id;
     private String name;
+    private Set<Z_m_product_factory> z_m_product_factory;
 
     public Z_m_factory() {
     }
 
-    public Z_m_factory(BigDecimal z_m_factory_id, BigDecimal ad_client_id, BigDecimal ad_org_id, String isactive, Date created, BigDecimal createdby, Date updated, BigDecimal updatedby, BigDecimal c_bpartner_id, String name) {
+    public Z_m_factory(BigDecimal z_m_factory_id, BigDecimal ad_client_id, BigDecimal ad_org_id, String isactive, Date created, BigDecimal createdby, Date updated, BigDecimal updatedby, BigDecimal c_bpartner_id, String name, Set<Z_m_product_factory> z_m_product_factory) {
         this.z_m_factory_id = z_m_factory_id;
         this.ad_client_id = ad_client_id;
         this.ad_org_id = ad_org_id;
@@ -36,6 +39,7 @@ public class Z_m_factory implements EntityObject<Z_m_factory> {
         this.updatedby = updatedby;
         this.c_bpartner_id = c_bpartner_id;
         this.name = name;
+        this.z_m_product_factory = z_m_product_factory;
     }
 
     public void assignNewZ_m_factory(Z_m_factory z_m_factory) {
@@ -49,6 +53,14 @@ public class Z_m_factory implements EntityObject<Z_m_factory> {
         this.updatedby = z_m_factory.updatedby;
         this.c_bpartner_id = z_m_factory.c_bpartner_id;
         this.name = z_m_factory.name;
+    }
+
+    public Set<Z_m_product_factory> getZ_m_product_factory() {
+        return z_m_product_factory;
+    }
+
+    public void setZ_m_product_factory(Set<Z_m_product_factory> z_m_product_factory) {
+        this.z_m_product_factory = z_m_product_factory;
     }
 
     public BigDecimal getZ_m_factory_id() {
@@ -134,15 +146,16 @@ public class Z_m_factory implements EntityObject<Z_m_factory> {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 37 * hash + Objects.hashCode(this.ad_client_id);
-        hash = 37 * hash + Objects.hashCode(this.ad_org_id);
-        hash = 37 * hash + Objects.hashCode(this.isactive);
-        hash = 37 * hash + Objects.hashCode(this.created);
-        hash = 37 * hash + Objects.hashCode(this.createdby);
-        hash = 37 * hash + Objects.hashCode(this.updated);
-        hash = 37 * hash + Objects.hashCode(this.updatedby);
-        hash = 37 * hash + Objects.hashCode(this.c_bpartner_id);
-        hash = 37 * hash + Objects.hashCode(this.name);
+        hash = 41 * hash + Objects.hashCode(this.ad_client_id);
+        hash = 41 * hash + Objects.hashCode(this.ad_org_id);
+        hash = 41 * hash + Objects.hashCode(this.isactive);
+        hash = 41 * hash + Objects.hashCode(this.created);
+        hash = 41 * hash + Objects.hashCode(this.createdby);
+        hash = 41 * hash + Objects.hashCode(this.updated);
+        hash = 41 * hash + Objects.hashCode(this.updatedby);
+        hash = 41 * hash + Objects.hashCode(this.c_bpartner_id);
+        hash = 41 * hash + Objects.hashCode(this.name);
+        hash = 41 * hash + Objects.hashCode(this.z_m_product_factory);
         return hash;
     }
 

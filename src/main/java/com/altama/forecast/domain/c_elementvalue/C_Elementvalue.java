@@ -3,7 +3,6 @@ package com.altama.forecast.domain.c_elementvalue;
 import com.altama.forecast.domain.ad_treenodeu1.Ad_treenodeu1;
 import com.altama.forecast.domain.shared.EntityObject;
 import java.math.BigDecimal;
-import java.util.List;
 import java.util.Objects;
 
 /**
@@ -12,7 +11,7 @@ import java.util.Objects;
  */
 public class C_Elementvalue implements EntityObject<C_Elementvalue> {
 
-    private BigDecimal c_elementvalue_id;
+    private long c_elementvalue_id;
     private BigDecimal ad_client_id;
     private String value;
     private String brand;
@@ -22,7 +21,7 @@ public class C_Elementvalue implements EntityObject<C_Elementvalue> {
     public C_Elementvalue() {
     }
 
-    public C_Elementvalue(BigDecimal c_elementvalue_id, BigDecimal ad_client_id, String value, String brand, String description, Ad_treenodeu1 ad_treenodeu1) {
+    public C_Elementvalue(long c_elementvalue_id, BigDecimal ad_client_id, String value, String brand, String description, Ad_treenodeu1 ad_treenodeu1) {
         this.c_elementvalue_id = c_elementvalue_id;
         this.ad_client_id = ad_client_id;
         this.value = value;
@@ -48,11 +47,11 @@ public class C_Elementvalue implements EntityObject<C_Elementvalue> {
         this.ad_treenodeu1 = ad_treenodeu1;
     }
 
-    public BigDecimal getC_elementvalue_id() {
+    public long getC_elementvalue_id() {
         return c_elementvalue_id;
     }
 
-    public void setC_elementvalue_id(BigDecimal c_elementvalue_id) {
+    public void setC_elementvalue_id(long c_elementvalue_id) {
         this.c_elementvalue_id = c_elementvalue_id;
     }
 
@@ -114,10 +113,6 @@ public class C_Elementvalue implements EntityObject<C_Elementvalue> {
         return true;
     }
 
-//    @Override
-//    public boolean sameValueAs(C_Elementvalue other) {
-//        return this.equals(other);
-//    }
     @Override
     public boolean sameIdentityAs(C_Elementvalue other) {
         return this.equals(other);
