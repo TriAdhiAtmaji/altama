@@ -29,7 +29,7 @@
                         <!--                        <textbox value="@bind(vm.factory)" width="300px"/>-->
                         <combobox width="300px" model="@bind(vm.listFactory)" selectedItem="@bind(vm.factory)" placeholder="- Pilihan Menu -" readonly="true">
                             <template name="model" var="items">
-                                <comboitem label="@load(items.getName())" value="@load(items.getName())"/>
+                                <comboitem label="@load(items.getName())" value="@load(items.getZ_m_factory_id().toString())"/>
                             </template>
                         </combobox>		
                     </row> 
