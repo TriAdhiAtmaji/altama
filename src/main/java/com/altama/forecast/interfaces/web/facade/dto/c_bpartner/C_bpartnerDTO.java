@@ -13,11 +13,11 @@ public class C_bpartnerDTO implements Serializable {
     private BigDecimal ad_client_id;
     private BigDecimal ad_org_id;
     private String value;
-    private String Suplier;
-    private String Suplier2;
+    private String suplier;
+    private String suplier2;
     private String description;
     private BigDecimal c_bp_group_id;
-    private String isvendor;
+    private char isvendor;
     private BigDecimal c_invoiceschedule_id;
     private BigDecimal c_paymentterm_id;
     private BigDecimal m_pricelist_id;
@@ -35,13 +35,13 @@ public class C_bpartnerDTO implements Serializable {
     public C_bpartnerDTO() {
     }
 
-    public C_bpartnerDTO(BigDecimal c_bpartner_id, BigDecimal ad_client_id, BigDecimal ad_org_id, String value, String Suplier, String Suplier2, String description, BigDecimal c_bp_group_id, String isvendor, BigDecimal c_invoiceschedule_id, BigDecimal c_paymentterm_id, BigDecimal m_pricelist_id, BigDecimal m_discountschema_id, BigDecimal c_dunning_id, BigDecimal po_pricelist_id, BigDecimal po_discountschema_id, BigDecimal po_paymentterm_id, BigDecimal documentcopies, BigDecimal c_greeting_id, BigDecimal salesrep_id, String sendemail, BigDecimal bpartner_parent_id) {
+    public C_bpartnerDTO(BigDecimal c_bpartner_id, BigDecimal ad_client_id, BigDecimal ad_org_id, String value, String suplier, String suplier2, String description, BigDecimal c_bp_group_id, char isvendor, BigDecimal c_invoiceschedule_id, BigDecimal c_paymentterm_id, BigDecimal m_pricelist_id, BigDecimal m_discountschema_id, BigDecimal c_dunning_id, BigDecimal po_pricelist_id, BigDecimal po_discountschema_id, BigDecimal po_paymentterm_id, BigDecimal documentcopies, BigDecimal c_greeting_id, BigDecimal salesrep_id, String sendemail, BigDecimal bpartner_parent_id) {
         this.c_bpartner_id = c_bpartner_id;
         this.ad_client_id = ad_client_id;
         this.ad_org_id = ad_org_id;
         this.value = value;
-        this.Suplier = Suplier;
-        this.Suplier2 = Suplier2;
+        this.suplier = suplier;
+        this.suplier2 = suplier2;
         this.description = description;
         this.c_bp_group_id = c_bp_group_id;
         this.isvendor = isvendor;
@@ -93,19 +93,19 @@ public class C_bpartnerDTO implements Serializable {
     }
 
     public String getSuplier() {
-        return Suplier;
+        return suplier;
     }
 
-    public void setSuplier(String Suplier) {
-        this.Suplier = Suplier;
+    public void setSuplier(String suplier) {
+        this.suplier = suplier;
     }
 
     public String getSuplier2() {
-        return Suplier2;
+        return suplier2;
     }
 
-    public void setSuplier2(String Suplier2) {
-        this.Suplier2 = Suplier2;
+    public void setSuplier2(String suplier2) {
+        this.suplier2 = suplier2;
     }
 
     public String getDescription() {
@@ -124,11 +124,11 @@ public class C_bpartnerDTO implements Serializable {
         this.c_bp_group_id = c_bp_group_id;
     }
 
-    public String getIsvendor() {
+    public char getIsvendor() {
         return isvendor;
     }
 
-    public void setIsvendor(String isvendor) {
+    public void setIsvendor(char isvendor) {
         this.isvendor = isvendor;
     }
 
@@ -238,7 +238,7 @@ public class C_bpartnerDTO implements Serializable {
 
     @Override
     public String toString() {
-        return "C_bpartnerDTO{" + "c_bpartner_id=" + c_bpartner_id + ", ad_client_id=" + ad_client_id + ", ad_org_id=" + ad_org_id + ", value=" + value + ", Suplier=" + Suplier + ", Suplier2=" + Suplier2 + ", description=" + description + ", c_bp_group_id=" + c_bp_group_id + ", isvendor=" + isvendor + ", c_invoiceschedule_id=" + c_invoiceschedule_id + ", c_paymentterm_id=" + c_paymentterm_id + ", m_pricelist_id=" + m_pricelist_id + ", m_discountschema_id=" + m_discountschema_id + ", c_dunning_id=" + c_dunning_id + ", po_pricelist_id=" + po_pricelist_id + ", po_discountschema_id=" + po_discountschema_id + ", po_paymentterm_id=" + po_paymentterm_id + ", documentcopies=" + documentcopies + ", c_greeting_id=" + c_greeting_id + ", salesrep_id=" + salesrep_id + ", sendemail=" + sendemail + ", bpartner_parent_id=" + bpartner_parent_id + '}';
+        return "C_bpartnerDTO{" + "c_bpartner_id=" + c_bpartner_id + ", ad_client_id=" + ad_client_id + ", ad_org_id=" + ad_org_id + ", value=" + value + ", suplier=" + suplier + ", suplier2=" + suplier2 + ", description=" + description + ", c_bp_group_id=" + c_bp_group_id + ", isvendor=" + isvendor + ", c_invoiceschedule_id=" + c_invoiceschedule_id + ", c_paymentterm_id=" + c_paymentterm_id + ", m_pricelist_id=" + m_pricelist_id + ", m_discountschema_id=" + m_discountschema_id + ", c_dunning_id=" + c_dunning_id + ", po_pricelist_id=" + po_pricelist_id + ", po_discountschema_id=" + po_discountschema_id + ", po_paymentterm_id=" + po_paymentterm_id + ", documentcopies=" + documentcopies + ", c_greeting_id=" + c_greeting_id + ", salesrep_id=" + salesrep_id + ", sendemail=" + sendemail + ", bpartner_parent_id=" + bpartner_parent_id + '}';
     }
 
 }

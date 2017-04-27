@@ -8,7 +8,6 @@ import com.altama.forecast.interfaces.web.facade.dto.assembler.z_m_product_facto
 import com.altama.forecast.interfaces.web.facade.dto.z_m_product_factory.Z_m_product_factoryDTO;
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import org.apache.commons.lang.Validate;
 
@@ -74,9 +73,9 @@ public class Z_m_product_factoryServiceImpl implements Z_m_product_factoryServic
     }
 
     @Override
-    public Set<Z_m_product_factoryDTO> findAll() {
+    public List<Z_m_product_factoryDTO> findAll() {
         Validate.notNull(z_m_product_factoryRepository);
-        return (Set<Z_m_product_factoryDTO>) z_m_product_factoryDTOAssembler.toDTOs((Set<Z_m_product_factory>) z_m_product_factoryRepository.findAll());
+        return (List<Z_m_product_factoryDTO>) z_m_product_factoryDTOAssembler.toDTOs((List<Z_m_product_factory>) z_m_product_factoryRepository.findAll());
     }
 
 }

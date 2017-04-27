@@ -49,6 +49,13 @@
         <property name="z_m_product_factoryDTOAssembler" ref="z_m_product_factoryDTOAssembler"/>
     </bean>
     
+    <bean id="m_pricelist_versionDTOAssembler" class="com.altama.forecast.interfaces.web.facade.dto.assembler.m_pricelist_version.M_pricelist_versionDTOAssembler">
+    </bean> 
+    <bean id="m_pricelist_versionService" class="com.altama.forecast.application.impl.M_pricelist_versionServiceImpl">
+        <property name="m_pricelist_versionRepository" ref="m_pricelist_versionRepository"/>
+        <property name="m_pricelist_versionDTOAssembler" ref="m_pricelist_versionDTOAssembler"/>
+    </bean>
+    
     <!--    <bean id="forecastDTOAssembler" class="com.altama.forecast.interfaces.web.facade.dto.assembler.forecast.ForecastDTOAssembler">
     </bean> 
     <bean id="forecastService" class="com.altama.forecast.application.impl.ForecastServiceImpl">

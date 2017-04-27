@@ -22,5 +22,5 @@ public interface Z_m_product_factoryService {
 
     Z_m_product_factoryDTO findByID(BigDecimal z_m_product_factory_id);
 
-    Set<Z_m_product_factoryDTO> findAll();
+    List<Z_m_product_factoryDTO> findAll();
 }

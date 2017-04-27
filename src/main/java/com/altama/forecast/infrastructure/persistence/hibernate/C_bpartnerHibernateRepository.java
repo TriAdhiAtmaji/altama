@@ -42,9 +42,12 @@ public class C_bpartnerHibernateRepository extends HibernateRepository implement
 
     @Override
     public List<C_bpartner> findAll() {
-        Criteria criteria = getSession().createCriteria(C_bpartner.class);
-        criteria.add(Restrictions.eq("isvendor", "Y"));
-        return criteria.list();
+        Query query = getSession().createQuery("FROM com.altama.forecast.domain.c_bpartner.C_bpartner WHERE isvendor = 'Y'");
+        return query.list();
+
+//        Criteria criteria = getSession().createCriteria(C_bpartner.class, "bPartner");
+//        criteria.add(Restrictions.eq("bPartner.isvendor", 'Y'));
+//        return criteria.list();
     }
 
     @Override

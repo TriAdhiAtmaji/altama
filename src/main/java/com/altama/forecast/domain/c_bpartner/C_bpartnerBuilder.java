@@ -13,11 +13,11 @@ public class C_bpartnerBuilder {
     private BigDecimal ad_client_id;
     private BigDecimal ad_org_id;
     private String value;
-    private String Suplier;
-    private String Suplier2;
+    private String suplier;
+    private String suplier2;
     private String description;
     private BigDecimal c_bp_group_id;
-    private String isvendor;
+    private char isvendor;
     private BigDecimal c_invoiceschedule_id;
     private BigDecimal c_paymentterm_id;
     private BigDecimal m_pricelist_id;
@@ -55,13 +55,13 @@ public class C_bpartnerBuilder {
         return this;
     }
 
-    public C_bpartnerBuilder setSuplier(String Suplier) {
-        this.Suplier = Suplier;
+    public C_bpartnerBuilder setSuplier(String suplier) {
+        this.suplier = suplier;
         return this;
     }
 
-    public C_bpartnerBuilder setSuplier2(String Suplier2) {
-        this.Suplier2 = Suplier2;
+    public C_bpartnerBuilder setSuplier2(String suplier2) {
+        this.suplier2 = suplier2;
         return this;
     }
 
@@ -75,7 +75,7 @@ public class C_bpartnerBuilder {
         return this;
     }
 
-    public C_bpartnerBuilder setIsvendor(String isvendor) {
+    public C_bpartnerBuilder setIsvendor(char isvendor) {
         this.isvendor = isvendor;
         return this;
     }
@@ -146,7 +146,7 @@ public class C_bpartnerBuilder {
     }
 
     public C_bpartner createC_bpartner() {
-        return new C_bpartner(c_bpartner_id, ad_client_id, ad_org_id, value, Suplier, Suplier2, description, c_bp_group_id, isvendor, c_invoiceschedule_id, c_paymentterm_id, m_pricelist_id, m_discountschema_id, c_dunning_id, po_pricelist_id, po_discountschema_id, po_paymentterm_id, documentcopies, c_greeting_id, salesrep_id, sendemail, bpartner_parent_id);
+        return new C_bpartner(c_bpartner_id, ad_client_id, ad_org_id, value, suplier, suplier2, description, c_bp_group_id, isvendor, c_invoiceschedule_id, c_paymentterm_id, m_pricelist_id, m_discountschema_id, c_dunning_id, po_pricelist_id, po_discountschema_id, po_paymentterm_id, documentcopies, c_greeting_id, salesrep_id, sendemail, bpartner_parent_id);
     }
 
 }

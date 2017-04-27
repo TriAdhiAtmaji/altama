@@ -42,8 +42,11 @@ public class M_pricelist_versionHibernateRepository extends HibernateRepository 
 
     @Override
     public List<M_pricelist_version> findAll() {
-        Criteria criteria = getSession().createCriteria(M_pricelist_version.class);
-        return (List<M_pricelist_version>) criteria.list();
+        Query query = getSession().createQuery("FROM com.altama.forecast.domain.m_pricelist_version.M_pricelist_version WHERE namePricelist LIKE 'US%'");
+        return (List<M_pricelist_version>) query.list();
+
+//        Criteria criteria = getSession().createCriteria(M_pricelist_version.class);
+//        return (List<M_pricelist_version>) criteria.list();
     }
 
     @Override

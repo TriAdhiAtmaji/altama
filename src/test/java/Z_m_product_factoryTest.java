@@ -2,7 +2,7 @@
 import com.altama.forecast.application.Z_m_product_factoryService;
 import com.altama.forecast.domain.z_m_product_factory.Z_m_product_factoryRepository;
 import com.altama.forecast.interfaces.web.facade.dto.z_m_product_factory.Z_m_product_factoryDTO;
-import java.util.Set;
+import java.util.List;
 import org.apache.commons.lang.Validate;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -45,7 +45,7 @@ public class Z_m_product_factoryTest {
 
         System.out.println("");
         System.out.println("Find ALL");
-        Set<Z_m_product_factoryDTO> listOrder = dataHistoryService.findAll();
+        List<Z_m_product_factoryDTO> listOrder = dataHistoryService.findAll();
         for (Z_m_product_factoryDTO tk : listOrder) {
             System.out.println("Order :" + tk.toString());
         }

@@ -2,13 +2,14 @@ package com.altama.forecast.viewModel;
 
 import com.altama.forecast.application.C_ElementvalueService;
 import com.altama.forecast.application.C_bpartnerService;
+import com.altama.forecast.application.M_pricelist_versionService;
 import com.altama.forecast.application.M_productService;
 import com.altama.forecast.application.Z_m_factoryService;
 import com.altama.forecast.common.zul.PageNavigation;
 import com.altama.forecast.domain.m_product.IsDiscontinue;
-import com.altama.forecast.domain.m_product.Name;
 import com.altama.forecast.interfaces.web.facade.dto.c_bpartner.C_bpartnerDTO;
 import com.altama.forecast.interfaces.web.facade.dto.c_elementvalue.C_ElementvalueDTO;
+import com.altama.forecast.interfaces.web.facade.dto.m_pricelist_versionDTO.M_pricelist_versionDTO;
 import com.altama.forecast.interfaces.web.facade.dto.m_productDTO.M_productDTO;
 import com.altama.forecast.interfaces.web.facade.dto.m_productDTO.M_productDTOBuilder;
 import com.altama.forecast.interfaces.web.facade.dto.z_m_factory.Z_m_factoryDTO;
@@ -46,6 +47,9 @@ public class ProductVM {
     @WireVariable
     Z_m_factoryService z_m_factoryService;
 
+    @WireVariable
+    M_pricelist_versionService m_pricelist_versionService;
+
     private M_productDTO m_productDTO = new M_productDTO();
     private List<M_productDTO> m_productDTOs = new ArrayList<>();
 
@@ -54,17 +58,18 @@ public class ProductVM {
 
     // Selected ComboBox
     private String nama;
-    private Name nameSelected;
     private IsDiscontinue continueSelect;
     private C_ElementvalueDTO brandSelected;
     private C_bpartnerDTO suplier;
     private Z_m_factoryDTO factory;
+    private M_pricelist_versionDTO priceVersion;
 
     //        combobox
     private ListModelList<IsDiscontinue> listDiscontinue = new ListModelList<IsDiscontinue>();
     private List<C_ElementvalueDTO> listC_Elementvalues = new ArrayList<C_ElementvalueDTO>();
     private List<C_bpartnerDTO> listBpartner = new ArrayList<C_bpartnerDTO>();
     private List<Z_m_factoryDTO> listFactory = new ArrayList<Z_m_factoryDTO>();
+    private List<M_pricelist_versionDTO> listPriceVersion = new ArrayList<M_pricelist_versionDTO>();
 
     //    Setting page navigate
     private PageNavigation previous;
@@ -86,10 +91,11 @@ public class ProductVM {
 
     private void initData() {
 
+        m_productDTOs = m_productService.findAll();
         listBpartner = c_bpartnerService.findAll();
         listC_Elementvalues = c_ElementvalueService.findAll();
-        m_productDTOs = m_productService.findAll();
         listFactory = z_m_factoryService.findAll();
+        listPriceVersion = m_pricelist_versionService.findAll();
 
     }
 
@@ -111,18 +117,20 @@ public class ProductVM {
         Map params = new HashMap();
         params.put("nama", nama);
 
-//        System.out.print("1 " + nameSelected.getId().toString() + " ");
-        System.out.print("2 " + brandSelected.getBrand() + " " + brandSelected.getC_elementvalue_id());
-
-        System.out.print("3 " + continueSelect + " ");
-
-        System.out.print("4 " + nama + " ");
-
-        System.out.print("5 " + suplier + " ");
-
-        System.out.print("6 " + factory + " ");
-
         m_productDTOs = m_productService.findByParams(params);
+
+//        System.out.print("1 " + nameSelected.getId().toString() + " ");
+//        System.out.print("2 " + brandSelected.getBrand() + " " + brandSelected.getC_elementvalue_id() + " \n");
+//
+//        System.out.print("3 " + continueSelect + " \n");
+//
+//        System.out.print("4 " + nama + " \n");
+//
+//        System.out.print("5 " + suplier.getSuplier() + " " + suplier.getC_bpartner_id() + " \n");
+//
+//        System.out.print("6 " + priceVersion.getNamePricelist() + " " + priceVersion.getM_pricelist_version_id() + " \n");
+//
+//        System.out.print("7 " + factory.getName() + " " + factory.getZ_m_factory_id() + " \n");
     }
 
     public M_productDTO getM_productDTO() {
@@ -205,28 +213,6 @@ public class ProductVM {
         this.m_productService = m_productService;
     }
 
-//    public Name getN() {
-//        return n;
-//    }
-//
-//    public void setN(Name n) {
-//        this.n = n;
-//    }
-//    public List<Name> getListName() {
-//        return listName;
-//    }
-//
-//    public void setListName(List<Name> listName) {
-//        this.listName = listName;
-//    }
-    public Name getNameSelected() {
-        return nameSelected;
-    }
-
-    public void setNameSelected(Name nameSelected) {
-        this.nameSelected = nameSelected;
-    }
-
     public C_ElementvalueDTO getBrandSelected() {
         return brandSelected;
     }
@@ -305,6 +291,22 @@ public class ProductVM {
 
     public void setListFactory(List<Z_m_factoryDTO> listFactory) {
         this.listFactory = listFactory;
+    }
+
+    public M_pricelist_versionDTO getPriceVersion() {
+        return priceVersion;
+    }
+
+    public void setPriceVersion(M_pricelist_versionDTO priceVersion) {
+        this.priceVersion = priceVersion;
+    }
+
+    public List<M_pricelist_versionDTO> getListPriceVersion() {
+        return listPriceVersion;
+    }
+
+    public void setListPriceVersion(List<M_pricelist_versionDTO> listPriceVersion) {
+        this.listPriceVersion = listPriceVersion;
     }
 
 }

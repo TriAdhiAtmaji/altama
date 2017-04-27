@@ -5,6 +5,7 @@ import com.altama.forecast.interfaces.web.facade.dto.z_m_product_factory.Z_m_pro
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -23,12 +24,12 @@ public class Z_m_factoryDTO implements Serializable {
     private BigDecimal updatedby;
     private BigDecimal c_bpartner_id;
     private String name;
-    private Set<Z_m_product_factory> z_m_product_factory;
+    private List<Z_m_product_factory> z_m_product_factory;
 
     public Z_m_factoryDTO() {
     }
 
-    public Z_m_factoryDTO(BigDecimal z_m_factory_id, BigDecimal ad_client_id, BigDecimal ad_org_id, String isactive, Date created, BigDecimal createdby, Date updated, BigDecimal updatedby, BigDecimal c_bpartner_id, String name, Set<Z_m_product_factory> z_m_product_factory) {
+    public Z_m_factoryDTO(BigDecimal z_m_factory_id, BigDecimal ad_client_id, BigDecimal ad_org_id, String isactive, Date created, BigDecimal createdby, Date updated, BigDecimal updatedby, BigDecimal c_bpartner_id, String name, List<Z_m_product_factory> z_m_product_factory) {
         this.z_m_factory_id = z_m_factory_id;
         this.ad_client_id = ad_client_id;
         this.ad_org_id = ad_org_id;
@@ -122,11 +123,11 @@ public class Z_m_factoryDTO implements Serializable {
         this.name = name;
     }
 
-    public Set<Z_m_product_factory> getZ_m_product_factory() {
+    public List<Z_m_product_factory> getZ_m_product_factory() {
         return z_m_product_factory;
     }
 
-    public void setZ_m_product_factory(Set<Z_m_product_factory> z_m_product_factory) {
+    public void setZ_m_product_factory(List<Z_m_product_factory> z_m_product_factory) {
         this.z_m_product_factory = z_m_product_factory;
     }
 

@@ -30,7 +30,7 @@ public class M_pricelist_versionDTOAssembler implements IObjectAssembler<M_price
                 .createM_pricelist_version();
     }
 
-    public List<M_pricelist_version> toDomain(List<M_pricelist_versionDTO> arg0) {
+    public List<M_pricelist_version> toDomains(List<M_pricelist_versionDTO> arg0) {
         List<M_pricelist_version> res = new ArrayList<>();
         for (M_pricelist_versionDTO t : arg0) {
             res.add(new M_pricelist_versionDTOAssembler().toDomain(t));
@@ -38,7 +38,7 @@ public class M_pricelist_versionDTOAssembler implements IObjectAssembler<M_price
         return res;
     }
 
-    public List<M_pricelist_versionDTO> toDTO(List<M_pricelist_version> arg0) {
+    public List<M_pricelist_versionDTO> toDTOs(List<M_pricelist_version> arg0) {
         List<M_pricelist_versionDTO> res = new ArrayList<>();
         for (M_pricelist_version t : arg0) {
             res.add(this.toDTO(t));

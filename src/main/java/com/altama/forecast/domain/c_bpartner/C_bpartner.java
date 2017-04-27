@@ -14,11 +14,11 @@ public class C_bpartner implements EntityObject<C_bpartner> {
     private BigDecimal ad_client_id;
     private BigDecimal ad_org_id;
     private String value;
-    private String Suplier;
-    private String Suplier2;
+    private String suplier;
+    private String suplier2;
     private String description;
     private BigDecimal c_bp_group_id;
-    private String isvendor;
+    private char isvendor;
     private BigDecimal c_invoiceschedule_id;
     private BigDecimal c_paymentterm_id;
     private BigDecimal m_pricelist_id;
@@ -36,13 +36,13 @@ public class C_bpartner implements EntityObject<C_bpartner> {
     public C_bpartner() {
     }
 
-    public C_bpartner(BigDecimal c_bpartner_id, BigDecimal ad_client_id, BigDecimal ad_org_id, String value, String Suplier, String Suplier2, String description, BigDecimal c_bp_group_id, String isvendor, BigDecimal c_invoiceschedule_id, BigDecimal c_paymentterm_id, BigDecimal m_pricelist_id, BigDecimal m_discountschema_id, BigDecimal c_dunning_id, BigDecimal po_pricelist_id, BigDecimal po_discountschema_id, BigDecimal po_paymentterm_id, BigDecimal documentcopies, BigDecimal c_greeting_id, BigDecimal salesrep_id, String sendemail, BigDecimal bpartner_parent_id) {
+    public C_bpartner(BigDecimal c_bpartner_id, BigDecimal ad_client_id, BigDecimal ad_org_id, String value, String suplier, String suplier2, String description, BigDecimal c_bp_group_id, char isvendor, BigDecimal c_invoiceschedule_id, BigDecimal c_paymentterm_id, BigDecimal m_pricelist_id, BigDecimal m_discountschema_id, BigDecimal c_dunning_id, BigDecimal po_pricelist_id, BigDecimal po_discountschema_id, BigDecimal po_paymentterm_id, BigDecimal documentcopies, BigDecimal c_greeting_id, BigDecimal salesrep_id, String sendemail, BigDecimal bpartner_parent_id) {
         this.c_bpartner_id = c_bpartner_id;
         this.ad_client_id = ad_client_id;
         this.ad_org_id = ad_org_id;
         this.value = value;
-        this.Suplier = Suplier;
-        this.Suplier2 = Suplier2;
+        this.suplier = suplier;
+        this.suplier2 = suplier2;
         this.description = description;
         this.c_bp_group_id = c_bp_group_id;
         this.isvendor = isvendor;
@@ -66,8 +66,8 @@ public class C_bpartner implements EntityObject<C_bpartner> {
         this.ad_client_id = c_bpartner.ad_client_id;
         this.ad_org_id = c_bpartner.ad_org_id;
         this.value = c_bpartner.value;
-        this.Suplier = c_bpartner.Suplier;
-        this.Suplier2 = c_bpartner.Suplier2;
+        this.suplier = c_bpartner.suplier;
+        this.suplier2 = c_bpartner.suplier2;
         this.description = c_bpartner.description;
         this.c_bp_group_id = c_bpartner.c_bp_group_id;
         this.isvendor = c_bpartner.isvendor;
@@ -119,19 +119,19 @@ public class C_bpartner implements EntityObject<C_bpartner> {
     }
 
     public String getSuplier() {
-        return Suplier;
+        return suplier;
     }
 
-    public void setSuplier(String Suplier) {
-        this.Suplier = Suplier;
+    public void setSuplier(String suplier) {
+        this.suplier = suplier;
     }
 
     public String getSuplier2() {
-        return Suplier2;
+        return suplier2;
     }
 
-    public void setSuplier2(String Suplier2) {
-        this.Suplier2 = Suplier2;
+    public void setSuplier2(String suplier2) {
+        this.suplier2 = suplier2;
     }
 
     public String getDescription() {
@@ -150,11 +150,11 @@ public class C_bpartner implements EntityObject<C_bpartner> {
         this.c_bp_group_id = c_bp_group_id;
     }
 
-    public String getIsvendor() {
+    public char getIsvendor() {
         return isvendor;
     }
 
-    public void setIsvendor(String isvendor) {
+    public void setIsvendor(char isvendor) {
         this.isvendor = isvendor;
     }
 
@@ -268,8 +268,8 @@ public class C_bpartner implements EntityObject<C_bpartner> {
         hash = 23 * hash + Objects.hashCode(this.ad_client_id);
         hash = 23 * hash + Objects.hashCode(this.ad_org_id);
         hash = 23 * hash + Objects.hashCode(this.value);
-        hash = 23 * hash + Objects.hashCode(this.Suplier);
-        hash = 23 * hash + Objects.hashCode(this.Suplier2);
+        hash = 23 * hash + Objects.hashCode(this.suplier);
+        hash = 23 * hash + Objects.hashCode(this.suplier2);
         hash = 23 * hash + Objects.hashCode(this.description);
         hash = 23 * hash + Objects.hashCode(this.c_bp_group_id);
         hash = 23 * hash + Objects.hashCode(this.isvendor);

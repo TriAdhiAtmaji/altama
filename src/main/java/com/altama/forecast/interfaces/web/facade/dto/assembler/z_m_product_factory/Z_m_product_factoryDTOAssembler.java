@@ -5,8 +5,8 @@ import com.altama.forecast.domain.z_m_product_factory.Z_m_product_factoryBuilder
 import com.altama.forecast.interfaces.web.facade.dto.assembler.IObjectAssembler;
 import com.altama.forecast.interfaces.web.facade.dto.z_m_product_factory.Z_m_product_factoryDTO;
 import com.altama.forecast.interfaces.web.facade.dto.z_m_product_factory.Z_m_product_factoryDTOBuilder;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -36,16 +36,16 @@ public class Z_m_product_factoryDTOAssembler implements IObjectAssembler<Z_m_pro
                 .createZ_m_product_factory();
     }
 
-    public Set<Z_m_product_factory> toDomains(Set<Z_m_product_factoryDTO> arg0) {
-        Set<Z_m_product_factory> res = new HashSet<>();
+    public List<Z_m_product_factory> toDomains(List<Z_m_product_factoryDTO> arg0) {
+        List<Z_m_product_factory> res = new ArrayList<>();
         for (Z_m_product_factoryDTO t : arg0) {
             res.add(new Z_m_product_factoryDTOAssembler().toDomain(t));
         }
         return res;
     }
 
-    public Set<Z_m_product_factoryDTO> toDTOs(Set<Z_m_product_factory> arg0) {
-        Set<Z_m_product_factoryDTO> res = new HashSet<>();
+    public List<Z_m_product_factoryDTO> toDTOs(List<Z_m_product_factory> arg0) {
+        List<Z_m_product_factoryDTO> res = new ArrayList<>();
         for (Z_m_product_factory t : arg0) {
             res.add(this.toDTO(t));
         }

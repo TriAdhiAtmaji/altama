@@ -3,7 +3,7 @@ package com.altama.forecast.infrastructure.persistence.hibernate;
 import com.altama.forecast.domain.z_m_product_factory.Z_m_product_factory;
 import com.altama.forecast.domain.z_m_product_factory.Z_m_product_factoryRepository;
 import java.math.BigDecimal;
-import java.util.Set;
+import java.util.List;
 import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -37,8 +37,8 @@ public class Z_m_product_factoryHibernateRepository extends HibernateRepository 
     }
 
     @Override
-    public Set<Z_m_product_factory> findAll() {
-        return (Set<Z_m_product_factory>) getSession()
+    public List<Z_m_product_factory> findAll() {
+        return (List<Z_m_product_factory>) getSession()
                 .createQuery("from com.altama.forecast.domain.z_m_product_factory.Z_m_product_factory")
                 .list();
     }
