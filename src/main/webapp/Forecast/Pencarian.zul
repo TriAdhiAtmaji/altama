@@ -53,29 +53,16 @@
                     <row>
                         <label value="Suplier" />
                         <!--                        <textbox value="@bind(vm.suplier)" width="300px"/>-->
-                        <!--                        <combobox width="300px" model="@bind(vm.listBpartner)" selectedItem="@bind(vm.suplier)" placeholder="- Pilihan Menu -" readonly="true">
+                        <combobox width="300px" model="@bind(vm.listBpartner)" selectedItem="@bind(vm.suplier)" placeholder="- Pilihan Menu -" readonly="true">
                             <template name="model" var="items">
                                 <comboitem label="@load(items.getSuplier())" value="@load(items.getC_bpartner_id().toString())"/>
                             </template>
-                        </combobox>-->
+                        </combobox>
                         
-                        <bandbox id="bd" mold="rounded" autodrop="true" width="300px">  
-                            <bandpopup>
-                                <listbox height="250px" width="450px" mold="paging" autopaging="true"  model="@bind(vm.listBpartner)" selectedItem="@bind(vm.suplier)"
-                                         onSelect="bd.value=self.selectedItem.label; bd.close();">
-                                    <listhead>
-                                        <listheader label="Suplier"/>
-                                    </listhead>
-                                    <template name="model" var="items">
-                                        <listitem label="@load(items.getSuplier())" value="@load(items.getC_bpartner_id().toString())" />
-                                    </template>
-                                </listbox>
-                            </bandpopup>
-                        </bandbox>
 
                         <label value="Price List Version Jual" />
                         <!--                        <textbox width="300px" readonly="false"/>			-->
-                        <combobox width="300px" model="@bind(vm.listPriceVersion)" selectedItem="@bind(vm.priceVersion)" placeholder="- Pilihan Menu -" readonly="true">
+                        <combobox width="300px" model="@bind(vm.listPriceVersion)" selectedItem="@bind(vm.priceVersion)" readonly="true">
                             <template name="model" var="items">
                                 <comboitem label="@load(items.getNamePricelist())" value="@load(items.getM_pricelist_version_id().toString())"/>
                             </template>

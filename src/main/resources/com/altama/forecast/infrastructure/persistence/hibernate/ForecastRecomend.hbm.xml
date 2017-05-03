@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class mutable="true" name="com.altama.forecast.domain.forecastrecomend.ForecastRecomend">
+        <id column="m_product_id" name="m_product_id"></id>
+        
+        <property column="c_bpartner_id" name="c_bpartner_id" not-null="false"/>
+        <property column="c_elementvalue_id" name="c_elementvalue_id" not-null="false"/>
+        <property column="z_m_factory_id" name="z_m_factory_id" not-null="false"/>
+        <property column="m_pricelist_version_id" name="m_pricelist_version_id" not-null="false"/>
+        <property column="name" name="product" not-null="false"/>
+        
+        <property column="qtyAvailable" name="qtyAvailable" not-null="false"/>
+        <property column="qtyAverage" name="qtyAverage" not-null="false"/>
+        <property column="leadTime" name="leadTime" not-null="false"/>
+        <property column="qtyBatasAtas" name="qtyBatasAtas" not-null="false"/>
+        <property column="qtyOnOrdered" name="qtyOnOrdered" not-null="false"/>
+        
+        <property column="priceListJual" name="priceListJual" not-null="false"/>
+        <property column="currencyLastPO" name="currencyLastPO" not-null="false"/>
+        <property column="priceListLastPO" name="priceListLastPO" not-null="false"/>
+        <property column="moq" name="moq" not-null="false"/>
+        <property column="qtyPcsPerMasterBox" name="qtyPcsPerMasterBox" not-null="false"/>
+        
+        <property column="recomendQtyPOPcs" name="recomendQtyPOPcs" not-null="false"/>
+        <property column="totalMasterBox" name="totalMasterBox" not-null="false"/>
+    </class>
+</hibernate-mapping>

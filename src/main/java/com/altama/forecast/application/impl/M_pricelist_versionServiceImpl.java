@@ -44,7 +44,12 @@ public class M_pricelist_versionServiceImpl implements M_pricelist_versionServic
 
     @Override
     public M_pricelist_versionDTO findByID(BigDecimal m_product_id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Validate.notNull(m_pricelist_versionRepository);
+        M_pricelist_version m = (M_pricelist_version) m_pricelist_versionRepository.findByID(m_product_id);
+        if (m != null) {
+            return m_pricelist_versionDTOAssembler.toDTO(m);
+        }
+        return null;
     }
 
     @Override
