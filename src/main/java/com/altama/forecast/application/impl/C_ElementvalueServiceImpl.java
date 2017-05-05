@@ -49,7 +49,7 @@ public class C_ElementvalueServiceImpl implements C_ElementvalueService {
     @Override
     public C_ElementvalueDTO getDummy() {
         C_Elementvalue c_Elementvalue = new C_ElementvalueBuilder()
-                .setC_elementvalue_id(1)
+                .setC_elementvalue_id(BigDecimal.valueOf(12))
                 .setAd_client_id(BigDecimal.valueOf(12))
                 .setValue("h")
                 .setBrand("Tekiro")
@@ -59,7 +59,7 @@ public class C_ElementvalueServiceImpl implements C_ElementvalueService {
     }
 
     @Override
-    public C_ElementvalueDTO findByID(long c_elementvalue_id) {
+    public C_ElementvalueDTO findByID(BigDecimal c_elementvalue_id) {
         Validate.notNull(c_ElementvalueRepository);
         C_Elementvalue b = (C_Elementvalue) c_ElementvalueRepository.findByID(c_elementvalue_id);
         if (b != null) {

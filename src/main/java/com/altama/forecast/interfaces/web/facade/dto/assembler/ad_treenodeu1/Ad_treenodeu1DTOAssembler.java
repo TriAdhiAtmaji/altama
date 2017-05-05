@@ -21,7 +21,6 @@ public class Ad_treenodeu1DTOAssembler implements IObjectAssembler<Ad_treenodeu1
                 .setNode_id(domainObject.getNode_id())
                 .setAd_client_id(domainObject.getAd_client_id())
                 .setAd_org_id(domainObject.getAd_org_id())
-                .setC_Elementvalue(domainObject.getC_Elementvalue())
                 .createAd_treenodeu1DTO();
 
     }
@@ -33,7 +32,6 @@ public class Ad_treenodeu1DTOAssembler implements IObjectAssembler<Ad_treenodeu1
                 .setNode_id(dtoObject.getNode_id())
                 .setAd_client_id(dtoObject.getAd_client_id())
                 .setAd_org_id(dtoObject.getAd_org_id())
-                .setC_Elementvalue(dtoObject.getC_Elementvalue())
                 .createAd_treenodeu1();
     }
 

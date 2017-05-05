@@ -53,8 +53,8 @@ public class M_pricelist_versionHibernateRepository extends HibernateRepository 
     public List<M_pricelist_version> findByParams(Map map) {
         Criteria criteria = getSession().createCriteria(M_pricelist_version.class);
 
-        if (StringUtil.hasValue(map.get("m_pricelist_version_id"))) {
-            criteria.add(Restrictions.eq("m_pricelist_version_id", map.get("m_pricelist_version_id")));
+        if (StringUtil.hasValue(map.get("brandSelected"))) {
+            criteria.add(Restrictions.eq("m_pricelist_version_id", map.get("brandSelected")));
         }
 
         if (StringUtil.hasValue(map.get("m_pricelist_version_id"))) {

@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 
 public class C_ElementvalueDTOBuilder {
 
-    private long c_elementvalue_id;
+    private BigDecimal c_elementvalue_id;
     private BigDecimal ad_client_id;
     private String value;
     private String brand;
@@ -20,7 +20,7 @@ public class C_ElementvalueDTOBuilder {
     public C_ElementvalueDTOBuilder() {
     }
 
-    public C_ElementvalueDTOBuilder setC_elementvalue_id(long c_elementvalue_id) {
+    public C_ElementvalueDTOBuilder setC_elementvalue_id(BigDecimal c_elementvalue_id) {
         this.c_elementvalue_id = c_elementvalue_id;
         return this;
     }

@@ -8,9 +8,9 @@ package com.altama.forecast.domain.c_elementvalue;
 import com.altama.forecast.domain.ad_treenodeu1.Ad_treenodeu1;
 import java.math.BigDecimal;
 
-
 public class C_ElementvalueBuilder {
-    private long c_elementvalue_id;
+
+    private BigDecimal c_elementvalue_id;
     private BigDecimal ad_client_id;
     private String value;
     private String brand;
@@ -20,7 +20,7 @@ public class C_ElementvalueBuilder {
     public C_ElementvalueBuilder() {
     }
 
-    public C_ElementvalueBuilder setC_elementvalue_id(long c_elementvalue_id) {
+    public C_ElementvalueBuilder setC_elementvalue_id(BigDecimal c_elementvalue_id) {
         this.c_elementvalue_id = c_elementvalue_id;
         return this;
     }
@@ -53,5 +53,5 @@ public class C_ElementvalueBuilder {
     public C_Elementvalue createC_Elementvalue() {
         return new C_Elementvalue(c_elementvalue_id, ad_client_id, value, brand, description, ad_treenodeu1);
     }
-    
+
 }

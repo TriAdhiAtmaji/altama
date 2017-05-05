@@ -26,6 +26,6 @@
     <mapping resource="com/altama/forecast/infrastructure/persistence/hibernate/Z_m_product_factory.hbm.xml"/>
     <mapping resource="com/altama/forecast/infrastructure/persistence/hibernate/M_pricelist_version.hbm.xml"/>
     <!--        <mapping resource="com/altama/forecast/infrastructure/persistence/hibernate/forecast.hbm.xml"/>-->
-    <mapping resource="com/altama/forecast/infrastructure/persistence/hibernate/ForecastRecomend.hbm.xml"/>
+    <!--    <mapping resource="com/altama/forecast/infrastructure/persistence/hibernate/ForecastRecomend.hbm.xml"/>-->
   </session-factory>
 </hibernate-configuration>

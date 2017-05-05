@@ -32,16 +32,16 @@ public class Ad_treenodeu1Test {
         print("Order Processing");
 
         /* Order get Dummy */
-        Ad_treenodeu1DTO dataHistory = dataHistoryService.getDummy();
-        System.out.println("Order :" + dataHistory.toString());
+//        Ad_treenodeu1DTO dataHistory = dataHistoryService.getDummy();
+//        System.out.println("Order :" + dataHistory.toString());
+//
+//        dataHistoryService.saveAd_treenodeu1(dataHistory);
+//        System.out.println("Order has been saved succesfully");
 
-        dataHistoryService.saveAd_treenodeu1(dataHistory);
-        System.out.println("Order has been saved succesfully");
-
-        System.out.println("");
-        System.out.println("Find by ID");
-        Ad_treenodeu1DTO d = dataHistoryService.findByID(dataHistory.getAd_tree_id());
-        System.out.println("Order :" + d.toString());
+//        System.out.println("");
+//        System.out.println("Find by ID");
+//        Ad_treenodeu1DTO d = dataHistoryService.findByID(dataHistory.getAd_tree_id());
+//        System.out.println("Order :" + d.toString());
 
         System.out.println("");
         System.out.println("Find ALL");

@@ -17,26 +17,21 @@
         <property column="updatedby" name="updatedby" not-null="false"/>
         <property column="c_bpartner_id" name="c_bpartner_id" not-null="false"/>
         <property column="name" name="name" not-null="false"/>
+                
+        <set name="z_m_product_factory" table="z_m_product_factory"
+             inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="z_m_factory_id" not-null="true" />
+            </key>
+            <one-to-many class="com.altama.forecast.domain.z_m_product_factory.Z_m_product_factory" />
+        </set>
         
-        <!--        <set cascade="all" lazy="false" name="z_m_product_factory" table="z_m_product_factory">
-            <key column="z_m_factory_id"/>
-            <one-to-many class="com.altama.forecast.domain.z_m_product_factory.Z_m_product_factory"/>            
-        </set>>-->
-        <!--        
-            <set name="z_m_product_factory" table="z_m_product_factory"
-                 inverse="true" lazy="true" fetch="select">
-                <key>
-                    <column name="z_m_factory_id" not-null="true" />
-                </key>
-                <one-to-many class="com.altama.forecast.domain.z_m_product_factory.Z_m_product_factory" />
-            </set>
-        -->
     
-        <list lazy="true" fetch="select" inverse="true" name="z_m_product_factory" table="z_m_product_factory"> 
+        <!--        <list lazy="true" fetch="select" inverse="true" name="z_m_product_factory" table="z_m_product_factory"> 
             <key column="z_m_factory_id" not-null="true"/>
             <index column="riwayat_factory_index"/>
             <one-to-many class="com.altama.forecast.domain.z_m_product_factory.Z_m_product_factory" />
-        </list>
+        </list>-->
     
     </class>
 </hibernate-mapping>

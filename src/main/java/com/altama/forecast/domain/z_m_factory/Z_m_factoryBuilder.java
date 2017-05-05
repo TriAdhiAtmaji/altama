@@ -8,7 +8,7 @@ package com.altama.forecast.domain.z_m_factory;
 import com.altama.forecast.domain.z_m_product_factory.Z_m_product_factory;
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
+import java.util.Set;
 
 public class Z_m_factoryBuilder {
 
@@ -22,7 +22,7 @@ public class Z_m_factoryBuilder {
     private BigDecimal updatedby;
     private BigDecimal c_bpartner_id;
     private String name;
-    private List<Z_m_product_factory> z_m_product_factory;
+    private Set<Z_m_product_factory> z_m_product_factory;
 
     public Z_m_factoryBuilder() {
     }
@@ -77,7 +77,7 @@ public class Z_m_factoryBuilder {
         return this;
     }
 
-    public Z_m_factoryBuilder setZ_m_product_factory(List<Z_m_product_factory> z_m_product_factory) {
+    public Z_m_factoryBuilder setZ_m_product_factory(Set<Z_m_product_factory> z_m_product_factory) {
         this.z_m_product_factory = z_m_product_factory;
         return this;
     }

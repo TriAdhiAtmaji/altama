@@ -5,16 +5,14 @@
  */
 package com.altama.forecast.domain.ad_treenodeu1;
 
-import com.altama.forecast.domain.c_elementvalue.C_Elementvalue;
 import java.math.BigDecimal;
 
-public class Ad_treenodeu1Builder {
 
+public class Ad_treenodeu1Builder {
     private BigDecimal ad_tree_id;
     private BigDecimal node_id;
     private BigDecimal ad_client_id;
     private BigDecimal ad_org_id;
-    private C_Elementvalue c_Elementvalue;
 
     public Ad_treenodeu1Builder() {
     }
@@ -39,13 +37,8 @@ public class Ad_treenodeu1Builder {
         return this;
     }
 
-    public Ad_treenodeu1Builder setC_Elementvalue(C_Elementvalue c_Elementvalue) {
-        this.c_Elementvalue = c_Elementvalue;
-        return this;
-    }
-
     public Ad_treenodeu1 createAd_treenodeu1() {
-        return new Ad_treenodeu1(ad_tree_id, node_id, ad_client_id, ad_org_id, c_Elementvalue);
+        return new Ad_treenodeu1(ad_tree_id, node_id, ad_client_id, ad_org_id);
     }
-
+    
 }

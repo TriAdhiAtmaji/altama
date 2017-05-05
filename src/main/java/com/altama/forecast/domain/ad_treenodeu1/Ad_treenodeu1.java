@@ -1,6 +1,5 @@
 package com.altama.forecast.domain.ad_treenodeu1;
 
-import com.altama.forecast.domain.c_elementvalue.C_Elementvalue;
 import com.altama.forecast.domain.shared.EntityObject;
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -15,17 +14,15 @@ public class Ad_treenodeu1 implements EntityObject<Ad_treenodeu1> {
     private BigDecimal node_id;
     private BigDecimal ad_client_id;
     private BigDecimal ad_org_id;
-    private C_Elementvalue c_Elementvalue;
 
     public Ad_treenodeu1() {
     }
 
-    public Ad_treenodeu1(BigDecimal ad_tree_id, BigDecimal node_id, BigDecimal ad_client_id, BigDecimal ad_org_id, C_Elementvalue c_Elementvalue) {
+    public Ad_treenodeu1(BigDecimal ad_tree_id, BigDecimal node_id, BigDecimal ad_client_id, BigDecimal ad_org_id) {
         this.ad_tree_id = ad_tree_id;
         this.node_id = node_id;
         this.ad_client_id = ad_client_id;
         this.ad_org_id = ad_org_id;
-        this.c_Elementvalue = c_Elementvalue;
     }
 
     public void assignNewAd_treenodeu1(Ad_treenodeu1 ad_treenodeu1) {
@@ -43,13 +40,6 @@ public class Ad_treenodeu1 implements EntityObject<Ad_treenodeu1> {
         this.node_id = node_id;
     }
 
-    public C_Elementvalue getC_Elementvalue() {
-        return c_Elementvalue;
-    }
-
-    public void setC_Elementvalue(C_Elementvalue c_Elementvalue) {
-        this.c_Elementvalue = c_Elementvalue;
-    }
 
     public BigDecimal getAd_tree_id() {
         return ad_tree_id;
@@ -81,7 +71,6 @@ public class Ad_treenodeu1 implements EntityObject<Ad_treenodeu1> {
         hash = 97 * hash + Objects.hashCode(this.node_id);
         hash = 97 * hash + Objects.hashCode(this.ad_client_id);
         hash = 97 * hash + Objects.hashCode(this.ad_org_id);
-        hash = 97 * hash + Objects.hashCode(this.c_Elementvalue);
         return hash;
     }
 

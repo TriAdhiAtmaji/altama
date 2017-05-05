@@ -7,21 +7,10 @@
             
         </id>
         
-        <!--        <one-to-one name="node_id" class="com.altama.forecast.domain.c_elementvalue.C_Elementvalue" />  -->
-        <!--
-            <generator class="foreign">
-                <param name="property">c_Elementvalue</param>
-            </generator>        
-        </one-to-one>       -->
         <property column="node_id" name="node_id" not-null="false"/>
         
         <property column="ad_client_id" name="ad_client_id" not-null="false"/>
         <property column="ad_org_id" name="ad_org_id" not-null="false"/>
-        
-<!--        <many-to-one name="c_Elementvalue" class="com.altama.forecast.domain.c_elementvalue.C_Elementvalue" column="node_id" unique="true" not-null="true"/>
-        
-      -->
     </class>
-    
    
 </hibernate-mapping>

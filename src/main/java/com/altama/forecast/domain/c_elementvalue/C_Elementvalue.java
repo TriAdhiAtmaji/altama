@@ -11,7 +11,7 @@ import java.util.Objects;
  */
 public class C_Elementvalue implements EntityObject<C_Elementvalue> {
 
-    private long c_elementvalue_id;
+    private BigDecimal c_elementvalue_id;
     private BigDecimal ad_client_id;
     private String value;
     private String brand;
@@ -21,7 +21,7 @@ public class C_Elementvalue implements EntityObject<C_Elementvalue> {
     public C_Elementvalue() {
     }
 
-    public C_Elementvalue(long c_elementvalue_id, BigDecimal ad_client_id, String value, String brand, String description, Ad_treenodeu1 ad_treenodeu1) {
+    public C_Elementvalue(BigDecimal c_elementvalue_id, BigDecimal ad_client_id, String value, String brand, String description, Ad_treenodeu1 ad_treenodeu1) {
         this.c_elementvalue_id = c_elementvalue_id;
         this.ad_client_id = ad_client_id;
         this.value = value;
@@ -47,11 +47,11 @@ public class C_Elementvalue implements EntityObject<C_Elementvalue> {
         this.ad_treenodeu1 = ad_treenodeu1;
     }
 
-    public long getC_elementvalue_id() {
+    public BigDecimal getC_elementvalue_id() {
         return c_elementvalue_id;
     }
 
-    public void setC_elementvalue_id(long c_elementvalue_id) {
+    public void setC_elementvalue_id(BigDecimal c_elementvalue_id) {
         this.c_elementvalue_id = c_elementvalue_id;
     }
 
@@ -89,12 +89,12 @@ public class C_Elementvalue implements EntityObject<C_Elementvalue> {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 29 * hash + Objects.hashCode(this.ad_client_id);
-        hash = 29 * hash + Objects.hashCode(this.value);
-        hash = 29 * hash + Objects.hashCode(this.brand);
-        hash = 29 * hash + Objects.hashCode(this.description);
-        hash = 29 * hash + Objects.hashCode(this.ad_treenodeu1);
+        int hash = 3;
+        hash = 79 * hash + Objects.hashCode(this.ad_client_id);
+        hash = 79 * hash + Objects.hashCode(this.value);
+        hash = 79 * hash + Objects.hashCode(this.brand);
+        hash = 79 * hash + Objects.hashCode(this.description);
+        hash = 79 * hash + Objects.hashCode(this.ad_treenodeu1);
         return hash;
     }
 
