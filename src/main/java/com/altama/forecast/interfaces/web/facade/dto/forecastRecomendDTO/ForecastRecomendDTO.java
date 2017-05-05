@@ -1,14 +1,12 @@
-package com.altama.forecast.domain.forecastrecomend;
+package com.altama.forecast.interfaces.web.facade.dto.forecastRecomendDTO;
 
-import com.altama.forecast.domain.shared.EntityObject;
 import java.math.BigDecimal;
-import java.util.Objects;
 
 /**
  *
  * @author admin
  */
-public class ForecastRecomend implements EntityObject<ForecastRecomend> {
+public class ForecastRecomendDTO {
 
     private BigDecimal m_product_id;
     private BigDecimal c_bpartner_id;
@@ -29,10 +27,10 @@ public class ForecastRecomend implements EntityObject<ForecastRecomend> {
     private BigDecimal recomendQtyPOPcs;
     private BigDecimal totalMasterBox;
 
-    public ForecastRecomend() {
+    public ForecastRecomendDTO() {
     }
 
-    public ForecastRecomend(BigDecimal m_product_id, BigDecimal c_bpartner_id, BigDecimal c_elementvalue_id, BigDecimal z_m_factory_id, BigDecimal m_pricelist_version_id, String product, BigDecimal qtyAvailable, BigDecimal qtyAverage, BigDecimal leadTime, BigDecimal qtyBatasAtas, BigDecimal qtyOnOrdered, BigDecimal priceListJual, String currencyListPO, BigDecimal priceListLastPO, BigDecimal moq, BigDecimal qtyPcsPerMasterBox, BigDecimal recomendQtyPOPcs, BigDecimal totalMasterBox) {
+    public ForecastRecomendDTO(BigDecimal m_product_id, BigDecimal c_bpartner_id, BigDecimal c_elementvalue_id, BigDecimal z_m_factory_id, BigDecimal m_pricelist_version_id, String product, BigDecimal qtyAvailable, BigDecimal qtyAverage, BigDecimal leadTime, BigDecimal qtyBatasAtas, BigDecimal qtyOnOrdered, BigDecimal priceListJual, String currencyListPO, BigDecimal priceListLastPO, BigDecimal moq, BigDecimal qtyPcsPerMasterBox, BigDecimal recomendQtyPOPcs, BigDecimal totalMasterBox) {
         this.m_product_id = m_product_id;
         this.c_bpartner_id = c_bpartner_id;
         this.c_elementvalue_id = c_elementvalue_id;
@@ -198,47 +196,8 @@ public class ForecastRecomend implements EntityObject<ForecastRecomend> {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 53 * hash + Objects.hashCode(this.m_product_id);
-        hash = 53 * hash + Objects.hashCode(this.c_bpartner_id);
-        hash = 53 * hash + Objects.hashCode(this.c_elementvalue_id);
-        hash = 53 * hash + Objects.hashCode(this.z_m_factory_id);
-        hash = 53 * hash + Objects.hashCode(this.m_pricelist_version_id);
-        hash = 53 * hash + Objects.hashCode(this.product);
-        hash = 53 * hash + Objects.hashCode(this.qtyAvailable);
-        hash = 53 * hash + Objects.hashCode(this.qtyAverage);
-        hash = 53 * hash + Objects.hashCode(this.leadTime);
-        hash = 53 * hash + Objects.hashCode(this.qtyBatasAtas);
-        hash = 53 * hash + Objects.hashCode(this.qtyOnOrdered);
-        hash = 53 * hash + Objects.hashCode(this.priceListJual);
-        hash = 53 * hash + Objects.hashCode(this.currencyListPO);
-        hash = 53 * hash + Objects.hashCode(this.priceListLastPO);
-        hash = 53 * hash + Objects.hashCode(this.moq);
-        hash = 53 * hash + Objects.hashCode(this.qtyPcsPerMasterBox);
-        hash = 53 * hash + Objects.hashCode(this.recomendQtyPOPcs);
-        hash = 53 * hash + Objects.hashCode(this.totalMasterBox);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final ForecastRecomend other = (ForecastRecomend) obj;
-        if (!Objects.equals(this.m_product_id, other.m_product_id)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public boolean sameIdentityAs(ForecastRecomend other) {
-        return this.equals(other);
+    public String toString() {
+        return "ForecastRecomendDTO{" + "m_product_id=" + m_product_id + ", c_bpartner_id=" + c_bpartner_id + ", c_elementvalue_id=" + c_elementvalue_id + ", z_m_factory_id=" + z_m_factory_id + ", m_pricelist_version_id=" + m_pricelist_version_id + ", product=" + product + ", qtyAvailable=" + qtyAvailable + ", qtyAverage=" + qtyAverage + ", leadTime=" + leadTime + ", qtyBatasAtas=" + qtyBatasAtas + ", qtyOnOrdered=" + qtyOnOrdered + ", priceListJual=" + priceListJual + ", currencyListPO=" + currencyListPO + ", priceListLastPO=" + priceListLastPO + ", moq=" + moq + ", qtyPcsPerMasterBox=" + qtyPcsPerMasterBox + ", recomendQtyPOPcs=" + recomendQtyPOPcs + ", totalMasterBox=" + totalMasterBox + '}';
     }
 
 }

@@ -20,14 +20,14 @@
                 <rows>
                     <row>
                         <label value="Brand"/>                                                                    
-                        <combobox width="300px" model="@bind(vm.listC_Elementvalues)" selectedItem="@bind(vm.brandSelected)" placeholder="- Pilihan Menu -" readonly="true">
+                        <combobox width="300px" model="@bind(vm.listC_Elementvalues)" selectedItem="@bind(vm.brandSelect)" placeholder="- Pilihan Menu -" readonly="true">
                             <template name="model" var="items">
                                 <comboitem label="@load(items.getBrand())" value="@load(items.getC_elementvalue_id().toString())"/>
                             </template>
                         </combobox>
                         <label value="Factory"/>
                         <!--                        <textbox value="@bind(vm.factory)" width="300px"/>-->
-                        <combobox width="300px" model="@bind(vm.listFactory)" selectedItem="@bind(vm.factory)" placeholder="- Pilihan Menu -" readonly="true">
+                        <combobox width="300px" model="@bind(vm.listFactory)" selectedItem="@bind(vm.factorySelect)" placeholder="- Pilihan Menu -" readonly="true">
                             <template name="model" var="items">
                                 <comboitem label="@load(items.getName())" value="@load(items.getZ_m_factory_id().toString())"/>
                             </template>
@@ -35,7 +35,7 @@
                     </row> 
                     <row>
                         <label value="Product" />
-                        <textbox value="@bind(vm.nama)" width="300px"/>
+                        <textbox value="@bind(vm.productSelect)" width="300px"/>
                         
                         <!--                                                <combobox width="300px" model="@load(vm.listName)" selectedItem="@bind(vm.nameSelected)" placeholder="- Pilihan Menu -" readonly="true">
                             <template name="model" var="items">
@@ -53,7 +53,7 @@
                     <row>
                         <label value="Suplier" />
                         <!--                        <textbox value="@bind(vm.suplier)" width="300px"/>-->
-                        <combobox width="300px" model="@bind(vm.listBpartner)" selectedItem="@bind(vm.suplier)" placeholder="- Pilihan Menu -" readonly="true">
+                        <combobox width="300px" model="@bind(vm.listBpartner)" selectedItem="@bind(vm.suplierSelect)" placeholder="- Pilihan Menu -" readonly="true">
                             <template name="model" var="items">
                                 <comboitem label="@load(items.getSuplier())" value="@load(items.getC_bpartner_id().toString())"/>
                             </template>
@@ -62,7 +62,7 @@
 
                         <label value="Price List Version Jual" />
                         <!--                        <textbox width="300px" readonly="false"/>			-->
-                        <combobox width="300px" model="@bind(vm.listPriceVersion)" selectedItem="@bind(vm.priceVersion)" readonly="true">
+                        <combobox width="300px" model="@bind(vm.listPriceVersion)" selectedItem="@bind(vm.priceVersionSelect)" readonly="true">
                             <template name="model" var="items">
                                 <comboitem label="@load(items.getNamePricelist())" value="@load(items.getM_pricelist_version_id().toString())"/>
                             </template>
@@ -99,7 +99,7 @@
                     <listheader label="Qty Batas Atas" width="30%" align="center"/>
                     <!--                    <listheader label="Qty On Ondered" width="30%" align="center"/>
                     <listheader label="Price List Jual" width="30%" align="center"/>
-                    <listheader label="Currency Last PCS" width="30%" align="center"/>
+                    <listheader label="Currency List PCS" width="30%" align="center"/>
                     <listheader label="MOQ" width="10%" align="center"/>
                     <listheader label="Qty PCS per Master Box" width="30%" align="center"/>
                     <listheader label="Rekomendasi Qty PO PCS" width="30%" align="center"/>
@@ -122,12 +122,6 @@
                         <listcell >
                             <label width="100%" value="@bind(each.weight)"/>
                         </listcell>
-                        
-                        <!--                        <listcell>
-                            <a label="Detail" style="text-decoration:underline ;color:blue" onClick="@command('detailLayanan', object=each)"></a>
-                            <a label="|" style="font-size:12pt ;color:black"></a>
-                            <a label="Delete" style="text-decoration:underline ;color:blue" onClick="@command('deleteLayanan', object=each)"></a>
-                        </listcell>-->
                     </listitem>
                 </template>
             </listbox>

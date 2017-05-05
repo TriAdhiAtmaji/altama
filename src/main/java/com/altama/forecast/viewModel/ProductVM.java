@@ -3,19 +3,19 @@ package com.altama.forecast.viewModel;
 import com.altama.forecast.application.Ad_treenodeu1Service;
 import com.altama.forecast.application.C_ElementvalueService;
 import com.altama.forecast.application.C_bpartnerService;
+import com.altama.forecast.application.ForecastRecomendService;
 import com.altama.forecast.application.M_pricelist_versionService;
 import com.altama.forecast.application.M_productService;
 import com.altama.forecast.application.Z_m_factoryService;
 import com.altama.forecast.common.zul.PageNavigation;
-import com.altama.forecast.domain.m_product.IsDiscontinue;
 import com.altama.forecast.interfaces.web.facade.dto.ad_treenodeu1.Ad_treenodeu1DTO;
 import com.altama.forecast.interfaces.web.facade.dto.c_bpartner.C_bpartnerDTO;
 import com.altama.forecast.interfaces.web.facade.dto.c_elementvalue.C_ElementvalueDTO;
+import com.altama.forecast.interfaces.web.facade.dto.forecastRecomendDTO.ForecastRecomendDTO;
 import com.altama.forecast.interfaces.web.facade.dto.m_pricelist_versionDTO.M_pricelist_versionDTO;
 import com.altama.forecast.interfaces.web.facade.dto.m_productDTO.M_productDTO;
 import com.altama.forecast.interfaces.web.facade.dto.m_productDTO.M_productDTOBuilder;
 import com.altama.forecast.interfaces.web.facade.dto.z_m_factory.Z_m_factoryDTO;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,7 +26,6 @@ import org.zkoss.bind.annotation.ContextType;
 import org.zkoss.bind.annotation.ExecutionArgParam;
 import org.zkoss.bind.annotation.Init;
 import org.zkoss.bind.annotation.NotifyChange;
-import org.zkoss.bind.sys.debugger.impl.info.AddBindingInfo;
 import org.zkoss.zk.ui.select.annotation.VariableResolver;
 import org.zkoss.zk.ui.select.annotation.WireVariable;
 import org.zkoss.zul.ListModelList;
@@ -57,22 +56,25 @@ public class ProductVM {
     @WireVariable
     M_pricelist_versionService m_pricelist_versionService;
 
+    @WireVariable
+    ForecastRecomendService forecastRecomendService;
+
     private M_productDTO m_productDTO = new M_productDTO();
     private List<M_productDTO> m_productDTOs = new ArrayList<>();
 
-    private C_ElementvalueDTO c_ElementvalueDTO = new C_ElementvalueDTO();
-    private List<C_ElementvalueDTO> c_ElementvalueDTOs = new ArrayList<>();
+    private ForecastRecomendDTO forecastRecomendDTO = new ForecastRecomendDTO();
+    private List<ForecastRecomendDTO> forecastRecomendDTOs = new ArrayList<>();
 
     private List<Ad_treenodeu1DTO> ad_treenodeu1DTOs = new ArrayList<>();
 
     // Selected ComboBox
-    private String nama;
+    private String productSelect;
 //    private IsDiscontinue continueSelect;
     private String continueSelect;
-    private C_ElementvalueDTO brandSelected;
-    private C_bpartnerDTO suplier;
-    private Z_m_factoryDTO factory;
-    private M_pricelist_versionDTO priceVersion;
+    private C_ElementvalueDTO brandSelect;
+    private C_bpartnerDTO suplierSelect;
+    private Z_m_factoryDTO factorySelect;
+    private M_pricelist_versionDTO priceVersionSelect;
 
     //        combobox
 //    private ListModelList<IsDiscontinue> listDiscontinue = new ListModelList<IsDiscontinue>();
@@ -110,16 +112,15 @@ public class ProductVM {
         listC_Elementvalues = c_ElementvalueService.findAll();
         listFactory = z_m_factoryService.findAll();
         listPriceVersion = m_pricelist_versionService.findAll();
+//        forecastRecomendDTOs = forecastRecomendService.findAll();
+//        System.out.println(forecastRecomendDTOs + "\n");
 
-        ad_treenodeu1DTOs = ad_treenodeu1Service.findAll();
-        System.err.println(ad_treenodeu1DTOs + "\n");
 //        M_pricelist_versionDTO price = new M_pricelist_versionDTO(BigDecimal.valueOf(1000031), "US_Standard_PriceList_1108_IDR");
 //        setPriceVersion(price);
-
-        if (priceVersion == null) {
-
-//            priceVersion.setM_pricelist_version_id(BigDecimal.valueOf(1000031));
-        }
+//        if (priceVersionSelect == null) {
+//
+//          priceVersion.setM_pricelist_version_id(BigDecimal.valueOf(1000031));
+//        }
         if (continueSelect == null) {
             continueSelect = "Y";
         }
@@ -133,7 +134,7 @@ public class ProductVM {
                     .createM_productDTO();
         } else {
             this.m_productDTO = m_product;
-            nama = m_productDTO.getName();
+            productSelect = m_productDTO.getName();
             this.previous = previous;
         }
     }
@@ -142,26 +143,74 @@ public class ProductVM {
     @NotifyChange("m_productDTOs")
     public void buttonSearch(@ContextParam(ContextType.VIEW) Window window) {
         Map params = new HashMap();
-        params.put("nama", nama);
+        params.put("productSelect", productSelect);
         params.put("continueSelect", continueSelect);
-        params.put("brandSelected", brandSelected.getC_elementvalue_id());
-        params.put("suplier", suplier.getC_bpartner_id());
-        params.put("factory", factory.getZ_m_factory_id());
-        params.put("priceVersion", priceVersion.getM_pricelist_version_id());
+        params.put("brandSelected", brandSelect.getC_elementvalue_id());
+        params.put("suplier", suplierSelect.getC_bpartner_id());
+        params.put("factory", factorySelect.getZ_m_factory_id());
+        params.put("priceVersion", priceVersionSelect.getM_pricelist_version_id());
 
         m_productDTOs = m_productService.findByParams(params);
 
-        System.out.print("2 " + brandSelected.getBrand() + " " + brandSelected.getC_elementvalue_id() + " \n");
+        System.out.print("2 " + brandSelect.getBrand() + " " + brandSelect.getC_elementvalue_id() + " \n");
 
         System.out.print("3 " + continueSelect + " \n");
 
-        System.out.print("4 " + nama + " \n");
+        System.out.print("4 " + productSelect + " \n");
 
-        System.out.print("5 " + suplier.getSuplier() + " " + suplier.getC_bpartner_id() + " \n");
+        System.out.print("5 " + suplierSelect.getSuplier() + " " + suplierSelect.getC_bpartner_id() + " \n");
 
-        System.out.print("6 " + priceVersion.getNamePricelist() + " " + priceVersion.getM_pricelist_version_id() + " \n");
+        System.out.print("6 " + priceVersionSelect.getNamePricelist() + " " + priceVersionSelect.getM_pricelist_version_id() + " \n");
 
-        System.out.print("7 " + factory.getName() + " " + factory.getZ_m_factory_id() + " \n");
+        System.out.print("7 " + factorySelect.getName() + " " + factorySelect.getZ_m_factory_id() + " \n");
+    }
+
+    public List<Ad_treenodeu1DTO> getAd_treenodeu1DTOs() {
+        return ad_treenodeu1DTOs;
+    }
+
+    public void setAd_treenodeu1DTOs(List<Ad_treenodeu1DTO> ad_treenodeu1DTOs) {
+        this.ad_treenodeu1DTOs = ad_treenodeu1DTOs;
+    }
+
+    public String getProductSelect() {
+        return productSelect;
+    }
+
+    public void setProductSelect(String productSelect) {
+        this.productSelect = productSelect;
+    }
+
+    public C_ElementvalueDTO getBrandSelect() {
+        return brandSelect;
+    }
+
+    public void setBrandSelect(C_ElementvalueDTO brandSelect) {
+        this.brandSelect = brandSelect;
+    }
+
+    public C_bpartnerDTO getSuplierSelect() {
+        return suplierSelect;
+    }
+
+    public void setSuplierSelect(C_bpartnerDTO suplierSelect) {
+        this.suplierSelect = suplierSelect;
+    }
+
+    public Z_m_factoryDTO getFactorySelect() {
+        return factorySelect;
+    }
+
+    public void setFactorySelect(Z_m_factoryDTO factorySelect) {
+        this.factorySelect = factorySelect;
+    }
+
+    public M_pricelist_versionDTO getPriceVersionSelect() {
+        return priceVersionSelect;
+    }
+
+    public void setPriceVersionSelect(M_pricelist_versionDTO priceVersionSelect) {
+        this.priceVersionSelect = priceVersionSelect;
     }
 
     public M_productDTO getM_productDTO() {
@@ -178,14 +227,6 @@ public class ProductVM {
 
     public void setM_productDTOs(List<M_productDTO> m_productDTOs) {
         this.m_productDTOs = m_productDTOs;
-    }
-
-    public String getNama() {
-        return nama;
-    }
-
-    public void setNama(String nama) {
-        this.nama = nama;
     }
 
     public PageNavigation getPrevious() {
@@ -244,14 +285,6 @@ public class ProductVM {
         this.m_productService = m_productService;
     }
 
-    public C_ElementvalueDTO getBrandSelected() {
-        return brandSelected;
-    }
-
-    public void setBrandSelected(C_ElementvalueDTO brandSelected) {
-        this.brandSelected = brandSelected;
-    }
-
     public List<C_ElementvalueDTO> getListC_Elementvalues() {
         return listC_Elementvalues;
     }
@@ -275,43 +308,12 @@ public class ProductVM {
         this.listDiscontinue = listDiscontinue;
     }
 
-    public C_ElementvalueDTO getC_ElementvalueDTO() {
-        return c_ElementvalueDTO;
-    }
-
-    public void setC_ElementvalueDTO(C_ElementvalueDTO c_ElementvalueDTO) {
-        this.c_ElementvalueDTO = c_ElementvalueDTO;
-    }
-
-    public List<C_ElementvalueDTO> getC_ElementvalueDTOs() {
-        return c_ElementvalueDTOs;
-    }
-
-    public void setC_ElementvalueDTOs(List<C_ElementvalueDTO> c_ElementvalueDTOs) {
-        this.c_ElementvalueDTOs = c_ElementvalueDTOs;
-    }
-
-//    public IsDiscontinue getContinueSelect() {
-//        return continueSelect;
-//    }
-//
-//    public void setContinueSelect(IsDiscontinue continueSelect) {
-//        this.continueSelect = continueSelect;
-//    }
     public String getContinueSelect() {
         return continueSelect;
     }
 
     public void setContinueSelect(String continueSelect) {
         this.continueSelect = continueSelect;
-    }
-
-    public C_bpartnerDTO getSuplier() {
-        return suplier;
-    }
-
-    public void setSuplier(C_bpartnerDTO suplier) {
-        this.suplier = suplier;
     }
 
     public List<C_bpartnerDTO> getListBpartner() {
@@ -322,14 +324,6 @@ public class ProductVM {
         this.listBpartner = listBpartner;
     }
 
-    public Z_m_factoryDTO getFactory() {
-        return factory;
-    }
-
-    public void setFactory(Z_m_factoryDTO factory) {
-        this.factory = factory;
-    }
-
     public List<Z_m_factoryDTO> getListFactory() {
         return listFactory;
     }
@@ -338,20 +332,28 @@ public class ProductVM {
         this.listFactory = listFactory;
     }
 
-    public M_pricelist_versionDTO getPriceVersion() {
-        return priceVersion;
-    }
-
-    public void setPriceVersion(M_pricelist_versionDTO priceVersion) {
-        this.priceVersion = priceVersion;
-    }
-
     public List<M_pricelist_versionDTO> getListPriceVersion() {
         return listPriceVersion;
     }
 
     public void setListPriceVersion(List<M_pricelist_versionDTO> listPriceVersion) {
         this.listPriceVersion = listPriceVersion;
+    }
+
+    public ForecastRecomendDTO getForecastRecomendDTO() {
+        return forecastRecomendDTO;
+    }
+
+    public void setForecastRecomendDTO(ForecastRecomendDTO forecastRecomendDTO) {
+        this.forecastRecomendDTO = forecastRecomendDTO;
+    }
+
+    public List<ForecastRecomendDTO> getForecastRecomendDTOs() {
+        return forecastRecomendDTOs;
+    }
+
+    public void setForecastRecomendDTOs(List<ForecastRecomendDTO> forecastRecomendDTOs) {
+        this.forecastRecomendDTOs = forecastRecomendDTOs;
     }
 
 }

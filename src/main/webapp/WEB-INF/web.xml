@@ -91,6 +91,6 @@
         </init-param>
     </servlet>
     <welcome-file-list>
-        <welcome-file>WEB-INF/zul/layout/Dashboard.zul</welcome-file>
+        <welcome-file>Forecast/Pencarian.zul</welcome-file>
     </welcome-file-list>
 </web-app>
