@@ -42,13 +42,6 @@ public class Ad_treenodeu1HibernateRepository extends HibernateRepository implem
 
     @Override
     public List<Ad_treenodeu1> findAll() {
-//        Query query = getSession().createSQLQuery("SELECT * FROM ad_treenodeu1")
-//                .addScalar("ad_tree_id")
-//                .addScalar("node_id")
-//                .addScalar("ad_client_id")
-//                .addScalar("ad_org_id");
-//        return query.list();
-
         Query query = getSession().createSQLQuery("SELECT ad_tree_id, node_id, ad_client_id, ad_org_id FROM ad_treenodeu1").addEntity(Ad_treenodeu1.class);
         return query.list();
     }

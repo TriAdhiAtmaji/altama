@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<hibernate-mapping>
-    
-    
+<hibernate-mapping> 
     <class mutable="true" name="com.altama.forecast.domain.c_elementvalue.C_Elementvalue" table="c_elementvalue">
         <id column="c_elementvalue_id" name="c_elementvalue_id">
             
         </id>
-        
-        <!--        <property column="c_elementvalue_id" name="c_elementvalue_id" not-null="false"/>-->
         <property column="ad_client_id" name="ad_client_id" not-null="false"/>
         <property column="value" name="value" not-null="false"/>
-        
-        <!--        <many-to-one name="name" class="com.altama.forecast.domain.ad_treenodeu1.Ad_treenodeu1" column="ad_tree_id" lazy="false"/>-->
-                
         <property column="name" name="brand" not-null="false"/> 
-            
         <property column="description" name="description" not-null="false"/>
-        
-        <!--        <one-to-one name="ad_treenodeu1" class="com.altama.forecast.domain.ad_treenodeu1.Ad_treenodeu1" />-->
-        <!--        <many-to-one name="ad_treenodeu1" class="com.altama.forecast.domain.ad_treenodeu1.Ad_treenodeu1" column="c_elementvalue_id" unique="true" not-null="true"/>-->
+
         <join table="ad_treenodeu1" >
             <key column="node_id"/>
             <many-to-one name="ad_treenodeu1"  not-null="true" unique="true"/>

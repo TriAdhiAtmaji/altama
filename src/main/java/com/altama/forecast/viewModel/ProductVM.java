@@ -12,6 +12,7 @@ import com.altama.forecast.interfaces.web.facade.dto.ad_treenodeu1.Ad_treenodeu1
 import com.altama.forecast.interfaces.web.facade.dto.c_bpartner.C_bpartnerDTO;
 import com.altama.forecast.interfaces.web.facade.dto.c_elementvalue.C_ElementvalueDTO;
 import com.altama.forecast.interfaces.web.facade.dto.forecastRecomendDTO.ForecastRecomendDTO;
+import com.altama.forecast.interfaces.web.facade.dto.forecastRecomendDTO.ForecastRecomendDTOBuilder;
 import com.altama.forecast.interfaces.web.facade.dto.m_pricelist_versionDTO.M_pricelist_versionDTO;
 import com.altama.forecast.interfaces.web.facade.dto.m_productDTO.M_productDTO;
 import com.altama.forecast.interfaces.web.facade.dto.m_productDTO.M_productDTOBuilder;
@@ -39,9 +40,6 @@ import org.zkoss.zul.Window;
 public class ProductVM {
 
     @WireVariable
-    Ad_treenodeu1Service ad_treenodeu1Service;
-
-    @WireVariable
     M_productService m_productService;
 
     @WireVariable
@@ -58,9 +56,6 @@ public class ProductVM {
 
     @WireVariable
     ForecastRecomendService forecastRecomendService;
-
-    private M_productDTO m_productDTO = new M_productDTO();
-    private List<M_productDTO> m_productDTOs = new ArrayList<>();
 
     private ForecastRecomendDTO forecastRecomendDTO = new ForecastRecomendDTO();
     private List<ForecastRecomendDTO> forecastRecomendDTOs = new ArrayList<>();
@@ -87,19 +82,19 @@ public class ProductVM {
     //    Setting page navigate
     private PageNavigation previous;
     private boolean checked;
-    private int pageSize = 5;
+    private int pageSize = 10;
     private int activePage = 0;
-    private int selectedIndex;
     private int totalSize = 0;
+
+    private Map params = new HashMap();
 
     @Init
     public void init(
-            @ExecutionArgParam("m_productDTO") M_productDTO m_product,
-            @ExecutionArgParam("c_ElementvalueDTO") C_ElementvalueDTO c_Elementvalue,
+            @ExecutionArgParam("forecastRecomendDTO") ForecastRecomendDTO forecastRecomend,
             @ExecutionArgParam("previous") PageNavigation previous
     ) {
         initData();
-        checkValidity(m_product, previous);
+        checkValidity(forecastRecomend, previous);
     }
 
     private void initData() {
@@ -107,62 +102,80 @@ public class ProductVM {
         listDiscontinue.add("Y");
         listDiscontinue.add("N");
 
-        m_productDTOs = m_productService.findAll();
+//        forecastRecomendDTOs = forecastRecomendService.findAll();
         listBpartner = c_bpartnerService.findAll();
-        listC_Elementvalues = c_ElementvalueService.findAll();
         listFactory = z_m_factoryService.findAll();
         listPriceVersion = m_pricelist_versionService.findAll();
-//        forecastRecomendDTOs = forecastRecomendService.findAll();
-//        System.out.println(forecastRecomendDTOs + "\n");
+        listC_Elementvalues = c_ElementvalueService.findAll();
 
-//        M_pricelist_versionDTO price = new M_pricelist_versionDTO(BigDecimal.valueOf(1000031), "US_Standard_PriceList_1108_IDR");
-//        setPriceVersion(price);
-//        if (priceVersionSelect == null) {
-//
-//          priceVersion.setM_pricelist_version_id(BigDecimal.valueOf(1000031));
-//        }
         if (continueSelect == null) {
-            continueSelect = "Y";
+            continueSelect = "N";
         }
+
+        params.put("productSelect", productSelect);
+        params.put("continueSelect", continueSelect);
+        if (brandSelect != null) {
+            params.put("brandSelected", brandSelect.getC_elementvalue_id());
+        }
+        if (suplierSelect != null) {
+            params.put("suplier", suplierSelect.getC_bpartner_id());
+        }
+        if (factorySelect != null) {
+            params.put("factory", factorySelect.getZ_m_factory_id());
+        }
+        if (priceVersionSelect != null) {
+            params.put("priceVersion", priceVersionSelect.getM_pricelist_version_id());
+        }
+
+        forecastRecomendDTOs = forecastRecomendService.findByParams(params, activePage * pageSize, pageSize);
+        totalSize = forecastRecomendDTOs.size();
 
     }
 
-    private void checkValidity(M_productDTO m_product, PageNavigation previous) {
-        if (m_product == null) {
-            ListModelList<M_productDTO> m_productList = new ListModelList<>(m_productService.findAll());
-            m_productDTO = new M_productDTOBuilder()
-                    .createM_productDTO();
+    private void checkValidity(ForecastRecomendDTO forecastRecomend, PageNavigation previous) {
+        if (forecastRecomend == null) {
+            forecastRecomendDTO = new ForecastRecomendDTOBuilder()
+                    .createForecastRecomendDTO();
         } else {
-            this.m_productDTO = m_product;
-            productSelect = m_productDTO.getName();
+            this.forecastRecomendDTO = forecastRecomend;
+//            brandSelect = forecastRecomend.getC_elementvalue_id();
+            productSelect = forecastRecomend.getProduct();
             this.previous = previous;
         }
     }
 
     @Command("buttonSearch")
-    @NotifyChange("m_productDTOs")
+    @NotifyChange("forecastRecomendDTOs")
     public void buttonSearch(@ContextParam(ContextType.VIEW) Window window) {
-        Map params = new HashMap();
         params.put("productSelect", productSelect);
         params.put("continueSelect", continueSelect);
-        params.put("brandSelected", brandSelect.getC_elementvalue_id());
-        params.put("suplier", suplierSelect.getC_bpartner_id());
-        params.put("factory", factorySelect.getZ_m_factory_id());
-        params.put("priceVersion", priceVersionSelect.getM_pricelist_version_id());
+        if (brandSelect != null) {
+            params.put("brandSelected", brandSelect.getC_elementvalue_id());
+        }
+        if (suplierSelect != null) {
+            params.put("suplier", suplierSelect.getC_bpartner_id());
+        }
+        if (factorySelect != null) {
+            params.put("factory", factorySelect.getZ_m_factory_id());
+        }
+        if (priceVersionSelect != null) {
+            params.put("priceVersion", priceVersionSelect.getM_pricelist_version_id());
+        }
 
-        m_productDTOs = m_productService.findByParams(params);
+        forecastRecomendDTOs = forecastRecomendService.findByParams(params, activePage * pageSize, pageSize);
+        totalSize = forecastRecomendDTOs.size();
 
-        System.out.print("2 " + brandSelect.getBrand() + " " + brandSelect.getC_elementvalue_id() + " \n");
-
-        System.out.print("3 " + continueSelect + " \n");
-
-        System.out.print("4 " + productSelect + " \n");
-
-        System.out.print("5 " + suplierSelect.getSuplier() + " " + suplierSelect.getC_bpartner_id() + " \n");
-
-        System.out.print("6 " + priceVersionSelect.getNamePricelist() + " " + priceVersionSelect.getM_pricelist_version_id() + " \n");
-
-        System.out.print("7 " + factorySelect.getName() + " " + factorySelect.getZ_m_factory_id() + " \n");
+//        System.out.print("2 " + brandSelect.getBrand() + " " + brandSelect.getC_elementvalue_id() + " \n");
+//
+//        System.out.print("3 " + continueSelect + " \n");
+//
+//        System.out.print("4 " + productSelect + " \n");
+//
+//        System.out.print("5 " + suplierSelect.getSuplier() + " " + suplierSelect.getC_bpartner_id() + " \n");
+//
+//        System.out.print("6 " + priceVersionSelect.getNamePricelist() + " " + priceVersionSelect.getM_pricelist_version_id() + " \n");
+//
+//        System.out.print("7 " + factorySelect.getName() + " " + factorySelect.getZ_m_factory_id() + " \n");
     }
 
     public List<Ad_treenodeu1DTO> getAd_treenodeu1DTOs() {
@@ -213,22 +226,6 @@ public class ProductVM {
         this.priceVersionSelect = priceVersionSelect;
     }
 
-    public M_productDTO getM_productDTO() {
-        return m_productDTO;
-    }
-
-    public void setM_productDTO(M_productDTO m_productDTO) {
-        this.m_productDTO = m_productDTO;
-    }
-
-    public List<M_productDTO> getM_productDTOs() {
-        return m_productDTOs;
-    }
-
-    public void setM_productDTOs(List<M_productDTO> m_productDTOs) {
-        this.m_productDTOs = m_productDTOs;
-    }
-
     public PageNavigation getPrevious() {
         return previous;
     }
@@ -257,16 +254,9 @@ public class ProductVM {
         return activePage;
     }
 
+    @NotifyChange("forecastRecomendDTOs")
     public void setActivePage(int activePage) {
         this.activePage = activePage;
-    }
-
-    public int getSelectedIndex() {
-        return selectedIndex;
-    }
-
-    public void setSelectedIndex(int selectedIndex) {
-        this.selectedIndex = selectedIndex;
     }
 
     public int getTotalSize() {

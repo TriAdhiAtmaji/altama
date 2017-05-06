@@ -49,13 +49,21 @@ public class ForecastRecomendServiceImpl implements ForecastRecomendService {
     }
 
     @Override
-    public List<ForecastRecomendDTO> findByParams(Map map) {
+    public List<ForecastRecomendDTO> findByParams(Map map, int offset, int limit) {
         Validate.notNull(forecastRecomendRepository);
-        List<ForecastRecomend> listForecastRecomend = forecastRecomendRepository.findByParam(map);
+        List<ForecastRecomend> listForecastRecomend = forecastRecomendRepository.findByParam(map, offset, limit);
         if (listForecastRecomend != null) {
             return (List<ForecastRecomendDTO>) forecastRecomendDTOAssembler.toDTOs(listForecastRecomend);
         }
         return null;
+    }
+
+    @Override
+    public Integer countRecord(int count) {
+        Validate.notNull(forecastRecomendRepository);
+        Integer i = forecastRecomendRepository.countRecord(count);
+        return null;
+
     }
 
 }

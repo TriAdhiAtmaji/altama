@@ -17,5 +17,7 @@ public interface ForecastRecomendService {
 
     List<ForecastRecomendDTO> findAll();
 
-    List<ForecastRecomendDTO> findByParams(Map map);
+    List<ForecastRecomendDTO> findByParams(Map map, int offset, int limit);
+
+    Integer countRecord(int count);
 }

@@ -14,5 +14,7 @@ public interface ForecastRecomendRepository {
 
     List<ForecastRecomend> findAll();
 
-    List<ForecastRecomend> findByParam(Map map);
+    Integer countRecord(int count);
+
+    List<ForecastRecomend> findByParam(Map map, int offset, int limit);
 }
