@@ -90,8 +90,8 @@
             </groupbox>
         </groupbox>
         <groupbox closable="false">
-           <paging pagesize="@load(vm.pageSize)" totalsize="@load(vm.totalSize)" activepage="@load(vm.activePage)"/>
-            <listbox  emptyMessage="${labels.common.noDataFound}" model="@bind(vm.forecastRecomendDTOs)">
+            <!--            <paging pagesize="@load(vm.pageSize)" totalsize="@load(vm.totalSize)" activepage="@load(vm.activePage)"/>-->
+            <listbox rows="@load(vm.pageSize)" pageSize="@load(vm.pageSize)" pagingPosition="top" mold="paging"  emptyMessage="${labels.common.noDataFound}" model="@bind(vm.forecastRecomendDTOs)">
                 <listhead>
                     <listheader label="Product" width="30%" align="center"/>
                     <listheader label="Qty Available" width="30%" align="center"/>
@@ -101,52 +101,52 @@
                     <listheader label="Qty On Ondered" width="30%" align="center"/>
                     <listheader label="Price List Jual" width="30%" align="center"/>
                     <listheader label="Currency List PCS" width="30%" align="center"/>
-                    <listheader label="Price List Last PO" width="30%" align="center"/>
+                    <listheader label="Price List Last PO" width="10%" align="center"/>
                     <listheader label="MOQ" width="10%" align="center"/>
                     <listheader label="Qty PCS per Master Box" width="30%" align="center"/>
-                    <listheader label="Rekomendasi Qty PO PCS" width="30%" align="center"/>
+                    <listheader label="Rekomendasi Qty PO PCS" width="40%" align="center"/>
                     <listheader label="Total Master BOX" width="30%" align="center"/>
                 </listhead>
                 <template name="model">
                     <listitem value="${each}">
                         <listcell >
-                            <label width="100%" value="@bind(each.product)"/>
+                            <label width="95%" value="@bind(each.product)"/>
                         </listcell>
                         <listcell >
-                            <label width="100%" value="@bind(each.qtyAvailable)"/>
+                            <label width="95%" value="@bind(each.qtyAvailable)"/>
                         </listcell>
                         <listcell >
-                            <label width="100%" value="@bind(each.qtyAverage)"/>
+                            <label width="95%" value="@bind(each.qtyAverage)"/>
                         </listcell>
                         <listcell >
-                            <label width="100%" value="@bind(each.leadTime)"/>
+                            <label width="95%" value="@bind(each.leadTime)"/>
                         </listcell>
                         <listcell >
-                            <label width="100%" value="@bind(each.qtyBatasAtas)"/>
+                            <label width="95%" value="@bind(each.qtyBatasAtas)"/>
                         </listcell>
                         <listcell >
-                            <label width="100%" value="@bind(each.qtyOnOrdered)"/>
+                            <label width="95%" value="@bind(each.qtyOnOrdered)"/>
                         </listcell>
                         <listcell >
-                            <label width="100%" value="@bind(each.priceListJual)"/>
+                            <label width="95%" value="@bind(each.priceListJual)"/>
                         </listcell>
                         <listcell >
-                            <label width="100%" value="@bind(each.currencyListPO)"/>
+                            <label width="95%" value="@bind(each.currencyListPO)"/>
                         </listcell>
                         <listcell >
-                            <label width="100%" value="@bind(each.priceListLastPO)"/>
+                            <label width="95%" value="@bind(each.priceListLastPO)"/>
                         </listcell>
                         <listcell >
-                            <label width="100%" value="@bind(each.moq)"/>
+                            <label width="95%" value="@bind(each.moq)"/>
                         </listcell>
                         <listcell >
-                            <label width="100%" value="@bind(each.qtyPcsPerMasterBox)"/>
+                            <label width="95%" value="@bind(each.qtyPcsPerMasterBox)"/>
                         </listcell>
                         <listcell >
-                            <label width="100%" value="@bind(each.recomendQtyPOPcs)"/>
+                            <label width="95%" value="@bind(each.recomendQtyPOPcs)"/>
                         </listcell>
                         <listcell >
-                            <label width="100%" value="@bind(each.totalMasterBox)"/>
+                            <label width="95%" value="@bind(each.totalMasterBox)"/>
                         </listcell>
                     </listitem>
                 </template>

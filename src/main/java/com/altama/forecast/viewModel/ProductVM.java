@@ -1,6 +1,5 @@
 package com.altama.forecast.viewModel;
 
-import com.altama.forecast.application.Ad_treenodeu1Service;
 import com.altama.forecast.application.C_ElementvalueService;
 import com.altama.forecast.application.C_bpartnerService;
 import com.altama.forecast.application.ForecastRecomendService;
@@ -8,14 +7,13 @@ import com.altama.forecast.application.M_pricelist_versionService;
 import com.altama.forecast.application.M_productService;
 import com.altama.forecast.application.Z_m_factoryService;
 import com.altama.forecast.common.zul.PageNavigation;
+import com.altama.forecast.domain.m_product.IsDiscontinue;
 import com.altama.forecast.interfaces.web.facade.dto.ad_treenodeu1.Ad_treenodeu1DTO;
 import com.altama.forecast.interfaces.web.facade.dto.c_bpartner.C_bpartnerDTO;
 import com.altama.forecast.interfaces.web.facade.dto.c_elementvalue.C_ElementvalueDTO;
 import com.altama.forecast.interfaces.web.facade.dto.forecastRecomendDTO.ForecastRecomendDTO;
 import com.altama.forecast.interfaces.web.facade.dto.forecastRecomendDTO.ForecastRecomendDTOBuilder;
 import com.altama.forecast.interfaces.web.facade.dto.m_pricelist_versionDTO.M_pricelist_versionDTO;
-import com.altama.forecast.interfaces.web.facade.dto.m_productDTO.M_productDTO;
-import com.altama.forecast.interfaces.web.facade.dto.m_productDTO.M_productDTOBuilder;
 import com.altama.forecast.interfaces.web.facade.dto.z_m_factory.Z_m_factoryDTO;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -64,16 +62,14 @@ public class ProductVM {
 
     // Selected ComboBox
     private String productSelect;
-//    private IsDiscontinue continueSelect;
-    private String continueSelect;
+    private IsDiscontinue continueSelect;
     private C_ElementvalueDTO brandSelect;
     private C_bpartnerDTO suplierSelect;
     private Z_m_factoryDTO factorySelect;
     private M_pricelist_versionDTO priceVersionSelect;
 
     //        combobox
-//    private ListModelList<IsDiscontinue> listDiscontinue = new ListModelList<IsDiscontinue>();
-    private ListModelList<String> listDiscontinue = new ListModelList<String>();
+    private ListModelList<IsDiscontinue> listDiscontinue = new ListModelList<IsDiscontinue>();
     private List<C_ElementvalueDTO> listC_Elementvalues = new ArrayList<C_ElementvalueDTO>();
     private List<C_bpartnerDTO> listBpartner = new ArrayList<C_bpartnerDTO>();
     private List<Z_m_factoryDTO> listFactory = new ArrayList<Z_m_factoryDTO>();
@@ -99,9 +95,6 @@ public class ProductVM {
 
     private void initData() {
 
-        listDiscontinue.add("Y");
-        listDiscontinue.add("N");
-
 //        forecastRecomendDTOs = forecastRecomendService.findAll();
         listBpartner = c_bpartnerService.findAll();
         listFactory = z_m_factoryService.findAll();
@@ -109,27 +102,30 @@ public class ProductVM {
         listC_Elementvalues = c_ElementvalueService.findAll();
 
         if (continueSelect == null) {
-            continueSelect = "N";
+            continueSelect = IsDiscontinue.valueOf("N");
         }
 
-        params.put("productSelect", productSelect);
-        params.put("continueSelect", continueSelect);
+        if (productSelect != null) {
+            params.put("productSelect", productSelect);
+        }
+        if (continueSelect != null) {
+            params.put("continueSelect", continueSelect);
+        }
         if (brandSelect != null) {
             params.put("brandSelected", brandSelect.getC_elementvalue_id());
         }
         if (suplierSelect != null) {
-            params.put("suplier", suplierSelect.getC_bpartner_id());
+            params.put("suplierSelect", suplierSelect.getC_bpartner_id());
         }
         if (factorySelect != null) {
-            params.put("factory", factorySelect.getZ_m_factory_id());
+            params.put("factorySelect", factorySelect.getZ_m_factory_id());
         }
         if (priceVersionSelect != null) {
-            params.put("priceVersion", priceVersionSelect.getM_pricelist_version_id());
+            params.put("priceVersionSelect", priceVersionSelect.getM_pricelist_version_id());
         }
 
         forecastRecomendDTOs = forecastRecomendService.findByParams(params, activePage * pageSize, pageSize);
         totalSize = forecastRecomendDTOs.size();
-
     }
 
     private void checkValidity(ForecastRecomendDTO forecastRecomend, PageNavigation previous) {
@@ -147,35 +143,28 @@ public class ProductVM {
     @Command("buttonSearch")
     @NotifyChange("forecastRecomendDTOs")
     public void buttonSearch(@ContextParam(ContextType.VIEW) Window window) {
-        params.put("productSelect", productSelect);
-        params.put("continueSelect", continueSelect);
+//        Map params = new HashMap();
+        if (productSelect != null) {
+            params.put("productSelect", productSelect);
+        }
+        if (continueSelect != null) {
+            params.put("continueSelect", continueSelect);
+        }
         if (brandSelect != null) {
             params.put("brandSelected", brandSelect.getC_elementvalue_id());
         }
         if (suplierSelect != null) {
-            params.put("suplier", suplierSelect.getC_bpartner_id());
+            params.put("suplierSelect", suplierSelect.getC_bpartner_id());
         }
         if (factorySelect != null) {
-            params.put("factory", factorySelect.getZ_m_factory_id());
+            params.put("factorySelect", factorySelect.getZ_m_factory_id());
         }
         if (priceVersionSelect != null) {
-            params.put("priceVersion", priceVersionSelect.getM_pricelist_version_id());
+            params.put("priceVersionSelect", priceVersionSelect.getM_pricelist_version_id());
         }
 
-        forecastRecomendDTOs = forecastRecomendService.findByParams(params, activePage * pageSize, pageSize);
-        totalSize = forecastRecomendDTOs.size();
-
-//        System.out.print("2 " + brandSelect.getBrand() + " " + brandSelect.getC_elementvalue_id() + " \n");
-//
-//        System.out.print("3 " + continueSelect + " \n");
-//
-//        System.out.print("4 " + productSelect + " \n");
-//
-//        System.out.print("5 " + suplierSelect.getSuplier() + " " + suplierSelect.getC_bpartner_id() + " \n");
-//
-//        System.out.print("6 " + priceVersionSelect.getNamePricelist() + " " + priceVersionSelect.getM_pricelist_version_id() + " \n");
-//
-//        System.out.print("7 " + factorySelect.getName() + " " + factorySelect.getZ_m_factory_id() + " \n");
+        forecastRecomendDTOs = forecastRecomendService.findByParams(params, pageSize, pageSize);
+//        forecastRecomendDTOs = forecastRecomendService.findByParamsMap(params);
     }
 
     public List<Ad_treenodeu1DTO> getAd_treenodeu1DTOs() {
@@ -283,27 +272,12 @@ public class ProductVM {
         this.listC_Elementvalues = listC_Elementvalues;
     }
 
-//    public ListModelList<IsDiscontinue> getListDiscontinue() {
-//        return new ListModelList<>(IsDiscontinue.values());
-//    }
-//
-//    public void setListDiscontinue(ListModelList<IsDiscontinue> listDiscontinue) {
-//        this.listDiscontinue = listDiscontinue;
-//    }
-    public ListModelList<String> getListDiscontinue() {
-        return listDiscontinue;
+    public ListModelList<IsDiscontinue> getListDiscontinue() {
+        return new ListModelList<>(IsDiscontinue.values());
     }
 
-    public void setListDiscontinue(ListModelList<String> listDiscontinue) {
+    public void setListDiscontinue(ListModelList<IsDiscontinue> listDiscontinue) {
         this.listDiscontinue = listDiscontinue;
-    }
-
-    public String getContinueSelect() {
-        return continueSelect;
-    }
-
-    public void setContinueSelect(String continueSelect) {
-        this.continueSelect = continueSelect;
     }
 
     public List<C_bpartnerDTO> getListBpartner() {
@@ -344,6 +318,14 @@ public class ProductVM {
 
     public void setForecastRecomendDTOs(List<ForecastRecomendDTO> forecastRecomendDTOs) {
         this.forecastRecomendDTOs = forecastRecomendDTOs;
+    }
+
+    public IsDiscontinue getContinueSelect() {
+        return continueSelect;
+    }
+
+    public void setContinueSelect(IsDiscontinue continueSelect) {
+        this.continueSelect = continueSelect;
     }
 
 }

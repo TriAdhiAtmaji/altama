@@ -34,6 +34,7 @@ public class ForecastRecomendDTOAssembler implements IObjectAssembler<ForecastRe
                 .setQtyPcsPerMasterBox(domainObject.getQtyPcsPerMasterBox())
                 .setRecomendQtyPOPcs(domainObject.getRecomendQtyPOPcs())
                 .setTotalMasterBox(domainObject.getTotalMasterBox())
+                .setIsDiscontinue(domainObject.getIsDiscontinue())
                 .createForecastRecomendDTO();
     }
 
@@ -57,6 +58,7 @@ public class ForecastRecomendDTOAssembler implements IObjectAssembler<ForecastRe
                 .setQtyPcsPerMasterBox(dtoObject.getQtyPcsPerMasterBox())
                 .setRecomendQtyPOPcs(dtoObject.getRecomendQtyPOPcs())
                 .setTotalMasterBox(dtoObject.getTotalMasterBox())
+                .setIsDiscontinue(dtoObject.getIsDiscontinue())
                 .createForecastRecomend();
     }
 

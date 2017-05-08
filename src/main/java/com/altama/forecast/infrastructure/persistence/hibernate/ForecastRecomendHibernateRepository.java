@@ -30,7 +30,7 @@ public class ForecastRecomendHibernateRepository extends HibernateRepository imp
 
     @Override
     public List<ForecastRecomend> findAll() {
-        Query query = getSession().createQuery("SELECT DISTINCT forecast FROM com.altama.forecast.domain.forecastrecomend.ForecastRecomend AS forecast");
+        Query query = getSession().createQuery("SELECT forecast FROM com.altama.forecast.domain.forecastrecomend.ForecastRecomend AS forecast");
         return query.list();
     }
 
@@ -38,27 +38,27 @@ public class ForecastRecomendHibernateRepository extends HibernateRepository imp
     public List<ForecastRecomend> findByParam(Map map, int offset, int limit) {
         Criteria criteria = getSession().createCriteria(ForecastRecomend.class);
 
-        if (StringUtil.hasValue(map.get("c_elementvalue_id"))) {
-            criteria.add(Restrictions.eq("c_elementvalue_id", map.get("c_elementvalue_id")));
+        if (StringUtil.hasValue(map.get("brandSelected"))) {
+            criteria.add(Restrictions.eq("c_elementvalue_id", map.get("brandSelected")));
         }
 
         if (StringUtil.hasValue(map.get("productSelect"))) {
             criteria.add(Restrictions.eq("product", map.get("productSelect")));
         }
 
-        if (StringUtil.hasValue(map.get("c_bpartner_id"))) {
-            criteria.add(Restrictions.eq("c_bpartner_id", map.get("c_bpartner_id")));
+        if (StringUtil.hasValue(map.get("suplierSelect"))) {
+            criteria.add(Restrictions.eq("c_bpartner_id", map.get("suplierSelect")));
         }
 
-        if (StringUtil.hasValue(map.get("z_m_factory_id"))) {
-            criteria.add(Restrictions.eq("z_m_factory_id", map.get("z_m_factory_id")));
+        if (StringUtil.hasValue(map.get("factorySelect"))) {
+            criteria.add(Restrictions.eq("z_m_factory_id", map.get("factorySelect")));
         }
 
-        if (StringUtil.hasValue(map.get("isDiscontinued"))) {
-            criteria.add(Restrictions.eq("isDiscontinued", map.get("isDiscontinued")));
+        if (StringUtil.hasValue(map.get("continueSelect"))) {
+            criteria.add(Restrictions.eq("isDiscontinue", map.get("continueSelect")));
         }
-        if (StringUtil.hasValue(map.get("m_pricelist_version_id"))) {
-            criteria.add(Restrictions.eq("m_pricelist_version_id", map.get("m_pricelist_version_id")));
+        if (StringUtil.hasValue(map.get("priceVersionSelect"))) {
+            criteria.add(Restrictions.eq("m_pricelist_version_id", map.get("priceVersionSelect")));
         }
         criteria.setFirstResult(offset);
         criteria.setMaxResults(limit);
@@ -72,5 +72,33 @@ public class ForecastRecomendHibernateRepository extends HibernateRepository imp
         return countRecord(count);
     }
 
+    @Override
+    public List<ForecastRecomend> findByParamMap(Map map) {
+        Criteria criteria = getSession().createCriteria(ForecastRecomend.class);
+
+        if (StringUtil.hasValue(map.get("brandSelected"))) {
+            criteria.add(Restrictions.eq("c_elementvalue_id", map.get("brandSelected")));
+        }
+
+        if (StringUtil.hasValue(map.get("productSelect"))) {
+            criteria.add(Restrictions.eq("product", map.get("productSelect")));
+        }
+
+        if (StringUtil.hasValue(map.get("suplierSelect"))) {
+            criteria.add(Restrictions.eq("c_bpartner_id", map.get("suplierSelect")));
+        }
+
+        if (StringUtil.hasValue(map.get("factorySelect"))) {
+            criteria.add(Restrictions.eq("z_m_factory_id", map.get("factorySelect")));
+        }
+
+        if (StringUtil.hasValue(map.get("continueSelect"))) {
+            criteria.add(Restrictions.eq("isDiscontinue", map.get("continueSelect")));
+        }
+        if (StringUtil.hasValue(map.get("priceVersionSelect"))) {
+            criteria.add(Restrictions.eq("m_pricelist_version_id", map.get("priceVersionSelect")));
+        }
+        return criteria.list();
+    }
+
 }
-//"SELECT COUNT * FROM com.altama.forecast.domain.forecastrecomend.ForecastRecomend"

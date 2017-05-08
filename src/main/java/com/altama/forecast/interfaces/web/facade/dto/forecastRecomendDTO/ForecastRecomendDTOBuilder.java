@@ -5,6 +5,7 @@
  */
 package com.altama.forecast.interfaces.web.facade.dto.forecastRecomendDTO;
 
+import com.altama.forecast.domain.m_product.IsDiscontinue;
 import java.math.BigDecimal;
 
 public class ForecastRecomendDTOBuilder {
@@ -21,12 +22,13 @@ public class ForecastRecomendDTOBuilder {
     private BigDecimal qtyBatasAtas;
     private BigDecimal qtyOnOrdered;
     private BigDecimal priceListJual;
-    private String currencyListPO;
-    private BigDecimal priceListLastPO;
+    private BigDecimal currencyListPO;
+    private String priceListLastPO;
     private BigDecimal moq;
     private BigDecimal qtyPcsPerMasterBox;
     private BigDecimal recomendQtyPOPcs;
     private BigDecimal totalMasterBox;
+    private IsDiscontinue isDiscontinue;
 
     public ForecastRecomendDTOBuilder() {
     }
@@ -91,12 +93,12 @@ public class ForecastRecomendDTOBuilder {
         return this;
     }
 
-    public ForecastRecomendDTOBuilder setCurrencyListPO(String currencyListPO) {
+    public ForecastRecomendDTOBuilder setCurrencyListPO(BigDecimal currencyListPO) {
         this.currencyListPO = currencyListPO;
         return this;
     }
 
-    public ForecastRecomendDTOBuilder setPriceListLastPO(BigDecimal priceListLastPO) {
+    public ForecastRecomendDTOBuilder setPriceListLastPO(String priceListLastPO) {
         this.priceListLastPO = priceListLastPO;
         return this;
     }
@@ -121,8 +123,13 @@ public class ForecastRecomendDTOBuilder {
         return this;
     }
 
+    public ForecastRecomendDTOBuilder setIsDiscontinue(IsDiscontinue isDiscontinue) {
+        this.isDiscontinue = isDiscontinue;
+        return this;
+    }
+
     public ForecastRecomendDTO createForecastRecomendDTO() {
-        return new ForecastRecomendDTO(m_product_id, c_bpartner_id, c_elementvalue_id, z_m_factory_id, m_pricelist_version_id, product, qtyAvailable, qtyAverage, leadTime, qtyBatasAtas, qtyOnOrdered, priceListJual, currencyListPO, priceListLastPO, moq, qtyPcsPerMasterBox, recomendQtyPOPcs, totalMasterBox);
+        return new ForecastRecomendDTO(m_product_id, c_bpartner_id, c_elementvalue_id, z_m_factory_id, m_pricelist_version_id, product, qtyAvailable, qtyAverage, leadTime, qtyBatasAtas, qtyOnOrdered, priceListJual, currencyListPO, priceListLastPO, moq, qtyPcsPerMasterBox, recomendQtyPOPcs, totalMasterBox, isDiscontinue);
     }
 
 }

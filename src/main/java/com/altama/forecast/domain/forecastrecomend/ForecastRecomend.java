@@ -1,5 +1,6 @@
 package com.altama.forecast.domain.forecastrecomend;
 
+import com.altama.forecast.domain.m_product.IsDiscontinue;
 import com.altama.forecast.domain.shared.EntityObject;
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -22,17 +23,18 @@ public class ForecastRecomend implements EntityObject<ForecastRecomend> {
     private BigDecimal qtyBatasAtas;
     private BigDecimal qtyOnOrdered;
     private BigDecimal priceListJual;
-    private String currencyListPO;
-    private BigDecimal priceListLastPO;
+    private BigDecimal currencyListPO;
+    private String priceListLastPO;
     private BigDecimal moq;
     private BigDecimal qtyPcsPerMasterBox;
     private BigDecimal recomendQtyPOPcs;
     private BigDecimal totalMasterBox;
+    private IsDiscontinue isDiscontinue;
 
     public ForecastRecomend() {
     }
 
-    public ForecastRecomend(BigDecimal m_product_id, BigDecimal c_bpartner_id, BigDecimal c_elementvalue_id, BigDecimal z_m_factory_id, BigDecimal m_pricelist_version_id, String product, BigDecimal qtyAvailable, BigDecimal qtyAverage, BigDecimal leadTime, BigDecimal qtyBatasAtas, BigDecimal qtyOnOrdered, BigDecimal priceListJual, String currencyListPO, BigDecimal priceListLastPO, BigDecimal moq, BigDecimal qtyPcsPerMasterBox, BigDecimal recomendQtyPOPcs, BigDecimal totalMasterBox) {
+    public ForecastRecomend(BigDecimal m_product_id, BigDecimal c_bpartner_id, BigDecimal c_elementvalue_id, BigDecimal z_m_factory_id, BigDecimal m_pricelist_version_id, String product, BigDecimal qtyAvailable, BigDecimal qtyAverage, BigDecimal leadTime, BigDecimal qtyBatasAtas, BigDecimal qtyOnOrdered, BigDecimal priceListJual, BigDecimal currencyListPO, String priceListLastPO, BigDecimal moq, BigDecimal qtyPcsPerMasterBox, BigDecimal recomendQtyPOPcs, BigDecimal totalMasterBox, IsDiscontinue isDiscontinue) {
         this.m_product_id = m_product_id;
         this.c_bpartner_id = c_bpartner_id;
         this.c_elementvalue_id = c_elementvalue_id;
@@ -51,6 +53,7 @@ public class ForecastRecomend implements EntityObject<ForecastRecomend> {
         this.qtyPcsPerMasterBox = qtyPcsPerMasterBox;
         this.recomendQtyPOPcs = recomendQtyPOPcs;
         this.totalMasterBox = totalMasterBox;
+        this.isDiscontinue = isDiscontinue;
     }
 
     public BigDecimal getM_product_id() {
@@ -149,19 +152,19 @@ public class ForecastRecomend implements EntityObject<ForecastRecomend> {
         this.priceListJual = priceListJual;
     }
 
-    public String getCurrencyListPO() {
+    public BigDecimal getCurrencyListPO() {
         return currencyListPO;
     }
 
-    public void setCurrencyListPO(String currencyListPO) {
+    public void setCurrencyListPO(BigDecimal currencyListPO) {
         this.currencyListPO = currencyListPO;
     }
 
-    public BigDecimal getPriceListLastPO() {
+    public String getPriceListLastPO() {
         return priceListLastPO;
     }
 
-    public void setPriceListLastPO(BigDecimal priceListLastPO) {
+    public void setPriceListLastPO(String priceListLastPO) {
         this.priceListLastPO = priceListLastPO;
     }
 
@@ -197,27 +200,35 @@ public class ForecastRecomend implements EntityObject<ForecastRecomend> {
         this.totalMasterBox = totalMasterBox;
     }
 
+    public IsDiscontinue getIsDiscontinue() {
+        return isDiscontinue;
+    }
+
+    public void setIsDiscontinue(IsDiscontinue isDiscontinue) {
+        this.isDiscontinue = isDiscontinue;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 53 * hash + Objects.hashCode(this.m_product_id);
-        hash = 53 * hash + Objects.hashCode(this.c_bpartner_id);
-        hash = 53 * hash + Objects.hashCode(this.c_elementvalue_id);
-        hash = 53 * hash + Objects.hashCode(this.z_m_factory_id);
-        hash = 53 * hash + Objects.hashCode(this.m_pricelist_version_id);
-        hash = 53 * hash + Objects.hashCode(this.product);
-        hash = 53 * hash + Objects.hashCode(this.qtyAvailable);
-        hash = 53 * hash + Objects.hashCode(this.qtyAverage);
-        hash = 53 * hash + Objects.hashCode(this.leadTime);
-        hash = 53 * hash + Objects.hashCode(this.qtyBatasAtas);
-        hash = 53 * hash + Objects.hashCode(this.qtyOnOrdered);
-        hash = 53 * hash + Objects.hashCode(this.priceListJual);
-        hash = 53 * hash + Objects.hashCode(this.currencyListPO);
-        hash = 53 * hash + Objects.hashCode(this.priceListLastPO);
-        hash = 53 * hash + Objects.hashCode(this.moq);
-        hash = 53 * hash + Objects.hashCode(this.qtyPcsPerMasterBox);
-        hash = 53 * hash + Objects.hashCode(this.recomendQtyPOPcs);
-        hash = 53 * hash + Objects.hashCode(this.totalMasterBox);
+        hash = 19 * hash + Objects.hashCode(this.c_bpartner_id);
+        hash = 19 * hash + Objects.hashCode(this.c_elementvalue_id);
+        hash = 19 * hash + Objects.hashCode(this.z_m_factory_id);
+        hash = 19 * hash + Objects.hashCode(this.m_pricelist_version_id);
+        hash = 19 * hash + Objects.hashCode(this.product);
+        hash = 19 * hash + Objects.hashCode(this.qtyAvailable);
+        hash = 19 * hash + Objects.hashCode(this.qtyAverage);
+        hash = 19 * hash + Objects.hashCode(this.leadTime);
+        hash = 19 * hash + Objects.hashCode(this.qtyBatasAtas);
+        hash = 19 * hash + Objects.hashCode(this.qtyOnOrdered);
+        hash = 19 * hash + Objects.hashCode(this.priceListJual);
+        hash = 19 * hash + Objects.hashCode(this.currencyListPO);
+        hash = 19 * hash + Objects.hashCode(this.priceListLastPO);
+        hash = 19 * hash + Objects.hashCode(this.moq);
+        hash = 19 * hash + Objects.hashCode(this.qtyPcsPerMasterBox);
+        hash = 19 * hash + Objects.hashCode(this.recomendQtyPOPcs);
+        hash = 19 * hash + Objects.hashCode(this.totalMasterBox);
+        hash = 19 * hash + Objects.hashCode(this.isDiscontinue);
         return hash;
     }
 

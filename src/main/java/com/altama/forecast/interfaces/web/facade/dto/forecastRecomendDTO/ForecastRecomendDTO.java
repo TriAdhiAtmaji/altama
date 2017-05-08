@@ -1,5 +1,6 @@
 package com.altama.forecast.interfaces.web.facade.dto.forecastRecomendDTO;
 
+import com.altama.forecast.domain.m_product.IsDiscontinue;
 import java.math.BigDecimal;
 
 /**
@@ -20,17 +21,18 @@ public class ForecastRecomendDTO {
     private BigDecimal qtyBatasAtas;
     private BigDecimal qtyOnOrdered;
     private BigDecimal priceListJual;
-    private String currencyListPO;
-    private BigDecimal priceListLastPO;
+    private BigDecimal currencyListPO;
+    private String priceListLastPO;
     private BigDecimal moq;
     private BigDecimal qtyPcsPerMasterBox;
     private BigDecimal recomendQtyPOPcs;
     private BigDecimal totalMasterBox;
+    private IsDiscontinue isDiscontinue;
 
     public ForecastRecomendDTO() {
     }
 
-    public ForecastRecomendDTO(BigDecimal m_product_id, BigDecimal c_bpartner_id, BigDecimal c_elementvalue_id, BigDecimal z_m_factory_id, BigDecimal m_pricelist_version_id, String product, BigDecimal qtyAvailable, BigDecimal qtyAverage, BigDecimal leadTime, BigDecimal qtyBatasAtas, BigDecimal qtyOnOrdered, BigDecimal priceListJual, String currencyListPO, BigDecimal priceListLastPO, BigDecimal moq, BigDecimal qtyPcsPerMasterBox, BigDecimal recomendQtyPOPcs, BigDecimal totalMasterBox) {
+    public ForecastRecomendDTO(BigDecimal m_product_id, BigDecimal c_bpartner_id, BigDecimal c_elementvalue_id, BigDecimal z_m_factory_id, BigDecimal m_pricelist_version_id, String product, BigDecimal qtyAvailable, BigDecimal qtyAverage, BigDecimal leadTime, BigDecimal qtyBatasAtas, BigDecimal qtyOnOrdered, BigDecimal priceListJual, BigDecimal currencyListPO, String priceListLastPO, BigDecimal moq, BigDecimal qtyPcsPerMasterBox, BigDecimal recomendQtyPOPcs, BigDecimal totalMasterBox, IsDiscontinue isDiscontinue) {
         this.m_product_id = m_product_id;
         this.c_bpartner_id = c_bpartner_id;
         this.c_elementvalue_id = c_elementvalue_id;
@@ -49,6 +51,7 @@ public class ForecastRecomendDTO {
         this.qtyPcsPerMasterBox = qtyPcsPerMasterBox;
         this.recomendQtyPOPcs = recomendQtyPOPcs;
         this.totalMasterBox = totalMasterBox;
+        this.isDiscontinue = isDiscontinue;
     }
 
     public BigDecimal getM_product_id() {
@@ -147,19 +150,19 @@ public class ForecastRecomendDTO {
         this.priceListJual = priceListJual;
     }
 
-    public String getCurrencyListPO() {
+    public BigDecimal getCurrencyListPO() {
         return currencyListPO;
     }
 
-    public void setCurrencyListPO(String currencyListPO) {
+    public void setCurrencyListPO(BigDecimal currencyListPO) {
         this.currencyListPO = currencyListPO;
     }
 
-    public BigDecimal getPriceListLastPO() {
+    public String getPriceListLastPO() {
         return priceListLastPO;
     }
 
-    public void setPriceListLastPO(BigDecimal priceListLastPO) {
+    public void setPriceListLastPO(String priceListLastPO) {
         this.priceListLastPO = priceListLastPO;
     }
 
@@ -195,9 +198,17 @@ public class ForecastRecomendDTO {
         this.totalMasterBox = totalMasterBox;
     }
 
+    public IsDiscontinue getIsDiscontinue() {
+        return isDiscontinue;
+    }
+
+    public void setIsDiscontinue(IsDiscontinue isDiscontinue) {
+        this.isDiscontinue = isDiscontinue;
+    }
+
     @Override
     public String toString() {
-        return "ForecastRecomendDTO{" + "m_product_id=" + m_product_id + ", c_bpartner_id=" + c_bpartner_id + ", c_elementvalue_id=" + c_elementvalue_id + ", z_m_factory_id=" + z_m_factory_id + ", m_pricelist_version_id=" + m_pricelist_version_id + ", product=" + product + ", qtyAvailable=" + qtyAvailable + ", qtyAverage=" + qtyAverage + ", leadTime=" + leadTime + ", qtyBatasAtas=" + qtyBatasAtas + ", qtyOnOrdered=" + qtyOnOrdered + ", priceListJual=" + priceListJual + ", currencyListPO=" + currencyListPO + ", priceListLastPO=" + priceListLastPO + ", moq=" + moq + ", qtyPcsPerMasterBox=" + qtyPcsPerMasterBox + ", recomendQtyPOPcs=" + recomendQtyPOPcs + ", totalMasterBox=" + totalMasterBox + '}';
+        return "ForecastRecomendDTO{" + "m_product_id=" + m_product_id + ", c_bpartner_id=" + c_bpartner_id + ", c_elementvalue_id=" + c_elementvalue_id + ", z_m_factory_id=" + z_m_factory_id + ", m_pricelist_version_id=" + m_pricelist_version_id + ", product=" + product + ", qtyAvailable=" + qtyAvailable + ", qtyAverage=" + qtyAverage + ", leadTime=" + leadTime + ", qtyBatasAtas=" + qtyBatasAtas + ", qtyOnOrdered=" + qtyOnOrdered + ", priceListJual=" + priceListJual + ", currencyListPO=" + currencyListPO + ", priceListLastPO=" + priceListLastPO + ", moq=" + moq + ", qtyPcsPerMasterBox=" + qtyPcsPerMasterBox + ", recomendQtyPOPcs=" + recomendQtyPOPcs + ", totalMasterBox=" + totalMasterBox + ", isDiscontinue=" + isDiscontinue + '}';
     }
 
 }

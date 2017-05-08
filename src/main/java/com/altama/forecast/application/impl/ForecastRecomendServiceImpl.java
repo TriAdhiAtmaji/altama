@@ -66,4 +66,14 @@ public class ForecastRecomendServiceImpl implements ForecastRecomendService {
 
     }
 
+    @Override
+    public List<ForecastRecomendDTO> findByParamsMap(Map map) {
+        Validate.notNull(forecastRecomendRepository);
+        List<ForecastRecomend> listForecastRecomend = forecastRecomendRepository.findByParamMap(map);
+        if (listForecastRecomend != null) {
+            return (List<ForecastRecomendDTO>) forecastRecomendDTOAssembler.toDTOs(listForecastRecomend);
+        }
+        return null;
+    }
+
 }
