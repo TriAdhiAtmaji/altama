@@ -95,15 +95,14 @@ public class ProductVM {
 
     private void initData() {
 
-//        forecastRecomendDTOs = forecastRecomendService.findAll();
         listBpartner = c_bpartnerService.findAll();
         listFactory = z_m_factoryService.findAll();
         listPriceVersion = m_pricelist_versionService.findAll();
         listC_Elementvalues = c_ElementvalueService.findAll();
 
-        if (continueSelect == null) {
-            continueSelect = IsDiscontinue.valueOf("N");
-        }
+//        if (continueSelect == null) {
+//            continueSelect = IsDiscontinue.valueOf("N");
+//        }
 
         if (productSelect != null) {
             params.put("productSelect", productSelect);

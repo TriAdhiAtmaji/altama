@@ -90,8 +90,9 @@
             </groupbox>
         </groupbox>
         <groupbox closable="false">
-            <!--            <paging pagesize="@load(vm.pageSize)" totalsize="@load(vm.totalSize)" activepage="@load(vm.activePage)"/>-->
-            <listbox rows="@load(vm.pageSize)" pageSize="@load(vm.pageSize)" pagingPosition="top" mold="paging"  emptyMessage="${labels.common.noDataFound}" model="@bind(vm.forecastRecomendDTOs)">
+            <paging pageSize="@load(vm.pageSize)" totalSize="@load(vm.totalSize)" activePage="@load(vm.activePage)"/>
+            <listbox emptyMessage="${labels.common.noDataFound}" model="@bind(vm.forecastRecomendDTOs)">
+<!--                rows="@load(vm.pageSize)" pageSize="@load(vm.pageSize)" pagingPosition="top" mold="paging"-->
                 <listhead>
                     <listheader label="Product" width="30%" align="center"/>
                     <listheader label="Qty Available" width="30%" align="center"/>
