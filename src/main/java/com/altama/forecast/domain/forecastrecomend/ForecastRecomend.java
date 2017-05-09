@@ -23,8 +23,8 @@ public class ForecastRecomend implements EntityObject<ForecastRecomend> {
     private BigDecimal qtyBatasAtas;
     private BigDecimal qtyOnOrdered;
     private BigDecimal priceListJual;
-    private BigDecimal currencyListPO;
-    private String priceListLastPO;
+    private BigDecimal priceListLastPO;
+    private String currencyListPO;
     private BigDecimal moq;
     private BigDecimal qtyPcsPerMasterBox;
     private BigDecimal recomendQtyPOPcs;
@@ -34,7 +34,7 @@ public class ForecastRecomend implements EntityObject<ForecastRecomend> {
     public ForecastRecomend() {
     }
 
-    public ForecastRecomend(BigDecimal m_product_id, BigDecimal c_bpartner_id, BigDecimal c_elementvalue_id, BigDecimal z_m_factory_id, BigDecimal m_pricelist_version_id, String product, BigDecimal qtyAvailable, BigDecimal qtyAverage, BigDecimal leadTime, BigDecimal qtyBatasAtas, BigDecimal qtyOnOrdered, BigDecimal priceListJual, BigDecimal currencyListPO, String priceListLastPO, BigDecimal moq, BigDecimal qtyPcsPerMasterBox, BigDecimal recomendQtyPOPcs, BigDecimal totalMasterBox, IsDiscontinue isDiscontinue) {
+    public ForecastRecomend(BigDecimal m_product_id, BigDecimal c_bpartner_id, BigDecimal c_elementvalue_id, BigDecimal z_m_factory_id, BigDecimal m_pricelist_version_id, String product, BigDecimal qtyAvailable, BigDecimal qtyAverage, BigDecimal leadTime, BigDecimal qtyBatasAtas, BigDecimal qtyOnOrdered, BigDecimal priceListJual, BigDecimal priceListLastPO, String currencyListPO, BigDecimal moq, BigDecimal qtyPcsPerMasterBox, BigDecimal recomendQtyPOPcs, BigDecimal totalMasterBox, IsDiscontinue isDiscontinue) {
         this.m_product_id = m_product_id;
         this.c_bpartner_id = c_bpartner_id;
         this.c_elementvalue_id = c_elementvalue_id;
@@ -47,8 +47,8 @@ public class ForecastRecomend implements EntityObject<ForecastRecomend> {
         this.qtyBatasAtas = qtyBatasAtas;
         this.qtyOnOrdered = qtyOnOrdered;
         this.priceListJual = priceListJual;
-        this.currencyListPO = currencyListPO;
         this.priceListLastPO = priceListLastPO;
+        this.currencyListPO = currencyListPO;
         this.moq = moq;
         this.qtyPcsPerMasterBox = qtyPcsPerMasterBox;
         this.recomendQtyPOPcs = recomendQtyPOPcs;
@@ -152,20 +152,20 @@ public class ForecastRecomend implements EntityObject<ForecastRecomend> {
         this.priceListJual = priceListJual;
     }
 
-    public BigDecimal getCurrencyListPO() {
-        return currencyListPO;
-    }
-
-    public void setCurrencyListPO(BigDecimal currencyListPO) {
-        this.currencyListPO = currencyListPO;
-    }
-
-    public String getPriceListLastPO() {
+    public BigDecimal getPriceListLastPO() {
         return priceListLastPO;
     }
 
-    public void setPriceListLastPO(String priceListLastPO) {
+    public void setPriceListLastPO(BigDecimal priceListLastPO) {
         this.priceListLastPO = priceListLastPO;
+    }
+
+    public String getCurrencyListPO() {
+        return currencyListPO;
+    }
+
+    public void setCurrencyListPO(String currencyListPO) {
+        this.currencyListPO = currencyListPO;
     }
 
     public BigDecimal getMoq() {

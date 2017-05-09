@@ -67,9 +67,5 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
     
-    
-    <!--    <bean id="forecastRepository" class="com.altama.forecast.infrastructure.persistence.hibernate.ForecastHibernateRepository">
-        <property name="sessionFactory" ref="sessionFactory"/>
-    </bean>
-    -->
+
 </beans>

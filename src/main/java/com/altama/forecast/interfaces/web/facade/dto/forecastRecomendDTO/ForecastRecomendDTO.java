@@ -2,6 +2,7 @@ package com.altama.forecast.interfaces.web.facade.dto.forecastRecomendDTO;
 
 import com.altama.forecast.domain.m_product.IsDiscontinue;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 /**
  *
@@ -21,8 +22,8 @@ public class ForecastRecomendDTO {
     private BigDecimal qtyBatasAtas;
     private BigDecimal qtyOnOrdered;
     private BigDecimal priceListJual;
-    private BigDecimal currencyListPO;
-    private String priceListLastPO;
+    private BigDecimal priceListLastPO;
+    private String currencyListPO;
     private BigDecimal moq;
     private BigDecimal qtyPcsPerMasterBox;
     private BigDecimal recomendQtyPOPcs;
@@ -32,7 +33,7 @@ public class ForecastRecomendDTO {
     public ForecastRecomendDTO() {
     }
 
-    public ForecastRecomendDTO(BigDecimal m_product_id, BigDecimal c_bpartner_id, BigDecimal c_elementvalue_id, BigDecimal z_m_factory_id, BigDecimal m_pricelist_version_id, String product, BigDecimal qtyAvailable, BigDecimal qtyAverage, BigDecimal leadTime, BigDecimal qtyBatasAtas, BigDecimal qtyOnOrdered, BigDecimal priceListJual, BigDecimal currencyListPO, String priceListLastPO, BigDecimal moq, BigDecimal qtyPcsPerMasterBox, BigDecimal recomendQtyPOPcs, BigDecimal totalMasterBox, IsDiscontinue isDiscontinue) {
+    public ForecastRecomendDTO(BigDecimal m_product_id, BigDecimal c_bpartner_id, BigDecimal c_elementvalue_id, BigDecimal z_m_factory_id, BigDecimal m_pricelist_version_id, String product, BigDecimal qtyAvailable, BigDecimal qtyAverage, BigDecimal leadTime, BigDecimal qtyBatasAtas, BigDecimal qtyOnOrdered, BigDecimal priceListJual, BigDecimal priceListLastPO, String currencyListPO, BigDecimal moq, BigDecimal qtyPcsPerMasterBox, BigDecimal recomendQtyPOPcs, BigDecimal totalMasterBox, IsDiscontinue isDiscontinue) {
         this.m_product_id = m_product_id;
         this.c_bpartner_id = c_bpartner_id;
         this.c_elementvalue_id = c_elementvalue_id;
@@ -45,8 +46,8 @@ public class ForecastRecomendDTO {
         this.qtyBatasAtas = qtyBatasAtas;
         this.qtyOnOrdered = qtyOnOrdered;
         this.priceListJual = priceListJual;
-        this.currencyListPO = currencyListPO;
         this.priceListLastPO = priceListLastPO;
+        this.currencyListPO = currencyListPO;
         this.moq = moq;
         this.qtyPcsPerMasterBox = qtyPcsPerMasterBox;
         this.recomendQtyPOPcs = recomendQtyPOPcs;
@@ -111,7 +112,7 @@ public class ForecastRecomendDTO {
     }
 
     public BigDecimal getQtyAverage() {
-        return qtyAverage;
+        return qtyAverage.setScale(2, RoundingMode.HALF_UP);
     }
 
     public void setQtyAverage(BigDecimal qtyAverage) {
@@ -127,7 +128,7 @@ public class ForecastRecomendDTO {
     }
 
     public BigDecimal getQtyBatasAtas() {
-        return qtyBatasAtas;
+        return qtyBatasAtas.setScale(2, RoundingMode.HALF_UP);
     }
 
     public void setQtyBatasAtas(BigDecimal qtyBatasAtas) {
@@ -143,27 +144,27 @@ public class ForecastRecomendDTO {
     }
 
     public BigDecimal getPriceListJual() {
-        return priceListJual;
+        return priceListJual.setScale(2, RoundingMode.HALF_UP);
     }
 
     public void setPriceListJual(BigDecimal priceListJual) {
         this.priceListJual = priceListJual;
     }
 
-    public BigDecimal getCurrencyListPO() {
+    public BigDecimal getPriceListLastPO() {
+        return priceListLastPO.setScale(2, RoundingMode.HALF_UP);
+    }
+
+    public void setPriceListLastPO(BigDecimal priceListLastPO) {
+        this.priceListLastPO = priceListLastPO;
+    }
+
+    public String getCurrencyListPO() {
         return currencyListPO;
     }
 
-    public void setCurrencyListPO(BigDecimal currencyListPO) {
+    public void setCurrencyListPO(String currencyListPO) {
         this.currencyListPO = currencyListPO;
-    }
-
-    public String getPriceListLastPO() {
-        return priceListLastPO;
-    }
-
-    public void setPriceListLastPO(String priceListLastPO) {
-        this.priceListLastPO = priceListLastPO;
     }
 
     public BigDecimal getMoq() {
@@ -175,7 +176,7 @@ public class ForecastRecomendDTO {
     }
 
     public BigDecimal getQtyPcsPerMasterBox() {
-        return qtyPcsPerMasterBox;
+        return qtyPcsPerMasterBox.setScale(2, RoundingMode.HALF_UP);
     }
 
     public void setQtyPcsPerMasterBox(BigDecimal qtyPcsPerMasterBox) {
@@ -183,7 +184,7 @@ public class ForecastRecomendDTO {
     }
 
     public BigDecimal getRecomendQtyPOPcs() {
-        return recomendQtyPOPcs;
+        return recomendQtyPOPcs.setScale(2, RoundingMode.HALF_UP);
     }
 
     public void setRecomendQtyPOPcs(BigDecimal recomendQtyPOPcs) {
@@ -191,7 +192,7 @@ public class ForecastRecomendDTO {
     }
 
     public BigDecimal getTotalMasterBox() {
-        return totalMasterBox;
+        return totalMasterBox.setScale(2, RoundingMode.HALF_UP);
     }
 
     public void setTotalMasterBox(BigDecimal totalMasterBox) {

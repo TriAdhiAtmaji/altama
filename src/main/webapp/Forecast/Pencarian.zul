@@ -62,7 +62,8 @@
 
                         <label value="Price List Version Jual" />
                         <!--                        <textbox width="300px" readonly="false"/>			-->
-                        <combobox width="300px" model="@bind(vm.listPriceVersion)" selectedItem="@bind(vm.priceVersionSelect)" readonly="true">
+                        <combobox width="300px" model="@bind(vm.listPriceVersion)" selectedItem="@bind(vm.priceVersionSelect)" readonly="true" onAfterRender="self.setSelectedIndex(21)">
+                            <!--                            onAfterRender="self.setSelectedIndex(21)"-->
                             <template name="model" var="items">
                                 <comboitem label="@load(items.getNamePricelist())" value="@load(items.getM_pricelist_version_id().toString())"/>
                             </template>
@@ -90,21 +91,21 @@
             </groupbox>
         </groupbox>
         <groupbox closable="false">
-            <paging pageSize="@load(vm.pageSize)" totalSize="@load(vm.totalSize)" activePage="@load(vm.activePage)"/>
+            <paging pageSize="@load(vm.pageSize)" totalSize="@load(vm.totalSize)" activePage="@save(vm.activePage)"/>
             <listbox emptyMessage="${labels.common.noDataFound}" model="@bind(vm.forecastRecomendDTOs)">
-<!--                rows="@load(vm.pageSize)" pageSize="@load(vm.pageSize)" pagingPosition="top" mold="paging"-->
+                <!--                rows="@load(vm.pageSize)" pageSize="@load(vm.pageSize)" pagingPosition="top" mold="paging"-->
                 <listhead>
                     <listheader label="Product" width="30%" align="center"/>
-                    <listheader label="Qty Available" width="30%" align="center"/>
+                    <listheader label="Qty Available" width="25%" align="center"/>
                     <listheader label="Qty Average" width="30%" align="center"/>
                     <listheader label="Lead Time" width="20%" align="center"/>
                     <listheader label="Qty Batas Atas" width="30%" align="center"/>
                     <listheader label="Qty On Ondered" width="30%" align="center"/>
                     <listheader label="Price List Jual" width="30%" align="center"/>
-                    <listheader label="Currency List PCS" width="30%" align="center"/>
-                    <listheader label="Price List Last PO" width="10%" align="center"/>
+                    <listheader label="Currency Last PO" width="20%" align="center"/>
+                    <listheader label="Price List Last PO" width="30%" align="center"/>
                     <listheader label="MOQ" width="10%" align="center"/>
-                    <listheader label="Qty PCS per Master Box" width="30%" align="center"/>
+                    <listheader label="Qty PCS perMaster Box" width="30%" align="center"/>
                     <listheader label="Rekomendasi Qty PO PCS" width="40%" align="center"/>
                     <listheader label="Total Master BOX" width="30%" align="center"/>
                 </listhead>

@@ -22,8 +22,8 @@ public class ForecastRecomendBuilder {
     private BigDecimal qtyBatasAtas;
     private BigDecimal qtyOnOrdered;
     private BigDecimal priceListJual;
-    private BigDecimal currencyListPO;
-    private String priceListLastPO;
+    private BigDecimal priceListLastPO;
+    private String currencyListPO;
     private BigDecimal moq;
     private BigDecimal qtyPcsPerMasterBox;
     private BigDecimal recomendQtyPOPcs;
@@ -93,13 +93,13 @@ public class ForecastRecomendBuilder {
         return this;
     }
 
-    public ForecastRecomendBuilder setCurrencyListPO(BigDecimal currencyListPO) {
-        this.currencyListPO = currencyListPO;
+    public ForecastRecomendBuilder setPriceListLastPO(BigDecimal priceListLastPO) {
+        this.priceListLastPO = priceListLastPO;
         return this;
     }
 
-    public ForecastRecomendBuilder setPriceListLastPO(String priceListLastPO) {
-        this.priceListLastPO = priceListLastPO;
+    public ForecastRecomendBuilder setCurrencyListPO(String currencyListPO) {
+        this.currencyListPO = currencyListPO;
         return this;
     }
 
@@ -129,7 +129,7 @@ public class ForecastRecomendBuilder {
     }
 
     public ForecastRecomend createForecastRecomend() {
-        return new ForecastRecomend(m_product_id, c_bpartner_id, c_elementvalue_id, z_m_factory_id, m_pricelist_version_id, product, qtyAvailable, qtyAverage, leadTime, qtyBatasAtas, qtyOnOrdered, priceListJual, currencyListPO, priceListLastPO, moq, qtyPcsPerMasterBox, recomendQtyPOPcs, totalMasterBox, isDiscontinue);
+        return new ForecastRecomend(m_product_id, c_bpartner_id, c_elementvalue_id, z_m_factory_id, m_pricelist_version_id, product, qtyAvailable, qtyAverage, leadTime, qtyBatasAtas, qtyOnOrdered, priceListJual, priceListLastPO, currencyListPO, moq, qtyPcsPerMasterBox, recomendQtyPOPcs, totalMasterBox, isDiscontinue);
     }
 
 }

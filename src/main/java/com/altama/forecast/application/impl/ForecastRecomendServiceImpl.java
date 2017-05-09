@@ -59,11 +59,10 @@ public class ForecastRecomendServiceImpl implements ForecastRecomendService {
     }
 
     @Override
-    public Integer countRecord(int count) {
+    public Integer countRecord(Map map) {
         Validate.notNull(forecastRecomendRepository);
-        Integer i = forecastRecomendRepository.countRecord(count);
-        return null;
-
+        int i = forecastRecomendRepository.countRecord(map);
+        return i;
     }
 
     @Override
