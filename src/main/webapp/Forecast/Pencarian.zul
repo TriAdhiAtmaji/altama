@@ -85,7 +85,7 @@
             </groupbox>
         </groupbox>
         <groupbox closable="false">
-            <paging pageSize="@load(vm.pageSize)" totalSize="@load(vm.totalSize)" activePage="@save(vm.activePage)"/>
+            <paging id="pagingRecommendedQty" pageSize="@load(vm.pageSize)" totalSize="@load(vm.totalSize)" activePage="@save(vm.activePage)"/>
             <listbox emptyMessage="${labels.common.noDataFound}" model="@bind(vm.forecastRecomendDTOs)">
                 <!--                rows="@load(vm.pageSize)" pageSize="@load(vm.pageSize)" pagingPosition="top" mold="paging"-->
                 <listhead>

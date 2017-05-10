@@ -16,22 +16,26 @@ public class C_ElementvalueDTO implements Serializable {
     private String value;
     private String brand;
     private String description;
-    private Ad_treenodeu1 ad_treenodeu1;
+    private Ad_treenodeu1 node_id;
 
     public C_ElementvalueDTO() {
     }
 
-    public C_ElementvalueDTO(BigDecimal c_elementvalue_id, BigDecimal ad_client_id, String value, String brand, String description, Ad_treenodeu1 ad_treenodeu1) {
+    public C_ElementvalueDTO(BigDecimal c_elementvalue_id, BigDecimal ad_client_id, String value, String brand, String description, Ad_treenodeu1 node_id) {
         this.c_elementvalue_id = c_elementvalue_id;
         this.ad_client_id = ad_client_id;
         this.value = value;
         this.brand = brand;
         this.description = description;
-        this.ad_treenodeu1 = ad_treenodeu1;
+        this.node_id = node_id;
     }
 
-    public Ad_treenodeu1 getAd_treenodeu1() {
-        return ad_treenodeu1;
+    public Ad_treenodeu1 getNode_id() {
+        return node_id;
+    }
+
+    public void setNode_id(Ad_treenodeu1 node_id) {
+        this.node_id = node_id;
     }
 
     public BigDecimal getC_elementvalue_id() {
@@ -76,7 +80,7 @@ public class C_ElementvalueDTO implements Serializable {
 
     @Override
     public String toString() {
-        return "C_ElementvalueDTO{" + "c_elementvalue_id=" + c_elementvalue_id + ", ad_client_id=" + ad_client_id + ", value=" + value + ", brand=" + brand + ", description=" + description + ", ad_treenodeu1=" + ad_treenodeu1 + '}';
+        return "C_ElementvalueDTO{" + "c_elementvalue_id=" + c_elementvalue_id + ", ad_client_id=" + ad_client_id + ", value=" + value + ", brand=" + brand + ", description=" + description + ", node_id=" + node_id + '}';
     }
 
 }

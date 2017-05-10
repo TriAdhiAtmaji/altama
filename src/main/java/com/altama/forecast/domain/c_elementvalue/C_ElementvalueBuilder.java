@@ -15,7 +15,7 @@ public class C_ElementvalueBuilder {
     private String value;
     private String brand;
     private String description;
-    private Ad_treenodeu1 ad_treenodeu1;
+    private Ad_treenodeu1 node_id;
 
     public C_ElementvalueBuilder() {
     }
@@ -45,13 +45,13 @@ public class C_ElementvalueBuilder {
         return this;
     }
 
-    public C_ElementvalueBuilder setAd_treenodeu1(Ad_treenodeu1 ad_treenodeu1) {
-        this.ad_treenodeu1 = ad_treenodeu1;
+    public C_ElementvalueBuilder setNode_id(Ad_treenodeu1 node_id) {
+        this.node_id = node_id;
         return this;
     }
 
     public C_Elementvalue createC_Elementvalue() {
-        return new C_Elementvalue(c_elementvalue_id, ad_client_id, value, brand, description, ad_treenodeu1);
+        return new C_Elementvalue(c_elementvalue_id, ad_client_id, value, brand, description, node_id);
     }
 
 }

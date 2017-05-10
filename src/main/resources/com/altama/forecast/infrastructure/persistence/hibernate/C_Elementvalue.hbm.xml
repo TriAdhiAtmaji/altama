@@ -12,7 +12,7 @@
 
         <join table="ad_treenodeu1" >
             <key column="node_id"/>
-            <many-to-one name="ad_treenodeu1"  not-null="true" unique="true"/>
+            <many-to-one name="node_id"  not-null="true" unique="true" insert="false" update="false"/>
         </join>
     </class>
     

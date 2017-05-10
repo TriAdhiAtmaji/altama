@@ -22,7 +22,7 @@ public class C_ElementvalueDTOAssembler implements IObjectAssembler<C_Elementval
                 .setValue(domainObject.getValue())
                 .setBrand(domainObject.getBrand())
                 .setDescription(domainObject.getDescription())
-                .setAd_treenodeu1(domainObject.getAd_treenodeu1())
+                .setNode_id(domainObject.getNode_id())
                 .createC_ElementvalueDTO();
 
     }
@@ -35,7 +35,7 @@ public class C_ElementvalueDTOAssembler implements IObjectAssembler<C_Elementval
                 .setValue(dtoObject.getValue())
                 .setBrand(dtoObject.getBrand())
                 .setDescription(dtoObject.getDescription())
-                .setAd_treenodeu1(dtoObject.getAd_treenodeu1())
+                .setNode_id(dtoObject.getNode_id())
                 .createC_Elementvalue();
 
     }

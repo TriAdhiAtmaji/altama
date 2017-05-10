@@ -15,18 +15,18 @@ public class C_Elementvalue implements EntityObject<C_Elementvalue> {
     private String value;
     private String brand;
     private String description;
-    private Ad_treenodeu1 ad_treenodeu1;
+    private Ad_treenodeu1 node_id;
 
     public C_Elementvalue() {
     }
 
-    public C_Elementvalue(BigDecimal c_elementvalue_id, BigDecimal ad_client_id, String value, String brand, String description, Ad_treenodeu1 ad_treenodeu1) {
+    public C_Elementvalue(BigDecimal c_elementvalue_id, BigDecimal ad_client_id, String value, String brand, String description, Ad_treenodeu1 node_id) {
         this.c_elementvalue_id = c_elementvalue_id;
         this.ad_client_id = ad_client_id;
         this.value = value;
         this.brand = brand;
         this.description = description;
-        this.ad_treenodeu1 = ad_treenodeu1;
+        this.node_id = node_id;
     }
 
     public void assignNEWc_elemenvalue(C_Elementvalue c_Elementvalue) {
@@ -38,12 +38,12 @@ public class C_Elementvalue implements EntityObject<C_Elementvalue> {
 
     }
 
-    public Ad_treenodeu1 getAd_treenodeu1() {
-        return ad_treenodeu1;
+    public Ad_treenodeu1 getNode_id() {
+        return node_id;
     }
 
-    public void setAd_treenodeu1(Ad_treenodeu1 ad_treenodeu1) {
-        this.ad_treenodeu1 = ad_treenodeu1;
+    public void setNode_id(Ad_treenodeu1 node_id) {
+        this.node_id = node_id;
     }
 
     public BigDecimal getC_elementvalue_id() {
@@ -88,12 +88,12 @@ public class C_Elementvalue implements EntityObject<C_Elementvalue> {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 59 * hash + (this.ad_client_id != null ? this.ad_client_id.hashCode() : 0);
-        hash = 59 * hash + (this.value != null ? this.value.hashCode() : 0);
-        hash = 59 * hash + (this.brand != null ? this.brand.hashCode() : 0);
-        hash = 59 * hash + (this.description != null ? this.description.hashCode() : 0);
-        hash = 59 * hash + (this.ad_treenodeu1 != null ? this.ad_treenodeu1.hashCode() : 0);
+        int hash = 3;
+        hash = 89 * hash + (this.ad_client_id != null ? this.ad_client_id.hashCode() : 0);
+        hash = 89 * hash + (this.value != null ? this.value.hashCode() : 0);
+        hash = 89 * hash + (this.brand != null ? this.brand.hashCode() : 0);
+        hash = 89 * hash + (this.description != null ? this.description.hashCode() : 0);
+        hash = 89 * hash + (this.node_id != null ? this.node_id.hashCode() : 0);
         return hash;
     }
 
