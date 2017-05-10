@@ -2,7 +2,6 @@ package com.altama.forecast.domain.c_bpartner;
 
 import com.altama.forecast.domain.shared.EntityObject;
 import java.math.BigDecimal;
-import java.util.Objects;
 
 /**
  *
@@ -264,28 +263,28 @@ public class C_bpartner implements EntityObject<C_bpartner> {
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 23 * hash + Objects.hashCode(this.ad_client_id);
-        hash = 23 * hash + Objects.hashCode(this.ad_org_id);
-        hash = 23 * hash + Objects.hashCode(this.value);
-        hash = 23 * hash + Objects.hashCode(this.suplier);
-        hash = 23 * hash + Objects.hashCode(this.suplier2);
-        hash = 23 * hash + Objects.hashCode(this.description);
-        hash = 23 * hash + Objects.hashCode(this.c_bp_group_id);
-        hash = 23 * hash + Objects.hashCode(this.isvendor);
-        hash = 23 * hash + Objects.hashCode(this.c_invoiceschedule_id);
-        hash = 23 * hash + Objects.hashCode(this.c_paymentterm_id);
-        hash = 23 * hash + Objects.hashCode(this.m_pricelist_id);
-        hash = 23 * hash + Objects.hashCode(this.m_discountschema_id);
-        hash = 23 * hash + Objects.hashCode(this.c_dunning_id);
-        hash = 23 * hash + Objects.hashCode(this.po_pricelist_id);
-        hash = 23 * hash + Objects.hashCode(this.po_discountschema_id);
-        hash = 23 * hash + Objects.hashCode(this.po_paymentterm_id);
-        hash = 23 * hash + Objects.hashCode(this.documentcopies);
-        hash = 23 * hash + Objects.hashCode(this.c_greeting_id);
-        hash = 23 * hash + Objects.hashCode(this.salesrep_id);
-        hash = 23 * hash + Objects.hashCode(this.sendemail);
-        hash = 23 * hash + Objects.hashCode(this.bpartner_parent_id);
+        int hash = 7;
+        hash = 17 * hash + (this.ad_client_id != null ? this.ad_client_id.hashCode() : 0);
+        hash = 17 * hash + (this.ad_org_id != null ? this.ad_org_id.hashCode() : 0);
+        hash = 17 * hash + (this.value != null ? this.value.hashCode() : 0);
+        hash = 17 * hash + (this.suplier != null ? this.suplier.hashCode() : 0);
+        hash = 17 * hash + (this.suplier2 != null ? this.suplier2.hashCode() : 0);
+        hash = 17 * hash + (this.description != null ? this.description.hashCode() : 0);
+        hash = 17 * hash + (this.c_bp_group_id != null ? this.c_bp_group_id.hashCode() : 0);
+        hash = 17 * hash + this.isvendor;
+        hash = 17 * hash + (this.c_invoiceschedule_id != null ? this.c_invoiceschedule_id.hashCode() : 0);
+        hash = 17 * hash + (this.c_paymentterm_id != null ? this.c_paymentterm_id.hashCode() : 0);
+        hash = 17 * hash + (this.m_pricelist_id != null ? this.m_pricelist_id.hashCode() : 0);
+        hash = 17 * hash + (this.m_discountschema_id != null ? this.m_discountschema_id.hashCode() : 0);
+        hash = 17 * hash + (this.c_dunning_id != null ? this.c_dunning_id.hashCode() : 0);
+        hash = 17 * hash + (this.po_pricelist_id != null ? this.po_pricelist_id.hashCode() : 0);
+        hash = 17 * hash + (this.po_discountschema_id != null ? this.po_discountschema_id.hashCode() : 0);
+        hash = 17 * hash + (this.po_paymentterm_id != null ? this.po_paymentterm_id.hashCode() : 0);
+        hash = 17 * hash + (this.documentcopies != null ? this.documentcopies.hashCode() : 0);
+        hash = 17 * hash + (this.c_greeting_id != null ? this.c_greeting_id.hashCode() : 0);
+        hash = 17 * hash + (this.salesrep_id != null ? this.salesrep_id.hashCode() : 0);
+        hash = 17 * hash + (this.sendemail != null ? this.sendemail.hashCode() : 0);
+        hash = 17 * hash + (this.bpartner_parent_id != null ? this.bpartner_parent_id.hashCode() : 0);
         return hash;
     }
 
@@ -298,7 +297,7 @@ public class C_bpartner implements EntityObject<C_bpartner> {
             return false;
         }
         final C_bpartner other = (C_bpartner) obj;
-        if (!Objects.equals(this.c_bpartner_id, other.c_bpartner_id)) {
+        if (this.c_bpartner_id != other.c_bpartner_id && (this.c_bpartner_id == null || !this.c_bpartner_id.equals(other.c_bpartner_id))) {
             return false;
         }
         return true;

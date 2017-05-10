@@ -3,7 +3,6 @@ package com.altama.forecast.infrastructure.persistence.hibernate;
 import com.altama.forecast.application.util.StringUtil;
 import com.altama.forecast.domain.forecastrecomend.ForecastRecomend;
 import com.altama.forecast.domain.forecastrecomend.ForecastRecomendRepository;
-import com.altama.forecast.domain.m_product.IsDiscontinue;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
@@ -45,7 +44,7 @@ public class ForecastRecomendHibernateRepository extends HibernateRepository imp
         }
 
         if (StringUtil.hasValue(map.get("productSelect"))) {
-            criteria.add(Restrictions.eq("product", map.get("productSelect")));
+            criteria.add(Restrictions.ilike("product", map.get("productSelect")));
         }
 
         if (StringUtil.hasValue(map.get("suplierSelect"))) {
@@ -77,7 +76,7 @@ public class ForecastRecomendHibernateRepository extends HibernateRepository imp
         }
 
         if (StringUtil.hasValue(map.get("productSelect"))) {
-            criteria.add(Restrictions.eq("product", map.get("productSelect")));
+            criteria.add(Restrictions.ilike("product", map.get("productSelect")));
         }
 
         if (StringUtil.hasValue(map.get("suplierSelect"))) {

@@ -4,7 +4,7 @@
 <zk xmlns="http://www.zkoss.org/2005/zul">
     <window border="none" apply="org.zkoss.bind.BindComposer"
             viewModel="@id('vm') @init('com.altama.forecast.viewModel.ProductVM')"
-            form="@id('fx') @load(vm.forecastRecomendDTO) @save(vm.forecastRecomendDTO, before='buttonSave')">
+            form="@id('fx') @load(vm.forecastRecomendDTO) @save(vm.forecastRecomendDTO, after='buttonSearch')">
         
         <separator/>
         <groupbox closable="false" mold="3d">
@@ -36,12 +36,6 @@
                     <row>
                         <label value="Product" />
                         <textbox value="@bind(vm.productSelect)" width="300px"/>
-                        
-                        <!--                                                <combobox width="300px" model="@load(vm.listName)" selectedItem="@bind(vm.nameSelected)" placeholder="- Pilihan Menu -" readonly="true">
-                            <template name="model" var="items">
-                                <comboitem label="@load(items.getName())" value="@load(items.getId().toString())"/>
-                            </template>
-                        </combobox>-->
                         
                         <label value="Is Discontinued"/>
                         <combobox width="300px" model="@load(vm.listDiscontinue)" selectedItem="@bind(vm.continueSelect)" placeholder="- Pilihan Menu -" readonly="true">
@@ -105,9 +99,9 @@
                     <listheader label="Currency Last PO" width="20%" align="center"/>
                     <listheader label="Price List Last PO" width="30%" align="center"/>
                     <listheader label="MOQ" width="10%" align="center"/>
-                    <listheader label="Qty PCS perMaster Box" width="30%" align="center"/>
-                    <listheader label="Rekomendasi Qty PO PCS" width="40%" align="center"/>
-                    <listheader label="Total Master BOX" width="30%" align="center"/>
+                    <listheader label="Qty PCS perMB" width="30%" align="center"/>
+                    <listheader label="Recommended Qty PO PCS" width="40%" align="center"/>
+                    <listheader label="Recommended MB" width="30%" align="center"/>
                 </listhead>
                 <template name="model">
                     <listitem value="${each}">

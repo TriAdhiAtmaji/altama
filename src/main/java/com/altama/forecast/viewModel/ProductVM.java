@@ -2,13 +2,13 @@ package com.altama.forecast.viewModel;
 
 import com.altama.forecast.application.C_ElementvalueService;
 import com.altama.forecast.application.C_bpartnerService;
+import com.altama.forecast.application.CountForecastRecomendService;
 import com.altama.forecast.application.ForecastRecomendService;
 import com.altama.forecast.application.M_pricelist_versionService;
 import com.altama.forecast.application.M_productService;
 import com.altama.forecast.application.Z_m_factoryService;
 import com.altama.forecast.common.zul.PageNavigation;
 import com.altama.forecast.domain.m_product.IsDiscontinue;
-import com.altama.forecast.interfaces.web.facade.dto.ad_treenodeu1.Ad_treenodeu1DTO;
 import com.altama.forecast.interfaces.web.facade.dto.c_bpartner.C_bpartnerDTO;
 import com.altama.forecast.interfaces.web.facade.dto.c_elementvalue.C_ElementvalueDTO;
 import com.altama.forecast.interfaces.web.facade.dto.forecastRecomendDTO.ForecastRecomendDTO;
@@ -30,7 +30,6 @@ import org.zkoss.zk.ui.select.annotation.VariableResolver;
 import org.zkoss.zk.ui.select.annotation.WireVariable;
 import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Window;
-import java.math.RoundingMode;
 
 /**
  *
@@ -57,10 +56,11 @@ public class ProductVM {
     @WireVariable
     ForecastRecomendService forecastRecomendService;
 
-    private ForecastRecomendDTO forecastRecomendDTO = new ForecastRecomendDTO();
-    private List<ForecastRecomendDTO> forecastRecomendDTOs = new ArrayList<>();
+    @WireVariable
+    CountForecastRecomendService countForecastRecomendService;
 
-    private List<Ad_treenodeu1DTO> ad_treenodeu1DTOs = new ArrayList<>();
+    private ForecastRecomendDTO forecastRecomendDTO = new ForecastRecomendDTO();
+    private List<ForecastRecomendDTO> forecastRecomendDTOs = new ArrayList<ForecastRecomendDTO>();
 
     // Selected ComboBox
     private String productSelect;
@@ -77,11 +77,10 @@ public class ProductVM {
     private List<Z_m_factoryDTO> listFactory = new ArrayList<Z_m_factoryDTO>();
     private List<M_pricelist_versionDTO> listPriceVersion = new ArrayList<M_pricelist_versionDTO>();
 
+    // default priceversion parameter
     private M_pricelist_versionDTO defaultPriceVersion = new M_pricelist_versionDTO(BigDecimal.valueOf(1000000), "US_Standard_PriceList_1108_IDR");
 
-    //    Setting page navigate
-//    private PageNavigation previous;
-//    private boolean checked;
+    //Paging
     private int pageSize = 10;
     private int activePage = 0;
     private int totalSize;
@@ -99,6 +98,7 @@ public class ProductVM {
 
     private void initData() {
 
+        // Parameter
         listBpartner = c_bpartnerService.findAll();
         listFactory = z_m_factoryService.findAll();
         listPriceVersion = m_pricelist_versionService.findAll();
@@ -112,28 +112,6 @@ public class ProductVM {
             priceVersionSelect = defaultPriceVersion;
         }
 
-//        if (productSelect != null) {
-//            params.put("productSelect", productSelect);
-//        }
-//        if (continueSelect != null) {
-//            params.put("continueSelect", continueSelect);
-//        }
-//        if (brandSelect != null) {
-//            params.put("brandSelected", brandSelect.getC_elementvalue_id());
-//        }
-//        if (suplierSelect != null) {
-//            params.put("suplierSelect", suplierSelect.getC_bpartner_id());
-//        }
-//        if (factorySelect != null) {
-//            params.put("factorySelect", factorySelect.getZ_m_factory_id());
-//        }
-//        if (priceVersionSelect != null) {
-//            params.put("priceVersionSelect", priceVersionSelect.getM_pricelist_version_id());
-//        }
-//
-//        forecastRecomendDTOs = forecastRecomendService.findByParams(params, activePage * pageSize, pageSize);
-//
-//        totalSize = forecastRecomendDTOs.size();
     }
 
     private void checkValidity(ForecastRecomendDTO forecastRecomend, PageNavigation previous) {
@@ -142,48 +120,15 @@ public class ProductVM {
                     .createForecastRecomendDTO();
         } else {
             this.forecastRecomendDTO = forecastRecomend;
-//            brandSelect = forecastRecomend.getC_elementvalue_id();
             productSelect = forecastRecomend.getProduct();
-//            this.previous = previous;
         }
     }
 
     @Command("buttonSearch")
-    @NotifyChange({"forecastRecomendDTOs", "activePage"})
+    @NotifyChange("*")
     public void buttonSearch(@ContextParam(ContextType.VIEW) Window window) {
 
         activePage = 0;
-//        Map params = new HashMap();
-//        if (productSelect != null) {
-//            params.put("productSelect", productSelect);
-//        }
-//        if (continueSelect != null) {
-//            params.put("continueSelect", continueSelect);
-//        }
-//        if (brandSelect != null) {
-//            params.put("brandSelected", brandSelect.getC_elementvalue_id());
-//        }
-//        if (suplierSelect != null) {
-//            params.put("suplierSelect", suplierSelect.getC_bpartner_id());
-//        }
-//        if (factorySelect != null) {
-//            params.put("factorySelect", factorySelect.getZ_m_factory_id());
-//        }
-//        if (priceVersionSelect != null) {
-//            params.put("priceVersionSelect", priceVersionSelect.getM_pricelist_version_id());
-//        }
-//
-//        forecastRecomendDTOs = forecastRecomendService.findByParams(params, pageSize, pageSize);
-//        totalSize = forecastRecomendDTOs.size();
-//        forecastRecomendDTOs = forecastRecomendService.findByParamsMap(params);
-    }
-
-    public List<Ad_treenodeu1DTO> getAd_treenodeu1DTOs() {
-        return ad_treenodeu1DTOs;
-    }
-
-    public void setAd_treenodeu1DTOs(List<Ad_treenodeu1DTO> ad_treenodeu1DTOs) {
-        this.ad_treenodeu1DTOs = ad_treenodeu1DTOs;
     }
 
     public String getProductSelect() {
@@ -226,21 +171,6 @@ public class ProductVM {
         this.priceVersionSelect = priceVersionSelect;
     }
 
-//    public PageNavigation getPrevious() {
-//        return previous;
-//    }
-//
-//    public void setPrevious(PageNavigation previous) {
-//        this.previous = previous;
-//    }
-//
-//    public boolean isChecked() {
-//        return checked;
-//    }
-//
-//    public void setChecked(boolean checked) {
-//        this.checked = checked;
-//    }
     public int getPageSize() {
         return pageSize;
     }
@@ -277,7 +207,7 @@ public class ProductVM {
         if (priceVersionSelect != null) {
             params.put("priceVersionSelect", priceVersionSelect.getM_pricelist_version_id());
         }
-        return forecastRecomendService.countRecord(params);
+        return countForecastRecomendService.countRecord(params);
     }
 
     public void setTotalSize(int totalSize) {
@@ -301,7 +231,7 @@ public class ProductVM {
     }
 
     public ListModelList<IsDiscontinue> getListDiscontinue() {
-        return new ListModelList<>(IsDiscontinue.values());
+        return new ListModelList<IsDiscontinue>(IsDiscontinue.values());
     }
 
     public void setListDiscontinue(ListModelList<IsDiscontinue> listDiscontinue) {
@@ -360,8 +290,8 @@ public class ProductVM {
             params.put("priceVersionSelect", priceVersionSelect.getM_pricelist_version_id());
         }
 
+        totalSize = countForecastRecomendService.countRecord(params);
         return forecastRecomendDTOs = forecastRecomendService.findByParams(params, activePage * pageSize, pageSize);
-//        return forecastRecomendDTOs;
     }
 
     public void setForecastRecomendDTOs(List<ForecastRecomendDTO> forecastRecomendDTOs) {

@@ -4,8 +4,6 @@ import com.altama.forecast.domain.shared.EntityObject;
 import com.altama.forecast.domain.z_m_product_factory.Z_m_product_factory;
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
-import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -146,17 +144,17 @@ public class Z_m_factory implements EntityObject<Z_m_factory> {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 41 * hash + Objects.hashCode(this.ad_client_id);
-        hash = 41 * hash + Objects.hashCode(this.ad_org_id);
-        hash = 41 * hash + Objects.hashCode(this.isactive);
-        hash = 41 * hash + Objects.hashCode(this.created);
-        hash = 41 * hash + Objects.hashCode(this.createdby);
-        hash = 41 * hash + Objects.hashCode(this.updated);
-        hash = 41 * hash + Objects.hashCode(this.updatedby);
-        hash = 41 * hash + Objects.hashCode(this.c_bpartner_id);
-        hash = 41 * hash + Objects.hashCode(this.name);
-        hash = 41 * hash + Objects.hashCode(this.z_m_product_factory);
+        int hash = 5;
+        hash = 97 * hash + (this.ad_client_id != null ? this.ad_client_id.hashCode() : 0);
+        hash = 97 * hash + (this.ad_org_id != null ? this.ad_org_id.hashCode() : 0);
+        hash = 97 * hash + (this.isactive != null ? this.isactive.hashCode() : 0);
+        hash = 97 * hash + (this.created != null ? this.created.hashCode() : 0);
+        hash = 97 * hash + (this.createdby != null ? this.createdby.hashCode() : 0);
+        hash = 97 * hash + (this.updated != null ? this.updated.hashCode() : 0);
+        hash = 97 * hash + (this.updatedby != null ? this.updatedby.hashCode() : 0);
+        hash = 97 * hash + (this.c_bpartner_id != null ? this.c_bpartner_id.hashCode() : 0);
+        hash = 97 * hash + (this.name != null ? this.name.hashCode() : 0);
+        hash = 97 * hash + (this.z_m_product_factory != null ? this.z_m_product_factory.hashCode() : 0);
         return hash;
     }
 
@@ -169,7 +167,7 @@ public class Z_m_factory implements EntityObject<Z_m_factory> {
             return false;
         }
         final Z_m_factory other = (Z_m_factory) obj;
-        if (!Objects.equals(this.z_m_factory_id, other.z_m_factory_id)) {
+        if (this.z_m_factory_id != other.z_m_factory_id && (this.z_m_factory_id == null || !this.z_m_factory_id.equals(other.z_m_factory_id))) {
             return false;
         }
         return true;

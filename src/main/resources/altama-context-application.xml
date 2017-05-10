@@ -63,5 +63,12 @@
         <property name="forecastRecomendDTOAssembler" ref="forecastRecomendDTOAssembler"/>
     </bean>
     
+    <bean id="countForecastRecomendDTOAssembler" class="com.altama.forecast.interfaces.web.facade.dto.assembler.forecastRecomend.CountForecastRecomendDTOAssembler">
+    </bean> 
+    <bean id="countForecastRecomendService" class="com.altama.forecast.application.impl.CountForecastRecomendServiceImpl">
+        <property name="countForecastRecomendRepository" ref="countForecastRecomendRepository"/>
+        <property name="countForecastRecomendDTOAssembler" ref="countForecastRecomendDTOAssembler"/>
+    </bean>
+    
             
 </beans>

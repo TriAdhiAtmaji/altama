@@ -2,7 +2,6 @@ package com.altama.forecast.domain.ad_treenodeu1;
 
 import com.altama.forecast.domain.shared.EntityObject;
 import java.math.BigDecimal;
-import java.util.Objects;
 
 /**
  *
@@ -40,7 +39,6 @@ public class Ad_treenodeu1 implements EntityObject<Ad_treenodeu1> {
         this.node_id = node_id;
     }
 
-
     public BigDecimal getAd_tree_id() {
         return ad_tree_id;
     }
@@ -67,10 +65,10 @@ public class Ad_treenodeu1 implements EntityObject<Ad_treenodeu1> {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 97 * hash + Objects.hashCode(this.node_id);
-        hash = 97 * hash + Objects.hashCode(this.ad_client_id);
-        hash = 97 * hash + Objects.hashCode(this.ad_org_id);
+        int hash = 3;
+        hash = 17 * hash + (this.node_id != null ? this.node_id.hashCode() : 0);
+        hash = 17 * hash + (this.ad_client_id != null ? this.ad_client_id.hashCode() : 0);
+        hash = 17 * hash + (this.ad_org_id != null ? this.ad_org_id.hashCode() : 0);
         return hash;
     }
 
@@ -83,7 +81,7 @@ public class Ad_treenodeu1 implements EntityObject<Ad_treenodeu1> {
             return false;
         }
         final Ad_treenodeu1 other = (Ad_treenodeu1) obj;
-        if (!Objects.equals(this.ad_tree_id, other.ad_tree_id)) {
+        if (this.ad_tree_id != other.ad_tree_id && (this.ad_tree_id == null || !this.ad_tree_id.equals(other.ad_tree_id))) {
             return false;
         }
         return true;

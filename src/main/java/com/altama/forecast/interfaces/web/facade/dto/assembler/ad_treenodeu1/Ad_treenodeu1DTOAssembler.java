@@ -36,7 +36,7 @@ public class Ad_treenodeu1DTOAssembler implements IObjectAssembler<Ad_treenodeu1
     }
 
     public List<Ad_treenodeu1> toDomains(List<Ad_treenodeu1DTO> arg0) {
-        List<Ad_treenodeu1> res = new ArrayList<>();
+        List<Ad_treenodeu1> res = new ArrayList<Ad_treenodeu1>();
         for (Ad_treenodeu1DTO t : arg0) {
             res.add(new Ad_treenodeu1DTOAssembler().toDomain(t));
         }
@@ -44,7 +44,7 @@ public class Ad_treenodeu1DTOAssembler implements IObjectAssembler<Ad_treenodeu1
     }
 
     public List<Ad_treenodeu1DTO> toDTOs(List<Ad_treenodeu1> arg0) {
-        List<Ad_treenodeu1DTO> res = new ArrayList<>();
+        List<Ad_treenodeu1DTO> res = new ArrayList<Ad_treenodeu1DTO>();
         for (Ad_treenodeu1 t : arg0) {
             res.add(this.toDTO(t));
         }

@@ -37,7 +37,7 @@ public class Z_m_product_factoryDTOAssembler implements IObjectAssembler<Z_m_pro
     }
 
     public List<Z_m_product_factory> toDomains(List<Z_m_product_factoryDTO> arg0) {
-        List<Z_m_product_factory> res = new ArrayList<>();
+        List<Z_m_product_factory> res = new ArrayList<Z_m_product_factory>();
         for (Z_m_product_factoryDTO t : arg0) {
             res.add(new Z_m_product_factoryDTOAssembler().toDomain(t));
         }
@@ -45,7 +45,7 @@ public class Z_m_product_factoryDTOAssembler implements IObjectAssembler<Z_m_pro
     }
 
     public List<Z_m_product_factoryDTO> toDTOs(List<Z_m_product_factory> arg0) {
-        List<Z_m_product_factoryDTO> res = new ArrayList<>();
+        List<Z_m_product_factoryDTO> res = new ArrayList<Z_m_product_factoryDTO>();
         for (Z_m_product_factory t : arg0) {
             res.add(this.toDTO(t));
         }

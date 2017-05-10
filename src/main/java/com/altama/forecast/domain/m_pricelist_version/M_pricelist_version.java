@@ -2,7 +2,6 @@ package com.altama.forecast.domain.m_pricelist_version;
 
 import com.altama.forecast.domain.shared.EntityObject;
 import java.math.BigDecimal;
-import java.util.Objects;
 
 /**
  *
@@ -44,8 +43,8 @@ public class M_pricelist_version implements EntityObject<M_pricelist_version> {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 79 * hash + Objects.hashCode(this.namePricelist);
+        int hash = 7;
+        hash = 73 * hash + (this.namePricelist != null ? this.namePricelist.hashCode() : 0);
         return hash;
     }
 
@@ -58,7 +57,7 @@ public class M_pricelist_version implements EntityObject<M_pricelist_version> {
             return false;
         }
         final M_pricelist_version other = (M_pricelist_version) obj;
-        if (!Objects.equals(this.m_pricelist_version_id, other.m_pricelist_version_id)) {
+        if (this.m_pricelist_version_id != other.m_pricelist_version_id && (this.m_pricelist_version_id == null || !this.m_pricelist_version_id.equals(other.m_pricelist_version_id))) {
             return false;
         }
         return true;

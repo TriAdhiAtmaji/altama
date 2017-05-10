@@ -71,7 +71,7 @@ public class C_bpartnerDTOAssembler implements IObjectAssembler<C_bpartner, C_bp
     }
 
     public List<C_bpartner> toDomains(List<C_bpartnerDTO> arg0) {
-        List<C_bpartner> res = new ArrayList<>();
+        List<C_bpartner> res = new ArrayList<C_bpartner>();
         for (C_bpartnerDTO t : arg0) {
             res.add(new C_bpartnerDTOAssembler().toDomain(t));
         }
@@ -79,7 +79,7 @@ public class C_bpartnerDTOAssembler implements IObjectAssembler<C_bpartner, C_bp
     }
 
     public List<C_bpartnerDTO> toDTOs(List<C_bpartner> arg0) {
-        List<C_bpartnerDTO> res = new ArrayList<>();
+        List<C_bpartnerDTO> res = new ArrayList<C_bpartnerDTO>();
         for (C_bpartner t : arg0) {
             res.add(this.toDTO(t));
         }

@@ -56,7 +56,7 @@ public class M_productDTOAssembler implements IObjectAssembler<M_product, M_prod
     }
 
     public List<M_product> toDomain(List<M_productDTO> arg0) {
-        List<M_product> res = new ArrayList<>();
+        List<M_product> res = new ArrayList<M_product>();
         for (M_productDTO t : arg0) {
             res.add(new M_productDTOAssembler().toDomain(t));
         }
@@ -64,7 +64,7 @@ public class M_productDTOAssembler implements IObjectAssembler<M_product, M_prod
     }
 
     public List<M_productDTO> toDTO(List<M_product> arg0) {
-        List<M_productDTO> res = new ArrayList<>();
+        List<M_productDTO> res = new ArrayList<M_productDTO>();
         for (M_product t : arg0) {
             res.add(this.toDTO(t));
         }

@@ -3,7 +3,6 @@ package com.altama.forecast.domain.forecastrecomend;
 import com.altama.forecast.domain.m_product.IsDiscontinue;
 import com.altama.forecast.domain.shared.EntityObject;
 import java.math.BigDecimal;
-import java.util.Objects;
 
 /**
  *
@@ -211,24 +210,24 @@ public class ForecastRecomend implements EntityObject<ForecastRecomend> {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 19 * hash + Objects.hashCode(this.c_bpartner_id);
-        hash = 19 * hash + Objects.hashCode(this.c_elementvalue_id);
-        hash = 19 * hash + Objects.hashCode(this.z_m_factory_id);
-        hash = 19 * hash + Objects.hashCode(this.m_pricelist_version_id);
-        hash = 19 * hash + Objects.hashCode(this.product);
-        hash = 19 * hash + Objects.hashCode(this.qtyAvailable);
-        hash = 19 * hash + Objects.hashCode(this.qtyAverage);
-        hash = 19 * hash + Objects.hashCode(this.leadTime);
-        hash = 19 * hash + Objects.hashCode(this.qtyBatasAtas);
-        hash = 19 * hash + Objects.hashCode(this.qtyOnOrdered);
-        hash = 19 * hash + Objects.hashCode(this.priceListJual);
-        hash = 19 * hash + Objects.hashCode(this.currencyListPO);
-        hash = 19 * hash + Objects.hashCode(this.priceListLastPO);
-        hash = 19 * hash + Objects.hashCode(this.moq);
-        hash = 19 * hash + Objects.hashCode(this.qtyPcsPerMasterBox);
-        hash = 19 * hash + Objects.hashCode(this.recomendQtyPOPcs);
-        hash = 19 * hash + Objects.hashCode(this.totalMasterBox);
-        hash = 19 * hash + Objects.hashCode(this.isDiscontinue);
+        hash = 59 * hash + (this.c_bpartner_id != null ? this.c_bpartner_id.hashCode() : 0);
+        hash = 59 * hash + (this.c_elementvalue_id != null ? this.c_elementvalue_id.hashCode() : 0);
+        hash = 59 * hash + (this.z_m_factory_id != null ? this.z_m_factory_id.hashCode() : 0);
+        hash = 59 * hash + (this.m_pricelist_version_id != null ? this.m_pricelist_version_id.hashCode() : 0);
+        hash = 59 * hash + (this.product != null ? this.product.hashCode() : 0);
+        hash = 59 * hash + (this.qtyAvailable != null ? this.qtyAvailable.hashCode() : 0);
+        hash = 59 * hash + (this.qtyAverage != null ? this.qtyAverage.hashCode() : 0);
+        hash = 59 * hash + (this.leadTime != null ? this.leadTime.hashCode() : 0);
+        hash = 59 * hash + (this.qtyBatasAtas != null ? this.qtyBatasAtas.hashCode() : 0);
+        hash = 59 * hash + (this.qtyOnOrdered != null ? this.qtyOnOrdered.hashCode() : 0);
+        hash = 59 * hash + (this.priceListJual != null ? this.priceListJual.hashCode() : 0);
+        hash = 59 * hash + (this.priceListLastPO != null ? this.priceListLastPO.hashCode() : 0);
+        hash = 59 * hash + (this.currencyListPO != null ? this.currencyListPO.hashCode() : 0);
+        hash = 59 * hash + (this.moq != null ? this.moq.hashCode() : 0);
+        hash = 59 * hash + (this.qtyPcsPerMasterBox != null ? this.qtyPcsPerMasterBox.hashCode() : 0);
+        hash = 59 * hash + (this.recomendQtyPOPcs != null ? this.recomendQtyPOPcs.hashCode() : 0);
+        hash = 59 * hash + (this.totalMasterBox != null ? this.totalMasterBox.hashCode() : 0);
+        hash = 59 * hash + (this.isDiscontinue != null ? this.isDiscontinue.hashCode() : 0);
         return hash;
     }
 
@@ -241,7 +240,7 @@ public class ForecastRecomend implements EntityObject<ForecastRecomend> {
             return false;
         }
         final ForecastRecomend other = (ForecastRecomend) obj;
-        if (!Objects.equals(this.m_product_id, other.m_product_id)) {
+        if (this.m_product_id != other.m_product_id && (this.m_product_id == null || !this.m_product_id.equals(other.m_product_id))) {
             return false;
         }
         return true;

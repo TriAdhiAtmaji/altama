@@ -29,6 +29,7 @@ public class ForecastRecomendDTO {
     private BigDecimal recomendQtyPOPcs;
     private BigDecimal totalMasterBox;
     private IsDiscontinue isDiscontinue;
+    private final BigDecimal ZERO = new BigDecimal(0);
 
     public ForecastRecomendDTO() {
     }
@@ -104,7 +105,12 @@ public class ForecastRecomendDTO {
     }
 
     public BigDecimal getQtyAvailable() {
-        return qtyAvailable;
+        if (qtyAvailable == null) {
+            return ZERO;
+        } else {
+            return qtyAvailable.setScale(2, RoundingMode.HALF_UP);
+        }
+
     }
 
     public void setQtyAvailable(BigDecimal qtyAvailable) {
@@ -112,7 +118,11 @@ public class ForecastRecomendDTO {
     }
 
     public BigDecimal getQtyAverage() {
-        return qtyAverage.setScale(2, RoundingMode.HALF_UP);
+        if (qtyAverage == null) {
+            return ZERO;
+        } else {
+            return qtyAverage.setScale(2, RoundingMode.HALF_UP);
+        }
     }
 
     public void setQtyAverage(BigDecimal qtyAverage) {
@@ -120,7 +130,12 @@ public class ForecastRecomendDTO {
     }
 
     public BigDecimal getLeadTime() {
-        return leadTime;
+        if (leadTime == null) {
+            return ZERO;
+        } else {
+            return leadTime.setScale(2, RoundingMode.HALF_UP);
+        }
+
     }
 
     public void setLeadTime(BigDecimal leadTime) {
@@ -128,7 +143,11 @@ public class ForecastRecomendDTO {
     }
 
     public BigDecimal getQtyBatasAtas() {
-        return qtyBatasAtas.setScale(2, RoundingMode.HALF_UP);
+        if (qtyBatasAtas == null) {
+            return ZERO;
+        } else {
+            return qtyBatasAtas.setScale(2, RoundingMode.HALF_UP);
+        }
     }
 
     public void setQtyBatasAtas(BigDecimal qtyBatasAtas) {
@@ -136,7 +155,12 @@ public class ForecastRecomendDTO {
     }
 
     public BigDecimal getQtyOnOrdered() {
-        return qtyOnOrdered;
+        if (qtyOnOrdered == null) {
+            return ZERO;
+        } else {
+            return qtyOnOrdered.setScale(2, RoundingMode.HALF_UP);
+        }
+
     }
 
     public void setQtyOnOrdered(BigDecimal qtyOnOrdered) {
@@ -144,7 +168,12 @@ public class ForecastRecomendDTO {
     }
 
     public BigDecimal getPriceListJual() {
-        return priceListJual.setScale(2, RoundingMode.HALF_UP);
+        if (priceListJual == null) {
+            return ZERO;
+        } else {
+            return priceListJual.setScale(2, RoundingMode.HALF_UP);
+        }
+
     }
 
     public void setPriceListJual(BigDecimal priceListJual) {
@@ -152,7 +181,12 @@ public class ForecastRecomendDTO {
     }
 
     public BigDecimal getPriceListLastPO() {
-        return priceListLastPO.setScale(2, RoundingMode.HALF_UP);
+        if (priceListLastPO == null) {
+            return ZERO;
+        } else {
+            return priceListLastPO.setScale(2, RoundingMode.HALF_UP);
+        }
+
     }
 
     public void setPriceListLastPO(BigDecimal priceListLastPO) {
@@ -168,7 +202,10 @@ public class ForecastRecomendDTO {
     }
 
     public BigDecimal getMoq() {
-        return moq;
+        if (moq == null) {
+            return ZERO;
+        }
+        return moq.setScale(2, RoundingMode.HALF_UP);
     }
 
     public void setMoq(BigDecimal moq) {
@@ -176,7 +213,12 @@ public class ForecastRecomendDTO {
     }
 
     public BigDecimal getQtyPcsPerMasterBox() {
-        return qtyPcsPerMasterBox.setScale(2, RoundingMode.HALF_UP);
+        if (qtyPcsPerMasterBox == null) {
+            return ZERO;
+        } else {
+            return qtyPcsPerMasterBox.setScale(2, RoundingMode.HALF_UP);
+        }
+
     }
 
     public void setQtyPcsPerMasterBox(BigDecimal qtyPcsPerMasterBox) {
@@ -184,7 +226,12 @@ public class ForecastRecomendDTO {
     }
 
     public BigDecimal getRecomendQtyPOPcs() {
-        return recomendQtyPOPcs.setScale(2, RoundingMode.HALF_UP);
+        if (recomendQtyPOPcs == null) {
+            return ZERO;
+        } else {
+            return recomendQtyPOPcs.setScale(2, RoundingMode.HALF_UP);
+        }
+
     }
 
     public void setRecomendQtyPOPcs(BigDecimal recomendQtyPOPcs) {
@@ -192,7 +239,12 @@ public class ForecastRecomendDTO {
     }
 
     public BigDecimal getTotalMasterBox() {
-        return totalMasterBox.setScale(2, RoundingMode.HALF_UP);
+        if (totalMasterBox == null) {
+            return ZERO;
+        } else {
+            return totalMasterBox.setScale(2, RoundingMode.HALF_UP);
+        }
+
     }
 
     public void setTotalMasterBox(BigDecimal totalMasterBox) {

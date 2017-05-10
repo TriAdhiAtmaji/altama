@@ -3,7 +3,6 @@ package com.altama.forecast.domain.z_m_product_factory;
 import com.altama.forecast.domain.shared.EntityObject;
 import com.altama.forecast.domain.z_m_factory.Z_m_factory;
 import java.math.BigDecimal;
-import java.util.Objects;
 
 /**
  *
@@ -77,11 +76,11 @@ public class Z_m_product_factory implements EntityObject<Z_m_product_factory> {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 79 * hash + Objects.hashCode(this.m_product_id);
-        hash = 79 * hash + Objects.hashCode(this.z_m_factory_id);
-        hash = 79 * hash + Objects.hashCode(this.iscurrentvendor);
-        hash = 79 * hash + Objects.hashCode(this.z_m_factory);
+        int hash = 3;
+        hash = 83 * hash + (this.m_product_id != null ? this.m_product_id.hashCode() : 0);
+        hash = 83 * hash + (this.z_m_factory_id != null ? this.z_m_factory_id.hashCode() : 0);
+        hash = 83 * hash + (this.iscurrentvendor != null ? this.iscurrentvendor.hashCode() : 0);
+        hash = 83 * hash + (this.z_m_factory != null ? this.z_m_factory.hashCode() : 0);
         return hash;
     }
 
@@ -94,7 +93,7 @@ public class Z_m_product_factory implements EntityObject<Z_m_product_factory> {
             return false;
         }
         final Z_m_product_factory other = (Z_m_product_factory) obj;
-        if (!Objects.equals(this.z_m_product_factory_id, other.z_m_product_factory_id)) {
+        if (this.z_m_product_factory_id != other.z_m_product_factory_id && (this.z_m_product_factory_id == null || !this.z_m_product_factory_id.equals(other.z_m_product_factory_id))) {
             return false;
         }
         return true;

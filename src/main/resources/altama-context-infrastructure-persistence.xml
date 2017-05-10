@@ -67,5 +67,8 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
     
-
+    <bean id="countForecastRecomendRepository" class="com.altama.forecast.infrastructure.persistence.hibernate.CountForecastRecomendHibernateRepository">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    
 </beans>

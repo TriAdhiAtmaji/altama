@@ -63,7 +63,7 @@ public class ForecastRecomendDTOAssembler implements IObjectAssembler<ForecastRe
     }
 
     public List<ForecastRecomend> toDomains(List<ForecastRecomendDTO> arg0) {
-        List<ForecastRecomend> res = new ArrayList<>();
+        List<ForecastRecomend> res = new ArrayList<ForecastRecomend>();
         for (ForecastRecomendDTO f : arg0) {
             res.add(new ForecastRecomendDTOAssembler().toDomain(f));
         }
@@ -71,7 +71,7 @@ public class ForecastRecomendDTOAssembler implements IObjectAssembler<ForecastRe
     }
 
     public List<ForecastRecomendDTO> toDTOs(List<ForecastRecomend> arg0) {
-        List<ForecastRecomendDTO> res = new ArrayList<>();
+        List<ForecastRecomendDTO> res = new ArrayList<ForecastRecomendDTO>();
         for (ForecastRecomend f : arg0) {
             res.add(this.toDTO(f));
         }

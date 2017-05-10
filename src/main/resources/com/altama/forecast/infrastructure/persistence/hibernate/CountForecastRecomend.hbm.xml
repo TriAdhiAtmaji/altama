@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class mutable="true" name="com.altama.forecast.domain.forecastrecomend.CountForecastRecomend" table="poforecast_qtyrecomend_count">
+        <id column="m_product_id" name="m_product_id"></id>
+        
+        <property column="c_bpartner_id" name="c_bpartner_id" not-null="false"/>
+        <property column="c_elementvalue_id" name="c_elementvalue_id" not-null="false"/>
+        <property column="z_m_factory_id" name="z_m_factory_id" not-null="false"/>
+        <property column="m_pricelist_version_id" name="m_pricelist_version_id" not-null="false"/>
+        <property column="product" name="product" not-null="false"/>
+        <property column="isdiscontinued" name="isdiscontinued" not-null="false">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">com.altama.forecast.domain.m_product.IsDiscontinue</param>
+                <param name="type">12</param>
+            </type>
+        </property>
+        
+    </class>
+</hibernate-mapping>

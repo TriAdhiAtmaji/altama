@@ -41,7 +41,7 @@ public class C_ElementvalueDTOAssembler implements IObjectAssembler<C_Elementval
     }
 
     public List<C_Elementvalue> toDomains(List<C_ElementvalueDTO> arg0) {
-        List<C_Elementvalue> res = new ArrayList<>();
+        List<C_Elementvalue> res = new ArrayList<C_Elementvalue>();
         for (C_ElementvalueDTO t : arg0) {
             res.add(new C_ElementvalueDTOAssembler().toDomain(t));
         }
@@ -49,7 +49,7 @@ public class C_ElementvalueDTOAssembler implements IObjectAssembler<C_Elementval
     }
 
     public List<C_ElementvalueDTO> toDTOs(List<C_Elementvalue> arg0) {
-        List<C_ElementvalueDTO> res = new ArrayList<>();
+        List<C_ElementvalueDTO> res = new ArrayList<C_ElementvalueDTO>();
         if (arg0 != null) {
             for (C_Elementvalue t : arg0) {
                 res.add(new C_ElementvalueDTOAssembler().toDTO(t));

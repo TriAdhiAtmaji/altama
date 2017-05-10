@@ -3,7 +3,6 @@ package com.altama.forecast.domain.c_elementvalue;
 import com.altama.forecast.domain.ad_treenodeu1.Ad_treenodeu1;
 import com.altama.forecast.domain.shared.EntityObject;
 import java.math.BigDecimal;
-import java.util.Objects;
 
 /**
  *
@@ -89,12 +88,12 @@ public class C_Elementvalue implements EntityObject<C_Elementvalue> {
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 79 * hash + Objects.hashCode(this.ad_client_id);
-        hash = 79 * hash + Objects.hashCode(this.value);
-        hash = 79 * hash + Objects.hashCode(this.brand);
-        hash = 79 * hash + Objects.hashCode(this.description);
-        hash = 79 * hash + Objects.hashCode(this.ad_treenodeu1);
+        int hash = 7;
+        hash = 59 * hash + (this.ad_client_id != null ? this.ad_client_id.hashCode() : 0);
+        hash = 59 * hash + (this.value != null ? this.value.hashCode() : 0);
+        hash = 59 * hash + (this.brand != null ? this.brand.hashCode() : 0);
+        hash = 59 * hash + (this.description != null ? this.description.hashCode() : 0);
+        hash = 59 * hash + (this.ad_treenodeu1 != null ? this.ad_treenodeu1.hashCode() : 0);
         return hash;
     }
 
@@ -107,7 +106,7 @@ public class C_Elementvalue implements EntityObject<C_Elementvalue> {
             return false;
         }
         final C_Elementvalue other = (C_Elementvalue) obj;
-        if (!Objects.equals(this.c_elementvalue_id, other.c_elementvalue_id)) {
+        if (this.c_elementvalue_id != other.c_elementvalue_id && (this.c_elementvalue_id == null || !this.c_elementvalue_id.equals(other.c_elementvalue_id))) {
             return false;
         }
         return true;
