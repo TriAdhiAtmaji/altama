@@ -94,14 +94,14 @@
                     <listheader label="Qty Average" width="30%" align="center"/>
                     <listheader label="Lead Time" width="20%" align="center"/>
                     <listheader label="Qty Batas Atas" width="30%" align="center"/>
-                    <listheader label="Qty On Ondered" width="30%" align="center"/>
+                    <listheader label="Qty On Order" width="30%" align="center"/>
                     <listheader label="Price List Jual" width="30%" align="center"/>
                     <listheader label="Currency Last PO" width="20%" align="center"/>
                     <listheader label="Price List Last PO" width="30%" align="center"/>
                     <listheader label="MOQ" width="10%" align="center"/>
                     <listheader label="Qty PCS perMB" width="30%" align="center"/>
-                    <listheader label="Recommended Qty PO PCS" width="40%" align="center"/>
-                    <listheader label="Recommended MB" width="30%" align="center"/>
+                    <listheader label="Recommend Qty PO PCS" width="40%" align="center"/>
+                    <listheader label="Recommend MB" width="30%" align="center"/>
                 </listhead>
                 <template name="model">
                     <listitem value="${each}">
