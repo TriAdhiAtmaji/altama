@@ -43,8 +43,8 @@ public class Z_m_factoryHibernateRepository extends HibernateRepository implemen
     @Override
     public List<Z_m_factory> findAll() {
         Query query = getSession().createQuery("SELECT DISTINCT factory FROM com.altama.forecast.domain.z_m_factory.Z_m_factory as factory "
-                        + "INNER JOIN factory.z_m_product_factory as productFactory "
-                        + "WHERE productFactory.iscurrentvendor = 'Y'");
+                + "INNER JOIN factory.z_m_product_factory as productFactory "
+                + "WHERE productFactory.iscurrentvendor = 'Y' ORDER BY factory.name ASC");
         System.out.println(query.list().isEmpty());
         return (List<Z_m_factory>) query.list();
 //        Criteria criteria = getSession().createCriteria(Z_m_factory.class, "factory");

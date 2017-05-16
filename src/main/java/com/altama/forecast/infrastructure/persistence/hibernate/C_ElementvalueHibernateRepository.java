@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -44,6 +45,10 @@ public class C_ElementvalueHibernateRepository extends HibernateRepository imple
     @Override
     public List<C_Elementvalue> findAll() {
         Criteria criteria = getSession().createCriteria(C_Elementvalue.class, "elementvalueAlias");
+        criteria.add(Restrictions.not(Restrictions.eq("c_elementvalue_id", BigDecimal.valueOf(1001053))));
+        criteria.add(Restrictions.not(Restrictions.eq("c_elementvalue_id", BigDecimal.valueOf(1001054))));
+        criteria.add(Restrictions.not(Restrictions.eq("c_elementvalue_id", BigDecimal.valueOf(1000649))));
+        criteria.addOrder(Order.asc("elementvalueAlias.brand"));
         return (List<C_Elementvalue>) criteria.list();
 
     }

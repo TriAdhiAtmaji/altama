@@ -3,6 +3,7 @@ package com.altama.forecast.interfaces.web.facade.dto.forecastRecomendDTO;
 import com.altama.forecast.domain.m_product.IsDiscontinue;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -15,6 +16,11 @@ public class ForecastRecomendDTO {
     private BigDecimal c_elementvalue_id;
     private BigDecimal z_m_factory_id;
     private BigDecimal m_pricelist_version_id;
+    private String supplier;
+    private String factory;
+    private String barcode;
+    private String itemCode;
+    private String productEnglish;
     private String product;
     private BigDecimal qtyAvailable;
     private BigDecimal qtyAverage;
@@ -30,16 +36,22 @@ public class ForecastRecomendDTO {
     private BigDecimal totalMasterBox;
     private IsDiscontinue isDiscontinue;
     private final BigDecimal ZERO = new BigDecimal(0);
+    private DecimalFormat df = new DecimalFormat("#,##0.00");
 
     public ForecastRecomendDTO() {
     }
 
-    public ForecastRecomendDTO(BigDecimal m_product_id, BigDecimal c_bpartner_id, BigDecimal c_elementvalue_id, BigDecimal z_m_factory_id, BigDecimal m_pricelist_version_id, String product, BigDecimal qtyAvailable, BigDecimal qtyAverage, BigDecimal leadTime, BigDecimal qtyBatasAtas, BigDecimal qtyOnOrdered, BigDecimal priceListJual, BigDecimal priceListLastPO, String currencyListPO, BigDecimal moq, BigDecimal qtyPcsPerMasterBox, BigDecimal recomendQtyPOPcs, BigDecimal totalMasterBox, IsDiscontinue isDiscontinue) {
+    public ForecastRecomendDTO(BigDecimal m_product_id, BigDecimal c_bpartner_id, BigDecimal c_elementvalue_id, BigDecimal z_m_factory_id, BigDecimal m_pricelist_version_id, String supplier, String factory, String barcode, String itemCode, String productEnglish, String product, BigDecimal qtyAvailable, BigDecimal qtyAverage, BigDecimal leadTime, BigDecimal qtyBatasAtas, BigDecimal qtyOnOrdered, BigDecimal priceListJual, BigDecimal priceListLastPO, String currencyListPO, BigDecimal moq, BigDecimal qtyPcsPerMasterBox, BigDecimal recomendQtyPOPcs, BigDecimal totalMasterBox, IsDiscontinue isDiscontinue) {
         this.m_product_id = m_product_id;
         this.c_bpartner_id = c_bpartner_id;
         this.c_elementvalue_id = c_elementvalue_id;
         this.z_m_factory_id = z_m_factory_id;
         this.m_pricelist_version_id = m_pricelist_version_id;
+        this.supplier = supplier;
+        this.factory = factory;
+        this.barcode = barcode;
+        this.itemCode = itemCode;
+        this.productEnglish = productEnglish;
         this.product = product;
         this.qtyAvailable = qtyAvailable;
         this.qtyAverage = qtyAverage;
@@ -54,6 +66,46 @@ public class ForecastRecomendDTO {
         this.recomendQtyPOPcs = recomendQtyPOPcs;
         this.totalMasterBox = totalMasterBox;
         this.isDiscontinue = isDiscontinue;
+    }
+
+    public String getSupplier() {
+        return supplier;
+    }
+
+    public void setSupplier(String supplier) {
+        this.supplier = supplier;
+    }
+
+    public String getFactory() {
+        return factory;
+    }
+
+    public void setFactory(String factory) {
+        this.factory = factory;
+    }
+
+    public String getBarcode() {
+        return barcode;
+    }
+
+    public void setBarcode(String barcode) {
+        this.barcode = barcode;
+    }
+
+    public String getItemCode() {
+        return itemCode;
+    }
+
+    public void setItemCode(String itemCode) {
+        this.itemCode = itemCode;
+    }
+
+    public String getProductEnglish() {
+        return productEnglish;
+    }
+
+    public void setProductEnglish(String productEnglish) {
+        this.productEnglish = productEnglish;
     }
 
     public BigDecimal getM_product_id() {
@@ -261,7 +313,7 @@ public class ForecastRecomendDTO {
 
     @Override
     public String toString() {
-        return "ForecastRecomendDTO{" + "m_product_id=" + m_product_id + ", c_bpartner_id=" + c_bpartner_id + ", c_elementvalue_id=" + c_elementvalue_id + ", z_m_factory_id=" + z_m_factory_id + ", m_pricelist_version_id=" + m_pricelist_version_id + ", product=" + product + ", qtyAvailable=" + qtyAvailable + ", qtyAverage=" + qtyAverage + ", leadTime=" + leadTime + ", qtyBatasAtas=" + qtyBatasAtas + ", qtyOnOrdered=" + qtyOnOrdered + ", priceListJual=" + priceListJual + ", currencyListPO=" + currencyListPO + ", priceListLastPO=" + priceListLastPO + ", moq=" + moq + ", qtyPcsPerMasterBox=" + qtyPcsPerMasterBox + ", recomendQtyPOPcs=" + recomendQtyPOPcs + ", totalMasterBox=" + totalMasterBox + ", isDiscontinue=" + isDiscontinue + '}';
+        return "ForecastRecomendDTO{" + "m_product_id=" + m_product_id + ", c_bpartner_id=" + c_bpartner_id + ", c_elementvalue_id=" + c_elementvalue_id + ", z_m_factory_id=" + z_m_factory_id + ", m_pricelist_version_id=" + m_pricelist_version_id + ", supplier=" + supplier + ", factory=" + factory + ", barcode=" + barcode + ", itemCode=" + itemCode + ", productEnglish=" + productEnglish + ", product=" + product + ", qtyAvailable=" + qtyAvailable + ", qtyAverage=" + qtyAverage + ", leadTime=" + leadTime + ", qtyBatasAtas=" + qtyBatasAtas + ", qtyOnOrdered=" + qtyOnOrdered + ", priceListJual=" + priceListJual + ", priceListLastPO=" + priceListLastPO + ", currencyListPO=" + currencyListPO + ", moq=" + moq + ", qtyPcsPerMasterBox=" + qtyPcsPerMasterBox + ", recomendQtyPOPcs=" + recomendQtyPOPcs + ", totalMasterBox=" + totalMasterBox + ", isDiscontinue=" + isDiscontinue + ", ZERO=" + ZERO + '}';
     }
 
 }

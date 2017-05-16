@@ -27,10 +27,8 @@ import org.zkoss.bind.annotation.ExecutionArgParam;
 import org.zkoss.bind.annotation.Init;
 import org.zkoss.bind.annotation.NotifyChange;
 import org.zkoss.zk.ui.select.annotation.VariableResolver;
-import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zk.ui.select.annotation.WireVariable;
 import org.zkoss.zul.ListModelList;
-import org.zkoss.zul.Paging;
 import org.zkoss.zul.Window;
 
 /**
@@ -83,7 +81,7 @@ public class ProductVM {
     private M_pricelist_versionDTO defaultPriceVersion = new M_pricelist_versionDTO(BigDecimal.valueOf(1000000), "US_Standard_PriceList_1108_IDR");
 
     //Paging
-    private int pageSize = 10;
+    private int pageSize = 50;
     private int activePage = 0;
     private int totalSize;
 

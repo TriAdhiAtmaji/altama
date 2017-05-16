@@ -15,6 +15,11 @@ public class ForecastRecomend implements EntityObject<ForecastRecomend> {
     private BigDecimal c_elementvalue_id;
     private BigDecimal z_m_factory_id;
     private BigDecimal m_pricelist_version_id;
+    private String supplier;
+    private String factory;
+    private String barcode;
+    private String itemCode;
+    private String productEnglish;
     private String product;
     private BigDecimal qtyAvailable;
     private BigDecimal qtyAverage;
@@ -33,12 +38,17 @@ public class ForecastRecomend implements EntityObject<ForecastRecomend> {
     public ForecastRecomend() {
     }
 
-    public ForecastRecomend(BigDecimal m_product_id, BigDecimal c_bpartner_id, BigDecimal c_elementvalue_id, BigDecimal z_m_factory_id, BigDecimal m_pricelist_version_id, String product, BigDecimal qtyAvailable, BigDecimal qtyAverage, BigDecimal leadTime, BigDecimal qtyBatasAtas, BigDecimal qtyOnOrdered, BigDecimal priceListJual, BigDecimal priceListLastPO, String currencyListPO, BigDecimal moq, BigDecimal qtyPcsPerMasterBox, BigDecimal recomendQtyPOPcs, BigDecimal totalMasterBox, IsDiscontinue isDiscontinue) {
+    public ForecastRecomend(BigDecimal m_product_id, BigDecimal c_bpartner_id, BigDecimal c_elementvalue_id, BigDecimal z_m_factory_id, BigDecimal m_pricelist_version_id, String supplier, String factory, String barcode, String itemCode, String productEnglish, String product, BigDecimal qtyAvailable, BigDecimal qtyAverage, BigDecimal leadTime, BigDecimal qtyBatasAtas, BigDecimal qtyOnOrdered, BigDecimal priceListJual, BigDecimal priceListLastPO, String currencyListPO, BigDecimal moq, BigDecimal qtyPcsPerMasterBox, BigDecimal recomendQtyPOPcs, BigDecimal totalMasterBox, IsDiscontinue isDiscontinue) {
         this.m_product_id = m_product_id;
         this.c_bpartner_id = c_bpartner_id;
         this.c_elementvalue_id = c_elementvalue_id;
         this.z_m_factory_id = z_m_factory_id;
         this.m_pricelist_version_id = m_pricelist_version_id;
+        this.supplier = supplier;
+        this.factory = factory;
+        this.barcode = barcode;
+        this.itemCode = itemCode;
+        this.productEnglish = productEnglish;
         this.product = product;
         this.qtyAvailable = qtyAvailable;
         this.qtyAverage = qtyAverage;
@@ -53,6 +63,46 @@ public class ForecastRecomend implements EntityObject<ForecastRecomend> {
         this.recomendQtyPOPcs = recomendQtyPOPcs;
         this.totalMasterBox = totalMasterBox;
         this.isDiscontinue = isDiscontinue;
+    }
+
+    public String getSupplier() {
+        return supplier;
+    }
+
+    public void setSupplier(String supplier) {
+        this.supplier = supplier;
+    }
+
+    public String getFactory() {
+        return factory;
+    }
+
+    public void setFactory(String factory) {
+        this.factory = factory;
+    }
+
+    public String getBarcode() {
+        return barcode;
+    }
+
+    public void setBarcode(String barcode) {
+        this.barcode = barcode;
+    }
+
+    public String getItemCode() {
+        return itemCode;
+    }
+
+    public void setItemCode(String itemCode) {
+        this.itemCode = itemCode;
+    }
+
+    public String getProductEnglish() {
+        return productEnglish;
+    }
+
+    public void setProductEnglish(String productEnglish) {
+        this.productEnglish = productEnglish;
     }
 
     public BigDecimal getM_product_id() {
@@ -210,24 +260,29 @@ public class ForecastRecomend implements EntityObject<ForecastRecomend> {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 59 * hash + (this.c_bpartner_id != null ? this.c_bpartner_id.hashCode() : 0);
-        hash = 59 * hash + (this.c_elementvalue_id != null ? this.c_elementvalue_id.hashCode() : 0);
-        hash = 59 * hash + (this.z_m_factory_id != null ? this.z_m_factory_id.hashCode() : 0);
-        hash = 59 * hash + (this.m_pricelist_version_id != null ? this.m_pricelist_version_id.hashCode() : 0);
-        hash = 59 * hash + (this.product != null ? this.product.hashCode() : 0);
-        hash = 59 * hash + (this.qtyAvailable != null ? this.qtyAvailable.hashCode() : 0);
-        hash = 59 * hash + (this.qtyAverage != null ? this.qtyAverage.hashCode() : 0);
-        hash = 59 * hash + (this.leadTime != null ? this.leadTime.hashCode() : 0);
-        hash = 59 * hash + (this.qtyBatasAtas != null ? this.qtyBatasAtas.hashCode() : 0);
-        hash = 59 * hash + (this.qtyOnOrdered != null ? this.qtyOnOrdered.hashCode() : 0);
-        hash = 59 * hash + (this.priceListJual != null ? this.priceListJual.hashCode() : 0);
-        hash = 59 * hash + (this.priceListLastPO != null ? this.priceListLastPO.hashCode() : 0);
-        hash = 59 * hash + (this.currencyListPO != null ? this.currencyListPO.hashCode() : 0);
-        hash = 59 * hash + (this.moq != null ? this.moq.hashCode() : 0);
-        hash = 59 * hash + (this.qtyPcsPerMasterBox != null ? this.qtyPcsPerMasterBox.hashCode() : 0);
-        hash = 59 * hash + (this.recomendQtyPOPcs != null ? this.recomendQtyPOPcs.hashCode() : 0);
-        hash = 59 * hash + (this.totalMasterBox != null ? this.totalMasterBox.hashCode() : 0);
-        hash = 59 * hash + (this.isDiscontinue != null ? this.isDiscontinue.hashCode() : 0);
+        hash = 47 * hash + (this.c_bpartner_id != null ? this.c_bpartner_id.hashCode() : 0);
+        hash = 47 * hash + (this.c_elementvalue_id != null ? this.c_elementvalue_id.hashCode() : 0);
+        hash = 47 * hash + (this.z_m_factory_id != null ? this.z_m_factory_id.hashCode() : 0);
+        hash = 47 * hash + (this.m_pricelist_version_id != null ? this.m_pricelist_version_id.hashCode() : 0);
+        hash = 47 * hash + (this.supplier != null ? this.supplier.hashCode() : 0);
+        hash = 47 * hash + (this.factory != null ? this.factory.hashCode() : 0);
+        hash = 47 * hash + (this.barcode != null ? this.barcode.hashCode() : 0);
+        hash = 47 * hash + (this.itemCode != null ? this.itemCode.hashCode() : 0);
+        hash = 47 * hash + (this.productEnglish != null ? this.productEnglish.hashCode() : 0);
+        hash = 47 * hash + (this.product != null ? this.product.hashCode() : 0);
+        hash = 47 * hash + (this.qtyAvailable != null ? this.qtyAvailable.hashCode() : 0);
+        hash = 47 * hash + (this.qtyAverage != null ? this.qtyAverage.hashCode() : 0);
+        hash = 47 * hash + (this.leadTime != null ? this.leadTime.hashCode() : 0);
+        hash = 47 * hash + (this.qtyBatasAtas != null ? this.qtyBatasAtas.hashCode() : 0);
+        hash = 47 * hash + (this.qtyOnOrdered != null ? this.qtyOnOrdered.hashCode() : 0);
+        hash = 47 * hash + (this.priceListJual != null ? this.priceListJual.hashCode() : 0);
+        hash = 47 * hash + (this.priceListLastPO != null ? this.priceListLastPO.hashCode() : 0);
+        hash = 47 * hash + (this.currencyListPO != null ? this.currencyListPO.hashCode() : 0);
+        hash = 47 * hash + (this.moq != null ? this.moq.hashCode() : 0);
+        hash = 47 * hash + (this.qtyPcsPerMasterBox != null ? this.qtyPcsPerMasterBox.hashCode() : 0);
+        hash = 47 * hash + (this.recomendQtyPOPcs != null ? this.recomendQtyPOPcs.hashCode() : 0);
+        hash = 47 * hash + (this.totalMasterBox != null ? this.totalMasterBox.hashCode() : 0);
+        hash = 47 * hash + (this.isDiscontinue != null ? this.isDiscontinue.hashCode() : 0);
         return hash;
     }
 

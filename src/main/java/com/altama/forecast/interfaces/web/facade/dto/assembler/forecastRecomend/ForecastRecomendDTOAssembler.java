@@ -35,6 +35,11 @@ public class ForecastRecomendDTOAssembler implements IObjectAssembler<ForecastRe
                 .setRecomendQtyPOPcs(domainObject.getRecomendQtyPOPcs())
                 .setTotalMasterBox(domainObject.getTotalMasterBox())
                 .setIsDiscontinue(domainObject.getIsDiscontinue())
+                .setSupplier(domainObject.getSupplier())
+                .setFactory(domainObject.getFactory())
+                .setBarcode(domainObject.getBarcode())
+                .setItemCode(domainObject.getItemCode())
+                .setProductEnglish(domainObject.getProductEnglish())
                 .createForecastRecomendDTO();
     }
 
@@ -59,6 +64,11 @@ public class ForecastRecomendDTOAssembler implements IObjectAssembler<ForecastRe
                 .setRecomendQtyPOPcs(dtoObject.getRecomendQtyPOPcs())
                 .setTotalMasterBox(dtoObject.getTotalMasterBox())
                 .setIsDiscontinue(dtoObject.getIsDiscontinue())
+                .setSupplier(dtoObject.getSupplier())
+                .setFactory(dtoObject.getFactory())
+                .setBarcode(dtoObject.getBarcode())
+                .setItemCode(dtoObject.getItemCode())
+                .setProductEnglish(dtoObject.getProductEnglish())
                 .createForecastRecomend();
     }
 

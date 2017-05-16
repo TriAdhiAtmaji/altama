@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?component name="signLabel" class="com.jatis.ui.common.SignLabel" ?>
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c"?>
 
 <zk xmlns="http://www.zkoss.org/2005/zul">
     <window border="none" apply="org.zkoss.bind.BindComposer"
@@ -20,14 +21,14 @@
                 <rows>
                     <row>
                         <label value="Brand"/>                                                                    
-                        <combobox width="300px" model="@bind(vm.listC_Elementvalues)" selectedItem="@bind(vm.brandSelect)" placeholder="- Pilihan Menu -" readonly="true">
+                        <combobox width="300px" model="@bind(vm.listC_Elementvalues)" selectedItem="@bind(vm.brandSelect)" placeholder="- Pilihan Menu -">
                             <template name="model" var="items">
                                 <comboitem label="@load(items.getBrand())" value="@load(items.getC_elementvalue_id().toString())"/>
                             </template>
                         </combobox>
                         <label value="Factory"/>
                         <!--                        <textbox value="@bind(vm.factory)" width="300px"/>-->
-                        <combobox width="300px" model="@bind(vm.listFactory)" selectedItem="@bind(vm.factorySelect)" placeholder="- Pilihan Menu -" readonly="true">
+                        <combobox width="300px" model="@bind(vm.listFactory)" selectedItem="@bind(vm.factorySelect)" placeholder="- Pilihan Menu -">
                             <template name="model" var="items">
                                 <comboitem label="@load(items.getName())" value="@load(items.getZ_m_factory_id().toString())"/>
                             </template>
@@ -47,7 +48,7 @@
                     <row>
                         <label value="Suplier" />
                         <!--                        <textbox value="@bind(vm.suplier)" width="300px"/>-->
-                        <combobox width="300px" model="@bind(vm.listBpartner)" selectedItem="@bind(vm.suplierSelect)" placeholder="- Pilihan Menu -" readonly="true">
+                        <combobox width="300px" model="@bind(vm.listBpartner)" selectedItem="@bind(vm.suplierSelect)" placeholder="- Pilihan Menu -">
                             <template name="model" var="items">
                                 <comboitem label="@load(items.getSuplier())" value="@load(items.getC_bpartner_id().toString())"/>
                             </template>
@@ -56,7 +57,7 @@
 
                         <label value="Price List Version Jual" />
                         <!--                        <textbox width="300px" readonly="false"/>			-->
-                        <combobox width="300px" model="@bind(vm.listPriceVersion)" selectedItem="@bind(vm.priceVersionSelect)" readonly="true" onAfterRender="self.setSelectedIndex(21)">
+                        <combobox width="300px" model="@bind(vm.listPriceVersion)" selectedItem="@bind(vm.priceVersionSelect)" onAfterRender="self.setSelectedIndex(25)">
                             <!--                            onAfterRender="self.setSelectedIndex(21)"-->
                             <template name="model" var="items">
                                 <comboitem label="@load(items.getNamePricelist())" value="@load(items.getM_pricelist_version_id().toString())"/>
@@ -89,15 +90,20 @@
             <listbox emptyMessage="${labels.common.noDataFound}" model="@bind(vm.forecastRecomendDTOs)">
                 <!--                rows="@load(vm.pageSize)" pageSize="@load(vm.pageSize)" pagingPosition="top" mold="paging"-->
                 <listhead>
+                    <listheader label="Supplier" width="30%" align="center"/>
+                    <listheader label="Factory" width="25%" align="center"/>
+                    <listheader label="Barcode" width="30%" align="center"/>
+                    <listheader label="Item Code" width="20%" align="center"/>
                     <listheader label="Product" width="30%" align="center"/>
+                    <listheader label="Product Name English" width="30%" align="center"/>
                     <listheader label="Qty Available" width="25%" align="center"/>
                     <listheader label="Qty Average" width="30%" align="center"/>
                     <listheader label="Lead Time" width="20%" align="center"/>
                     <listheader label="Qty Batas Atas" width="30%" align="center"/>
                     <listheader label="Qty On Order" width="30%" align="center"/>
                     <listheader label="Price List Jual" width="30%" align="center"/>
-                    <listheader label="Currency Last PO" width="20%" align="center"/>
-                    <listheader label="Price List Last PO" width="30%" align="center"/>
+                    <listheader label="Currency Factory" width="20%" align="center"/>
+                    <listheader label="Price List Factory" width="30%" align="center"/>
                     <listheader label="MOQ" width="10%" align="center"/>
                     <listheader label="Qty PCS perMB" width="30%" align="center"/>
                     <listheader label="Recommend Qty PO PCS" width="40%" align="center"/>
@@ -106,9 +112,25 @@
                 <template name="model">
                     <listitem value="${each}">
                         <listcell >
+                            <label width="95%" value="@bind(each.supplier)"/>
+                        </listcell>
+                        <listcell >
+                            <label width="95%" value="@bind(each.factory)"/>
+                        </listcell>
+                        <listcell >
+                            <label width="95%" value="@bind(each.barcode)"/>
+                        </listcell>
+                        <listcell >
+                            <label width="95%" value="@bind(each.itemCode)"/>
+                        </listcell>
+                        <listcell >
                             <label width="95%" value="@bind(each.product)"/>
                         </listcell>
                         <listcell >
+                            <label width="95%" value="@bind(each.productEnglish)"/>
+                        </listcell>
+                        <listcell >
+                            <!--                            <doublebox format="#,##0.00" disabled="true" value="@bind(each.qtyAvailable)" width="95%" />-->
                             <label width="95%" value="@bind(each.qtyAvailable)"/>
                         </listcell>
                         <listcell >
@@ -124,7 +146,11 @@
                             <label width="95%" value="@bind(each.qtyOnOrdered)"/>
                         </listcell>
                         <listcell >
-                            <label width="95%" value="@bind(each.priceListJual)"/>
+                            <label width="95%" value="@bind{c:formatNumber(each.priceListJual, '###,###,###.00')}"/>
+                            <!--                            value="@bind(each.priceListJual)"-->
+                            <!--value="${c:formatNumber(@bind(each.priceListJual), '$ ###,###,###.00')}"-->
+                            <!--<doublebox format="#,##0.00" disabled="true" style="text-align: center" value="@bind(each.priceListJual)" width="95%" />-->
+                            
                         </listcell>
                         <listcell >
                             <label width="95%" value="@bind(each.currencyListPO)"/>

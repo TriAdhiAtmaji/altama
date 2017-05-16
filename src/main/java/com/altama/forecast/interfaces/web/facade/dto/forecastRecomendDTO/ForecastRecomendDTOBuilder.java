@@ -15,6 +15,11 @@ public class ForecastRecomendDTOBuilder {
     private BigDecimal c_elementvalue_id;
     private BigDecimal z_m_factory_id;
     private BigDecimal m_pricelist_version_id;
+    private String supplier;
+    private String factory;
+    private String barcode;
+    private String itemCode;
+    private String productEnglish;
     private String product;
     private BigDecimal qtyAvailable;
     private BigDecimal qtyAverage;
@@ -55,6 +60,31 @@ public class ForecastRecomendDTOBuilder {
 
     public ForecastRecomendDTOBuilder setM_pricelist_version_id(BigDecimal m_pricelist_version_id) {
         this.m_pricelist_version_id = m_pricelist_version_id;
+        return this;
+    }
+
+    public ForecastRecomendDTOBuilder setSupplier(String supplier) {
+        this.supplier = supplier;
+        return this;
+    }
+
+    public ForecastRecomendDTOBuilder setFactory(String factory) {
+        this.factory = factory;
+        return this;
+    }
+
+    public ForecastRecomendDTOBuilder setBarcode(String barcode) {
+        this.barcode = barcode;
+        return this;
+    }
+
+    public ForecastRecomendDTOBuilder setItemCode(String itemCode) {
+        this.itemCode = itemCode;
+        return this;
+    }
+
+    public ForecastRecomendDTOBuilder setProductEnglish(String productEnglish) {
+        this.productEnglish = productEnglish;
         return this;
     }
 
@@ -129,7 +159,7 @@ public class ForecastRecomendDTOBuilder {
     }
 
     public ForecastRecomendDTO createForecastRecomendDTO() {
-        return new ForecastRecomendDTO(m_product_id, c_bpartner_id, c_elementvalue_id, z_m_factory_id, m_pricelist_version_id, product, qtyAvailable, qtyAverage, leadTime, qtyBatasAtas, qtyOnOrdered, priceListJual, priceListLastPO, currencyListPO, moq, qtyPcsPerMasterBox, recomendQtyPOPcs, totalMasterBox, isDiscontinue);
+        return new ForecastRecomendDTO(m_product_id, c_bpartner_id, c_elementvalue_id, z_m_factory_id, m_pricelist_version_id, supplier, factory, barcode, itemCode, productEnglish, product, qtyAvailable, qtyAverage, leadTime, qtyBatasAtas, qtyOnOrdered, priceListJual, priceListLastPO, currencyListPO, moq, qtyPcsPerMasterBox, recomendQtyPOPcs, totalMasterBox, isDiscontinue);
     }
 
 }
