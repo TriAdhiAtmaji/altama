@@ -146,7 +146,7 @@
                             <label width="95%" value="@bind(each.qtyOnOrdered)"/>
                         </listcell>
                         <listcell >
-                            <label width="95%" value="@bind{c:formatNumber(each.priceListJual, '###,###,###.00')}"/>
+                            <label width="95%" value="@bind(each.priceListJual)"/>
                             <!--                            value="@bind(each.priceListJual)"-->
                             <!--value="${c:formatNumber(@bind(each.priceListJual), '$ ###,###,###.00')}"-->
                             <!--<doublebox format="#,##0.00" disabled="true" style="text-align: center" value="@bind(each.priceListJual)" width="95%" />-->
