@@ -5,7 +5,7 @@
 <zk xmlns="http://www.zkoss.org/2005/zul">
     <window border="none" apply="org.zkoss.bind.BindComposer"
             viewModel="@id('vm') @init('com.altama.forecast.viewModel.ProductVM')"
-            form="@id('fx') @load(vm.forecastRecomendDTO) @save(vm.forecastRecomendDTO, after='buttonSearch')">
+            form="@id('fx') @load(vm.forecastRecomendDTO) @save(vm.forecastRecomendDTO, after='buttonSearch')" sizable="true" width="150%" >
         
         <separator/>
         <groupbox closable="false" mold="3d">
@@ -13,9 +13,9 @@
             <grid>
                 <columns>
                     <column width="20%"/>
-                    <column width="80%"/>
+                    <column width="50%"/>
                     <column width="20%"/>
-                    <column width="80%"/>
+                    <column width="110%"/>
                 </columns>
                 
                 <rows>
@@ -70,9 +70,9 @@
             <groupbox >
                 <grid style="border:0">
                     <columns>
-                        <column width="40%"></column>
+                        <column width="20%"></column>
                         <column width="20%" align="center"></column>
-                        <column width="40%" align="right"></column>
+                        <column width="60%" align="right"></column>
                     </columns>
                     <rows>
                         <row>
@@ -89,22 +89,22 @@
             <paging id="pagingRecommendedQty" pageSize="@load(vm.pageSize)" totalSize="@load(vm.totalSize)" activePage="@save(vm.activePage)"/>
             <listbox emptyMessage="${labels.common.noDataFound}" model="@bind(vm.forecastRecomendDTOs)">
                 <!--                rows="@load(vm.pageSize)" pageSize="@load(vm.pageSize)" pagingPosition="top" mold="paging"-->
-                <listhead>
-                    <listheader label="Supplier" width="30%" align="center"/>
-                    <listheader label="Factory" width="25%" align="center"/>
-                    <listheader label="Barcode" width="30%" align="center"/>
-                    <listheader label="Item Code" width="20%" align="center"/>
-                    <listheader label="Product" width="30%" align="center"/>
-                    <listheader label="Product Name English" width="30%" align="center"/>
-                    <listheader label="Qty Available" width="25%" align="center"/>
+                <listhead sizable="true">
+                    <listheader label="Supplier" width="50%" align="center"/>
+                    <listheader label="Factory" width="50%" align="center"/>
+                    <listheader label="Barcode" width="35%" align="center"/>
+                    <listheader label="Item Code" width="30%" align="center"/>
+                    <listheader label="Product" width="50%" align="center"/>
+                    <listheader label="Product Name English" width="50%" align="center"/>
+                    <listheader label="Qty Available" width="30%" align="center"/>
                     <listheader label="Qty Average" width="30%" align="center"/>
                     <listheader label="Lead Time" width="20%" align="center"/>
                     <listheader label="Qty Batas Atas" width="30%" align="center"/>
                     <listheader label="Qty On Order" width="30%" align="center"/>
                     <listheader label="Price List Jual" width="30%" align="center"/>
-                    <listheader label="Currency Factory" width="20%" align="center"/>
+                    <listheader label="Currency Factory" width="30%" align="center"/>
                     <listheader label="Price List Factory" width="30%" align="center"/>
-                    <listheader label="MOQ" width="10%" align="center"/>
+                    <listheader label="MOQ" width="30%" align="center"/>
                     <listheader label="Qty PCS perMB" width="30%" align="center"/>
                     <listheader label="Recommend Qty PO PCS" width="40%" align="center"/>
                     <listheader label="Recommend MB" width="30%" align="center"/>
@@ -112,63 +112,58 @@
                 <template name="model">
                     <listitem value="${each}">
                         <listcell >
-                            <label width="95%" value="@bind(each.supplier)"/>
+                            <label width="100%"  value="@bind(each.supplier)"/>
                         </listcell>
                         <listcell >
-                            <label width="95%" value="@bind(each.factory)"/>
+                            <label width="100%" value="@bind(each.factory)"/>
                         </listcell>
                         <listcell >
-                            <label width="95%" value="@bind(each.barcode)"/>
+                            <label width="100%" value="@bind(each.barcode)"/>
                         </listcell>
                         <listcell >
-                            <label width="95%" value="@bind(each.itemCode)"/>
+                            <label width="100%" value="@bind(each.itemCode)"/>
                         </listcell>
                         <listcell >
-                            <label width="95%" value="@bind(each.product)"/>
+                            <label width="100%" value="@bind(each.product)"/>
                         </listcell>
                         <listcell >
-                            <label width="95%" value="@bind(each.productEnglish)"/>
+                            <label width="100%" value="@bind(each.productEnglish)"/>
                         </listcell>
                         <listcell >
-                            <!--                            <doublebox format="#,##0.00" disabled="true" value="@bind(each.qtyAvailable)" width="95%" />-->
-                            <label width="95%" value="@bind(each.qtyAvailable)"/>
+                            <label width="100%" value="@bind(each.qtyAvailable) @converter('formatedNumber', format='###,##0.00')"/>
                         </listcell>
                         <listcell >
-                            <label width="95%" value="@bind(each.qtyAverage)"/>
+                            <label width="100%" value="@bind(each.qtyAverage) @converter('formatedNumber', format='###,##0.00')" />
                         </listcell>
                         <listcell >
-                            <label width="95%" value="@bind(each.leadTime)"/>
+                            <label width="100%" value="@bind(each.leadTime) @converter('formatedNumber', format='###,##0.00')"/>
                         </listcell>
                         <listcell >
-                            <label width="95%" value="@bind(each.qtyBatasAtas)"/>
+                            <label width="100%" value="@bind(each.qtyBatasAtas) @converter('formatedNumber', format='###,##0.00')"/>
                         </listcell>
                         <listcell >
-                            <label width="95%" value="@bind(each.qtyOnOrdered)"/>
+                            <label width="100%" value="@bind(each.qtyOnOrdered) @converter('formatedNumber', format='###,##0.00')"/>
                         </listcell>
                         <listcell >
-                            <label width="95%" value="@bind(each.priceListJual)"/>
-                            <!--                            value="@bind(each.priceListJual)"-->
-                            <!--value="${c:formatNumber(@bind(each.priceListJual), '$ ###,###,###.00')}"-->
-                            <!--<doublebox format="#,##0.00" disabled="true" style="text-align: center" value="@bind(each.priceListJual)" width="95%" />-->
-                            
+                            <label width="100%" value="@bind(each.priceListJual) @converter('formatedNumber', format='###,##0.00')"/>
                         </listcell>
                         <listcell >
-                            <label width="95%" value="@bind(each.currencyListPO)"/>
+                            <label width="100%" value="@bind(each.currencyListPO)"/>
                         </listcell>
                         <listcell >
-                            <label width="95%" value="@bind(each.priceListLastPO)"/>
+                            <label width="100%" value="@bind(each.priceListLastPO) @converter('formatedNumber', format='###,##0.00')"/>
                         </listcell>
                         <listcell >
-                            <label width="95%" value="@bind(each.moq)"/>
+                            <label width="100%" value="@bind(each.moq) @converter('formatedNumber', format='###,##0.00')"/>
                         </listcell>
                         <listcell >
-                            <label width="95%" value="@bind(each.qtyPcsPerMasterBox)"/>
+                            <label width="100%" value="@bind(each.qtyPcsPerMasterBox) @converter('formatedNumber', format='###,##0.00')"/>
                         </listcell>
                         <listcell >
-                            <label width="95%" value="@bind(each.recomendQtyPOPcs)"/>
+                            <label width="100%" value="@bind(each.recomendQtyPOPcs) @converter('formatedNumber', format='###,##0.00')"/>
                         </listcell>
                         <listcell >
-                            <label width="95%" value="@bind(each.totalMasterBox)"/>
+                            <label width="100%" value="@bind(each.totalMasterBox) @converter('formatedNumber', format='###,##0.00')"/>
                         </listcell>
                     </listitem>
                 </template>
