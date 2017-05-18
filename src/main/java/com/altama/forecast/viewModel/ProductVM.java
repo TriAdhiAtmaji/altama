@@ -69,6 +69,7 @@ public class ProductVM {
     private C_bpartnerDTO suplierSelect;
     private Z_m_factoryDTO factorySelect;
     private M_pricelist_versionDTO priceVersionSelect;
+    private BigDecimal strPriceVersionSelect;
 
     //        combobox
     private ListModelList<IsDiscontinue> listDiscontinue = new ListModelList<IsDiscontinue>();
@@ -111,7 +112,9 @@ public class ProductVM {
         if (priceVersionSelect == null) {
             priceVersionSelect = defaultPriceVersion;
         }
-
+//        if (strPriceVersionSelect == null) {
+//            setStrPriceVersionSelect(BigDecimal.valueOf(1000000));
+//        }
     }
 
     private void checkValidity(ForecastRecomendDTO forecastRecomend, PageNavigation previous) {
@@ -125,7 +128,7 @@ public class ProductVM {
     }
 
     @Command("buttonSearch")
-    @NotifyChange("*")
+    @NotifyChange({"forecastRecomendDTOs", "activePage", "totalSize"})
     public void buttonSearch(@ContextParam(ContextType.VIEW) Window window) {
 
     }
@@ -206,6 +209,9 @@ public class ProductVM {
         if (priceVersionSelect != null) {
             params.put("priceVersionSelect", priceVersionSelect.getM_pricelist_version_id());
         }
+//        if (strPriceVersionSelect != null) {
+//            params.put("strPriceVersionSelect", strPriceVersionSelect);
+//        }
         return countForecastRecomendService.countRecord(params);
     }
 
@@ -288,6 +294,9 @@ public class ProductVM {
         if (priceVersionSelect != null) {
             params.put("priceVersionSelect", priceVersionSelect.getM_pricelist_version_id());
         }
+//        if (strPriceVersionSelect != null) {
+//            params.put("strPriceVersionSelect", strPriceVersionSelect);
+//        }
 
         totalSize = countForecastRecomendService.countRecord(params);
         return forecastRecomendDTOs = forecastRecomendService.findByParams(params, activePage * pageSize, pageSize);
@@ -311,6 +320,14 @@ public class ProductVM {
 
     public void setDefaultPriceVersion(M_pricelist_versionDTO defaultPriceVersion) {
         this.defaultPriceVersion = defaultPriceVersion;
+    }
+
+    public BigDecimal getStrPriceVersionSelect() {
+        return strPriceVersionSelect;
+    }
+
+    public void setStrPriceVersionSelect(BigDecimal strPriceVersionSelect) {
+        this.strPriceVersionSelect = strPriceVersionSelect;
     }
 
 }
