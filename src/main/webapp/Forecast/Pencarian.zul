@@ -57,7 +57,7 @@
 
                         <label value="Price List Version Jual" />
                       	
-                        <combobox width="300px" model="@bind(vm.listPriceVersion)" selectedItem="@bind(vm.priceVersionSelect)" placeholder="US_Standard_PriceList_1108_IDR" onAfterRender="self.setSelectedIndex(25)">
+                        <combobox width="300px" model="@bind(vm.listPriceVersion)" selectedItem="@bind(vm.priceVersionSelect)"  onAfterRender="self.setSelectedIndex(25)">
                             <!--                            onAfterRender="self.setSelectedIndex(21)"-->
                             <template name="model" var="items">
                                 <comboitem label="@load(items.getNamePricelist())" value="@load(items.getM_pricelist_version_id().toString())"/>
@@ -100,7 +100,7 @@
                     <rows>
                         <row>
                             <label></label>
-                            <button label="Search" mold="trendy" width="120px" onClick="@command('buttonSearch')"/>
+                            <button label="Search" mold="trendy" width="120px" onClick="@command('buttonSearch')" autodisable="self"/>
                             <label></label>
                         </row>
                     </rows>

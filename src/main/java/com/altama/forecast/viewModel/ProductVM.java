@@ -23,6 +23,7 @@ import java.util.Map;
 import org.zkoss.bind.annotation.Command;
 import org.zkoss.bind.annotation.ContextParam;
 import org.zkoss.bind.annotation.ContextType;
+import org.zkoss.bind.annotation.DependsOn;
 import org.zkoss.bind.annotation.ExecutionArgParam;
 import org.zkoss.bind.annotation.Init;
 import org.zkoss.bind.annotation.NotifyChange;
@@ -132,8 +133,14 @@ public class ProductVM {
     public void buttonSearch(@ContextParam(ContextType.VIEW) Window window) {
 
     }
-
+    
+    @DependsOn("productSelect")
     public String getProductSelect() {
+        if (productSelect != null) {
+            params.put("productSelect", productSelect);
+        }else{
+            params.put("productSelect", null);
+        }
         return productSelect;
     }
 
@@ -141,7 +148,13 @@ public class ProductVM {
         this.productSelect = productSelect;
     }
 
+    @DependsOn("brandSelect")
     public C_ElementvalueDTO getBrandSelect() {
+        if (brandSelect != null) {
+            params.put("brandSelected", brandSelect.getC_elementvalue_id());
+        } else {
+            params.put("brandSelected", null);
+        }
         return brandSelect;
     }
 
@@ -149,7 +162,13 @@ public class ProductVM {
         this.brandSelect = brandSelect;
     }
 
+    @DependsOn("suplierSelect")
     public C_bpartnerDTO getSuplierSelect() {
+        if (suplierSelect != null) {
+            params.put("suplierSelect", suplierSelect.getC_bpartner_id());
+        } else {
+            params.put("suplierSelect", null);
+        }
         return suplierSelect;
     }
 
@@ -157,7 +176,13 @@ public class ProductVM {
         this.suplierSelect = suplierSelect;
     }
 
+    @DependsOn("factorySelect")
     public Z_m_factoryDTO getFactorySelect() {
+        if (factorySelect != null) {
+            params.put("factorySelect", factorySelect.getZ_m_factory_id());
+        } else {
+            params.put("factorySelect", null);
+        }
         return factorySelect;
     }
 
@@ -165,7 +190,13 @@ public class ProductVM {
         this.factorySelect = factorySelect;
     }
 
+    @DependsOn("priceVersionSelect")
     public M_pricelist_versionDTO getPriceVersionSelect() {
+        if (priceVersionSelect != null) {
+            params.put("priceVersionSelect", priceVersionSelect.getM_pricelist_version_id());
+        } else {
+            params.put("priceVersionSelect", null);
+        }
         return priceVersionSelect;
     }
 
@@ -191,24 +222,24 @@ public class ProductVM {
     }
 
     public int getTotalSize() {
-        if (productSelect != null) {
-            params.put("productSelect", productSelect);
-        }
-        if (continueSelect != null) {
-            params.put("continueSelect", continueSelect);
-        }
-        if (brandSelect != null) {
-            params.put("brandSelected", brandSelect.getC_elementvalue_id());
-        }
-        if (suplierSelect != null) {
-            params.put("suplierSelect", suplierSelect.getC_bpartner_id());
-        }
-        if (factorySelect != null) {
-            params.put("factorySelect", factorySelect.getZ_m_factory_id());
-        }
-        if (priceVersionSelect != null) {
-            params.put("priceVersionSelect", priceVersionSelect.getM_pricelist_version_id());
-        }
+//        if (productSelect != null) {
+//            params.put("productSelect", productSelect);
+//        }
+//        if (continueSelect != null) {
+//            params.put("continueSelect", continueSelect);
+//        }
+//        if (brandSelect != null) {
+//            params.put("brandSelected", brandSelect.getC_elementvalue_id());
+//        }
+//        if (suplierSelect != null) {
+//            params.put("suplierSelect", suplierSelect.getC_bpartner_id());
+//        }
+//        if (factorySelect != null) {
+//            params.put("factorySelect", factorySelect.getZ_m_factory_id());
+//        }
+//        if (priceVersionSelect != null) {
+//            params.put("priceVersionSelect", priceVersionSelect.getM_pricelist_version_id());
+//        }
 //        if (strPriceVersionSelect != null) {
 //            params.put("strPriceVersionSelect", strPriceVersionSelect);
 //        }
@@ -276,24 +307,24 @@ public class ProductVM {
     }
 
     public List<ForecastRecomendDTO> getForecastRecomendDTOs() {
-        if (productSelect != null) {
-            params.put("productSelect", productSelect);
-        }
-        if (continueSelect != null) {
-            params.put("continueSelect", continueSelect);
-        }
-        if (brandSelect != null) {
-            params.put("brandSelected", brandSelect.getC_elementvalue_id());
-        }
-        if (suplierSelect != null) {
-            params.put("suplierSelect", suplierSelect.getC_bpartner_id());
-        }
-        if (factorySelect != null) {
-            params.put("factorySelect", factorySelect.getZ_m_factory_id());
-        }
-        if (priceVersionSelect != null) {
-            params.put("priceVersionSelect", priceVersionSelect.getM_pricelist_version_id());
-        }
+//        if (productSelect != null) {
+//            params.put("productSelect", productSelect);
+//        }
+//        if (continueSelect != null) {
+//            params.put("continueSelect", continueSelect);
+//        }
+//        if (brandSelect != null) {
+//            params.put("brandSelected", brandSelect.getC_elementvalue_id());
+//        }
+//        if (suplierSelect != null) {
+//            params.put("suplierSelect", suplierSelect.getC_bpartner_id());
+//        }
+//        if (factorySelect != null) {
+//            params.put("factorySelect", factorySelect.getZ_m_factory_id());
+//        }
+//        if (priceVersionSelect != null) {
+//            params.put("priceVersionSelect", priceVersionSelect.getM_pricelist_version_id());
+//        }
 //        if (strPriceVersionSelect != null) {
 //            params.put("strPriceVersionSelect", strPriceVersionSelect);
 //        }
@@ -306,7 +337,13 @@ public class ProductVM {
         this.forecastRecomendDTOs = forecastRecomendDTOs;
     }
 
+    @DependsOn("continueSelect")
     public IsDiscontinue getContinueSelect() {
+        if (continueSelect != null) {
+            params.put("continueSelect", continueSelect);
+        } else {
+            params.put("continueSelect", null);
+        }
         return continueSelect;
     }
 
