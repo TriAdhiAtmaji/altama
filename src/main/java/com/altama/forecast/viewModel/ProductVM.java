@@ -23,7 +23,6 @@ import java.util.Map;
 import org.zkoss.bind.annotation.Command;
 import org.zkoss.bind.annotation.ContextParam;
 import org.zkoss.bind.annotation.ContextType;
-import org.zkoss.bind.annotation.DependsOn;
 import org.zkoss.bind.annotation.ExecutionArgParam;
 import org.zkoss.bind.annotation.Init;
 import org.zkoss.bind.annotation.NotifyChange;
@@ -82,11 +81,12 @@ public class ProductVM {
     // default priceversion parameter
     private M_pricelist_versionDTO defaultPriceVersion = new M_pricelist_versionDTO(BigDecimal.valueOf(1000000), "US_Standard_PriceList_1108_IDR");
 
-    //Paging
+    // Paging
     private int pageSize = 50;
     private int activePage = 0;
     private int totalSize;
 
+    // menampung Parameter
     private Map params = new HashMap();
 
     @Init
@@ -100,22 +100,21 @@ public class ProductVM {
 
     private void initData() {
 
-        // Parameter
+        // Parameter untuk pencarian
         listBpartner = c_bpartnerService.findAll();
         listFactory = z_m_factoryService.findAll();
         listPriceVersion = m_pricelist_versionService.findAll();
         listC_Elementvalues = c_ElementvalueService.findAll();
 
+        // Default Value continueSelect
         if (continueSelect == null) {
             continueSelect = IsDiscontinue.valueOf("N");
         }
 
+        // Default Value priceVersionSelect
         if (priceVersionSelect == null) {
             priceVersionSelect = defaultPriceVersion;
         }
-//        if (strPriceVersionSelect == null) {
-//            setStrPriceVersionSelect(BigDecimal.valueOf(1000000));
-//        }
     }
 
     private void checkValidity(ForecastRecomendDTO forecastRecomend, PageNavigation previous) {
@@ -133,12 +132,13 @@ public class ProductVM {
     public void buttonSearch(@ContextParam(ContextType.VIEW) Window window) {
 
     }
-    
-    @DependsOn("productSelect")
+
+    //     untuk Parameter product
+    //    @DependsOn("productSelect")
     public String getProductSelect() {
         if (productSelect != null) {
             params.put("productSelect", productSelect);
-        }else{
+        } else {
             params.put("productSelect", null);
         }
         return productSelect;
@@ -148,7 +148,8 @@ public class ProductVM {
         this.productSelect = productSelect;
     }
 
-    @DependsOn("brandSelect")
+    //    Parameter Brand
+    //    @DependsOn("brandSelect")
     public C_ElementvalueDTO getBrandSelect() {
         if (brandSelect != null) {
             params.put("brandSelected", brandSelect.getC_elementvalue_id());
@@ -162,7 +163,8 @@ public class ProductVM {
         this.brandSelect = brandSelect;
     }
 
-    @DependsOn("suplierSelect")
+    //     parameter suplier
+    //    @DependsOn("suplierSelect")
     public C_bpartnerDTO getSuplierSelect() {
         if (suplierSelect != null) {
             params.put("suplierSelect", suplierSelect.getC_bpartner_id());
@@ -176,7 +178,8 @@ public class ProductVM {
         this.suplierSelect = suplierSelect;
     }
 
-    @DependsOn("factorySelect")
+    //     parameter factory
+    //    @DependsOn("factorySelect")
     public Z_m_factoryDTO getFactorySelect() {
         if (factorySelect != null) {
             params.put("factorySelect", factorySelect.getZ_m_factory_id());
@@ -190,7 +193,8 @@ public class ProductVM {
         this.factorySelect = factorySelect;
     }
 
-    @DependsOn("priceVersionSelect")
+    //     parameter price list version
+    //    @DependsOn("priceVersionSelect")
     public M_pricelist_versionDTO getPriceVersionSelect() {
         if (priceVersionSelect != null) {
             params.put("priceVersionSelect", priceVersionSelect.getM_pricelist_version_id());
@@ -220,29 +224,9 @@ public class ProductVM {
     public void setActivePage(int activePage) {
         this.activePage = activePage;
     }
-
+    
+    // jumlah data
     public int getTotalSize() {
-//        if (productSelect != null) {
-//            params.put("productSelect", productSelect);
-//        }
-//        if (continueSelect != null) {
-//            params.put("continueSelect", continueSelect);
-//        }
-//        if (brandSelect != null) {
-//            params.put("brandSelected", brandSelect.getC_elementvalue_id());
-//        }
-//        if (suplierSelect != null) {
-//            params.put("suplierSelect", suplierSelect.getC_bpartner_id());
-//        }
-//        if (factorySelect != null) {
-//            params.put("factorySelect", factorySelect.getZ_m_factory_id());
-//        }
-//        if (priceVersionSelect != null) {
-//            params.put("priceVersionSelect", priceVersionSelect.getM_pricelist_version_id());
-//        }
-//        if (strPriceVersionSelect != null) {
-//            params.put("strPriceVersionSelect", strPriceVersionSelect);
-//        }
         return countForecastRecomendService.countRecord(params);
     }
 
@@ -306,29 +290,8 @@ public class ProductVM {
         this.forecastRecomendDTO = forecastRecomendDTO;
     }
 
+    // Search parameter forecast dan jumlah data
     public List<ForecastRecomendDTO> getForecastRecomendDTOs() {
-//        if (productSelect != null) {
-//            params.put("productSelect", productSelect);
-//        }
-//        if (continueSelect != null) {
-//            params.put("continueSelect", continueSelect);
-//        }
-//        if (brandSelect != null) {
-//            params.put("brandSelected", brandSelect.getC_elementvalue_id());
-//        }
-//        if (suplierSelect != null) {
-//            params.put("suplierSelect", suplierSelect.getC_bpartner_id());
-//        }
-//        if (factorySelect != null) {
-//            params.put("factorySelect", factorySelect.getZ_m_factory_id());
-//        }
-//        if (priceVersionSelect != null) {
-//            params.put("priceVersionSelect", priceVersionSelect.getM_pricelist_version_id());
-//        }
-//        if (strPriceVersionSelect != null) {
-//            params.put("strPriceVersionSelect", strPriceVersionSelect);
-//        }
-
         totalSize = countForecastRecomendService.countRecord(params);
         return forecastRecomendDTOs = forecastRecomendService.findByParams(params, activePage * pageSize, pageSize);
     }
@@ -337,7 +300,8 @@ public class ProductVM {
         this.forecastRecomendDTOs = forecastRecomendDTOs;
     }
 
-    @DependsOn("continueSelect")
+    //     parameter isDiscontinueSelect
+    //    @DependsOn("continueSelect")
     public IsDiscontinue getContinueSelect() {
         if (continueSelect != null) {
             params.put("continueSelect", continueSelect);
