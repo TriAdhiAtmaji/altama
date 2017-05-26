@@ -4,7 +4,6 @@
     <class  mutable="true" name="com.altama.forecast.domain.c_bpartner.C_bpartner" table="c_bpartner">
         <id column="c_bpartner_id" name="c_bpartner_id">
         </id>                      
-        <!--        <property column="c_bpartner_id" name="c_bpartner_id" not-null="false"/>-->
         <property column="ad_client_id" name="ad_client_id" not-null="false"/>
         <property column="ad_org_id" name="ad_org_id" not-null="false"/>
         <property column="value" name="value" not-null="false"/>

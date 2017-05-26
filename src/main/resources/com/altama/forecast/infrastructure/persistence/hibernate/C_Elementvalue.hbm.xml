@@ -9,7 +9,8 @@
         <property column="value" name="value" not-null="false"/>
         <property column="name" name="brand" not-null="false"/> 
         <property column="description" name="description" not-null="false"/>
-
+        
+        <!--        join table c_elementvalue_id dengan node_id-->
         <join table="ad_treenodeu1" >
             <key column="node_id"/>
             <many-to-one name="node_id"  not-null="true" unique="true" insert="false" update="false"/>

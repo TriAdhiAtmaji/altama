@@ -42,15 +42,12 @@ public class Z_m_factoryHibernateRepository extends HibernateRepository implemen
 
     @Override
     public List<Z_m_factory> findAll() {
+        //        Use HQL
         Query query = getSession().createQuery("SELECT DISTINCT factory FROM com.altama.forecast.domain.z_m_factory.Z_m_factory as factory "
                 + "INNER JOIN factory.z_m_product_factory as productFactory "
                 + "WHERE productFactory.iscurrentvendor = 'Y' ORDER BY factory.name ASC");
         System.out.println(query.list().isEmpty());
         return (List<Z_m_factory>) query.list();
-//        Criteria criteria = getSession().createCriteria(Z_m_factory.class, "factory");
-//        criteria.createCriteria("factory.z_m_product_factory", "join", criteria.INNER_JOIN);
-//        System.out.println(criteria.list().isEmpty());
-//        return (List<Z_m_factory>) criteria.list();
     }
 
     @Override
@@ -60,10 +57,6 @@ public class Z_m_factoryHibernateRepository extends HibernateRepository implemen
         if (StringUtil.hasValue(map.get("z_m_factory_id"))) {
             criteria.add(Restrictions.eq("z_m_factory_id", map.get("z_m_factory_id")));
         }
-
-//        if (StringUtil.hasValue(map.get("name"))) {
-//            criteria.add(Restrictions.eq("name", map.get("name")));
-//        }
         return criteria.list();
     }
 
