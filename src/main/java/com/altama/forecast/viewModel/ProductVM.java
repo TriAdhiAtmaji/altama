@@ -130,7 +130,7 @@ public class ProductVM {
     @Command("buttonSearch")
     @NotifyChange({"forecastRecomendDTOs", "activePage", "totalSize"})
     public void buttonSearch(@ContextParam(ContextType.VIEW) Window window) {
-
+        activePage = 0;
     }
 
     //     untuk Parameter product
@@ -217,7 +217,7 @@ public class ProductVM {
     }
 
     public int getActivePage() {
-        if(activePage == 0){
+        if (activePage == 0) {
             return activePage = 0;
         }
         return activePage;
@@ -227,7 +227,7 @@ public class ProductVM {
     public void setActivePage(int activePage) {
         this.activePage = activePage;
     }
-    
+
     // jumlah data
     public int getTotalSize() {
         return countForecastRecomendService.countRecord(params);
