@@ -217,6 +217,9 @@ public class ProductVM {
     }
 
     public int getActivePage() {
+        if(activePage == 0){
+            return activePage = 0;
+        }
         return activePage;
     }
 

@@ -61,9 +61,6 @@ public class ForecastRecomendHibernateRepository extends HibernateRepository imp
         if (StringUtil.hasValue(map.get("priceVersionSelect"))) {
             criteria.add(Restrictions.eq("m_pricelist_version_id", map.get("priceVersionSelect")));
         }
-//        if (StringUtil.hasValue(map.get("strPriceVersionSelect"))) {
-//            criteria.add(Restrictions.eq("m_pricelist_version_id", map.get("strPriceVersionSelect")));
-//        }
         criteria.setFirstResult(offset);
         criteria.setMaxResults(limit);
 

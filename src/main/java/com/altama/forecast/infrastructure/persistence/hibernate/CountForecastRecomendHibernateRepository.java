@@ -44,9 +44,6 @@ public class CountForecastRecomendHibernateRepository extends HibernateRepositor
         if (StringUtil.hasValue(map.get("priceVersionSelect"))) {
             criteria.add(Restrictions.eq("m_pricelist_version_id", map.get("priceVersionSelect")));
         }
-//        if (StringUtil.hasValue(map.get("strPriceVersionSelect"))) {
-//            criteria.add(Restrictions.eq("m_pricelist_version_id", map.get("strPriceVersionSelect")));
-//        }
         return (Integer) criteria.uniqueResult();
     }
 
