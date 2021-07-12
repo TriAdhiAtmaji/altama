@@ -10,17 +10,17 @@
     <name>com.altama.forecast</name>
 
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
         <spring.version>3.2.1.RELEASE</spring.version>
         
         <!-- ZKoss Properties -->
-        <!-- <zkoss.version>7.0.5</zkoss.version>
+        <zkoss.version>7.0.5</zkoss.version>
         <zkoss.ckez.version>3.6.0.0</zkoss.ckez.version>
         <zkoss.calendar.version>2.1.2</zkoss.calendar.version>
         <zkoss.timelinez.version>2.3.1_50</zkoss.timelinez.version>
         <zkoss.timeplotz.version>1.1_50</zkoss.timeplotz.version>
-        <zkoss.zkcharts.version>1.2.0</zkoss.zkcharts.version> -->
+        <zkoss.zkcharts.version>1.2.0</zkoss.zkcharts.version>
     </properties>
     
     <build>
@@ -30,8 +30,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>1.7</source>
+                    <target>1.7</target>
                     <debug>false</debug>
                     <debuglevel>lines,vars,source</debuglevel>
                 </configuration>
