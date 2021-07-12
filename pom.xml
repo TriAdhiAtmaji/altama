@@ -342,7 +342,7 @@
         </dependency>
         
         <!-- Zkoss Dependencies -->
-        <dependency>
+        <!-- <dependency>
             <groupId>org.zkoss.zk</groupId>
             <artifactId>zul</artifactId>
             <version>${zkoss.version}</version>
@@ -377,7 +377,7 @@
             <groupId>org.zkoss.zk</groupId>
             <artifactId>zkmax</artifactId>
             <version>${zkoss.version}</version>
-        </dependency>
+        </dependency> -->
     </dependencies>
 
 </project>
